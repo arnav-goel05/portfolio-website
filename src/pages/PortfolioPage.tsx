@@ -42,7 +42,6 @@ export function PortfolioPage() {
           </div>
         </div>
         <div className="hero-visual" aria-label="Editorial portfolio motif">
-          <div className="code-mark">&lt;/&gt;</div>
           <img src={heroArnav} alt="Stylized portrait of Arnav working on a laptop" />
         </div>
       </section>

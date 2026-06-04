@@ -191,16 +191,6 @@ main {
   mix-blend-mode: multiply;
 }
 
-.code-mark {
-  position: absolute;
-  top: 17%;
-  left: 8%;
-  z-index: 2;
-  color: var(--clay);
-  font-size: 38px;
-  font-weight: 800;
-}
-
 .section-block {
   padding: 34px clamp(22px, 5vw, 70px) 36px;
 }
