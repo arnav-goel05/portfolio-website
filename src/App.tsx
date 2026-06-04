@@ -1,33 +1,15 @@
 import heroArnav from './assets/hero-arnav.png'
+import customerSupportHeader from './assets/customer-support-header.png'
 import './App.css'
 
 const projects = [
   {
-    title: 'Automated Kaggle Housing ETL Script',
-    posterTop: 'Kaggle Housing',
-    posterMain: 'ETL Script',
-    roles: 'Bash | Python | MySQL | Slack',
-    summary:
-      'Automated a daily ETL pipeline to download, clean, engineer, and load Housing Prices data into MySQL with Slack notifications.',
-    tone: 'gold',
-  },
-  {
-    title: 'Credit Risk Prediction for U.S. Oil Sector',
-    posterTop: 'Credit Risk',
-    posterMain: 'U.S. Oil Sector',
-    roles: 'Logistic Regression | Random Forest | KNN | Neural Networks',
-    summary:
-      'Fine-tuned machine learning algorithms for default prediction, achieving test ROC AUC above 0.85 with feature engineering and EDA.',
-    tone: 'green',
-  },
-  {
     title: 'Automated Customer Support Evaluation System',
-    posterTop: 'Customer Support',
-    posterMain: 'Evaluation System',
     roles: 'Whisper ASR | BERT-RoBERTa | Sentiment Analysis',
     summary:
-      'Built an end-to-end pipeline for call transcription and sentiment assessment, reducing WER from 77.37% to 23.79%.',
+      'Built an end-to-end pipeline for call transcription and sentiment assessment, reducing WER from 77.37% to 23.79% and reaching sentiment accuracy above 0.89.',
     tone: 'blue',
+    image: customerSupportHeader,
   },
 ]
 
@@ -132,11 +114,7 @@ function App() {
         <div className="project-grid">
           {projects.map((project) => (
             <article className="project-card" key={project.title}>
-              <div className={`poster poster-${project.tone}`} aria-hidden="true">
-                <div className="poster-orbit" />
-                <span className="poster-top">{project.posterTop}</span>
-                <strong>{project.posterMain}</strong>
-              </div>
+              <img className="project-media" src={project.image} alt="" aria-hidden="true" />
               <div className="project-body">
                 <div>
                   <h3>{project.title}</h3>
