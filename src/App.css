@@ -430,6 +430,32 @@ main {
   line-height: 1.6;
 }
 
+.case-placeholder {
+  min-height: 320px;
+  align-content: end;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.74)),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 54px,
+      rgba(8, 22, 38, 0.08) 55px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #fbf7ef 0,
+      #fbf7ef 54px,
+      rgba(8, 22, 38, 0.08) 55px
+    );
+}
+
+.placeholder-metric p {
+  max-width: 360px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .article-row time {
   color: var(--muted);
   font-size: 15px;

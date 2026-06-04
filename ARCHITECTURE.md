@@ -10,6 +10,7 @@ system over adding dependencies.
 - `src/App.tsx` is intentionally small. It chooses between:
   - `PortfolioPage` for `/`
   - `CustomerSupportProjectPage` for `/projects/customer-support`
+  - `HandEyeCoordinationProjectPage` for `/projects/hand-eye-coordination`
 - Routing is currently path-based and dependency-free. Add a router only when
   there are enough pages to justify it.
 
@@ -19,6 +20,8 @@ system over adding dependencies.
   - Page-level components. Pages own section order and page-specific layout.
   - `PortfolioPage.tsx` renders the homepage.
   - `CustomerSupportProjectPage.tsx` renders the project case study.
+  - `HandEyeCoordinationProjectPage.tsx` renders the hand-eye coordination
+    project placeholder case study.
 - `src/components/`
   - Reusable UI shared across pages.
   - `SiteNav.tsx` owns the common navigation skeleton.

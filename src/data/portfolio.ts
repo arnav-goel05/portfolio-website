@@ -1,4 +1,5 @@
 import customerSupportHeader from '../assets/customer-support-header.png'
+import handEyeCoordinationHeader from '../assets/hand-eye-coordination-header.svg'
 
 export const projects = [
   {
@@ -9,6 +10,15 @@ export const projects = [
     tone: 'blue',
     image: customerSupportHeader,
     href: '/projects/customer-support',
+  },
+  {
+    title: '3D Hand-Eye Coordination Assessment Tool',
+    roles: 'SwiftUI | ARKit | RealityKit | Python Analysis',
+    summary:
+      'Developing a spatial-computing tool with NUH Rehabilitation to assess hand dexterity by measuring how closely patients follow an ideal path between two points.',
+    tone: 'green',
+    image: handEyeCoordinationHeader,
+    href: '/projects/hand-eye-coordination',
   },
 ]
 

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 405" role="img" aria-labelledby="title desc">
+  <title id="title">Hand Eye Coordination Assessment placeholder header</title>
+  <desc id="desc">Editorial poster-style placeholder for a spatial hand-eye coordination assessment project.</desc>
+  <rect width="1200" height="405" fill="#f8f4ec" />
+  <g opacity="0.28" stroke="#9aa3ad" stroke-width="1">
+    <path d="M0 60h1200M0 120h1200M0 180h1200M0 240h1200M0 300h1200M0 360h1200" />
+    <path d="M80 0v405M160 0v405M240 0v405M320 0v405M400 0v405M480 0v405M560 0v405M640 0v405M720 0v405M800 0v405M880 0v405M960 0v405M1040 0v405M1120 0v405" />
+  </g>
+  <ellipse cx="590" cy="185" rx="320" ry="72" fill="#c6463d" opacity="0.78" transform="rotate(-4 590 185)" />
+  <ellipse cx="590" cy="185" rx="350" ry="94" fill="none" stroke="#081626" stroke-width="2" opacity="0.32" transform="rotate(-4 590 185)" />
+  <text x="330" y="168" fill="#081626" font-family="Georgia, serif" font-size="54" font-style="italic">Hand-Eye Coordination</text>
+  <text x="330" y="234" fill="#081626" font-family="Arial, sans-serif" font-size="62" font-weight="800">Assessment Tool</text>
+  <g fill="none" stroke="#081626" stroke-width="4" opacity="0.76">
+    <path d="M150 245c80-90 190-94 285-30" stroke-dasharray="10 14" />
+    <circle cx="145" cy="247" r="20" />
+    <circle cx="445" cy="214" r="20" />
+  </g>
+  <g fill="#081626" opacity="0.7">
+    <circle cx="146" cy="247" r="6" />
+    <circle cx="445" cy="214" r="6" />
+    <circle cx="982" cy="138" r="8" />
+    <circle cx="1048" cy="268" r="8" />
+  </g>
+  <g stroke="#c6463d" stroke-width="5" stroke-linecap="round" fill="none">
+    <path d="M965 138h34M982 121v34" />
+    <path d="M1031 268h34M1048 251v34" />
+    <path d="M915 275c55-40 112-40 168 0" opacity="0.55" />
+  </g>
+  <g font-family="Arial, sans-serif" font-size="18" font-weight="700">
+    <text x="338" y="326" fill="#081626">SwiftUI</text>
+    <text x="455" y="326" fill="#081626">ARKit</text>
+    <text x="558" y="326" fill="#081626">RealityKit</text>
+    <text x="705" y="326" fill="#081626">Python Analysis</text>
+  </g>
+  <g stroke="#081626" stroke-width="2" opacity="0.34">
+    <path d="M418 320h28M518 320h31M675 320h23" />
+  </g>
+</svg>
