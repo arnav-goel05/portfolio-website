@@ -111,7 +111,7 @@ function App() {
           </p>
           <div className="hero-actions">
             <a className="button primary" href="#projects">
-              View Projects <span aria-hidden="true">{'->'}</span>
+              View Projects
             </a>
             <a className="button secondary" href="#contact">
               Contact
