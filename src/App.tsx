@@ -101,8 +101,8 @@ function App() {
         <div className="hero-copy">
           <h1>Arnav Goel</h1>
           <p className="hero-lede">
-            Computer Science student at NUS building software, spatial
-            computing, AI/ML pipelines, and UX prototypes.
+            NUS Computer Science student building reliable software, spatial
+            computing tools, and applied AI systems.
           </p>
           <p className="hero-support">
             Bachelor of Computing candidate with experience across SwiftUI,
