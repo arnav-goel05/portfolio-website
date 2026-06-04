@@ -91,7 +91,6 @@ export function PortfolioPage() {
       <section className="section-block" id="skills">
         <div className="section-heading">
           <h2>Technical Skills</h2>
-          <a href="#contact">Contact {'->'}</a>
         </div>
         <div className="skill-list">
           {skillGroups.map((group, index) => (
