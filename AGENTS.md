@@ -17,6 +17,8 @@ Follow these files when deciding where code belongs and how the site should look
 - Put page-level UI in `src/pages/`.
 - Put reusable UI in `src/components/`.
 - Put static portfolio/resume-backed data in `src/data/`.
+- Put page/feature CSS in `src/styles/`; keep `src/App.css` as imports only.
+- Keep responsive and reduced-motion overrides in `src/styles/responsive.css` unless a future split is justified.
 - Update `ARCHITECTURE.md` when the app structure changes.
 - Update `DESIGN.md` when the visual system changes.
 - No testing is needed unless the user explicitly asks for it.

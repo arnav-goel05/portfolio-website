@@ -1,0 +1,319 @@
+@media (max-width: 920px) {
+  .site-nav {
+    align-items: flex-start;
+    gap: 14px;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 12px 22px;
+    justify-content: flex-start;
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 42px;
+    overflow: hidden;
+  }
+
+  .hero-copy {
+    width: 100%;
+  }
+
+  .hero-lede {
+    max-width: min(100%, 340px);
+  }
+
+  .hero-visual {
+    min-height: 360px;
+  }
+
+  .hero-visual img {
+    width: min(104%, 470px);
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vision-launch-frame {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .vision-launch-shell {
+    bottom: -12vh;
+    width: min(148vw, 980px);
+  }
+
+  .vision-launch-panel {
+    top: 28vh;
+    width: min(82vw, 720px);
+  }
+
+  .vision-launch-lens {
+    top: 28vh;
+    width: min(82vw, 720px);
+    min-height: 300px;
+  }
+
+  .vision-experience {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 78px;
+  }
+
+  .vision-intro,
+  .vision-experience-ready .vision-intro {
+    max-width: 640px;
+    padding-top: 0;
+    text-align: left;
+  }
+
+  .vision-stage,
+  .vision-experience-ready .vision-stage {
+    min-height: 620px;
+  }
+
+  .vision-experience-ready .vision-frame,
+  .vision-experience-playing .vision-frame,
+  .vision-experience-complete .vision-frame {
+    right: 50%;
+    bottom: -70px;
+    width: min(132vw, 900px);
+    transform: translateX(50%);
+  }
+
+  .vision-lens,
+  .vision-experience-playing .vision-lens,
+  .vision-experience-complete .vision-lens {
+    top: 16%;
+    right: 50%;
+    width: min(92vw, 720px);
+    min-height: 390px;
+    transform: translateX(50%);
+  }
+
+  .vision-experience-from-launch.vision-experience-playing .vision-stage,
+  .vision-experience-from-launch.vision-experience-complete .vision-stage {
+    height: 100vh;
+    min-height: 100svh;
+  }
+
+  .vision-experience-from-launch.vision-experience-playing .vision-frame,
+  .vision-experience-from-launch.vision-experience-complete .vision-frame {
+    inset: 0;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(1.55);
+    transform-origin: 50% 54%;
+  }
+
+  .vision-experience-from-launch.vision-experience-playing .vision-lens,
+  .vision-experience-from-launch.vision-experience-complete .vision-lens {
+    top: 28vh;
+    left: 50%;
+    right: auto;
+    width: min(82vw, 720px);
+    min-height: 300px;
+    transform: translateX(-50%);
+  }
+
+  .case-hero-grid,
+  .case-section.split,
+  .pipeline,
+  .feature-grid,
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-meta {
+    justify-content: flex-start;
+  }
+
+  .pipeline article:not(:last-child)::after {
+    top: auto;
+    right: 22px;
+    bottom: -16px;
+    transform: rotate(90deg);
+  }
+
+  .timeline-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .article-row,
+  .skill-row {
+    grid-template-columns: 44px 1fr 34px;
+  }
+
+  .article-row p,
+  .article-row time,
+  .skill-row p {
+    grid-column: 2 / 3;
+    text-align: left;
+  }
+
+  .article-row a {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer address {
+    border-inline: 0;
+    border-block: 1px solid rgba(8, 22, 38, 0.14);
+    padding: 22px 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .brand {
+    font-size: 23px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(40px, 10.5vw, 46px);
+    line-height: 0.98;
+  }
+
+  .hero-lede {
+    max-width: min(100%, 340px);
+    font-size: 19px;
+    line-height: 1.18;
+  }
+
+  .hero-support {
+    max-width: min(100%, 340px);
+    font-size: 15px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .project-media {
+    aspect-ratio: 16 / 7;
+  }
+
+  .vision-intro h1,
+  .vision-experience-ready .vision-intro h1 {
+    font-size: clamp(46px, 13vw, 62px);
+  }
+
+  .vision-intro p {
+    font-size: 16px;
+  }
+
+  .vision-stage,
+  .vision-experience-ready .vision-stage {
+    min-height: 560px;
+  }
+
+  .vision-status,
+  .vision-tags,
+  .vision-progress {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .vision-lens,
+  .vision-experience-playing .vision-lens,
+  .vision-experience-complete .vision-lens {
+    min-height: 440px;
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .vision-launch-lens,
+  .vision-experience-from-launch.vision-experience-playing .vision-lens,
+  .vision-experience-from-launch.vision-experience-complete .vision-lens {
+    top: 24vh;
+    width: min(88vw, 420px);
+    min-height: 300px;
+    padding: 18px;
+    border-radius: 28px;
+  }
+
+  .vision-launch-shell {
+    bottom: -7vh;
+    width: min(178vw, 760px);
+  }
+
+  .vision-launch-panel {
+    top: 25vh;
+    width: min(88vw, 420px);
+    min-height: 260px;
+    border-radius: 28px;
+  }
+
+  .vision-launch-orbit {
+    width: 104px;
+    height: 104px;
+  }
+
+  .vision-launch-orbit span {
+    font-size: 28px;
+  }
+
+  .path-surface {
+    min-height: 280px;
+  }
+
+  .vision-progress i {
+    width: min(74vw, 360px);
+  }
+
+  .vision-tags {
+    gap: 8px;
+  }
+
+  .vision-scroll-cue {
+    right: auto;
+    left: clamp(22px, 5vw, 70px);
+  }
+
+  .project-body {
+    grid-template-columns: 1fr;
+  }
+
+  .project-arrow {
+    justify-self: start;
+  }
+
+  .skill-row {
+    grid-template-columns: 44px 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vision-launch,
+  .vision-launch-shell,
+  .vision-launch-panel,
+  .vision-launch-orbit,
+  .vision-launch-orbit span,
+  .vision-launch-orbit small,
+  .vision-launch-frame,
+  .vision-experience-ready .vision-frame,
+  .vision-experience-playing .path-finger,
+  .vision-experience-playing .vision-progress i::before {
+    animation-duration: 1ms;
+  }
+}

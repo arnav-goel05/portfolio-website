@@ -37,10 +37,17 @@ system over adding dependencies.
   - Do not delete generated originals from `.codex/generated_images`; copy
     selected assets into this folder.
 - `src/App.css`
-  - Current shared page styling.
-  - If it grows much further, split it into `src/styles/portfolio.css`,
-    `src/styles/case-study.css`, and `src/styles/components.css`, then import
-    them from `App.css`.
+  - CSS import manifest only. Keep feature styles in `src/styles/`.
+- `src/styles/`
+  - `base.css` contains the page shell, navigation, and shared link primitives.
+  - `portfolio.css` contains homepage sections, hero, project cards, timeline,
+    skills, articles, and footer styles.
+  - `vision.css` contains the Vision Pro launch, hand-eye experience, and
+    related animation keyframes.
+  - `case-study.css` contains shared project case-study sections, metrics,
+    pipeline visuals, and case placeholders.
+  - `responsive.css` contains breakpoint and reduced-motion overrides. Keep it
+    imported last so overrides remain predictable.
 - `src/index.css`
   - Global tokens, base typography, resets, and root styling.
 
