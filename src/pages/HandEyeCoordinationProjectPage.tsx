@@ -1,43 +1,100 @@
-import handEyeCoordinationHeader from '../assets/hand-eye-coordination-header.svg'
-import { SiteNav } from '../components/SiteNav'
-
-const projectNavLinks = [
-  { href: '/', label: 'Portfolio' },
-  { href: '#problem', label: 'Problem' },
-  { href: '#system', label: 'System' },
-  { href: '#results', label: 'Results' },
-]
+import { useEffect, useState } from 'react'
+import spatialHeadset from '../assets/spatial-headset.png'
 
 export function HandEyeCoordinationProjectPage() {
-  return (
-    <main className="case-study-page">
-      <SiteNav
-        ariaLabel="Project navigation"
-        brandHref="/"
-        brandLabel="Back to Arnav Goel portfolio"
-        links={projectNavLinks}
-      />
+  const [assessmentState, setAssessmentState] = useState<'ready' | 'playing' | 'complete'>('ready')
 
-      <section className="case-hero">
-        <a className="back-link" href="/">
-          {'<-'} Back to portfolio
+  useEffect(() => {
+    if (assessmentState !== 'playing') {
+      return undefined
+    }
+
+    const completeTimer = window.setTimeout(() => setAssessmentState('complete'), 6200)
+    return () => window.clearTimeout(completeTimer)
+  }, [assessmentState])
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 })
+  }, [assessmentState])
+
+  const startAssessment = () => {
+    if (assessmentState === 'playing') {
+      setAssessmentState('ready')
+      window.setTimeout(() => setAssessmentState('playing'), 0)
+      return
+    }
+
+    setAssessmentState('playing')
+  }
+
+  return (
+    <main className="case-study-page hand-eye-page">
+      <section className={`vision-experience vision-experience-${assessmentState}`}>
+        <a className="vision-back-link" href="/">
+          {'<-'} Back to projects
         </a>
-        <div className="case-hero-grid">
-          <div>
-            <h1>3D Hand-Eye Coordination Assessment Tool</h1>
-            <p>
-              A spatial-computing assessment for hand dexterity, built with
-              SwiftUI, ARKit, and RealityKit for Apple Vision Pro.
-            </p>
-          </div>
-          <div className="case-meta">
-            <span>SwiftUI</span>
-            <span>ARKit</span>
-            <span>RealityKit</span>
-            <span>Python Analysis</span>
+
+        <div className="vision-intro">
+          <span>Hand-eye coordination assessment</span>
+          <h1>
+            {assessmentState === 'ready'
+              ? 'Experience it in Vision Pro'
+              : '3D Hand-Eye Coordination Assessment Tool'}
+          </h1>
+          <p>
+            {assessmentState === 'ready'
+              ? 'Put on the Vision Pro to begin the assessment. Follow the path as accurately as you can from start to finish.'
+              : 'A spatial assessment tool for hand dexterity built for Apple Vision Pro. It measures how closely a patient follows an ideal path between two points.'}
+          </p>
+        </div>
+
+        <div className="vision-stage" aria-label="Apple Vision Pro assessment simulation">
+          <img className="vision-headset" src={spatialHeadset} alt="" aria-hidden="true" />
+          <div className="vision-lens">
+            <div className="vision-status">
+              <span>{assessmentState === 'playing' ? 'Test in progress' : 'Vision Pro session ready'}</span>
+              <span>ARKit tracking</span>
+            </div>
+
+            <div className="path-surface">
+              <span className="path-point path-start" />
+              <span className="path-point path-mid" />
+              <span className="path-point path-end" />
+              <span className="path-line" />
+              <span className="path-glow" />
+              <span className="path-finger" />
+
+              {assessmentState !== 'ready' && (
+                <article className="path-accuracy">
+                  <span>Path accuracy</span>
+                  <strong>{assessmentState === 'complete' ? '94%' : '...'}</strong>
+                </article>
+              )}
+            </div>
+
+            {assessmentState === 'ready' ? (
+              <button className="vision-start-button" type="button" onClick={startAssessment}>
+                Start assessment
+              </button>
+            ) : (
+              <div className="vision-progress" aria-label="Assessment progress">
+                <span>00:24</span>
+                <i />
+                <span>00:25</span>
+              </div>
+            )}
+
+            <div className="vision-tags" aria-hidden="true">
+              <span>Vision Pro session ready</span>
+              <span>ARKit tracking</span>
+              <span>Spatial path test</span>
+            </div>
           </div>
         </div>
-        <img className="case-hero-image" src={handEyeCoordinationHeader} alt="" aria-hidden="true" />
+
+        <a className={`vision-scroll-cue ${assessmentState === 'complete' ? 'is-visible' : ''}`} href="#results">
+          Scroll down to view results
+        </a>
       </section>
 
       <section className="case-section split" id="problem">

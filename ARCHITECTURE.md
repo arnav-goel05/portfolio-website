@@ -21,7 +21,8 @@ system over adding dependencies.
   - `PortfolioPage.tsx` renders the homepage.
   - `CustomerSupportProjectPage.tsx` renders the project case study.
   - `HandEyeCoordinationProjectPage.tsx` renders the hand-eye coordination
-    project placeholder case study.
+    project experience: a Vision Pro-style assessment intro followed by the
+    case-study sections.
 - `src/components/`
   - Reusable UI shared across pages.
   - `SiteNav.tsx` owns the common navigation skeleton.
