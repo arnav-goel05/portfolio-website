@@ -73,7 +73,6 @@ export function PortfolioPage() {
       <section className="section-block timeline-block" id="timeline">
         <div className="section-heading">
           <h2>Experience Timeline</h2>
-          <a href="#contact">Full timeline {'->'}</a>
         </div>
         <div className="timeline-list">
           {timeline.map((item) => (
