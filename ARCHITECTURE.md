@@ -26,6 +26,8 @@ system over adding dependencies.
 - `src/components/`
   - Reusable UI shared across pages.
   - `SiteNav.tsx` owns the common navigation skeleton.
+  - `VisionProjectLaunch.tsx` owns the homepage-to-hand-eye-project launch
+    transition.
 - `src/data/`
   - Static portfolio content and asset-backed data.
   - Keep resume-backed content here when possible so page components stay

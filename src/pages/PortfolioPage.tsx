@@ -1,5 +1,7 @@
+import { useState, type MouseEvent } from 'react'
 import heroArnav from '../assets/hero-arnav.png'
 import { SiteNav } from '../components/SiteNav'
+import { VisionProjectLaunch } from '../components/VisionProjectLaunch'
 import { projects, skillGroups, timeline } from '../data/portfolio'
 
 const portfolioNavLinks = [
@@ -11,8 +13,27 @@ const portfolioNavLinks = [
 ]
 
 export function PortfolioPage() {
+  const [launchHref, setLaunchHref] = useState<string | null>(null)
+
+  const openProject = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (
+      href !== '/projects/hand-eye-coordination' ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    ) {
+      return
+    }
+
+    event.preventDefault()
+    setLaunchHref(href)
+  }
+
   return (
     <main>
+      <VisionProjectLaunch active={Boolean(launchHref)} href={launchHref} />
       <SiteNav
         ariaLabel="Main navigation"
         brandHref="#hero"
@@ -52,7 +73,12 @@ export function PortfolioPage() {
         </div>
         <div className="project-grid">
           {projects.map((project) => (
-            <a className="project-card project-card-link" href={project.href} key={project.title}>
+            <a
+              className="project-card project-card-link"
+              href={project.href}
+              key={project.title}
+              onClick={(event) => openProject(event, project.href)}
+            >
               <img className="project-media" src={project.image} alt="" aria-hidden="true" />
               <div className="project-body">
                 <div>

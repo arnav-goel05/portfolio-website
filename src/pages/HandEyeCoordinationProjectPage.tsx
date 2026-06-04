@@ -1,8 +1,16 @@
 import { useEffect, useState } from 'react'
-import spatialHeadset from '../assets/spatial-headset.png'
+import visionPovFrame from '../assets/vision-pov-frame.png'
 
 export function HandEyeCoordinationProjectPage() {
-  const [assessmentState, setAssessmentState] = useState<'ready' | 'playing' | 'complete'>('ready')
+  const [arrivedFromLaunch] = useState(() => window.sessionStorage.getItem('hand-eye-autoplay') === 'true')
+  const [assessmentState, setAssessmentState] = useState<'ready' | 'playing' | 'complete'>(() => {
+    if (window.sessionStorage.getItem('hand-eye-autoplay') === 'true') {
+      window.sessionStorage.removeItem('hand-eye-autoplay')
+      return 'playing'
+    }
+
+    return 'ready'
+  })
 
   useEffect(() => {
     if (assessmentState !== 'playing') {
@@ -29,7 +37,11 @@ export function HandEyeCoordinationProjectPage() {
 
   return (
     <main className="case-study-page hand-eye-page">
-      <section className={`vision-experience vision-experience-${assessmentState}`}>
+      <section
+        className={`vision-experience vision-experience-${assessmentState} ${
+          arrivedFromLaunch ? 'vision-experience-from-launch' : ''
+        }`}
+      >
         <a className="vision-back-link" href="/">
           {'<-'} Back to projects
         </a>
@@ -49,7 +61,7 @@ export function HandEyeCoordinationProjectPage() {
         </div>
 
         <div className="vision-stage" aria-label="Apple Vision Pro assessment simulation">
-          <img className="vision-headset" src={spatialHeadset} alt="" aria-hidden="true" />
+          <img className="vision-frame" src={visionPovFrame} alt="" aria-hidden="true" />
           <div className="vision-lens">
             <div className="vision-status">
               <span>{assessmentState === 'playing' ? 'Test in progress' : 'Vision Pro session ready'}</span>
@@ -92,8 +104,8 @@ export function HandEyeCoordinationProjectPage() {
           </div>
         </div>
 
-        <a className={`vision-scroll-cue ${assessmentState === 'complete' ? 'is-visible' : ''}`} href="#results">
-          Scroll down to view results
+        <a className={`vision-scroll-cue ${assessmentState === 'complete' ? 'is-visible' : ''}`} href="#problem">
+          Scroll down to learn more
         </a>
       </section>
 
