@@ -107,7 +107,6 @@ export function PortfolioPage() {
       <section className="section-block" id="articles">
         <div className="section-heading">
           <h2>Articles</h2>
-          <a href="#contact">Share writing later {'->'}</a>
         </div>
         <div className="placeholder-panel">
           <h3>Writing archive coming soon.</h3>
