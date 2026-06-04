@@ -49,7 +49,6 @@ export function PortfolioPage() {
       <section className="section-block" id="projects">
         <div className="section-heading">
           <h2>Projects</h2>
-          <a href="#contact">Discuss a project {'->'}</a>
         </div>
         <div className="project-grid">
           {projects.map((project) => (
