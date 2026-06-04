@@ -244,7 +244,7 @@ main {
 .project-media {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 7;
+  aspect-ratio: 16 / 5.4;
   background: var(--paper);
   border-bottom: 1px solid rgba(8, 22, 38, 0.12);
   object-fit: cover;
@@ -252,9 +252,9 @@ main {
 
 .project-body {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 42px;
-  gap: 18px;
-  padding: 24px 26px 25px;
+  grid-template-columns: minmax(0, 1fr) 38px;
+  gap: 14px;
+  padding: 20px 22px 21px;
 }
 
 .project-body h3,
@@ -266,9 +266,13 @@ main {
   line-height: 1.2;
 }
 
+.project-body h3 {
+  font-size: 20px;
+}
+
 .project-roles {
-  margin: 8px 0 10px;
-  font-size: 14px;
+  margin: 6px 0 8px;
+  font-size: 13px;
   font-weight: 800;
 }
 
@@ -301,13 +305,13 @@ main {
   align-self: end;
   justify-self: end;
   display: grid;
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   place-items: center;
   border: 1px solid rgba(8, 22, 38, 0.15);
   border-radius: 50%;
   color: var(--ink);
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .timeline-block {
@@ -884,7 +888,7 @@ main {
   }
 
   .project-media {
-    aspect-ratio: 16 / 8.5;
+    aspect-ratio: 16 / 7;
   }
 
   .project-body {
