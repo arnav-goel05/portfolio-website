@@ -388,9 +388,9 @@ body.is-vision-launching::-webkit-scrollbar {
   width: 100%;
   height: 100%;
   max-width: none;
-  object-fit: cover;
-  transform: translate3d(0, 48%, 0) scale(0.82);
-  transform-origin: 50% 100%;
+  object-fit: contain;
+  transform: translate3d(0, 8%, 0) scale(0.68);
+  transform-origin: 50% 54%;
   filter: drop-shadow(0 34px 70px rgba(8, 22, 38, 0.32));
   animation: launch-headset 2200ms cubic-bezier(0.18, 0.9, 0.18, 1) forwards;
 }
@@ -916,8 +916,9 @@ body:has(.vision-experience-from-launch.vision-experience-playing)::-webkit-scro
   bottom: auto;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transform: scale(1.08);
+  object-fit: contain;
+  transform: scale(1.55);
+  transform-origin: 50% 54%;
 }
 
 .vision-lens {
@@ -1555,26 +1556,27 @@ body:has(.vision-experience-from-launch.vision-experience-playing)::-webkit-scro
 
 @keyframes launch-headset {
   0% {
-    opacity: 0;
-    filter: blur(7px) drop-shadow(0 34px 70px rgba(8, 22, 38, 0.32));
-    transform: translate3d(0, 58%, 0) scale(0.72);
+    opacity: 1;
+    filter: blur(2px) drop-shadow(0 24px 48px rgba(8, 22, 38, 0.22));
+    transform: translate3d(0, 8%, 0) scale(0.68);
   }
 
   20% {
     opacity: 1;
-    filter: blur(3px) drop-shadow(0 34px 70px rgba(8, 22, 38, 0.32));
+    filter: blur(1px) drop-shadow(0 30px 58px rgba(8, 22, 38, 0.28));
+    transform: translate3d(0, 5%, 0) scale(0.84);
   }
 
   68% {
     opacity: 1;
     filter: blur(0) drop-shadow(0 34px 70px rgba(8, 22, 38, 0.32));
-    transform: translate3d(0, 5%, 0) scale(1.03);
+    transform: translate3d(0, 1%, 0) scale(1.18);
   }
 
   100% {
     opacity: 1;
     filter: blur(0) drop-shadow(0 34px 70px rgba(8, 22, 38, 0.32));
-    transform: translate3d(0, 0, 0) scale(1.1);
+    transform: translate3d(0, 0, 0) scale(1.55);
   }
 }
 
@@ -1717,8 +1719,9 @@ body:has(.vision-experience-from-launch.vision-experience-playing)::-webkit-scro
     bottom: auto;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transform: scale(1.08);
+    object-fit: contain;
+    transform: scale(1.55);
+    transform-origin: 50% 54%;
   }
 
   .vision-experience-from-launch.vision-experience-playing .vision-lens,
