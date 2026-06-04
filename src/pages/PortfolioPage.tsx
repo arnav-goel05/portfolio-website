@@ -32,7 +32,7 @@ export function PortfolioPage() {
   }
 
   return (
-    <main>
+    <main className={launchHref ? 'portfolio-page portfolio-page-launching' : 'portfolio-page'}>
       <VisionProjectLaunch active={Boolean(launchHref)} href={launchHref} />
       <SiteNav
         ariaLabel="Main navigation"

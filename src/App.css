@@ -11,6 +11,20 @@ main {
   background-size: 72px 72px;
 }
 
+.portfolio-page > :not(.vision-launch) {
+  transform-origin: 50% 42%;
+  transition:
+    filter 520ms ease,
+    opacity 520ms ease,
+    transform 700ms cubic-bezier(0.2, 0.86, 0.2, 1);
+}
+
+.portfolio-page-launching > :not(.vision-launch) {
+  filter: blur(5px) saturate(0.86);
+  opacity: 0.54;
+  transform: scale(0.985);
+}
+
 .site-nav {
   position: sticky;
   top: 0;
@@ -321,25 +335,44 @@ main {
   display: grid;
   place-items: center;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.62);
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.5);
   animation: launch-fade-in 180ms ease both;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(18px) saturate(0.9);
 }
 
 html.is-vision-launching,
 body.is-vision-launching {
   overflow: hidden;
+  scrollbar-width: none;
+}
+
+html.is-vision-launching::-webkit-scrollbar,
+body.is-vision-launching::-webkit-scrollbar {
+  display: none;
 }
 
 .vision-launch-backdrop {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 64%, rgba(8, 22, 38, 0.16), transparent 34%),
-    radial-gradient(circle at 54% 82%, rgba(198, 70, 61, 0.16), transparent 34%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.34), transparent 33%),
+    radial-gradient(circle at 50% 64%, rgba(8, 22, 38, 0.2), transparent 37%),
+    radial-gradient(circle at 54% 82%, rgba(198, 70, 61, 0.13), transparent 34%),
     linear-gradient(90deg, rgba(10, 25, 47, 0.05) 1px, transparent 1px),
     linear-gradient(180deg, rgba(10, 25, 47, 0.045) 1px, transparent 1px);
-  background-size: auto, auto, 72px 72px, 72px 72px;
+  background-size: auto, auto, auto, 72px 72px, 72px 72px;
+}
+
+.vision-launch-backdrop::after {
+  position: absolute;
+  inset: -10%;
+  background:
+    radial-gradient(ellipse at center, transparent 35%, rgba(8, 22, 38, 0.2) 78%),
+    linear-gradient(rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0));
+  content: '';
+  opacity: 0.66;
 }
 
 .vision-launch-stage {
@@ -356,10 +389,10 @@ body.is-vision-launching {
   height: 100%;
   max-width: none;
   object-fit: cover;
-  transform: translate3d(0, 42%, 0) scale(0.72);
+  transform: translate3d(0, 48%, 0) scale(0.82);
   transform-origin: 50% 100%;
   filter: drop-shadow(0 34px 70px rgba(8, 22, 38, 0.32));
-  animation: launch-headset 1900ms cubic-bezier(0.16, 0.82, 0.24, 1) forwards;
+  animation: launch-headset 2200ms cubic-bezier(0.18, 0.9, 0.18, 1) forwards;
 }
 
 .vision-launch-lens {
@@ -368,7 +401,7 @@ body.is-vision-launching {
   top: 26vh;
   left: 50%;
   width: min(64vw, 880px);
-  min-height: min(26vw, 292px);
+  min-height: min(25vw, 280px);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.62);
   border-radius: 42% 42% 34% 34% / 48% 48% 36% 36%;
@@ -386,6 +419,34 @@ body.is-vision-launching {
   backdrop-filter: blur(18px);
 }
 
+.vision-launch-lens::before,
+.vision-lens::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background:
+    linear-gradient(110deg, transparent 0 28%, rgba(255, 255, 255, 0.34) 42%, transparent 58%),
+    radial-gradient(circle at 28% 28%, rgba(255, 255, 255, 0.28), transparent 30%);
+  content: '';
+  opacity: 0.48;
+  pointer-events: none;
+}
+
+.vision-launch-lens::after,
+.vision-lens::after {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14) 1px, transparent 1px),
+    radial-gradient(ellipse at center, transparent 48%, rgba(8, 22, 38, 0.08) 100%);
+  background-size: auto, auto;
+  content: '';
+  opacity: 0.36;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
 .vision-launch-wearing .vision-launch-lens,
 .vision-launch-playing .vision-launch-lens {
   opacity: 1;
@@ -394,6 +455,7 @@ body.is-vision-launching {
 
 .vision-launch-path {
   position: absolute;
+  z-index: 1;
   inset: 24px 42px 46px;
   border-radius: 28px;
   background:
@@ -402,6 +464,7 @@ body.is-vision-launching {
     linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px),
     linear-gradient(180deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px);
   background-size: auto, auto, 42px 42px, 42px 42px;
+  animation: video-surface-drift 6200ms ease-in-out infinite alternate;
 }
 
 .launch-path-point {
@@ -463,6 +526,7 @@ body.is-vision-launching {
 
 .vision-launch-progress {
   position: absolute;
+  z-index: 2;
   right: 10%;
   bottom: 28px;
   left: 10%;
@@ -712,6 +776,15 @@ body.is-vision-launching {
   background: #ffffff;
 }
 
+body:has(.vision-experience-from-launch.vision-experience-playing) {
+  overflow: hidden;
+  scrollbar-width: none;
+}
+
+body:has(.vision-experience-from-launch.vision-experience-playing)::-webkit-scrollbar {
+  display: none;
+}
+
 .vision-back-link {
   position: absolute;
   z-index: 2;
@@ -844,7 +917,7 @@ body.is-vision-launching {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: none;
+  transform: scale(1.08);
 }
 
 .vision-lens {
@@ -855,6 +928,7 @@ body.is-vision-launching {
   display: grid;
   width: min(64vw, 840px);
   min-height: 286px;
+  overflow: hidden;
   padding: 20px 26px 22px;
   border: 1px solid rgba(255, 255, 255, 0.68);
   border-radius: 34px;
@@ -1014,6 +1088,10 @@ body.is-vision-launching {
 
 .vision-experience-playing .path-finger {
   animation: vision-trace 5600ms cubic-bezier(0.42, 0, 0.2, 1) forwards;
+}
+
+.vision-experience-playing .path-surface {
+  animation: video-surface-drift 6200ms ease-in-out infinite alternate;
 }
 
 .path-accuracy {
@@ -1478,21 +1556,37 @@ body.is-vision-launching {
 @keyframes launch-headset {
   0% {
     opacity: 0;
-    transform: translate3d(0, 48%, 0) scale(0.68);
+    filter: blur(7px) drop-shadow(0 34px 70px rgba(8, 22, 38, 0.32));
+    transform: translate3d(0, 58%, 0) scale(0.72);
   }
 
-  28% {
+  20% {
     opacity: 1;
+    filter: blur(3px) drop-shadow(0 34px 70px rgba(8, 22, 38, 0.32));
   }
 
-  72% {
+  68% {
     opacity: 1;
-    transform: translate3d(0, 8%, 0) scale(0.96);
+    filter: blur(0) drop-shadow(0 34px 70px rgba(8, 22, 38, 0.32));
+    transform: translate3d(0, 5%, 0) scale(1.03);
   }
 
   100% {
     opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1.02);
+    filter: blur(0) drop-shadow(0 34px 70px rgba(8, 22, 38, 0.32));
+    transform: translate3d(0, 0, 0) scale(1.1);
+  }
+}
+
+@keyframes video-surface-drift {
+  from {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+    transform: translate3d(-3px, 0, 0) scale(1.01);
+  }
+
+  to {
+    background-position: 18px -10px, -14px 8px, 16px 0, 0 16px;
+    transform: translate3d(4px, -2px, 0) scale(1.02);
   }
 }
 
@@ -1624,7 +1718,7 @@ body.is-vision-launching {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: none;
+    transform: scale(1.08);
   }
 
   .vision-experience-from-launch.vision-experience-playing .vision-lens,
