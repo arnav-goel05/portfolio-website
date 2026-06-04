@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react'
 import visionPovFrame from '../assets/vision-pov-frame.png'
+import visionProShell from '../assets/vision-pro-shell.png'
 
 type VisionProjectLaunchProps = {
   active: boolean
   href: string | null
 }
 
-const wearingDelay = 900
-const playbackDelay = 1550
-const navigationDelay = 3200
+const wearingDelay = 1500
+const playbackDelay = 2500
+const navigationDelay = 3900
 
 export function VisionProjectLaunch({ active, href }: VisionProjectLaunchProps) {
   const [phase, setPhase] = useState<'rising' | 'wearing' | 'playing'>('rising')
@@ -50,7 +51,18 @@ export function VisionProjectLaunch({ active, href }: VisionProjectLaunchProps) 
     >
       <div className="vision-launch-backdrop" />
       <div className="vision-launch-stage" aria-hidden="true">
+        <img className="vision-launch-shell" src={visionProShell} alt="" />
         <img className="vision-launch-frame" src={visionPovFrame} alt="" />
+        <div className="vision-launch-panel">
+          <div className="vision-launch-orbit">
+            <span>68%</span>
+            <small>Loading assessment</small>
+          </div>
+          <div className="vision-launch-grid" />
+          <span className="vision-launch-target target-a" />
+          <span className="vision-launch-target target-b" />
+          <p>Please keep your hands relaxed and follow the targets</p>
+        </div>
         <div className="vision-launch-lens">
           <div className="vision-launch-path">
             <span className="launch-path-point launch-path-start" />
