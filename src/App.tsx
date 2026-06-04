@@ -105,9 +105,9 @@ function App() {
             computing tools, and applied AI systems.
           </p>
           <p className="hero-support">
-            Bachelor of Computing candidate with experience across SwiftUI,
-            React, MySQL, open source, healthcare systems, and applied machine
-            learning.
+            I work across product engineering, healthcare technology, and open
+            source, turning complex requirements into practical tools people can
+            use.
           </p>
           <div className="hero-actions">
             <a className="button primary" href="#projects">
