@@ -526,34 +526,7 @@ main {
   align-content: start;
 }
 
-.cursor-tip {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 20;
-  pointer-events: none;
-  border: 1px solid rgba(8, 22, 38, 0.12);
-  border-radius: 7px;
-  background: #ffffff;
-  box-shadow: 0 12px 34px rgba(8, 22, 38, 0.15);
-  color: var(--ink);
-  font-size: 12px;
-  font-weight: 700;
-  opacity: 0;
-  padding: 7px 10px;
-  transition: opacity 160ms ease;
-  white-space: nowrap;
-}
-
-.cursor-tip.is-visible {
-  opacity: 0.94;
-}
-
 @media (max-width: 920px) {
-  .cursor-tip {
-    display: none;
-  }
-
   .site-nav {
     align-items: flex-start;
     gap: 14px;

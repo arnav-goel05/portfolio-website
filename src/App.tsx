@@ -1,12 +1,5 @@
-import { type PointerEvent, useEffect, useMemo, useState } from 'react'
 import heroArnav from './assets/hero-arnav.png'
 import './App.css'
-
-type TooltipState = {
-  x: number
-  y: number
-  label: string
-}
 
 const projects = [
   {
@@ -88,61 +81,9 @@ const skillGroups = [
   },
 ]
 
-const sectionHints: Record<string, string> = {
-  hero: 'Scroll below to learn more',
-  projects: 'Review resume-backed projects',
-  timeline: 'Follow the timeline',
-  skills: 'Scan technical skills',
-  articles: 'Add published writing later',
-  contact: 'Start a conversation',
-}
-
 function App() {
-  const [tooltip, setTooltip] = useState<TooltipState>({
-    x: -999,
-    y: -999,
-    label: sectionHints.hero,
-  })
-  const [hasPointer, setHasPointer] = useState(false)
-
-  const sectionIds = useMemo(() => Object.keys(sectionHints), [])
-
-  useEffect(() => {
-    const updateActiveSection = () => {
-      const midpoint = window.scrollY + window.innerHeight * 0.38
-      const activeId =
-        sectionIds.findLast((id) => {
-          const element = document.getElementById(id)
-          return element ? element.offsetTop <= midpoint : false
-        }) ?? 'hero'
-
-      setTooltip((current) => ({ ...current, label: sectionHints[activeId] }))
-    }
-
-    updateActiveSection()
-    window.addEventListener('scroll', updateActiveSection, { passive: true })
-    return () => window.removeEventListener('scroll', updateActiveSection)
-  }, [sectionIds])
-
-  const handlePointerMove = (event: PointerEvent<HTMLElement>) => {
-    setHasPointer(true)
-    setTooltip((current) => ({
-      ...current,
-      x: event.clientX,
-      y: event.clientY,
-    }))
-  }
-
   return (
-    <main onPointerMove={handlePointerMove}>
-      <div
-        className={`cursor-tip ${hasPointer ? 'is-visible' : ''}`}
-        style={{ transform: `translate(${tooltip.x + 18}px, ${tooltip.y + 18}px)` }}
-        aria-hidden="true"
-      >
-        {tooltip.label}
-      </div>
-
+    <main>
       <nav className="site-nav" aria-label="Main navigation">
         <a className="brand" href="#hero" aria-label="Arnav Goel home">
           Arnav Goel <span aria-hidden="true">+</span>
