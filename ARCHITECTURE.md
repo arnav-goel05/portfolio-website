@@ -36,6 +36,10 @@ system over adding dependencies.
   - Generated and static images used by the UI.
   - Do not delete generated originals from `.codex/generated_images`; copy
     selected assets into this folder.
+- `scripts/`
+  - Local asset-generation utilities.
+  - `generate_vision_transition.py` uses Python + Pillow to regenerate
+    `src/assets/vision-transition.webp` from existing Vision Pro assets.
 - `src/App.css`
   - CSS import manifest only. Keep feature styles in `src/styles/`.
 - `src/styles/`
@@ -76,3 +80,5 @@ system over adding dependencies.
 - The user asked to commit after every completed change.
 - Commit focused changes separately; avoid bundling unrelated visual and content
   edits into one commit.
+- Regenerate the hand-eye launch animation with
+  `npm run generate:vision-transition` if the Vision Pro source assets change.

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "generate:vision-transition": "python scripts/generate_vision_transition.py",
     "lint": "eslint .",
     "preview": "vite preview"
   },

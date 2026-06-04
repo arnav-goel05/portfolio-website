@@ -39,28 +39,6 @@
     grid-template-columns: 1fr;
   }
 
-  .vision-launch-frame {
-    inset: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .vision-launch-shell {
-    bottom: -12vh;
-    width: min(148vw, 980px);
-  }
-
-  .vision-launch-panel {
-    top: 28vh;
-    width: min(82vw, 720px);
-  }
-
-  .vision-launch-lens {
-    top: 28vh;
-    width: min(82vw, 720px);
-    min-height: 300px;
-  }
-
   .vision-experience {
     grid-template-columns: 1fr;
     min-height: auto;
@@ -242,7 +220,6 @@
     border-radius: 24px;
   }
 
-  .vision-launch-lens,
   .vision-experience-from-launch.vision-experience-playing .vision-lens,
   .vision-experience-from-launch.vision-experience-complete .vision-lens {
     top: 24vh;
@@ -250,27 +227,6 @@
     min-height: 300px;
     padding: 18px;
     border-radius: 28px;
-  }
-
-  .vision-launch-shell {
-    bottom: -7vh;
-    width: min(178vw, 760px);
-  }
-
-  .vision-launch-panel {
-    top: 25vh;
-    width: min(88vw, 420px);
-    min-height: 260px;
-    border-radius: 28px;
-  }
-
-  .vision-launch-orbit {
-    width: 104px;
-    height: 104px;
-  }
-
-  .vision-launch-orbit span {
-    font-size: 28px;
   }
 
   .path-surface {
@@ -305,12 +261,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .vision-launch,
-  .vision-launch-shell,
-  .vision-launch-panel,
-  .vision-launch-orbit,
-  .vision-launch-orbit span,
-  .vision-launch-orbit small,
-  .vision-launch-frame,
+  .vision-launch-animation,
+  .vision-launch-caption,
   .vision-experience-ready .vision-frame,
   .vision-experience-playing .path-finger,
   .vision-experience-playing .vision-progress i::before {
