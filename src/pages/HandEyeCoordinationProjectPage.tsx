@@ -1,16 +1,20 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import { VisionProjectLaunch } from '../components/VisionProjectLaunch'
 import visionPovFrame from '../assets/vision-pov-frame.png'
 
 export function HandEyeCoordinationProjectPage() {
-  const [arrivedFromLaunch] = useState(() => window.sessionStorage.getItem('hand-eye-autoplay') === 'true')
-  const [assessmentState, setAssessmentState] = useState<'ready' | 'playing' | 'complete'>(() => {
-    if (window.sessionStorage.getItem('hand-eye-autoplay') === 'true') {
-      window.sessionStorage.removeItem('hand-eye-autoplay')
-      return 'playing'
-    }
+  const [shouldPlayLaunch] = useState(() => {
+    const shouldLaunch =
+      window.sessionStorage.getItem('hand-eye-launch') === 'true' ||
+      window.sessionStorage.getItem('hand-eye-autoplay') === 'true'
 
-    return 'ready'
+    window.sessionStorage.removeItem('hand-eye-launch')
+    window.sessionStorage.removeItem('hand-eye-autoplay')
+    return shouldLaunch
   })
+  const [isLaunchPlaying, setIsLaunchPlaying] = useState(shouldPlayLaunch)
+  const [arrivedFromLaunch] = useState(shouldPlayLaunch)
+  const [assessmentState, setAssessmentState] = useState<'ready' | 'playing' | 'complete'>('ready')
 
   useEffect(() => {
     if (assessmentState !== 'playing') {
@@ -35,8 +39,14 @@ export function HandEyeCoordinationProjectPage() {
     setAssessmentState('playing')
   }
 
+  const finishLaunch = useCallback(() => {
+    setIsLaunchPlaying(false)
+    setAssessmentState('playing')
+  }, [])
+
   return (
     <main className="case-study-page hand-eye-page">
+      <VisionProjectLaunch active={isLaunchPlaying} onComplete={finishLaunch} />
       <section
         className={`vision-experience vision-experience-${assessmentState} ${
           arrivedFromLaunch ? 'vision-experience-from-launch' : ''

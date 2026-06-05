@@ -3,14 +3,14 @@ import visionTransition from '../assets/vision-transition.webp'
 
 type VisionProjectLaunchProps = {
   active: boolean
-  href: string | null
+  onComplete: () => void
 }
 
-const navigationDelay = 2850
+const launchDuration = 2850
 
-export function VisionProjectLaunch({ active, href }: VisionProjectLaunchProps) {
+export function VisionProjectLaunch({ active, onComplete }: VisionProjectLaunchProps) {
   useEffect(() => {
-    if (!active || !href) {
+    if (!active) {
       return undefined
     }
 
@@ -18,17 +18,14 @@ export function VisionProjectLaunch({ active, href }: VisionProjectLaunchProps) 
     document.body.classList.add('is-vision-launching')
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const navigationTimer = window.setTimeout(() => {
-      window.sessionStorage.setItem('hand-eye-autoplay', 'true')
-      window.location.href = href
-    }, prefersReducedMotion ? 120 : navigationDelay)
+    const completeTimer = window.setTimeout(onComplete, prefersReducedMotion ? 120 : launchDuration)
 
     return () => {
-      window.clearTimeout(navigationTimer)
+      window.clearTimeout(completeTimer)
       document.documentElement.classList.remove('is-vision-launching')
       document.body.classList.remove('is-vision-launching')
     }
-  }, [active, href])
+  }, [active, onComplete])
 
   if (!active) {
     return null

@@ -1,7 +1,6 @@
-import { useState, type MouseEvent } from 'react'
+import type { MouseEvent } from 'react'
 import heroArnav from '../assets/hero-arnav.png'
 import { SiteNav } from '../components/SiteNav'
-import { VisionProjectLaunch } from '../components/VisionProjectLaunch'
 import { projects, skillGroups, timeline } from '../data/portfolio'
 
 const portfolioNavLinks = [
@@ -13,8 +12,6 @@ const portfolioNavLinks = [
 ]
 
 export function PortfolioPage() {
-  const [launchHref, setLaunchHref] = useState<string | null>(null)
-
   const openProject = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
     if (
       href !== '/projects/hand-eye-coordination' ||
@@ -27,13 +24,11 @@ export function PortfolioPage() {
       return
     }
 
-    event.preventDefault()
-    setLaunchHref(href)
+    window.sessionStorage.setItem('hand-eye-launch', 'true')
   }
 
   return (
-    <main className={launchHref ? 'portfolio-page portfolio-page-launching' : 'portfolio-page'}>
-      <VisionProjectLaunch active={Boolean(launchHref)} href={launchHref} />
+    <main className="portfolio-page">
       <SiteNav
         ariaLabel="Main navigation"
         brandHref="#hero"
