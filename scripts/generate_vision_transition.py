@@ -12,8 +12,11 @@ OUT = ASSET_DIR / "vision-transition.webp"
 
 WIDTH = 960
 HEIGHT = 540
-FRAME_COUNT = 72
 FRAME_MS = 38
+APPROACH_FRAMES = 37
+HOLD_FRAMES = 52
+REVEAL_FRAMES = 36
+FRAME_COUNT = APPROACH_FRAMES + HOLD_FRAMES + REVEAL_FRAMES
 
 
 def ease_in_out(t: float) -> float:
@@ -73,22 +76,26 @@ def composite_frame(
     pov: Image.Image,
     index: int,
 ) -> Image.Image:
-    t = index / (FRAME_COUNT - 1)
-    lift = ease_in_out(min(t / 0.72, 1))
-    reveal = ease_in_out(clamp((t - 0.47) / 0.53))
-    approach_tilt = ease_in_out(clamp((t - 0.32) / 0.30)) * (1 - reveal)
+    approach_progress = clamp(index / (APPROACH_FRAMES - 1))
+    hold_index = index - APPROACH_FRAMES
+    hold_progress = clamp(hold_index / (HOLD_FRAMES - 1))
+    reveal_index = index - APPROACH_FRAMES - HOLD_FRAMES
+    reveal = ease_in_out(clamp(reveal_index / (REVEAL_FRAMES - 1)))
+    settle = ease_out(hold_progress)
+    lift = ease_in_out(approach_progress)
+    approach_tilt = ease_in_out(clamp((approach_progress - 0.46) / 0.34)) * (1 - reveal)
 
     frame = Image.new("RGBA", (WIDTH, HEIGHT), (255, 255, 255, 0))
 
-    shell_scale = 0.72 + 1.96 * lift
+    shell_scale = 0.72 + 1.96 * lift + 0.018 * settle * (1 - reveal)
     shell_w = round(WIDTH * shell_scale)
     shell_layer = fit_image(shell, shell_w, round(shell_w * shell.height / shell.width)).convert("RGBA")
     shell_layer = tilt_shell_toward_viewer(shell_layer, approach_tilt)
-    blur = 0 if t < 0.66 else (t - 0.66) * 12
+    blur = reveal * 4.2
     if blur > 0:
         shell_layer = shell_layer.filter(ImageFilter.GaussianBlur(blur))
 
-    shell_y = round(HEIGHT + 90 - lift * 560 + 18 * approach_tilt)
+    shell_y = round(HEIGHT + 90 - lift * 560 + 18 * approach_tilt + 8 * settle * (1 - reveal))
     paste_center(frame, shell_layer, (WIDTH // 2, shell_y), alpha=max(0, 1 - reveal * 0.92))
 
     pov_alpha = reveal

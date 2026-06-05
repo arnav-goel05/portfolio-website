@@ -6,7 +6,7 @@ type VisionProjectLaunchProps = {
   onComplete: () => void
 }
 
-const launchDuration = 2850
+const launchDuration = 4750
 
 export function VisionProjectLaunch({ active, onComplete }: VisionProjectLaunchProps) {
   useEffect(() => {
