@@ -102,6 +102,12 @@ body.is-vision-launching::-webkit-scrollbar {
   padding-bottom: 0;
 }
 
+.vision-experience-launching {
+  min-height: 100svh;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .vision-experience-from-launch.vision-experience-playing,
 .vision-experience-from-launch.vision-experience-complete {
   display: block;

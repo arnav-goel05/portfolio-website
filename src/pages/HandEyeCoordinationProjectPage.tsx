@@ -50,7 +50,7 @@ export function HandEyeCoordinationProjectPage() {
       <section
         className={`vision-experience vision-experience-${assessmentState} ${
           arrivedFromLaunch ? 'vision-experience-from-launch' : ''
-        }`}
+        } ${isLaunchPlaying ? 'vision-experience-launching' : ''}`}
       >
         <a className="vision-back-link" href="/">
           {'<-'} Back to projects
