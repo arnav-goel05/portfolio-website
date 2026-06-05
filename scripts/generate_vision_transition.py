@@ -94,15 +94,6 @@ def composite_frame(
     pov_alpha = reveal
     if pov_alpha > 0:
         pov_layer = cover_image(pov, WIDTH, HEIGHT).convert("RGBA")
-        pov_layer = pov_layer.resize((round(WIDTH * (1 + reveal * 0.18)), round(HEIGHT * (1 + reveal * 0.18))), Image.Resampling.LANCZOS)
-        pov_layer = pov_layer.crop(
-            (
-                (pov_layer.width - WIDTH) // 2,
-                (pov_layer.height - HEIGHT) // 2,
-                (pov_layer.width + WIDTH) // 2,
-                (pov_layer.height + HEIGHT) // 2,
-            )
-        )
         if reveal < 0.28:
             pov_layer = pov_layer.filter(ImageFilter.GaussianBlur((0.28 - reveal) * 10))
         paste_center(frame, pov_layer, (WIDTH // 2, HEIGHT // 2), alpha=pov_alpha)
