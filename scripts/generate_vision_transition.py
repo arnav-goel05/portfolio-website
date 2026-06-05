@@ -95,7 +95,7 @@ def composite_frame(
     if blur > 0:
         shell_layer = shell_layer.filter(ImageFilter.GaussianBlur(blur))
 
-    shell_y = round(HEIGHT + 90 - lift * 560 + 18 * approach_tilt + 8 * settle * (1 - reveal))
+    shell_y = round(HEIGHT + 90 - lift * 560 + 18 * approach_tilt + 20 * settle * (1 - reveal))
     paste_center(frame, shell_layer, (WIDTH // 2, shell_y), alpha=max(0, 1 - reveal * 0.92))
 
     pov_alpha = reveal
