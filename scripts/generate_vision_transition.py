@@ -24,6 +24,10 @@ def ease_out(t: float) -> float:
     return 1 - (1 - t) ** 3
 
 
+def clamp(value: float, low: float = 0, high: float = 1) -> float:
+    return max(low, min(value, high))
+
+
 def fit_image(image: Image.Image, width: int, height: int) -> Image.Image:
     scale = min(width / image.width, height / image.height)
     size = (round(image.width * scale), round(image.height * scale))
@@ -51,6 +55,19 @@ def paste_center(canvas: Image.Image, image: Image.Image, center: tuple[int, int
     canvas.alpha_composite(layer, (x, y))
 
 
+def tilt_shell_toward_viewer(shell_layer: Image.Image, amount: float) -> Image.Image:
+    if amount <= 0:
+        return shell_layer
+
+    height_scale = 1 - 0.085 * amount
+    width_scale = 1 + 0.018 * amount
+    tilted = shell_layer.resize(
+        (round(shell_layer.width * width_scale), round(shell_layer.height * height_scale)),
+        Image.Resampling.LANCZOS,
+    )
+    return tilted.filter(ImageFilter.UnsharpMask(radius=0.7, percent=18, threshold=3))
+
+
 def composite_frame(
     shell: Image.Image,
     pov: Image.Image,
@@ -58,18 +75,20 @@ def composite_frame(
 ) -> Image.Image:
     t = index / (FRAME_COUNT - 1)
     lift = ease_in_out(min(t / 0.72, 1))
-    reveal = ease_out(max((t - 0.52) / 0.48, 0))
+    reveal = ease_in_out(clamp((t - 0.47) / 0.53))
+    approach_tilt = ease_in_out(clamp((t - 0.32) / 0.30)) * (1 - reveal)
 
     frame = Image.new("RGBA", (WIDTH, HEIGHT), (255, 255, 255, 0))
 
     shell_scale = 0.72 + 1.96 * lift
     shell_w = round(WIDTH * shell_scale)
     shell_layer = fit_image(shell, shell_w, round(shell_w * shell.height / shell.width)).convert("RGBA")
+    shell_layer = tilt_shell_toward_viewer(shell_layer, approach_tilt)
     blur = 0 if t < 0.66 else (t - 0.66) * 12
     if blur > 0:
         shell_layer = shell_layer.filter(ImageFilter.GaussianBlur(blur))
 
-    shell_y = round(HEIGHT + 90 - lift * 560)
+    shell_y = round(HEIGHT + 90 - lift * 560 + 18 * approach_tilt)
     paste_center(frame, shell_layer, (WIDTH // 2, shell_y), alpha=max(0, 1 - reveal * 0.92))
 
     pov_alpha = reveal
