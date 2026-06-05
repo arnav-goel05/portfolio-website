@@ -40,7 +40,6 @@ export function VisionProjectLaunch({ active, onComplete }: VisionProjectLaunchP
       <div className="vision-launch-backdrop" />
       <div className="vision-launch-stage" aria-hidden="true">
         <img className="vision-launch-animation" src={visionTransition} alt="" />
-        <p className="vision-launch-caption">Loading Vision Pro assessment</p>
       </div>
     </div>
   )
