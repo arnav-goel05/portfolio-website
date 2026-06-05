@@ -205,6 +205,7 @@ body:has(.vision-experience-from-launch.vision-experience-playing)::-webkit-scro
   width: 100%;
   min-height: 650px;
   align-self: stretch;
+  isolation: isolate;
 }
 
 .vision-experience-ready .vision-stage {
@@ -223,13 +224,14 @@ body:has(.vision-experience-from-launch.vision-experience-playing)::-webkit-scro
 
 .vision-frame {
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   right: 50%;
   bottom: -28px;
   width: min(112%, 1120px);
   max-width: none;
   transform: translateX(50%);
   filter: drop-shadow(0 24px 52px rgba(8, 22, 38, 0.22));
+  pointer-events: none;
 }
 
 .vision-experience-ready .vision-frame {

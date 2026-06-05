@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { VisionProjectLaunch } from '../components/VisionProjectLaunch'
-import visionPovFrame from '../assets/vision-pov-frame.png'
+import visionFrameOverlay from '../assets/vision-frame-overlay.png'
 
 export function HandEyeCoordinationProjectPage() {
   const [shouldPlayLaunch] = useState(() => {
@@ -71,7 +71,7 @@ export function HandEyeCoordinationProjectPage() {
         </div>
 
         <div className="vision-stage" aria-label="Apple Vision Pro assessment simulation">
-          <img className="vision-frame" src={visionPovFrame} alt="" aria-hidden="true" />
+          <img className="vision-frame" src={visionFrameOverlay} alt="" aria-hidden="true" />
           <div className="vision-lens">
             <div className="vision-status">
               <span>{assessmentState === 'playing' ? 'Test in progress' : 'Vision Pro session ready'}</span>
