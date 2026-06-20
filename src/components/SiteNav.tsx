@@ -14,7 +14,7 @@ export function SiteNav({ ariaLabel, brandHref, brandLabel, links }: SiteNavProp
   return (
     <nav className="site-nav" aria-label={ariaLabel}>
       <a className="brand" href={brandHref} aria-label={brandLabel}>
-        Arnav Goel <span aria-hidden="true">+</span>
+        <span aria-hidden="true" />
       </a>
       <div className="nav-links">
         {links.map((link) => (

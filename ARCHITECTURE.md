@@ -18,16 +18,16 @@ system over adding dependencies.
 
 - `src/pages/`
   - Page-level components. Pages own section order and page-specific layout.
-  - `PortfolioPage.tsx` renders the homepage.
-  - `CustomerSupportProjectPage.tsx` renders the project case study.
-  - `HandEyeCoordinationProjectPage.tsx` renders the hand-eye coordination
-    project experience: a Vision Pro-style assessment intro followed by the
-    case-study sections.
+  - `PortfolioPage.tsx` renders the homepage as a sparse selected-work index.
+  - `ProjectCaseStudyPage.tsx` renders the shared project case-study flow.
+  - `CustomerSupportProjectPage.tsx` and `HandEyeCoordinationProjectPage.tsx`
+    are route wrappers that select their static project data.
 - `src/components/`
   - Reusable UI shared across pages.
-  - `SiteNav.tsx` owns the common navigation skeleton.
-  - `VisionProjectLaunch.tsx` owns the homepage-to-hand-eye-project launch
-    transition.
+  - `SiteNav.tsx` owns the common dot-brand navigation skeleton.
+  - `CustomCursor.tsx` owns the mouse-only custom cursor.
+  - `VisionProjectLaunch.tsx` is retained but no longer used by the active
+    project routes.
 - `src/data/`
   - Static portfolio content and asset-backed data.
   - Keep resume-backed content here when possible so page components stay
@@ -43,13 +43,14 @@ system over adding dependencies.
 - `src/App.css`
   - CSS import manifest only. Keep feature styles in `src/styles/`.
 - `src/styles/`
-  - `base.css` contains the page shell, navigation, and shared link primitives.
-  - `portfolio.css` contains homepage sections, hero, project cards, timeline,
-    skills, articles, and footer styles.
+  - `base.css` contains the page shell, dot navigation, custom cursor, and
+    shared reveal animation.
+  - `portfolio.css` contains the homepage hero, selected-work index, project
+    cards, and footer styles.
   - `vision.css` contains the Vision Pro launch, hand-eye experience, and
     related animation keyframes.
-  - `case-study.css` contains shared project case-study sections, metrics,
-    pipeline visuals, and case placeholders.
+  - `case-study.css` contains the shared project case-study flow, metadata,
+    section grids, insight cards, takeaways, and placeholders.
   - `responsive.css` contains breakpoint and reduced-motion overrides. Keep it
     imported last so overrides remain predictable.
 - `src/index.css`
@@ -59,18 +60,20 @@ system over adding dependencies.
 
 - Use the resume as source of truth for claims, dates, roles, metrics, and
   project outcomes.
-- Placeholder sections are allowed only when clearly marked, such as the
-  Articles placeholder.
+- Placeholder sections are allowed only when clearly marked.
 - Do not invent screenshots, clients, datasets, or extra metrics. Illustrative
   visuals should feel explanatory, not like fabricated product evidence.
 
 ## Visual System
 
-- Light editorial system: white background, subtle grid, charcoal text, clay-red
-  accents, soft borders, restrained shadows.
+- Reference-driven minimal portfolio system based on Yutong Wang's portfolio:
+  white background, black text, dot navigation, large whitespace, serif case
+  headings, compact mono metadata, pastel media panels, and sparse contact
+  footer.
 - Typography:
-  - Headings: Fraunces fallback stack via `--serif`
-  - Body/UI: Manrope fallback stack via `--sans`
+  - Headings: Erode-like serif fallback stack via `--serif`
+  - Body/UI: Switzer/Inter-like fallback stack via `--sans`
+  - Metadata/UI: Fragment Mono-like stack via `--mono`
 - Keep motion subtle and respect readability. Avoid adding decorative animation
   to the hero unless it supports the content.
 

@@ -1,273 +1,204 @@
-@media (max-width: 920px) {
+@media (max-width: 940px) {
   .site-nav {
-    align-items: flex-start;
-    gap: 14px;
-    flex-direction: column;
+    padding: 28px 24px;
   }
 
-  .nav-links {
-    width: 100%;
+  .portfolio-hero {
+    min-height: 92svh;
+  }
+
+  .work-card,
+  .case-title-row,
+  .case-overview,
+  .case-section-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .work-card {
+    gap: 20px;
+  }
+
+  .work-media {
+    min-height: 260px;
+  }
+
+  .work-meta {
+    display: flex;
     flex-wrap: wrap;
-    gap: 12px 22px;
-    justify-content: flex-start;
+    gap: 10px 18px;
   }
 
-  .hero-section {
-    grid-template-columns: 1fr;
-    min-height: auto;
-    padding-top: 42px;
-    overflow: hidden;
-  }
-
-  .hero-copy {
-    width: 100%;
-  }
-
-  .hero-lede {
-    max-width: min(100%, 340px);
-  }
-
-  .hero-visual {
-    min-height: 360px;
-  }
-
-  .hero-visual img {
-    width: min(104%, 470px);
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .vision-experience {
-    grid-template-columns: 1fr;
-    min-height: auto;
-    padding-top: 78px;
-  }
-
-  .vision-intro,
-  .vision-experience-ready .vision-intro {
-    max-width: 640px;
-    padding-top: 0;
+  .case-title-row p {
+    justify-self: start;
     text-align: left;
   }
 
-  .vision-stage,
-  .vision-experience-ready .vision-stage {
-    min-height: 620px;
+  .case-section-body {
+    max-width: 100%;
+    margin-left: 0;
   }
 
-  .vision-experience-ready .vision-frame,
-  .vision-experience-playing .vision-frame,
-  .vision-experience-complete .vision-frame {
-    right: 50%;
-    bottom: -70px;
-    width: min(132vw, 900px);
-    transform: translateX(50%);
-  }
-
-  .vision-lens,
-  .vision-experience-playing .vision-lens,
-  .vision-experience-complete .vision-lens {
-    top: 16%;
-    right: 50%;
-    width: min(92vw, 720px);
-    min-height: 390px;
-    transform: translateX(50%);
-  }
-
-  .vision-experience-from-launch.vision-experience-playing .vision-stage,
-  .vision-experience-from-launch.vision-experience-complete .vision-stage {
-    height: 100vh;
-    min-height: 100svh;
-  }
-
-  .vision-experience-from-launch.vision-experience-playing .vision-frame,
-  .vision-experience-from-launch.vision-experience-complete .vision-frame {
-    inset: 0;
-    right: auto;
-    bottom: auto;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.98;
-    filter: saturate(0.98) contrast(1.03);
-    transform: scale(1.012);
-    transform-origin: 50% 50%;
-  }
-
-  .vision-experience-from-launch.vision-experience-playing .vision-lens,
-  .vision-experience-from-launch.vision-experience-complete .vision-lens {
-    top: 28vh;
-    left: 50%;
-    right: auto;
-    width: min(82vw, 720px);
-    min-height: 300px;
-    transform: translateX(-50%);
-  }
-
-  .case-hero-grid,
-  .case-section.split,
-  .pipeline,
-  .feature-grid,
-  .result-grid {
+  .case-card-grid {
     grid-template-columns: 1fr;
   }
 
-  .case-meta {
+  .contact-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-footer div {
     justify-content: flex-start;
-  }
-
-  .pipeline article:not(:last-child)::after {
-    top: auto;
-    right: 22px;
-    bottom: -16px;
-    transform: rotate(90deg);
-  }
-
-  .timeline-row {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  .article-row,
-  .skill-row {
-    grid-template-columns: 44px 1fr 34px;
-  }
-
-  .article-row p,
-  .article-row time,
-  .skill-row p {
-    grid-column: 2 / 3;
-    text-align: left;
-  }
-
-  .article-row a {
-    grid-column: 3 / 4;
-    grid-row: 1 / 2;
-  }
-
-  .footer {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .footer address {
-    border-inline: 0;
-    border-block: 1px solid rgba(8, 22, 38, 0.14);
-    padding: 22px 0;
   }
 }
 
-@media (max-width: 560px) {
-  .brand {
-    font-size: 23px;
+@media (max-width: 620px) {
+  body,
+  a,
+  button {
+    cursor: auto;
   }
 
-  .nav-links a {
-    font-size: 13px;
+  .custom-cursor {
+    display: none;
   }
 
-  .hero-copy h1 {
-    font-size: clamp(40px, 10.5vw, 46px);
-    line-height: 0.98;
+  .nav-links {
+    position: absolute;
+    top: 31px;
+    right: 22px;
+    gap: 18px;
   }
 
-  .hero-lede {
-    max-width: min(100%, 340px);
-    font-size: 19px;
-    line-height: 1.18;
+  .nav-links a,
+  .contact-footer a {
+    font-size: 11px;
   }
 
-  .hero-support {
-    max-width: min(100%, 340px);
-    font-size: 15px;
+  .portfolio-hero {
+    min-height: 86svh;
+    padding-inline: 22px;
   }
 
-  .section-heading {
-    align-items: flex-start;
+  .portfolio-hero p {
+    width: 100%;
+    max-width: 310px;
+    font-size: 36px;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+
+  .portfolio-hero em {
+    display: block;
+  }
+
+  .portfolio-hero span {
+    display: block;
+    max-width: 300px;
+    margin-inline: auto;
+  }
+
+  .portfolio-about,
+  .selected-work,
+  .case-hero,
+  .case-section,
+  .contact-footer {
+    padding-inline: 22px;
+  }
+
+  .case-overview,
+  .case-section {
+    margin-inline: 22px;
+  }
+
+  .portfolio-about {
+    min-height: 42svh;
+    padding-block: 72px;
+  }
+
+  .selected-work {
+    padding-top: 76px;
+  }
+
+  .work-heading {
+    align-items: start;
     flex-direction: column;
   }
 
-  .project-media {
-    aspect-ratio: 16 / 7;
+  .work-media {
+    min-height: 220px;
   }
 
-  .vision-intro h1,
-  .vision-experience-ready .vision-intro h1 {
-    font-size: clamp(46px, 13vw, 62px);
+  .work-media img,
+  .case-visual img {
+    width: min(78%, 280px);
   }
 
-  .vision-intro p {
-    font-size: 16px;
+  .case-hero {
+    padding-top: 108px;
   }
 
-  .vision-stage,
-  .vision-experience-ready .vision-stage {
-    min-height: 560px;
+  .case-title-row h1 {
+    width: min(320px, 100%);
+    max-width: 100%;
+    font-size: clamp(38px, 11vw, 46px);
+    overflow-wrap: break-word;
   }
 
-  .vision-status,
-  .vision-tags,
-  .vision-progress {
-    align-items: flex-start;
-    flex-direction: column;
+  .case-title-row p,
+  .case-overview-copy p,
+  .case-section-heading h2,
+  .case-placeholder-panel p {
+    max-width: 100%;
+    overflow-wrap: break-word;
   }
 
-  .vision-lens,
-  .vision-experience-playing .vision-lens,
-  .vision-experience-complete .vision-lens {
-    min-height: 440px;
-    padding: 18px;
-    border-radius: 24px;
+  .case-title-row p {
+    width: min(320px, 100%);
   }
 
-  .vision-experience-from-launch.vision-experience-playing .vision-lens,
-  .vision-experience-from-launch.vision-experience-complete .vision-lens {
-    top: 24vh;
-    width: min(88vw, 420px);
+  .case-overview-copy p {
+    width: min(320px, 100%);
+    font-size: clamp(29px, 8.6vw, 36px);
+  }
+
+  .case-visual {
     min-height: 300px;
-    padding: 18px;
-    border-radius: 28px;
+    padding: 28px;
   }
 
-  .path-surface {
-    min-height: 280px;
+  .case-overview {
+    padding-block: 54px;
   }
 
-  .vision-progress i {
-    width: min(74vw, 360px);
+  .case-section {
+    padding-block: 66px;
   }
 
-  .vision-tags {
-    gap: 8px;
-  }
-
-  .vision-scroll-cue {
-    right: auto;
-    left: clamp(22px, 5vw, 70px);
-  }
-
-  .project-body {
-    grid-template-columns: 1fr;
-  }
-
-  .project-arrow {
-    justify-self: start;
-  }
-
-  .skill-row {
-    grid-template-columns: 44px 1fr;
+  .takeaway-row {
+    grid-template-columns: 52px minmax(0, 1fr);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .vision-launch,
-  .vision-launch-animation,
-  .vision-launch-caption,
-  .vision-experience-ready .vision-frame,
-  .vision-experience-playing .path-finger,
-  .vision-experience-playing .vision-progress i::before {
-    animation-duration: 1ms;
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+
+  body,
+  a,
+  button {
+    cursor: auto;
+  }
+
+  .custom-cursor {
+    display: none;
   }
 }

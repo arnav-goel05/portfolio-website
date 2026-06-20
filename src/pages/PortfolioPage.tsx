@@ -1,163 +1,71 @@
-import type { MouseEvent } from 'react'
-import heroArnav from '../assets/hero-arnav.png'
 import { SiteNav } from '../components/SiteNav'
-import { projects, skillGroups, timeline } from '../data/portfolio'
+import { contactLinks, projects } from '../data/portfolio'
 
 const portfolioNavLinks = [
-  { href: '#projects', label: 'Projects' },
-  { href: '#timeline', label: 'Timeline' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#articles', label: 'Articles' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#work', label: 'Work' },
+  { href: '#about', label: 'About' },
 ]
 
 export function PortfolioPage() {
-  const openProject = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (
-      href !== '/projects/hand-eye-coordination' ||
-      event.button !== 0 ||
-      event.metaKey ||
-      event.ctrlKey ||
-      event.shiftKey ||
-      event.altKey
-    ) {
-      return
-    }
-
-    window.sessionStorage.setItem('hand-eye-launch', 'true')
-  }
-
   return (
     <main className="portfolio-page">
       <SiteNav
         ariaLabel="Main navigation"
-        brandHref="#hero"
+        brandHref="#top"
         brandLabel="Arnav Goel home"
         links={portfolioNavLinks}
       />
 
-      <section className="hero-section" id="hero">
-        <div className="hero-copy">
-          <h1>Arnav Goel</h1>
-          <p className="hero-lede">
-            NUS Computer Science student building reliable software, spatial
-            computing tools, and applied AI systems.
-          </p>
-          <p className="hero-support">
-            I work across product engineering, healthcare technology, and open
-            source, turning complex requirements into practical tools people can
-            use.
-          </p>
-          <div className="hero-actions">
-            <a className="button primary" href="#projects">
-              View Projects
-            </a>
-            <a className="button secondary" href="#contact">
-              Contact
-            </a>
-          </div>
-        </div>
-        <div className="hero-visual" aria-label="Editorial portfolio motif">
-          <img src={heroArnav} alt="Stylized portrait of Arnav working on a laptop" />
-        </div>
+      <section className="portfolio-hero reveal" id="top">
+        <p>
+          Hello, I am <em>Arnav Goel</em>.
+          <br />
+          <span>A computer science student who builds.</span>
+        </p>
       </section>
 
-      <section className="section-block" id="projects">
-        <div className="section-heading">
-          <h2>Projects</h2>
+      <section className="portfolio-about reveal" id="about">
+        <p>
+          I build applied AI, spatial-computing, and product engineering projects
+          that turn messy technical requirements into practical systems.
+        </p>
+      </section>
+
+      <section className="selected-work" id="work" aria-labelledby="work-title">
+        <div className="work-heading reveal">
+          <p>Selected Work</p>
+          <h1 id="work-title">Projects</h1>
         </div>
-        <div className="project-grid">
+
+        <div className="work-list">
           {projects.map((project) => (
-            <a
-              className="project-card project-card-link"
-              href={project.href}
-              key={project.title}
-              onClick={(event) => openProject(event, project.href)}
-            >
-              <img className="project-media" src={project.image} alt="" aria-hidden="true" />
-              <div className="project-body">
-                <div>
-                  <h3>{project.title}</h3>
-                  <p className={`project-roles role-${project.tone}`}>{project.roles}</p>
-                  <p>{project.summary}</p>
-                </div>
-                <span className="project-arrow" aria-label={`Open ${project.title}`}>
-                  {'->'}
-                </span>
+            <a className="work-card reveal" href={`/projects/${project.slug}`} key={project.slug}>
+              <div className="work-media" style={{ backgroundColor: project.accent }}>
+                <img src={project.image} alt="" aria-hidden="true" />
+              </div>
+              <div className="work-meta" aria-label={`${project.title} metadata`}>
+                <span>{project.year}</span>
+                <span>{project.status}</span>
+                <span>{project.category}</span>
+                <span>{project.platform}</span>
+              </div>
+              <div className="work-copy">
+                <h2>{project.title}</h2>
+                <p>{project.summary}</p>
               </div>
             </a>
           ))}
         </div>
       </section>
 
-      <section className="section-block timeline-block" id="timeline">
-        <div className="section-heading">
-          <h2>Experience Timeline</h2>
-        </div>
-        <div className="timeline-list">
-          {timeline.map((item) => (
-            <article className="timeline-row" key={`${item.date}-${item.role}`}>
-              <time>{item.date}</time>
-              <div>
-                <h3>{item.role}</h3>
-                <p className="timeline-org">{item.org}</p>
-                <p>{item.detail}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section-block" id="skills">
-        <div className="section-heading">
-          <h2>Technical Skills</h2>
-        </div>
-        <div className="skill-list">
-          {skillGroups.map((group, index) => (
-            <article className="skill-row" key={group.title}>
-              <span className="article-icon">{String(index + 1).padStart(2, '0')}</span>
-              <h3>{group.title}</h3>
-              <p>{group.items}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section-block" id="articles">
-        <div className="section-heading">
-          <h2>Articles</h2>
-        </div>
-        <div className="placeholder-panel">
-          <h3>Writing archive coming soon.</h3>
-          <p>
-            This section is intentionally blank for now so it can hold essays,
-            technical writeups, or published pieces once the final article list
-            is available.
-          </p>
-        </div>
-      </section>
-
-      <footer className="footer" id="contact">
+      <footer className="contact-footer" id="contact">
+        <p>Where to Find Me <span aria-hidden="true">-&gt;</span></p>
         <div>
-          <h2>Contact</h2>
-          <p>
-            Open to software engineering, spatial computing, AI/ML, and
-            product-focused opportunities.
-          </p>
-        </div>
-        <address>
-          <a href="mailto:arnav.goel@u.nus.edu">arnav.goel@u.nus.edu</a>
-          <a href="https://www.linkedin.com/in/arnav--goel/" target="_blank" rel="noreferrer">
-            LinkedIn
-          </a>
-          <span>National University of Singapore</span>
-        </address>
-        <div className="education-summary">
-          <h3>Education</h3>
-          <p>
-            National University of Singapore, Bachelor of Computing in Computer
-            Science, Honours. Expected May 2027.
-          </p>
+          {contactLinks.map((link) => (
+            <a href={link.href} key={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer">
+              {link.label}
+            </a>
+          ))}
         </div>
       </footer>
     </main>

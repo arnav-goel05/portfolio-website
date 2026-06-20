@@ -2,23 +2,26 @@
 
 ## Visual Direction
 
-This portfolio uses a light editorial design system.
+This portfolio uses a sparse, reference-driven portfolio system inspired by
+Yutong Wang's portfolio and Puzzle AI case-study flow.
 
 ## Style Preferences
 
-- Use a white background with a subtle pale grey grid.
-- Use charcoal text.
-- Use clay-red accents sparingly.
-- Use soft borders and restrained shadows.
-- Keep layouts clean, airy, and professional.
+- Use a white background with very large whitespace.
+- Use black text and thin grey dividers.
+- Use pastel media panels for project imagery.
+- Use sparse dot navigation and compact uppercase links.
+- Keep layouts clean, airy, and reference-like rather than resume-like.
 - Avoid dark mode unless explicitly requested.
 - Avoid cluttered illustrations or decorative elements that compete with the content.
-- Keep animations subtle and content-supporting.
+- Keep animations subtle: left-to-right reveal, image scale on hover, and a
+  mouse-only custom cursor.
 
 ## Typography
 
-- Headings use Fraunces via `--serif`.
-- Body and UI text use Manrope via `--sans`.
+- Headings use an Erode-like serif stack via `--serif`.
+- Body and UI text use a Switzer/Inter-like stack via `--sans`.
+- Metadata and navigation use Fragment Mono-like text via `--mono`.
 
 ## CSS Organization
 
@@ -29,6 +32,9 @@ This portfolio uses a light editorial design system.
 
 ## Content Presentation
 
-- Keep project pages editorial and easy to scan.
+- Keep project pages aligned to the Puzzle AI flow: status, title, hero visual,
+  overview, metadata, problem, research/discovery, solution, system design,
+  walkthrough, validation, and takeaways.
 - Prefer clear sections, concise copy, and a small number of strong visuals.
+- Use explicit placeholders when real project evidence is unavailable.
 - Do not make pages feel like dense reports or dashboards unless explicitly requested.
