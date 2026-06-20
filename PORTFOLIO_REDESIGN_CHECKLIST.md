@@ -84,3 +84,16 @@ Update task status as work progresses:
 - [x] Review changed files.
 - [x] Commit the completed redesign.
   - Progress: Committed as `8d3c519` with message `Redesign portfolio around project case studies`.
+
+## 9. Hero Screenshot Refinement
+
+- [x] Match the homepage hero more closely to the supplied screenshot.
+  - Progress: Initial target was `C:/Users/arnav/AppData/Local/Temp/codex-clipboard-a2c808fc-7641-4d1c-95fa-ca826ef197f6.png`.
+  - Progress: Superseded by compact target `outputs/source-captures/hero-target-compact.png`.
+- [x] Add supporting intro line and location/open-to-relocation line inside the first viewport.
+- [x] Verify desktop and mobile hero layout.
+  - Evidence: `outputs/implementation-captures/home-hero-compact-target.png` and `outputs/implementation-captures/home-mobile-settled.png`.
+- [x] Run build and lint.
+  - Progress: `npm run build` and `npm run lint` passed.
+- [x] Commit the hero refinement.
+  - Progress: Committed as `94ae5fb` with message `Refine homepage hero to match reference`.

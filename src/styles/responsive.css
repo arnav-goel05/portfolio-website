@@ -76,13 +76,15 @@
 
   .portfolio-hero {
     min-height: 86svh;
+    gap: 30px;
     padding-inline: 22px;
   }
 
-  .portfolio-hero p {
+  .portfolio-hero h1 {
     width: 100%;
-    max-width: 310px;
-    font-size: 36px;
+    max-width: 340px;
+    margin-inline: auto;
+    font-size: 42px;
     overflow-wrap: break-word;
     white-space: normal;
   }
@@ -93,8 +95,20 @@
 
   .portfolio-hero span {
     display: block;
-    max-width: 300px;
+    max-width: 340px;
     margin-inline: auto;
+  }
+
+  .hero-subcopy {
+    max-width: 340px;
+    font-size: 20px;
+    line-height: 1.38;
+  }
+
+  .hero-location {
+    max-width: 340px;
+    margin-inline: auto;
+    font-size: 16px;
   }
 
   .portfolio-about,

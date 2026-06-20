@@ -5,24 +5,26 @@
 }
 
 .portfolio-hero {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   min-height: 100svh;
-  place-items: center;
-  padding: 120px clamp(24px, 6vw, 86px) 80px;
+  gap: clamp(38px, 4.7vw, 64px);
+  padding: 112px clamp(24px, 6vw, 86px) 72px;
   background:
-    linear-gradient(180deg, transparent 0 72%, rgba(255, 233, 238, 0.86) 88%, rgba(210, 255, 214, 0.78) 100%),
+    linear-gradient(180deg, #ffffff 0 68%, rgba(255, 233, 238, 0.76) 82%, rgba(222, 238, 255, 0.72) 91%, rgba(221, 255, 213, 0.78) 100%),
     #ffffff;
   text-align: center;
 }
 
-.portfolio-hero p {
-  max-width: 860px;
+.portfolio-hero h1 {
+  max-width: 1240px;
   margin: 0;
-  color: #242424;
-  font-size: clamp(38px, 5.2vw, 72px);
+  color: #000000;
+  font-size: clamp(46px, 3.55vw, 74px);
   font-weight: 500;
   letter-spacing: 0;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 .portfolio-hero em {
@@ -30,6 +32,40 @@
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
+}
+
+.portfolio-hero h1 span {
+  display: inline;
+}
+
+.hero-subcopy {
+  max-width: 1180px;
+  margin: 0 auto;
+  color: #000000;
+  font-size: clamp(20px, 1.45vw, 30px);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.36;
+}
+
+.hero-subcopy em {
+  border-bottom: 0;
+}
+
+.hero-location {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0;
+  color: #000000;
+  font-size: clamp(16px, 1.25vw, 24px);
+  line-height: 1.2;
+}
+
+.hero-location span {
+  font-size: 0.92em;
+  line-height: 1;
 }
 
 .portfolio-about {

@@ -7,12 +7,13 @@
 
 **Implementation Checklist**
 - Source visual truth path: `outputs/source-captures/yutong-home-desktop.png`, `outputs/source-captures/yutong-home-mobile.png`, `outputs/source-captures/yutong-puzzle-desktop.png`, `outputs/source-captures/yutong-puzzle-mobile.png`.
-- Implementation screenshot path: `outputs/implementation-captures/home-desktop-settled.png`, `outputs/implementation-captures/home-mobile-settled.png`, `outputs/implementation-captures/customer-desktop-settled.png`, `outputs/implementation-captures/customer-mobile-settled.png`, `outputs/implementation-captures/hand-eye-desktop-settled.png`, `outputs/implementation-captures/hand-eye-mobile-settled.png`.
+- Additional hero target path: `outputs/source-captures/hero-target-compact.png`.
+- Implementation screenshot path: `outputs/implementation-captures/home-hero-compact-target.png`, `outputs/implementation-captures/home-mobile-settled.png`, `outputs/implementation-captures/customer-desktop-settled.png`, `outputs/implementation-captures/customer-mobile-settled.png`, `outputs/implementation-captures/hand-eye-desktop-settled.png`, `outputs/implementation-captures/hand-eye-mobile-settled.png`.
 - Viewport: desktop `1440px` wide; mobile `390px` wide.
 - State: settled initial page state after reveal animation.
 - Full-view comparison evidence: homepage first viewport, project first viewport, project overview/metadata area, and mobile homepage/project layouts were captured and reviewed.
 - Focused region comparison evidence: hero typography/nav, project status/title/media block, project overview metadata, mobile long-title wrapping.
-- Patches made since previous QA pass: added hero gradient to first viewport, fixed mobile homepage text wrapping, tightened mobile case-study title/overview/media measures, updated docs.
+- Patches made since previous QA pass: added compact screenshot-style hero support copy and location line, restored the bottom pastel gradient, tuned headline scale, fixed mobile homepage text wrapping, tightened mobile case-study title/overview/media measures, updated docs.
 
 **Required Fidelity Surfaces**
 - Fonts and typography: close adapted match using serif/sans/mono stacks. Exact Framer font files were not copied; this is the main remaining P3 fidelity difference.

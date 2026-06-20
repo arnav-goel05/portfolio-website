@@ -17,11 +17,17 @@ export function PortfolioPage() {
       />
 
       <section className="portfolio-hero reveal" id="top">
-        <p>
-          Hello, I am <em>Arnav Goel</em>.
+        <h1>
+          Hello, I am <em>Arnav Goel.</em>
           <br />
-          <span>A computer science student who builds.</span>
+          <span>A software engineer who builds.</span>
+        </h1>
+        <p className="hero-subcopy">
+          <em>Building applied AI and spatial tools from 0-&gt;1,</em>
+          <br />
+          turning complex requirements into practical software.
         </p>
+        <p className="hero-location">Based in Singapore / Open to relocation</p>
       </section>
 
       <section className="portfolio-about reveal" id="about">

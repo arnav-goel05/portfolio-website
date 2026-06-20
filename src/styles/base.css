@@ -24,8 +24,8 @@ button {
   width: 16px;
   height: 16px;
   border-radius: 999px;
-  background: #000000;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
+  background: #d84d63;
+  box-shadow: 0 0 10px rgba(216, 77, 99, 0.28);
   opacity: 0;
   pointer-events: none;
   transition:
@@ -43,7 +43,7 @@ body:has(a:hover) .custom-cursor,
 body:has(button:hover) .custom-cursor {
   width: 28px;
   height: 28px;
-  background: rgba(0, 0, 0, 0.72);
+  background: rgba(216, 77, 99, 0.82);
 }
 
 .site-nav {
