@@ -1,3 +1,4 @@
+import { AboutPage } from './pages/AboutPage'
 import { CustomerSupportProjectPage } from './pages/CustomerSupportProjectPage'
 import { CustomCursor } from './components/CustomCursor'
 import { HandEyeCoordinationProjectPage } from './pages/HandEyeCoordinationProjectPage'
@@ -5,6 +6,15 @@ import { PortfolioPage } from './pages/PortfolioPage'
 import './App.css'
 
 function App() {
+  if (window.location.pathname === '/about') {
+    return (
+      <>
+        <CustomCursor />
+        <AboutPage />
+      </>
+    )
+  }
+
   if (window.location.pathname === '/projects/customer-support') {
     return (
       <>

@@ -35,6 +35,10 @@ Yutong Wang's portfolio and Puzzle AI case-study flow.
 - Keep project pages aligned to the Puzzle AI flow: status, title, hero visual,
   overview, metadata, problem, research/discovery, solution, system design,
   walkthrough, validation, and takeaways.
+- Keep the About page aligned to Yutong Wang's About flow: compact red section
+  labels, large Switzer-like paragraphs, a right-side portrait, underlined
+  contact links, thin bordered expandable rows, and a simple two-column skills
+  list.
 - Prefer clear sections, concise copy, and a small number of strong visuals.
 - Use explicit placeholders when real project evidence is unavailable.
 - Do not make pages feel like dense reports or dashboards unless explicitly requested.

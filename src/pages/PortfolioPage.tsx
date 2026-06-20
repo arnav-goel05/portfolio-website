@@ -3,7 +3,7 @@ import { contactLinks, projects } from '../data/portfolio'
 
 const portfolioNavLinks = [
   { href: '#work', label: 'Work' },
-  { href: '#about', label: 'About' },
+  { href: '/about', label: 'About' },
 ]
 
 export function PortfolioPage() {
@@ -30,30 +30,21 @@ export function PortfolioPage() {
         <p className="hero-location">Based in Singapore / Open to relocation</p>
       </section>
 
-      <section className="portfolio-about reveal" id="about">
-        <p>
-          I build applied AI, spatial-computing, and product engineering projects
-          that turn messy technical requirements into practical systems.
-        </p>
-      </section>
-
       <section className="selected-work" id="work" aria-labelledby="work-title">
         <div className="work-heading reveal">
-          <p>Selected Work</p>
-          <h1 id="work-title">Projects</h1>
+          <h1 id="work-title">Selected Work</h1>
         </div>
 
         <div className="work-list">
           {projects.map((project) => (
             <a className="work-card reveal" href={`/projects/${project.slug}`} key={project.slug}>
-              <div className="work-media" style={{ backgroundColor: project.accent }}>
+              <div className="work-media">
                 <img src={project.image} alt="" aria-hidden="true" />
               </div>
               <div className="work-meta" aria-label={`${project.title} metadata`}>
-                <span>{project.year}</span>
-                <span>{project.status}</span>
-                <span>{project.category}</span>
-                <span>{project.platform}</span>
+                {[project.year, project.status, project.category, project.platform].map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
               </div>
               <div className="work-copy">
                 <h2>{project.title}</h2>

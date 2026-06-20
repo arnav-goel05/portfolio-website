@@ -2,8 +2,8 @@ import { SiteNav } from '../components/SiteNav'
 import { contactLinks, type Project } from '../data/portfolio'
 
 const projectNavLinks = [
-  { href: '/', label: 'Work' },
-  { href: '/#about', label: 'About' },
+  { href: '/#work', label: 'Work' },
+  { href: '/about', label: 'About' },
 ]
 
 type ProjectCaseStudyPageProps = {

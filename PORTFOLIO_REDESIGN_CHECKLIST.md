@@ -83,7 +83,7 @@ Update task status as work progresses:
 
 - [x] Review changed files.
 - [x] Commit the completed redesign.
-  - Progress: Committed as `8d3c519` with message `Redesign portfolio around project case studies`.
+  - Progress: Committed as `cefe01d` with message `Redesign portfolio around project case studies`.
 
 ## 9. Hero Screenshot Refinement
 
@@ -96,4 +96,33 @@ Update task status as work progresses:
 - [x] Run build and lint.
   - Progress: `npm run build` and `npm run lint` passed.
 - [x] Commit the hero refinement.
-  - Progress: Committed as `94ae5fb` with message `Refine homepage hero to match reference`.
+  - Progress: Committed as `6ef6879` with message `Refine homepage hero to match reference`.
+
+## 10. Selected Work Screenshot Refinement
+
+- [x] Match the Selected Work section to the supplied two-column card screenshot.
+  - Progress: Reference target is `C:/Users/arnav/AppData/Local/Temp/codex-clipboard-023820ba-0dc1-45d4-9246-1466bfb95f99.png`.
+- [x] Convert selected work from horizontal rows to a two-column card grid.
+- [x] Match heading scale, image panel treatment, metadata separators, title, and summary rhythm.
+- [x] Verify desktop and mobile selected work layout.
+  - Evidence: `outputs/implementation-captures/selected-work-target-match.png` and `outputs/implementation-captures/selected-work-mobile-target-match.png`.
+- [x] Run build and lint.
+  - Progress: `npm run build` and `npm run lint` passed.
+- [x] Commit the selected work refinement.
+  - Progress: Committed in the current `Add Yutong-inspired about page` commit.
+
+## 11. About Page URL-To-Code Refinement
+
+- [x] Capture Yutong Wang's About page as the source target.
+  - Progress: Desktop and mobile source captures saved under `outputs/source-captures/`.
+- [x] Add a dedicated `/about` route using the existing page/data/style structure.
+- [x] Match the source About flow: intro plus portrait, contact links, expandable rows, skills, and footer.
+- [x] Keep About content work-experience based and placeholder-safe rather than inventing unknown employers.
+  - Progress: Confirmed work item from existing project data is used; unknown entries remain placeholders.
+- [x] Verify desktop and mobile About layout.
+  - Evidence: `outputs/implementation-captures/about-desktop-yutong-match.png` and `outputs/implementation-captures/about-mobile-yutong-match.png`.
+- [x] Run build and lint.
+  - Progress: `npm run build` and `npm run lint` passed.
+- [x] Update design QA with About evidence.
+- [x] Commit the About page refinement.
+  - Progress: Committed in the current `Add Yutong-inspired about page` commit.

@@ -9,6 +9,7 @@ system over adding dependencies.
 - `src/main.tsx` mounts the React app.
 - `src/App.tsx` is intentionally small. It chooses between:
   - `PortfolioPage` for `/`
+  - `AboutPage` for `/about`
   - `CustomerSupportProjectPage` for `/projects/customer-support`
   - `HandEyeCoordinationProjectPage` for `/projects/hand-eye-coordination`
 - Routing is currently path-based and dependency-free. Add a router only when
@@ -19,6 +20,8 @@ system over adding dependencies.
 - `src/pages/`
   - Page-level components. Pages own section order and page-specific layout.
   - `PortfolioPage.tsx` renders the homepage as a sparse selected-work index.
+  - `AboutPage.tsx` renders the Yutong-inspired about/profile page with
+    project-based experience rows and skills.
   - `ProjectCaseStudyPage.tsx` renders the shared project case-study flow.
   - `CustomerSupportProjectPage.tsx` and `HandEyeCoordinationProjectPage.tsx`
     are route wrappers that select their static project data.
@@ -30,6 +33,7 @@ system over adding dependencies.
     project routes.
 - `src/data/`
   - Static portfolio content and asset-backed data.
+  - `about.ts` owns About-page profile copy, project rows, and skills.
   - Keep resume-backed content here when possible so page components stay
     mostly presentational.
 - `src/assets/`
@@ -47,6 +51,8 @@ system over adding dependencies.
     shared reveal animation.
   - `portfolio.css` contains the homepage hero, selected-work index, project
     cards, and footer styles.
+  - `about.css` contains the standalone about page, contact links, expandable
+    project rows, portrait crop, and skills layout.
   - `vision.css` contains the Vision Pro launch, hand-eye experience, and
     related animation keyframes.
   - `case-study.css` contains the shared project case-study flow, metadata,

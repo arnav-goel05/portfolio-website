@@ -2,28 +2,30 @@
 - No actionable P0/P1/P2 findings remain.
 
 **Open Questions**
-- Font fidelity is close but not exact. The source Framer page uses Switzer, Erode, Fragment Mono, and Inter. The implementation uses matching fallback stacks and does not copy or hotlink the Framer font files.
-- Mobile nav clipping appears in the captured source mobile screenshot as well as the implementation. It is treated as a source-matching behavior, not an implementation blocker.
+- Font fidelity is close but not exact. The source Framer pages use Switzer, Erode, Fragment Mono, and Inter. The implementation uses matching fallback stacks and does not copy or hotlink the Framer font files.
+- The About source mobile capture has fixed-viewport clipping from the original Framer page. The local About page keeps the same visual language but avoids horizontal overflow on a real `390px` mobile viewport.
+- About work-experience rows include placeholders because only one work entry was confirmable from the current repo data.
 
 **Implementation Checklist**
-- Source visual truth path: `outputs/source-captures/yutong-home-desktop.png`, `outputs/source-captures/yutong-home-mobile.png`, `outputs/source-captures/yutong-puzzle-desktop.png`, `outputs/source-captures/yutong-puzzle-mobile.png`.
-- Additional hero target path: `outputs/source-captures/hero-target-compact.png`.
-- Implementation screenshot path: `outputs/implementation-captures/home-hero-compact-target.png`, `outputs/implementation-captures/home-mobile-settled.png`, `outputs/implementation-captures/customer-desktop-settled.png`, `outputs/implementation-captures/customer-mobile-settled.png`, `outputs/implementation-captures/hand-eye-desktop-settled.png`, `outputs/implementation-captures/hand-eye-mobile-settled.png`.
+- Source visual truth path: `outputs/source-captures/yutong-home-desktop.png`, `outputs/source-captures/yutong-home-mobile.png`, `outputs/source-captures/yutong-puzzle-desktop.png`, `outputs/source-captures/yutong-puzzle-mobile.png`, `outputs/source-captures/hero-target-compact.png`, `outputs/source-captures/selected-work-target.png`, `outputs/source-captures/yutong-about-desktop-full.png`, `outputs/source-captures/yutong-about-mobile.png`.
+- Implementation screenshot path: `outputs/implementation-captures/home-hero-compact-target.png`, `outputs/implementation-captures/home-mobile-settled.png`, `outputs/implementation-captures/selected-work-target-match.png`, `outputs/implementation-captures/selected-work-mobile-target-match.png`, `outputs/implementation-captures/about-desktop-yutong-match.png`, `outputs/implementation-captures/about-mobile-yutong-match.png`, `outputs/implementation-captures/about-desktop-expanded-row.png`.
+- Comparison evidence path: `outputs/comparisons/about-desktop-comparison.png`, `outputs/comparisons/about-mobile-comparison.png`.
 - Viewport: desktop `1440px` wide; mobile `390px` wide.
-- State: settled initial page state after reveal animation.
-- Full-view comparison evidence: homepage first viewport, project first viewport, project overview/metadata area, and mobile homepage/project layouts were captured and reviewed.
-- Focused region comparison evidence: hero typography/nav, project status/title/media block, project overview metadata, mobile long-title wrapping.
-- Patches made since previous QA pass: added compact screenshot-style hero support copy and location line, restored the bottom pastel gradient, tuned headline scale, fixed mobile homepage text wrapping, tightened mobile case-study title/overview/media measures, updated docs.
+- State: settled initial page state after reveal animation; About expandable row was tested in an opened state.
+- Full-view comparison evidence: About desktop, About mobile, Selected Work desktop, and Selected Work mobile were captured and reviewed.
+- Focused region comparison evidence: About intro/portrait pairing, contact link underline treatment, expandable experience row, skills grid, Selected Work heading/media card/metadata rhythm.
+- Patches made since previous QA pass: added `/about` route, About data module, About page CSS, About responsive overrides, nav link updates, two-column Selected Work card layout, updated docs and checklist.
 
 **Required Fidelity Surfaces**
-- Fonts and typography: close adapted match using serif/sans/mono stacks. Exact Framer font files were not copied; this is the main remaining P3 fidelity difference.
-- Spacing and layout rhythm: matches the sparse white-space rhythm, fixed dot nav, large first viewport, oversized media panel, two-column overview, and compact metadata rows.
-- Colors and visual tokens: uses white/black base, thin grey dividers, blue media panels, and accent colors inspired by the source.
-- Image quality and asset fidelity: uses existing project assets only; missing evidence is represented with explicit placeholders rather than fabricated screenshots.
-- Copy and content: homepage, project cards, and case-study sections use Arnav's two projects and remove articles/employment history.
+- Fonts and typography: close adapted match using existing serif/sans/mono stacks; exact Framer-hosted fonts were not copied.
+- Spacing and layout rhythm: About follows the source's left-column content rhythm, right portrait, large vertical gaps, thin row dividers, sparse footer, and mobile stacked layout.
+- Colors and visual tokens: white background, black text, red section labels, grey dividers, dotted red link underlines, and black dot nav match the source direction.
+- Image quality and asset fidelity: source portrait is replaced with the existing Arnav portrait asset, cropped into the same rounded portrait slot; this is intentional because the page must use Arnav's content.
+- Copy and content: About uses Arnav's current project/work context; unknown work experience is shown as explicit placeholders rather than fabricated employment history.
 
 **Follow-up Polish**
-- [P3] Install or self-host closer open-license font matches if exact typography fidelity becomes important.
-- [P3] Replace placeholders with real product screenshots, demo clips, or study artifacts when available.
+- [P3] Replace placeholder work rows with real company, role, date, and detail copy.
+- [P3] Add Instagram/X/contact links if those profiles should appear like the source page.
+- [P3] Self-host closer font matches if exact typography fidelity becomes important.
 
 final result: passed
