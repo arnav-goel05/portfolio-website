@@ -189,7 +189,7 @@
   margin: 0;
   color: #000000;
   font-family: var(--serif);
-  font-size: clamp(48px, 4.2vw, 82px);
+  font-size: clamp(38px, 3.2vw, 64px);
   font-weight: 400;
   font-style: italic;
   line-height: 1;
