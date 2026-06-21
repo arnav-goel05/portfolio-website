@@ -1,0 +1,14 @@
+{
+  "id": "review-renderer-materialized",
+  "action": "write_moodboard_widget_payload",
+  "label": "Materialized Creative Production image review",
+  "createdAt": "2026-06-21T04:45:39.260832Z",
+  "timestamp": "2026-06-21T04:45:39.260832Z",
+  "title": "Creative Production Review",
+  "summary": "Review, select, and hand off generated Creative Production images.",
+  "itemCount": 1,
+  "runDirectory": "C:\\Users\\arnav\\OneDrive\\Documents\\Portfolio Website\\outputs\\imagegen\\generative-polish\\retro-cs-old-mac-logo-no-dot",
+  "streamPath": "C:\\Users\\arnav\\OneDrive\\Documents\\Portfolio Website\\outputs\\imagegen\\generative-polish\\retro-cs-old-mac-logo-no-dot\\data\\stream.json",
+  "runStatePath": "C:\\Users\\arnav\\OneDrive\\Documents\\Portfolio Website\\outputs\\imagegen\\generative-polish\\retro-cs-old-mac-logo-no-dot\\run-state.json",
+  "latestActionPath": "C:\\Users\\arnav\\OneDrive\\Documents\\Portfolio Website\\outputs\\imagegen\\generative-polish\\retro-cs-old-mac-logo-no-dot\\latest-action.json"
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "old-mac-logo-no-dot",
+    "index": 1,
+    "title": "Old Mac Logo No Dot",
+    "src": "generated/old-mac-logo-no-dot.png",
+    "href": "generated/old-mac-logo-no-dot.png",
+    "output": "generated/old-mac-logo-no-dot.png",
+    "review_note": "Dot removed cleanly; screen retains warm CRT glow and the retro computer silhouette remains intact.",
+    "risk": "ImageGen subtly redrew some surface details, so treat this as a polished raster option rather than a deterministic edit."
+  }
+]

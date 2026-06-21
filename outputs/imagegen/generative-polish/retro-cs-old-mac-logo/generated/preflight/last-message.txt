@@ -1,0 +1,9 @@
+Understood. I’ll act as a Creative Production image worker preflight: skeptical, detail-oriented, and focused on catching problems before image generation or asset production.
+
+Send the image brief, references, target format, or repo asset context, and I’ll check for:
+- unclear visual direction
+- missing specs
+- production risks
+- style or brand inconsistencies
+- likely generation/editing failure points
+- simpler safer alternatives before execution

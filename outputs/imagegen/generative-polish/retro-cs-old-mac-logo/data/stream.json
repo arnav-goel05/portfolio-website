@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "title": "Creative Production Review",
+    "summary": "Review, select, and hand off generated Creative Production images.",
+    "source": "review_renderer",
+    "itemCount": 3
+  },
+  "items": [
+    {
+      "id": "compact-classic-computer-badge",
+      "title": "Compact Classic Computer Badge",
+      "caption": "",
+      "tone": "",
+      "prompt": "",
+      "imageUrl": "/generated/mcp-thumbs/compact-classic-computer-badge.jpg",
+      "previewImageUrl": "/generated/mcp-thumbs/compact-classic-computer-badge.jpg",
+      "sourceImageUrl": "/generated/compact-classic-computer-badge.png"
+    },
+    {
+      "id": "rounded-beige-terminal-icon",
+      "title": "Rounded Beige Terminal Icon",
+      "caption": "",
+      "tone": "",
+      "prompt": "",
+      "imageUrl": "/generated/mcp-thumbs/rounded-beige-terminal-icon.jpg",
+      "previewImageUrl": "/generated/mcp-thumbs/rounded-beige-terminal-icon.jpg",
+      "sourceImageUrl": "/generated/rounded-beige-terminal-icon.png"
+    },
+    {
+      "id": "playful-retro-desktop-emblem",
+      "title": "Playful Retro Desktop Emblem",
+      "caption": "",
+      "tone": "",
+      "prompt": "",
+      "imageUrl": "/generated/mcp-thumbs/playful-retro-desktop-emblem.jpg",
+      "previewImageUrl": "/generated/mcp-thumbs/playful-retro-desktop-emblem.jpg",
+      "sourceImageUrl": "/generated/playful-retro-desktop-emblem.png"
+    }
+  ]
+}
