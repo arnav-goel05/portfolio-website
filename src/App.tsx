@@ -1,5 +1,4 @@
 import { AboutPage } from './pages/AboutPage'
-import { AIWorkflowProjectPage } from './pages/AIWorkflowProjectPage'
 import { CustomCursor } from './components/CustomCursor'
 import { PortfolioPage } from './pages/PortfolioPage'
 import { TribeMusicOptimizationProjectPage } from './pages/TribeMusicOptimizationProjectPage'
@@ -11,15 +10,6 @@ function App() {
       <>
         <CustomCursor />
         <AboutPage />
-      </>
-    )
-  }
-
-  if (window.location.pathname === '/projects/ai-workflow-system') {
-    return (
-      <>
-        <CustomCursor />
-        <AIWorkflowProjectPage />
       </>
     )
   }

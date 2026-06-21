@@ -10,7 +10,6 @@ system over adding dependencies.
 - `src/App.tsx` is intentionally small. It chooses between:
   - `PortfolioPage` for `/`
   - `AboutPage` for `/about`
-  - `AIWorkflowProjectPage` for `/projects/ai-workflow-system`
   - `TribeMusicOptimizationProjectPage` for `/projects/tribe-music-optimization`
 - Routing is currently path-based and dependency-free. Add a router only when
   there are enough pages to justify it.
@@ -23,8 +22,6 @@ system over adding dependencies.
   - `AboutPage.tsx` renders the Yutong-inspired about/profile page with
     project-based experience rows and skills.
   - `ProjectCaseStudyPage.tsx` renders the shared project case-study flow.
-  - `AIWorkflowProjectPage.tsx` is the route wrapper for the placeholder AI
-    workflow case study.
   - `TribeMusicOptimizationProjectPage.tsx` is the route wrapper for the
     TRIBE v2 music optimization case study.
 - `src/components/`
