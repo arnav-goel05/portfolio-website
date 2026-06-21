@@ -60,7 +60,7 @@ export function PortfolioPage() {
         <h1>
           Hello, I am <em>Arnav Goel.</em>
           <br />
-          <span>I build practical software for messy real-world problems.</span>
+          <span>Building software for real problems.</span>
         </h1>
         <p className="hero-subcopy">
           <em>Building applied AI and spatial tools from 0-&gt;1,</em>
