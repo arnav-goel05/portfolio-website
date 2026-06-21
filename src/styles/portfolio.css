@@ -1,7 +1,5 @@
 .portfolio-page {
-  background:
-    linear-gradient(180deg, transparent 0 65%, rgba(255, 222, 232, 0.62) 82%, rgba(219, 255, 214, 0.7) 100%),
-    #ffffff;
+  background: #ffffff;
 }
 
 .portfolio-hero {
@@ -13,9 +11,7 @@
   min-height: 100svh;
   gap: clamp(38px, 4.7vw, 64px);
   padding: 112px clamp(24px, 6vw, 86px) 72px;
-  background:
-    linear-gradient(180deg, #ffffff 0 68%, rgba(255, 233, 238, 0.76) 82%, rgba(222, 238, 255, 0.72) 91%, rgba(221, 255, 213, 0.78) 100%),
-    #ffffff;
+  background: #ffffff;
   text-align: center;
 }
 
