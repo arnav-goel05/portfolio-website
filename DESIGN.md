@@ -22,6 +22,9 @@ Yutong Wang's portfolio and Puzzle AI case-study flow.
 - Headings use an Erode-like serif stack via `--serif`.
 - Body and UI text use a Switzer/Inter-like stack via `--sans`.
 - Metadata and navigation use Fragment Mono-like text via `--mono`.
+- Case-study typography follows the Puzzle AI reference scale: 40px serif
+  project/section titles, 28px serif emphasis text, 24px serif supporting hero
+  copy, and 16px body text on desktop.
 
 ## CSS Organization
 
