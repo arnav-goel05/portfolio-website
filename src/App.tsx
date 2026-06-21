@@ -1,7 +1,6 @@
 import { AboutPage } from './pages/AboutPage'
-import { CustomerSupportProjectPage } from './pages/CustomerSupportProjectPage'
+import { AIWorkflowProjectPage } from './pages/AIWorkflowProjectPage'
 import { CustomCursor } from './components/CustomCursor'
-import { HandEyeCoordinationProjectPage } from './pages/HandEyeCoordinationProjectPage'
 import { PortfolioPage } from './pages/PortfolioPage'
 import './App.css'
 
@@ -15,20 +14,11 @@ function App() {
     )
   }
 
-  if (window.location.pathname === '/projects/customer-support') {
+  if (window.location.pathname === '/projects/ai-workflow-system') {
     return (
       <>
         <CustomCursor />
-        <CustomerSupportProjectPage />
-      </>
-    )
-  }
-
-  if (window.location.pathname === '/projects/hand-eye-coordination') {
-    return (
-      <>
-        <CustomCursor />
-        <HandEyeCoordinationProjectPage />
+        <AIWorkflowProjectPage />
       </>
     )
   }

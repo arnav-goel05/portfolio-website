@@ -331,6 +331,10 @@
     font-size: clamp(29px, 8.6vw, 36px);
   }
 
+  .case-section-heading h2 {
+    font-size: clamp(28px, 7.4vw, 34px);
+  }
+
   .case-visual {
     min-height: 300px;
     padding: 28px;

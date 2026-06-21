@@ -10,8 +10,7 @@ system over adding dependencies.
 - `src/App.tsx` is intentionally small. It chooses between:
   - `PortfolioPage` for `/`
   - `AboutPage` for `/about`
-  - `CustomerSupportProjectPage` for `/projects/customer-support`
-  - `HandEyeCoordinationProjectPage` for `/projects/hand-eye-coordination`
+  - `AIWorkflowProjectPage` for `/projects/ai-workflow-system`
 - Routing is currently path-based and dependency-free. Add a router only when
   there are enough pages to justify it.
 
@@ -23,8 +22,8 @@ system over adding dependencies.
   - `AboutPage.tsx` renders the Yutong-inspired about/profile page with
     project-based experience rows and skills.
   - `ProjectCaseStudyPage.tsx` renders the shared project case-study flow.
-  - `CustomerSupportProjectPage.tsx` and `HandEyeCoordinationProjectPage.tsx`
-    are route wrappers that select their static project data.
+  - `AIWorkflowProjectPage.tsx` is the route wrapper for the placeholder AI
+    workflow case study.
 - `src/components/`
   - Reusable UI shared across pages.
   - `SiteNav.tsx` owns the common dot-brand navigation skeleton.
@@ -34,6 +33,8 @@ system over adding dependencies.
 - `src/data/`
   - Static portfolio content and asset-backed data.
   - `about.ts` owns About-page profile copy, project rows, and skills.
+  - `portfolio.ts` currently owns one placeholder AI workflow project and
+    should avoid fabricated metrics until real project evidence exists.
   - Keep resume-backed content here when possible so page components stay
     mostly presentational.
 - `src/assets/`

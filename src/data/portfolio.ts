@@ -1,5 +1,4 @@
-import customerSupportHeader from '../assets/customer-support-header.png'
-import handEyeCoordinationHeader from '../assets/hand-eye-coordination-header.svg'
+import aiWorkflowPlaceholderHeader from '../assets/ai-workflow-placeholder-header.png'
 
 export type Project = {
   slug: string
@@ -30,240 +29,121 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: 'customer-support',
-    title: 'Automated Customer Support Evaluation System',
-    eyebrow: 'Turning support calls into reviewable signals',
-    year: '2024',
-    status: 'Prototype Built',
-    category: 'AI, NLP',
-    platform: 'Pipeline',
+    slug: 'ai-workflow-system',
+    title: 'AI Workflow System',
+    eyebrow: 'A placeholder case study for turning messy inputs into usable software.',
+    year: '2026',
+    status: 'Placeholder',
+    category: 'Applied AI',
+    platform: 'Web App',
     summary:
-      'An end-to-end call transcription and sentiment evaluation system for customer support review.',
+      'A placeholder case study for a practical AI product that organizes messy workflows into clearer decisions.',
     heroSummary:
-      'Building an automated evaluation pipeline from noisy support audio to transcript, sentiment, and review-ready output.',
-    role: 'Machine learning engineer',
-    skills: ['Speech recognition', 'NLP', 'Model evaluation', 'Pipeline design'],
-    timeline: 'Academic project',
-    tools: ['Python', 'Whisper ASR', 'BERT-RoBERTa', 'Pandas'],
-    team: ['Individual project'],
-    image: customerSupportHeader,
+      'A practical AI system concept for moving from scattered requirements, notes, and artifacts to reviewable workflow output.',
+    role: 'Software engineer',
+    skills: ['Product thinking', 'Applied AI', 'Workflow design', 'Frontend prototyping'],
+    timeline: 'Placeholder case study',
+    tools: ['React', 'TypeScript', 'AI-assisted workflows'],
+    team: ['Individual placeholder'],
+    image: aiWorkflowPlaceholderHeader,
     accent: '#83b9ef',
     sections: [
       {
         kicker: 'Problem',
-        title: 'Support calls hold useful signals, but manual review does not scale.',
+        title: 'Messy workflows often fail before the software gets complicated.',
         body: [
-          'Call evaluation is slow when every recording has to be listened to, transcribed, and judged manually.',
-          'The practical challenge was to turn raw audio into structured evidence that could support a more consistent review process.',
+          'The placeholder problem is deliberately broad: teams collect notes, requirements, examples, and constraints faster than they can turn them into a clear next action.',
+          'A real version of this case study should narrow the audience, source evidence, and workflow before making any product claims.',
         ],
       },
       {
         kicker: 'User Research',
-        title: 'The key workflow gap was between raw conversations and actionable review.',
+        title: 'The research section should prove where the workflow breaks.',
         body: [
-          'This project did not include published user interviews, so this section is intentionally framed around workflow assumptions rather than invented research.',
-          'The assumed reviewer need is simple: reduce listening time, preserve enough transcript context, and surface sentiment signals without hiding the original call evidence.',
+          'This placeholder keeps research claims conservative until interviews, usage traces, or project artifacts exist.',
+          'The expected evidence would be examples of duplicated work, unclear ownership, repeated context gathering, and decisions made from stale information.',
         ],
         cards: [
           {
             label: '01',
-            title: 'Audio is hard to scan',
-            body: 'Reviewers need searchable text before they can compare calls efficiently.',
+            title: 'Inputs scatter',
+            body: 'Useful context lives across notes, documents, chats, screenshots, and half-finished artifacts.',
           },
           {
             label: '02',
-            title: 'Sentiment needs context',
-            body: 'A score is useful only when it remains tied to the transcript and call moment.',
+            title: 'Decisions blur',
+            body: 'Teams struggle to see which details are facts, assumptions, open questions, or next steps.',
           },
           {
             label: '03',
-            title: 'Automation needs measurable quality',
-            body: 'The pipeline had to report transcription and classification performance, not just produce outputs.',
+            title: 'Output needs review',
+            body: 'AI help is only useful when the result is inspectable and easy to correct.',
           },
         ],
       },
       {
         kicker: 'Solution',
-        title: 'A modular pipeline converts audio into transcript, sentiment, and evaluation summary.',
+        title: 'A focused AI workflow can turn loose context into structured project output.',
         body: [
-          'Whisper ASR handles transcription first, creating a text layer that can be searched and inspected.',
-          'A BERT-RoBERTa sentiment layer then classifies the transcript output so review can move from raw call to structured assessment.',
+          'The intended product shape is a lightweight canvas that groups raw inputs, identifies unresolved questions, and drafts a practical output for review.',
+          'The system should keep humans in the loop: AI organizes and proposes, but the user confirms the final direction.',
         ],
       },
       {
         kicker: 'System Design',
-        title: 'Each model stage is separated so quality can improve without rewriting the full system.',
+        title: 'The system should separate source material, reasoning state, and final output.',
         body: [
-          'The pipeline is intentionally staged: audio input, ASR transcript, NLP sentiment classification, then evaluation output.',
-          'This is less flashy than an all-in-one system, but it is easier to test and less likely to hide failures in production.',
+          'A safer architecture treats source artifacts as preserved evidence, intermediate reasoning as editable structure, and final output as a reviewed deliverable.',
+          'That separation makes the workflow easier to debug than a single prompt box that hides where the answer came from.',
         ],
         cards: [
           {
             label: '01',
-            title: 'Audio input',
-            body: 'Support recordings enter the system as the source artifact.',
+            title: 'Collect',
+            body: 'Bring notes, requirements, and references into one reviewable workspace.',
           },
           {
             label: '02',
-            title: 'Transcript layer',
-            body: 'Whisper converts speech to text for downstream review.',
+            title: 'Structure',
+            body: 'Classify inputs into facts, assumptions, questions, and action candidates.',
           },
           {
             label: '03',
-            title: 'Sentiment layer',
-            body: 'BERT-RoBERTa classifies customer sentiment from transcript text.',
+            title: 'Review',
+            body: 'Generate a draft output that remains editable before it becomes project truth.',
           },
         ],
       },
       {
         kicker: 'MVP Walkthrough',
-        title: 'The walkthrough evidence is currently represented with placeholders.',
+        title: 'The walkthrough is intentionally reserved for a real prototype.',
         body: [
-          'Real interface screenshots or a scrubbed demo would make this section stronger.',
-          'Until those assets exist, this page avoids pretending that a polished dashboard was shipped.',
+          'This section should eventually show the core flow: adding sources, resolving ambiguity, and exporting a reviewed artifact.',
+          'Until that exists, the page uses a placeholder visual rather than a fabricated product screenshot.',
         ],
-        placeholder: 'Placeholder for transcript table, sentiment output, or pipeline run screenshot.',
+        placeholder: 'Placeholder for prototype screens, interaction states, or a short product walkthrough.',
       },
       {
-        kicker: 'User Study',
-        title: 'Validation focused on model performance rather than a formal user study.',
+        kicker: 'Validation',
+        title: 'Validation should measure whether the workflow reduces ambiguity.',
         body: [
-          'The measurable result was a transcription improvement from 77.37% WER to 23.79% WER and sentiment accuracy above 0.89.',
-          'A production-ready next step would be reviewer validation: does this actually reduce review time without losing important context?',
+          'Useful validation would compare time-to-brief, number of unresolved questions, and reviewer corrections before and after the workflow.',
+          'No outcome metrics are claimed here because this is a placeholder case study.',
         ],
       },
     ],
     takeaways: [
       {
-        label: 'What worked',
-        body: 'Separating transcription and sentiment made the system easier to evaluate and reason about.',
+        label: 'What this placeholder is for',
+        body: 'It gives the portfolio one polished case-study slot while leaving room for real evidence later.',
       },
       {
-        label: 'What is still weak',
-        body: 'The portfolio evidence needs real screenshots, sample outputs, or a walkthrough artifact to feel complete.',
-      },
-      {
-        label: 'What comes next',
-        body: 'Add reviewer-facing validation and error handling around low-confidence transcripts.',
-      },
-    ],
-  },
-  {
-    slug: 'hand-eye-coordination',
-    title: '3D Hand-Eye Coordination Assessment Tool',
-    eyebrow: 'Measuring spatial movement for rehabilitation',
-    year: '2025',
-    status: 'In Development',
-    category: 'Healthcare, Spatial Computing',
-    platform: 'Apple Vision Pro',
-    summary:
-      'A spatial-computing assessment tool for measuring how closely patients follow an ideal hand path.',
-    heroSummary:
-      'Designing a Vision Pro rehabilitation assessment that turns hand movement into repeatable path-accuracy data.',
-    role: 'Software engineer intern',
-    skills: ['Spatial computing', 'SwiftUI', 'ARKit', 'RealityKit', 'Data analysis'],
-    timeline: 'May 2025 - Present',
-    tools: ['SwiftUI', 'ARKit', 'RealityKit', 'Python', 'Pandas'],
-    team: ['Interactive 3D', 'NUH Rehabilitation'],
-    image: handEyeCoordinationHeader,
-    accent: '#b7df7f',
-    sections: [
-      {
-        kicker: 'Problem',
-        title: 'Manual rehabilitation assessment can be hard to repeat consistently.',
-        body: [
-          'Stroke survivors need assessments that clinicians can compare over time, but hand movement quality is difficult to capture precisely through observation alone.',
-          'The project explores whether a spatial path-following task can turn hand-eye coordination into clearer movement data.',
-        ],
-      },
-      {
-        kicker: 'User Research',
-        title: 'The product has to serve both patients completing the task and clinicians reviewing the result.',
-        body: [
-          'The current public portfolio content does not include formal user-study findings, so this section stays conservative.',
-          'The inferred design constraint is that the patient task must feel simple while the captured data remains useful for clinical review.',
-        ],
-        cards: [
-          {
-            label: '01',
-            title: 'Patient task clarity',
-            body: 'The assessment should make the start point, path, and target obvious in the headset.',
-          },
-          {
-            label: '02',
-            title: 'Clinician comparability',
-            body: 'Outputs should make sessions comparable instead of becoming isolated demos.',
-          },
-          {
-            label: '03',
-            title: 'Low distraction',
-            body: 'Visual polish should not compete with the motor task being measured.',
-          },
-        ],
-      },
-      {
-        kicker: 'Solution',
-        title: 'A Vision Pro path-following task records movement against an ideal trajectory.',
-        body: [
-          'The patient traces a virtual path between points in 3D space while the system captures deviation from the ideal path.',
-          'The experience is designed as an assessment, not a game, so clarity and repeatability matter more than spectacle.',
-        ],
-      },
-      {
-        kicker: 'System Design',
-        title: 'The workflow connects spatial interaction, tracking, and Python-based analysis.',
-        body: [
-          'SwiftUI and RealityKit shape the assessment experience, while ARKit tracking provides the spatial signal.',
-          'Python analysis is reserved for aggregating and visualizing movement data after the session.',
-        ],
-        cards: [
-          {
-            label: '01',
-            title: 'Spatial setup',
-            body: 'Define visible start, midpoint, and end targets for the patient task.',
-          },
-          {
-            label: '02',
-            title: 'Movement capture',
-            body: 'Record hand motion and deviations from the ideal trajectory.',
-          },
-          {
-            label: '03',
-            title: 'Analysis output',
-            body: 'Aggregate path data into clinician-readable comparisons.',
-          },
-        ],
-      },
-      {
-        kicker: 'MVP Walkthrough',
-        title: 'The existing Vision Pro visual becomes the walkthrough anchor.',
-        body: [
-          'The current site already contains a strong spatial-computing visual; the redesign uses it as the case-study hero rather than keeping a separate launch animation.',
-          'A real demo video or assessment recording can replace this placeholder later.',
-        ],
-        placeholder: 'Placeholder for Vision Pro demo video or scrubbed assessment walkthrough.',
-      },
-      {
-        kicker: 'User Study',
-        title: 'Clinical validation is not ready to publish yet.',
-        body: [
-          'This section should eventually hold trial status, patient-versus-control comparison, and final analysis visuals.',
-          'Until those are available, the page should say what is missing instead of overstating results.',
-        ],
-      },
-    ],
-    takeaways: [
-      {
-        label: 'What worked',
-        body: 'A spatial path task gives the project a concrete interaction model that is easy to understand.',
-      },
-      {
-        label: 'What is still weak',
-        body: 'The public case study needs validated results before it can make strong clinical claims.',
+        label: 'What is still missing',
+        body: 'The page needs a specific product, real workflow evidence, screenshots, and validation before it should make strong claims.',
       },
       {
         label: 'What comes next',
-        body: 'Replace placeholders with real trial visuals, methodology notes, and clinician-facing outputs.',
+        body: 'Replace placeholder sections with concrete artifacts from the project that best represents applied AI work.',
       },
     ],
   },
