@@ -1,10 +1,37 @@
 import { SiteNav } from '../components/SiteNav'
 import oldMacLogoNoDot from '../assets/old-mac-logo-no-dot.png'
+import chipSticker from '../assets/stickers/chip.png'
+import codeTagSticker from '../assets/stickers/code-tag.png'
+import curlyBracesSticker from '../assets/stickers/curly-braces.png'
+import databaseSticker from '../assets/stickers/database.png'
+import escKeySticker from '../assets/stickers/esc-key.png'
+import gitBranchSticker from '../assets/stickers/git-branch.png'
+import graphNodesSticker from '../assets/stickers/graph-nodes.png'
+import mapGridSticker from '../assets/stickers/map-grid.png'
+import rocketSticker from '../assets/stickers/rocket.png'
+import sparklesSticker from '../assets/stickers/sparkles.png'
+import terminalPromptSticker from '../assets/stickers/terminal-prompt.png'
+import terminalWindowSticker from '../assets/stickers/terminal-window.png'
 import { contactLinks, projects } from '../data/portfolio'
 
 const portfolioNavLinks = [
   { href: '#work', label: 'Work' },
   { href: '/about', label: 'About' },
+]
+
+const heroStickers = [
+  { src: terminalWindowSticker, label: 'terminal window', className: 'hero-sticker--terminal-window' },
+  { src: curlyBracesSticker, label: 'curly braces', className: 'hero-sticker--curly-braces' },
+  { src: databaseSticker, label: 'database stack', className: 'hero-sticker--database' },
+  { src: codeTagSticker, label: 'code brackets', className: 'hero-sticker--code-tag' },
+  { src: gitBranchSticker, label: 'git branch', className: 'hero-sticker--git-branch' },
+  { src: chipSticker, label: 'microchip', className: 'hero-sticker--chip' },
+  { src: graphNodesSticker, label: 'graph nodes', className: 'hero-sticker--graph-nodes' },
+  { src: escKeySticker, label: 'escape key', className: 'hero-sticker--esc-key' },
+  { src: terminalPromptSticker, label: 'terminal prompt', className: 'hero-sticker--terminal-prompt' },
+  { src: rocketSticker, label: 'rocket', className: 'hero-sticker--rocket' },
+  { src: sparklesSticker, label: 'sparkles', className: 'hero-sticker--sparkles' },
+  { src: mapGridSticker, label: 'map grid', className: 'hero-sticker--map-grid' },
 ]
 
 export function PortfolioPage() {
@@ -19,6 +46,17 @@ export function PortfolioPage() {
       />
 
       <section className="portfolio-hero reveal" id="top">
+        <div className="hero-stickers" aria-hidden="true">
+          {heroStickers.map((sticker) => (
+            <img
+              src={sticker.src}
+              alt=""
+              className={`hero-sticker ${sticker.className}`}
+              key={sticker.label}
+              loading="eager"
+            />
+          ))}
+        </div>
         <h1>
           Hello, I am <em>Arnav Goel.</em>
           <br />

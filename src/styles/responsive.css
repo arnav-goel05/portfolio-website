@@ -7,6 +7,49 @@
     min-height: 92svh;
   }
 
+  .hero-sticker--curly-braces,
+  .hero-sticker--git-branch,
+  .hero-sticker--graph-nodes,
+  .hero-sticker--rocket,
+  .hero-sticker--sparkles {
+    display: none;
+  }
+
+  .hero-sticker--terminal-window {
+    top: 15%;
+    left: 7%;
+  }
+
+  .hero-sticker--database {
+    top: 54%;
+    left: 5%;
+  }
+
+  .hero-sticker--code-tag {
+    bottom: 9%;
+    left: 8%;
+  }
+
+  .hero-sticker--chip {
+    bottom: 5%;
+    left: 34%;
+  }
+
+  .hero-sticker--esc-key {
+    top: 34%;
+    right: 5%;
+  }
+
+  .hero-sticker--terminal-prompt {
+    top: 56%;
+    right: 6%;
+  }
+
+  .hero-sticker--map-grid {
+    right: 28%;
+    bottom: 2%;
+  }
+
   .work-card,
   .about-intro,
   .case-title-row,
@@ -90,6 +133,10 @@
     padding-inline: 22px;
   }
 
+  .hero-sticker {
+    display: none;
+  }
+
   .portfolio-hero h1 {
     width: 100%;
     max-width: 340px;
@@ -110,9 +157,14 @@
   }
 
   .hero-subcopy {
-    max-width: 340px;
+    max-width: 300px;
     font-size: 20px;
     line-height: 1.38;
+    overflow-wrap: break-word;
+  }
+
+  .hero-subcopy em {
+    display: block;
   }
 
   .hero-location {

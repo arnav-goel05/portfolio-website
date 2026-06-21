@@ -5,8 +5,10 @@
 }
 
 .portfolio-hero {
+  position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   min-height: 100svh;
   gap: clamp(38px, 4.7vw, 64px);
@@ -15,6 +17,116 @@
     linear-gradient(180deg, #ffffff 0 68%, rgba(255, 233, 238, 0.76) 82%, rgba(222, 238, 255, 0.72) 91%, rgba(221, 255, 213, 0.78) 100%),
     #ffffff;
   text-align: center;
+}
+
+.hero-stickers {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-sticker {
+  position: absolute;
+  display: block;
+  width: var(--sticker-size);
+  height: auto;
+  filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.12));
+  opacity: 0.96;
+  transform: rotate(var(--sticker-rotate));
+  user-select: none;
+}
+
+.hero-sticker--terminal-window {
+  --sticker-size: clamp(82px, 7.4vw, 136px);
+  --sticker-rotate: -10deg;
+  top: 15%;
+  left: 10.4%;
+}
+
+.hero-sticker--curly-braces {
+  --sticker-size: clamp(58px, 4.8vw, 84px);
+  --sticker-rotate: -4deg;
+  top: 34.5%;
+  left: 4%;
+}
+
+.hero-sticker--database {
+  --sticker-size: clamp(68px, 5.8vw, 92px);
+  --sticker-rotate: 1deg;
+  top: 50.5%;
+  left: 8.7%;
+}
+
+.hero-sticker--code-tag {
+  --sticker-size: clamp(68px, 5.8vw, 100px);
+  --sticker-rotate: 13deg;
+  bottom: 12.2%;
+  left: 5%;
+}
+
+.hero-sticker--git-branch {
+  --sticker-size: clamp(58px, 4.6vw, 78px);
+  --sticker-rotate: -2deg;
+  bottom: 21.8%;
+  left: 12%;
+}
+
+.hero-sticker--chip {
+  --sticker-size: clamp(76px, 6vw, 110px);
+  --sticker-rotate: 0deg;
+  bottom: 8%;
+  left: 31.5%;
+}
+
+.hero-sticker--graph-nodes {
+  --sticker-size: clamp(76px, 6vw, 108px);
+  --sticker-rotate: -12deg;
+  top: 20%;
+  right: 11.4%;
+}
+
+.hero-sticker--esc-key {
+  --sticker-size: clamp(60px, 4.9vw, 86px);
+  --sticker-rotate: 12deg;
+  top: 35%;
+  right: 6%;
+}
+
+.hero-sticker--terminal-prompt {
+  --sticker-size: clamp(78px, 6.7vw, 118px);
+  --sticker-rotate: -9deg;
+  top: 52%;
+  right: 12.1%;
+}
+
+.hero-sticker--rocket {
+  --sticker-size: clamp(74px, 5.8vw, 96px);
+  --sticker-rotate: 14deg;
+  bottom: 23.2%;
+  right: 6.8%;
+}
+
+.hero-sticker--sparkles {
+  --sticker-size: clamp(70px, 5.4vw, 100px);
+  --sticker-rotate: -7deg;
+  right: 18.8%;
+  bottom: 10.5%;
+}
+
+.hero-sticker--map-grid {
+  --sticker-size: clamp(86px, 7vw, 122px);
+  --sticker-rotate: 13deg;
+  right: 30%;
+  bottom: 1.8%;
+}
+
+.portfolio-hero h1,
+.hero-subcopy,
+.hero-location {
+  position: relative;
+  z-index: 1;
 }
 
 .portfolio-hero h1 {
