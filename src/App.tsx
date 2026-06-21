@@ -2,6 +2,7 @@ import { AboutPage } from './pages/AboutPage'
 import { AIWorkflowProjectPage } from './pages/AIWorkflowProjectPage'
 import { CustomCursor } from './components/CustomCursor'
 import { PortfolioPage } from './pages/PortfolioPage'
+import { TribeMusicOptimizationProjectPage } from './pages/TribeMusicOptimizationProjectPage'
 import './App.css'
 
 function App() {
@@ -19,6 +20,15 @@ function App() {
       <>
         <CustomCursor />
         <AIWorkflowProjectPage />
+      </>
+    )
+  }
+
+  if (window.location.pathname === '/projects/tribe-music-optimization') {
+    return (
+      <>
+        <CustomCursor />
+        <TribeMusicOptimizationProjectPage />
       </>
     )
   }

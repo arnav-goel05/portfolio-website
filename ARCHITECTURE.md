@@ -11,6 +11,7 @@ system over adding dependencies.
   - `PortfolioPage` for `/`
   - `AboutPage` for `/about`
   - `AIWorkflowProjectPage` for `/projects/ai-workflow-system`
+  - `TribeMusicOptimizationProjectPage` for `/projects/tribe-music-optimization`
 - Routing is currently path-based and dependency-free. Add a router only when
   there are enough pages to justify it.
 
@@ -24,6 +25,8 @@ system over adding dependencies.
   - `ProjectCaseStudyPage.tsx` renders the shared project case-study flow.
   - `AIWorkflowProjectPage.tsx` is the route wrapper for the placeholder AI
     workflow case study.
+  - `TribeMusicOptimizationProjectPage.tsx` is the route wrapper for the
+    TRIBE v2 music optimization case study.
 - `src/components/`
   - Reusable UI shared across pages.
   - `SiteNav.tsx` owns the common dot-brand navigation skeleton.
@@ -33,8 +36,8 @@ system over adding dependencies.
 - `src/data/`
   - Static portfolio content and asset-backed data.
   - `about.ts` owns About-page profile copy, project rows, and skills.
-  - `portfolio.ts` currently owns one placeholder AI workflow project and
-    should avoid fabricated metrics until real project evidence exists.
+  - `portfolio.ts` owns project metadata and case-study copy; keep claims tied
+    to repo-backed or resume-backed evidence.
   - Keep resume-backed content here when possible so page components stay
     mostly presentational.
 - `src/assets/`
