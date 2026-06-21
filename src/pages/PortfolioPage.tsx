@@ -1,4 +1,5 @@
 import { SiteNav } from '../components/SiteNav'
+import oldMacLogoNoDot from '../assets/old-mac-logo-no-dot.png'
 import { contactLinks, projects } from '../data/portfolio'
 
 const portfolioNavLinks = [
@@ -12,6 +13,7 @@ export function PortfolioPage() {
       <SiteNav
         ariaLabel="Main navigation"
         brandHref="#top"
+        brandImageSrc={oldMacLogoNoDot}
         brandLabel="Arnav Goel home"
         links={portfolioNavLinks}
       />
