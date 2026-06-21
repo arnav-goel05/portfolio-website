@@ -34,13 +34,6 @@
   font-weight: 400;
 }
 
-.hero-name-cycle {
-  display: inline-block;
-  width: 6.9em;
-  text-align: center;
-  animation: hero-name-cycle 12s steps(1, end) infinite;
-}
-
 .portfolio-hero h1 span {
   display: inline;
 }
@@ -57,51 +50,6 @@
 
 .hero-subcopy em {
   border-bottom: 0;
-}
-
-@keyframes hero-name-cycle {
-  0%,
-  100% {
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-  }
-
-  14% {
-    font-family: var(--mono);
-    font-style: normal;
-    font-weight: 400;
-  }
-
-  28% {
-    font-family: "Arial Narrow", "Aptos Narrow", var(--sans);
-    font-style: normal;
-    font-weight: 700;
-  }
-
-  42% {
-    font-family: var(--sans);
-    font-style: normal;
-    font-weight: 760;
-  }
-
-  56% {
-    font-family: "Courier New", var(--mono);
-    font-style: normal;
-    font-weight: 700;
-  }
-
-  70% {
-    font-family: "Georgia", var(--serif);
-    font-style: normal;
-    font-weight: 700;
-  }
-
-  84% {
-    font-family: "Lucida Console", "Courier New", var(--mono);
-    font-style: normal;
-    font-weight: 400;
-  }
 }
 
 .hero-location {

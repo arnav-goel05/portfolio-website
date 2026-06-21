@@ -20,7 +20,7 @@ export function PortfolioPage() {
 
       <section className="portfolio-hero reveal" id="top">
         <h1>
-          Hello, I am <em className="hero-name-cycle">Arnav Goel.</em>
+          Hello, I am <em>Arnav Goel.</em>
           <br />
           <span>A software engineer who builds.</span>
         </h1>
