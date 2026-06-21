@@ -103,6 +103,11 @@
     display: block;
   }
 
+  .hero-name-cycle {
+    min-width: 0;
+    text-align: center;
+  }
+
   .portfolio-hero span {
     display: block;
     max-width: 340px;
@@ -318,5 +323,9 @@
 
   .custom-cursor {
     display: none;
+  }
+
+  .hero-name-cycle {
+    animation: none;
   }
 }
