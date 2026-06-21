@@ -177,7 +177,7 @@
 }
 
 .selected-work {
-  padding: 72px clamp(32px, 3.2vw, 64px) 70px;
+  padding: 72px clamp(24px, 8vw, 140px) 70px;
   background: #ffffff;
 }
 
