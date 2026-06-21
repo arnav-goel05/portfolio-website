@@ -36,8 +36,8 @@
 
 .hero-name-cycle {
   display: inline-block;
-  min-width: 6.7em;
-  text-align: left;
+  width: 6.9em;
+  text-align: center;
   animation: hero-name-cycle 12s steps(1, end) infinite;
 }
 
