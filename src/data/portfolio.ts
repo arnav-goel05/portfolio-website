@@ -1,4 +1,4 @@
-import tribeOptimizerGraph from '../assets/tribe-optimizer-graph.png'
+import tribeBrainResponseAnimation from '../assets/tribe-brain-response-animation.gif'
 
 export type Project = {
   slug: string
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     timeline: 'Prototype experiment',
     tools: ['Google Colab', 'Python', 'Demucs', 'TRIBE v2', 'Matplotlib'],
     team: ['Individual experiment'],
-    image: tribeOptimizerGraph,
+    image: tribeBrainResponseAnimation,
     accent: '#dbe7ff',
     sections: [
       {
@@ -93,10 +93,10 @@ export const projects: Project[] = [
         kicker: 'Result Visuals',
         title: 'Trial 007 produced the strongest model-derived sleep-alignment improvement.',
         body: [
-          'The included optimizer chart compares trial scores against the best single-change sensitivity test and highlights trial 007.',
-          'The repo also includes an animation showing where optimizer trials moved the score-weighted predicted brain-response map toward or away from the original baseline.',
+          'The project image uses the repository animation, where cortical maps show score-weighted predicted brain-response change across optimizer trials.',
+          'The animation highlights trial 007 as the selected-best result and sits closer to the TRIBE v2 story than a static optimizer chart.',
         ],
-        placeholder: 'Use the repository animation as a future walkthrough asset if this case study gets a richer media section.',
+        placeholder: 'Use the optimizer chart as a future walkthrough asset if this case study gets a richer results section.',
       },
       {
         kicker: 'Final Audio Change',
