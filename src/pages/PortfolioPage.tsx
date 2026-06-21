@@ -63,7 +63,7 @@ export function PortfolioPage() {
           <span>Building software for real problems.</span>
         </h1>
         <p className="hero-subcopy">
-          <em>Building practical AI systems from 0-&gt;1,</em>
+          <em>Building practical AI systems from 0→1,</em>
           <br />
           turning complex requirements into practical software.
         </p>
