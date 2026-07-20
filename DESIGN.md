@@ -20,8 +20,8 @@ portfolio and the clear information hierarchy of Puzzle AI.
   and restrained image scale.
 - Align wide-screen project cards on shared content rows, using consistent
   spacing for their media, copy, details, evidence, stack, and links.
-- Present three projects side by side only when the viewport can support readable
-  card widths; stack them below that breakpoint.
+- Present the first two projects side by side on wide screens and start the third
+  project on a new row at the same card width; stack all cards below that breakpoint.
 - Avoid dark mode unless explicitly requested.
 - Avoid cluttered illustrations or decorative elements that compete with the content.
 - Keep animations subtle: left-to-right reveal, image scale on hover, and a

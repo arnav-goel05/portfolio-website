@@ -10,6 +10,12 @@
     grid-row: auto;
   }
 
+  .work-card:nth-child(3) {
+    grid-column: auto;
+    grid-row: auto;
+    margin-top: 0;
+  }
+
   .work-details {
     display: block;
   }
