@@ -18,6 +18,8 @@ portfolio and the clear information hierarchy of Puzzle AI.
 - Keep layouts clean, airy, and reference-like rather than resume-like.
 - Keep Selected Work media cards full-width while using compact media heights
   and restrained image scale.
+- Align paired desktop project cards on shared content rows, using consistent
+  spacing for their media, metadata, copy, details, evidence, stack, and links.
 - Avoid dark mode unless explicitly requested.
 - Avoid cluttered illustrations or decorative elements that compete with the content.
 - Keep animations subtle: left-to-right reveal, image scale on hover, and a
@@ -41,7 +43,7 @@ portfolio and the clear information hierarchy of Puzzle AI.
 ## Content Presentation
 
 - Keep project information on the homepage. Each card should quickly communicate
-  the overview, role, problem, contribution, outcome, evidence, tools, and links.
+  the overview, problem, contribution, outcome, evidence, tools, and links.
 - Keep the About page aligned to Yutong Wang's About flow: compact red section
   labels, large Switzer-like paragraphs, a right-side portrait, underlined
   contact links, thin bordered expandable rows, and a simple two-column skills

@@ -81,10 +81,6 @@ export function PortfolioPage() {
 
               <dl className="work-details">
                 <div>
-                  <dt>Role</dt>
-                  <dd>{project.role}</dd>
-                </div>
-                <div>
                   <dt>Problem</dt>
                   <dd>{project.problem}</dd>
                 </div>

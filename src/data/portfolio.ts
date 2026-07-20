@@ -14,7 +14,6 @@ export type Project = {
   category: string
   platform: string
   summary: string
-  role: string
   problem: string
   contribution: string
   outcome: string
@@ -34,7 +33,6 @@ export const projects: Project[] = [
     platform: 'Colab Notebook',
     summary:
       'A model-guided music production experiment using predicted cortical responses to move a hip-hop track toward a calmer, sleep-oriented profile.',
-    role: 'AI experiment builder',
     problem:
       'Music-production choices are subjective, making it difficult to connect specific audio changes to a desired listener state.',
     contribution:
@@ -60,7 +58,6 @@ export const projects: Project[] = [
     platform: 'Web App',
     summary:
       'An interactive 3D map for discovering Singapore events, restaurants, landmarks, and routes in one visual planning experience.',
-    role: 'Product engineer',
     problem:
       'Planning something to do in Singapore means jumping between event sites, restaurant lists, social posts, maps, and route-planning tools.',
     contribution:
