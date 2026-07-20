@@ -64,10 +64,6 @@ body.is-vision-launching::-webkit-scrollbar {
   animation: launch-caption-fade 2850ms ease both;
 }
 
-.case-study-page {
-  min-height: 100vh;
-}
-
 .hand-eye-page {
   overflow: visible;
 }
@@ -660,4 +656,3 @@ body:has(.vision-experience-from-launch.vision-experience-complete)::-webkit-scr
     transform: translate3d(4px, -2px, 0) scale(1.02);
   }
 }
-

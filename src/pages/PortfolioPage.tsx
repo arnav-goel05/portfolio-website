@@ -65,7 +65,7 @@ export function PortfolioPage() {
 
         <div className="work-list">
           {projects.map((project) => (
-            <a className="work-card reveal" href={`/projects/${project.slug}`} key={project.slug}>
+            <article className="work-card reveal" key={project.slug}>
               <div className="work-media">
                 <img src={project.image} alt="" aria-hidden="true" />
               </div>
@@ -78,7 +78,45 @@ export function PortfolioPage() {
                 <h2>{project.title}</h2>
                 <p>{project.summary}</p>
               </div>
-            </a>
+
+              <dl className="work-details">
+                <div>
+                  <dt>Role</dt>
+                  <dd>{project.role}</dd>
+                </div>
+                <div>
+                  <dt>Problem</dt>
+                  <dd>{project.problem}</dd>
+                </div>
+                <div>
+                  <dt>Built</dt>
+                  <dd>{project.contribution}</dd>
+                </div>
+                <div>
+                  <dt>Outcome</dt>
+                  <dd>{project.outcome}</dd>
+                </div>
+              </dl>
+
+              <ul className="work-highlights" aria-label={`${project.title} highlights`}>
+                {project.highlights.map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
+
+              <div className="work-stack">
+                <span>Built with</span>
+                <p>{project.tools.join(' · ')}</p>
+              </div>
+
+              <div className="work-links">
+                {project.links.map((link) => (
+                  <a href={link.href} key={link.href} target="_blank" rel="noreferrer">
+                    {link.label} <span aria-hidden="true">↗</span>
+                  </a>
+                ))}
+              </div>
+            </article>
           ))}
         </div>
       </section>

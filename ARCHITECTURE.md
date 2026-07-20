@@ -10,20 +10,17 @@ system over adding dependencies.
 - `src/App.tsx` is intentionally small. It chooses between:
   - `PortfolioPage` for `/`
   - `AboutPage` for `/about`
-  - `TribeMusicOptimizationProjectPage` for `/projects/tribe-music-optimization`
-- Routing is currently path-based and dependency-free. Add a router only when
-  there are enough pages to justify it.
+- Project information lives directly on the homepage; there are no individual
+  project routes. Routing remains path-based and dependency-free.
 
 ## Source Layout
 
 - `src/pages/`
   - Page-level components. Pages own section order and page-specific layout.
-  - `PortfolioPage.tsx` renders the homepage as a sparse selected-work index.
+  - `PortfolioPage.tsx` renders the homepage as a selected-work index with
+    concise role, problem, contribution, outcome, metric, stack, and link details.
   - `AboutPage.tsx` renders the Yutong-inspired about/profile page with
     project-based experience rows and skills.
-  - `ProjectCaseStudyPage.tsx` renders the shared project case-study flow.
-  - `TribeMusicOptimizationProjectPage.tsx` is the route wrapper for the
-    TRIBE v2 music optimization case study.
 - `src/components/`
   - Reusable UI shared across pages.
   - `SiteNav.tsx` owns the common dot-brand navigation skeleton.
@@ -36,8 +33,8 @@ system over adding dependencies.
 - `src/data/`
   - Static portfolio content and asset-backed data.
   - `about.ts` owns About-page profile copy, project rows, and skills.
-  - `portfolio.ts` owns project metadata and case-study copy; keep claims tied
-    to repo-backed or resume-backed evidence.
+  - `portfolio.ts` owns concise homepage project metadata and external links;
+    keep claims tied to repo-backed or resume-backed evidence.
   - Keep resume-backed content here when possible so page components stay
     mostly presentational.
 - `src/assets/`
@@ -59,8 +56,6 @@ system over adding dependencies.
     project rows, portrait crop, and skills layout.
   - `vision.css` contains the Vision Pro launch, hand-eye experience, and
     related animation keyframes.
-  - `case-study.css` contains the shared project case-study flow, metadata,
-    section grids, insight cards, takeaways, and placeholders.
   - `responsive.css` contains breakpoint and reduced-motion overrides. Keep it
     imported last so overrides remain predictable.
 - `src/index.css`

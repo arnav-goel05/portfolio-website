@@ -50,11 +50,7 @@
     bottom: 2%;
   }
 
-  .work-card,
-  .about-intro,
-  .case-title-row,
-  .case-overview,
-  .case-section-heading {
+  .about-intro {
     grid-template-columns: 1fr;
   }
 
@@ -71,20 +67,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px 18px;
-  }
-
-  .case-title-row p {
-    justify-self: start;
-    text-align: left;
-  }
-
-  .case-section-body {
-    max-width: 100%;
-    margin-left: 0;
-  }
-
-  .case-card-grid {
-    grid-template-columns: 1fr;
   }
 
   .contact-footer {
@@ -175,8 +157,6 @@
 
   .selected-work,
   .about-intro,
-  .case-hero,
-  .case-section,
   .contact-footer {
     padding-inline: 22px;
   }
@@ -255,11 +235,6 @@
     font-size: 25px;
   }
 
-  .case-overview,
-  .case-section {
-    margin-inline: 22px;
-  }
-
   .selected-work {
     padding-top: 76px;
   }
@@ -276,8 +251,7 @@
     min-height: 180px;
   }
 
-  .work-media img,
-  .case-visual img {
+  .work-media img {
     width: min(78%, 280px);
   }
 
@@ -303,53 +277,14 @@
     line-height: 1.28;
   }
 
-  .case-hero {
-    padding-top: 108px;
+  .work-details > div,
+  .work-stack {
+    grid-template-columns: 68px minmax(0, 1fr);
+    gap: 14px;
   }
 
-  .case-title-row h1 {
-    width: min(320px, 100%);
-    max-width: 100%;
-    font-size: clamp(38px, 11vw, 46px);
-    overflow-wrap: break-word;
-  }
-
-  .case-title-row p,
-  .case-overview-copy p,
-  .case-section-heading h2,
-  .case-placeholder-panel p {
-    max-width: 100%;
-    overflow-wrap: break-word;
-  }
-
-  .case-title-row p {
-    width: min(320px, 100%);
-  }
-
-  .case-overview-copy p {
-    width: min(320px, 100%);
-    font-size: clamp(29px, 8.6vw, 36px);
-  }
-
-  .case-section-heading h2 {
-    font-size: clamp(28px, 7.4vw, 34px);
-  }
-
-  .case-visual {
-    min-height: 300px;
-    padding: 28px;
-  }
-
-  .case-overview {
-    padding-block: 54px;
-  }
-
-  .case-section {
-    padding-block: 66px;
-  }
-
-  .takeaway-row {
-    grid-template-columns: 52px minmax(0, 1fr);
+  .work-highlights {
+    grid-template-columns: 1fr;
   }
 }
 

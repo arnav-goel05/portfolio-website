@@ -2,8 +2,8 @@
 
 ## Visual Direction
 
-This portfolio uses a sparse, reference-driven portfolio system inspired by
-Yutong Wang's portfolio and Puzzle AI case-study flow.
+This portfolio uses a sparse, reference-driven system inspired by Yutong Wang's
+portfolio and the clear information hierarchy of Puzzle AI.
 
 ## Style Preferences
 
@@ -28,9 +28,8 @@ Yutong Wang's portfolio and Puzzle AI case-study flow.
 - Headings use an Erode-like serif stack via `--serif`.
 - Body and UI text use a Switzer/Inter-like stack via `--sans`.
 - Metadata and navigation use Fragment Mono-like text via `--mono`.
-- Case-study typography follows the Puzzle AI reference scale: 40px serif
-  project/section titles, 28px serif emphasis text, 24px serif supporting hero
-  copy, and 16px body text on desktop.
+- Project-card details use compact mono labels, readable body copy, and bordered
+  highlight cells so the information remains scannable.
 
 ## CSS Organization
 
@@ -41,9 +40,8 @@ Yutong Wang's portfolio and Puzzle AI case-study flow.
 
 ## Content Presentation
 
-- Keep project pages aligned to the Puzzle AI flow: status, title, hero visual,
-  overview, metadata, problem, research/discovery, solution, system design,
-  walkthrough, validation, and takeaways.
+- Keep project information on the homepage. Each card should quickly communicate
+  the overview, role, problem, contribution, outcome, evidence, tools, and links.
 - Keep the About page aligned to Yutong Wang's About flow: compact red section
   labels, large Switzer-like paragraphs, a right-side portrait, underlined
   contact links, thin bordered expandable rows, and a simple two-column skills
