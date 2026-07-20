@@ -17,9 +17,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       <dl className="work-details">
-        <div><dt>Problem</dt><dd>{project.problem}</dd></div>
-        <div><dt>Built</dt><dd>{project.contribution}</dd></div>
-        <div><dt>Outcome</dt><dd>{project.outcome}</dd></div>
+        <div>
+          <dt>Problem</dt>
+          <dd>{project.problem}</dd>
+        </div>
+        <div>
+          <dt>Built</dt>
+          <dd>{project.contribution}</dd>
+        </div>
+        <div>
+          <dt>Outcome</dt>
+          <dd>{project.outcome}</dd>
+        </div>
       </dl>
 
       <div className="work-stack">

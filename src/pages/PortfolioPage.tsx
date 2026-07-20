@@ -2,12 +2,7 @@ import { ProjectCard } from '../components/ProjectCard'
 import { SiteNav } from '../components/SiteNav'
 import { heroStickers } from '../data/hero'
 import { projects } from '../data/portfolio'
-
-function chunkProjects(size: number) {
-  return Array.from({ length: Math.ceil(projects.length / size) }, (_, index) =>
-    projects.slice(index * size, index * size + size),
-  )
-}
+import { chunkItems } from '../lib/collections'
 
 export function PortfolioPage() {
   return (
@@ -45,9 +40,11 @@ export function PortfolioPage() {
         </div>
 
         <div className="work-list">
-          {chunkProjects(2).map((projectRow) => (
+          {chunkItems(projects, 2).map((projectRow) => (
             <div className="work-row" key={projectRow.map(({ slug }) => slug).join('-')}>
-              {projectRow.map((project) => <ProjectCard project={project} key={project.slug} />)}
+              {projectRow.map((project) => (
+                <ProjectCard project={project} key={project.slug} />
+              ))}
             </div>
           ))}
         </div>

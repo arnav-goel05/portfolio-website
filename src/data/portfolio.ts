@@ -54,7 +54,18 @@ export const projects: Project[] = [
       'Built Amble end to end, from the MapLibre and deck.gl 3D interface to data pipelines that collect events from official sources, resolve venues to OneMap building identities, cache restaurant results, and publish approved data through Cloudflare Workers, D1, and R2.',
     outcome:
       'Shipped a live cloud native beta where people can explore the city spatially, inspect original references, build a plan, and export the route to Google Maps.',
-    tools: ['MapLibre', 'deck.gl', 'Three.js', '3D Tiles', 'Vite', 'Cloudflare Workers', 'D1', 'R2', 'OneMap', 'OpenStreetMap'],
+    tools: [
+      'MapLibre',
+      'deck.gl',
+      'Three.js',
+      '3D Tiles',
+      'Vite',
+      'Cloudflare Workers',
+      'D1',
+      'R2',
+      'OneMap',
+      'OpenStreetMap',
+    ],
     image: ambleMapFeatureTour,
     video: ambleDemoVideo,
     links: [
@@ -73,7 +84,16 @@ export const projects: Project[] = [
       'Worked with the NUH Department of Rehabilitation to translate clinical requirements into an immersive visionOS assessment. Built hand calibration, real-time fingertip tracking, six movement tasks, repeated trials, deviation metrics, and automated 3D data export using Swift, SwiftUI, ARKit, and RealityKit. I also developed a Python pipeline with Pandas and Matplotlib to process more than 15,000 spatial data points and visualise differences between control and ataxia movement patterns.',
     outcome:
       'Advanced the system into clinical trials with NUH, creating a repeatable assessment and analysis workflow for evaluating fine motor control. The underlying method is patent pending, with a research paper currently in preparation.',
-    tools: ['Swift', 'SwiftUI', 'ARKit', 'RealityKit', 'visionOS', 'Python', 'Pandas', 'Matplotlib'],
+    tools: [
+      'Swift',
+      'SwiftUI',
+      'ARKit',
+      'RealityKit',
+      'visionOS',
+      'Python',
+      'Pandas',
+      'Matplotlib',
+    ],
     image: visionProHandAssessment,
     links: [],
   },
