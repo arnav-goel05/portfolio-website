@@ -74,12 +74,7 @@ export const projects: Project[] = [
       'Advanced the system into clinical trials with NUH, creating a repeatable assessment and analysis workflow for evaluating fine motor control. The underlying method is patent pending, with a research paper currently in preparation.',
     tools: ['Swift', 'SwiftUI', 'ARKit', 'RealityKit', 'visionOS', 'Python', 'Pandas', 'Matplotlib'],
     image: visionProHandAssessment,
-    links: [
-      {
-        label: 'View source',
-        href: 'https://github.com/arnav-goel05/Hand-Eye-Coordination-Assessment',
-      },
-    ],
+    links: [],
   },
 ]
 
