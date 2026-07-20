@@ -45,7 +45,7 @@
 - [X] T014 [US2] Document source ownership, validation, previews, release flow, and static-only infrastructure in `ARCHITECTURE.md`
 - [X] T015 [US2] Document contributor commands and manual release operations in `README.md`
 - [ ] T016 [US2] Configure Cloudflare Workers Builds for `master` production and non-production branch previews
-- [ ] T017 [US2] Create `develop` and `master` repository rules requiring the recorded checks and blocking direct destructive changes
+- [X] T017 [US2] Create `develop` and `master` repository rules requiring the recorded checks and blocking direct destructive changes
 
 ---
 
