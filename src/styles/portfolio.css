@@ -280,6 +280,7 @@
 .work-details > div {
   display: grid;
   grid-template-columns: 82px minmax(0, 1fr);
+  align-items: baseline;
   gap: 18px;
   padding: 15px 0;
   border-bottom: 1px solid var(--line);
