@@ -37,6 +37,7 @@ export function ProjectMedia({ image, title, video }: ProjectMediaProps) {
         src={isNearViewport ? video : undefined}
         poster={image}
         aria-hidden="true"
+        autoPlay
         loop
         muted
         playsInline
