@@ -30,6 +30,9 @@ system over adding dependencies.
   - `CustomCursor.tsx` owns the mouse-only custom cursor.
   - `VisionProjectLaunch.tsx` is retained but no longer used by the active
     project routes.
+- `src/lib/`
+  - Small framework and component-library helpers shared across reusable UI.
+  - `utils.ts` exports the `cn` class-name helper used by registry components.
 - `src/data/`
   - Static portfolio content and asset-backed data.
   - `about.ts` owns About-page profile copy, project rows, and skills.
@@ -90,5 +93,16 @@ system over adding dependencies.
 - The user asked to commit after every completed change.
 - Commit focused changes separately; avoid bundling unrelated visual and content
   edits into one commit.
+- Motion Primitives and React Bits are source-copy component collections, not
+  monolithic runtime libraries. Both use the locally installed shadcn CLI so
+  generated files respect `components.json` and the `src/` architecture.
+- Add Motion Primitives with
+  `npm run ui:add:motion -- https://raw.githubusercontent.com/ibelick/motion-primitives/main/public/c/<component>.json`.
+  Add React Bits with
+  `npm run ui:add:react-bits -- @react-bits/<Component>-TS-CSS`.
+- Prefer React Bits' TypeScript + CSS variants so imported components follow the
+  existing CSS organization. Motion Primitives components require Tailwind;
+  Tailwind packages are installed but intentionally not activated globally to
+  avoid changing the current visual system before a component is selected.
 - Regenerate the hand-eye launch animation with
   `npm run generate:vision-transition` if the Vision Pro source assets change.
