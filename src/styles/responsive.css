@@ -59,12 +59,13 @@
   }
 
   .work-list {
+    width: 100%;
     grid-template-columns: 1fr;
     gap: 48px;
   }
 
   .work-media {
-    min-height: 360px;
+    min-height: 270px;
   }
 
   .work-meta {
@@ -273,7 +274,7 @@
   }
 
   .work-media {
-    min-height: 240px;
+    min-height: 180px;
   }
 
   .work-media img,
