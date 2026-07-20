@@ -11,6 +11,8 @@ Yutong Wang's portfolio and Puzzle AI case-study flow.
 - Use black text and thin grey dividers.
 - Use pastel media panels for project imagery.
 - Use sparse dot navigation and compact uppercase links.
+- Give the fixed navigation a subtle translucent white surface with restrained
+  backdrop blur so page content remains softly visible beneath it while scrolling.
 - Keep layouts clean, airy, and reference-like rather than resume-like.
 - Avoid dark mode unless explicitly requested.
 - Avoid cluttered illustrations or decorative elements that compete with the content.
