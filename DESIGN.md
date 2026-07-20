@@ -9,9 +9,11 @@ large whitespace, restrained project media, and compact monospace navigation and
 
 - Keep the fixed navbar compact and frosted, with the retro computer mark plus Work, About, Email, LinkedIn,
   and GitHub links.
-- Keep the centered hero statement, supporting line, location, and twelve project-derived stickers.
+- Keep the centered hero statement, supporting line, graduation timing, location, and twelve
+  project-derived stickers.
 - Present work in two-column rows on wide screens and a single column below the established breakpoint.
 - Align media, copy, details, stack, and link regions across cards in the same wide-screen row.
+- Use a compact outlined status pill beside a project title when the work is actively updated.
 - Keep project information on the homepage; do not add individual project pages or a duplicate footer.
 - Preserve compact media height and contained imagery with minimal grey gutter.
 - Avoid dark mode, dense dashboards, and decorative elements that compete with content unless requested.

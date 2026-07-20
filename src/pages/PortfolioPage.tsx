@@ -31,7 +31,10 @@ export function PortfolioPage() {
           <br />
           and software development.
         </p>
-        <p className="hero-location">Based in Singapore / Open to relocation</p>
+        <div className="hero-status">
+          <p>Graduating in May 2027</p>
+          <p className="hero-location">Based in Singapore / Open to relocation</p>
+        </div>
       </section>
 
       <section className="selected-work" id="work" aria-labelledby="work-title">

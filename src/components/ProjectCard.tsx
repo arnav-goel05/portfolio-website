@@ -12,7 +12,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <ProjectMedia image={project.image} title={project.title} video={project.video} />
       </div>
       <div className="work-copy">
-        <h3>{project.title}</h3>
+        <div className="work-title-row">
+          <h3>{project.title}</h3>
+          {project.status ? <span className="work-status">{project.status}</span> : null}
+        </div>
         <p>{project.summary}</p>
       </div>
 
