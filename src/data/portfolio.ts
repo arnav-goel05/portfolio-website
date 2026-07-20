@@ -44,17 +44,17 @@ export const projects: Project[] = [
   },
   {
     slug: 'amble',
-    title: 'Amble — Singapore Discovery Map',
+    title: 'Amble: Explore Singapore in 3D',
     summary:
-      'An interactive 3D map for discovering Singapore events, restaurants, landmarks, and routes in one visual planning experience.',
+      'A cloud native 3D discovery platform that brings Singapore’s events, restaurants, landmarks, and route planning into one spatial experience.',
     problem:
-      'Planning something to do in Singapore means jumping between event sites, restaurant lists, social posts, maps, and route-planning tools.',
+      'Finding something to do in Singapore meant switching between disconnected event listings, restaurant platforms, social posts, and maps, with no simple way to understand what was nearby or how different places could fit into one day.',
     contribution:
-      'Designed and built a browser-based 3D discovery experience that combines live places, source-backed event data, nearby search, and day planning.',
+      'Built Amble end to end, from the MapLibre and deck.gl 3D interface to data pipelines that collect events from official sources, resolve venues to OneMap building identities, cache restaurant results, and publish approved data through Cloudflare Workers, D1, and R2.',
     outcome:
-      'Shipped a live cloud-native beta where people can explore the city spatially, inspect original references, build a plan, and export the route to Google Maps.',
+      'Shipped a live cloud native beta where people can explore the city spatially, inspect original references, build a plan, and export the route to Google Maps.',
     highlights: ['Live beta', '3D Singapore map', 'Events + food + landmarks', 'Google Maps route export'],
-    tools: ['MapLibre', 'deck.gl', '3D Tiles', 'Vite', 'Cloudflare Workers', 'R2', 'D1'],
+    tools: ['MapLibre', 'deck.gl', 'Three.js', '3D Tiles', 'Vite', 'Cloudflare Workers', 'D1', 'R2', 'OneMap', 'OpenStreetMap'],
     image: ambleMapFeatureTour,
     links: [
       { label: 'Visit Amble', href: 'https://amblefinds.com/' },
