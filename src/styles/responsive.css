@@ -73,12 +73,6 @@
     min-height: 270px;
   }
 
-  .work-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 18px;
-  }
-
   .contact-footer {
     grid-template-columns: 1fr;
   }
@@ -263,19 +257,6 @@
 
   .work-media img {
     width: min(78%, 280px);
-  }
-
-  .work-meta {
-    gap: 7px 13px;
-    margin-top: 18px;
-  }
-
-  .work-meta span {
-    font-size: 16px;
-  }
-
-  .work-meta span:not(:last-child)::after {
-    right: -8px;
   }
 
   .work-copy h2 {

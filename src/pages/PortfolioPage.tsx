@@ -69,11 +69,6 @@ export function PortfolioPage() {
               <div className="work-media">
                 <img src={project.image} alt="" aria-hidden="true" />
               </div>
-              <div className="work-meta" aria-label={`${project.title} metadata`}>
-                {[project.year, project.status, project.category, project.platform].map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
-              </div>
               <div className="work-copy">
                 <h2>{project.title}</h2>
                 <p>{project.summary}</p>

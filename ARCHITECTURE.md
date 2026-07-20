@@ -33,7 +33,7 @@ system over adding dependencies.
 - `src/data/`
   - Static portfolio content and asset-backed data.
   - `about.ts` owns About-page profile copy, project rows, and skills.
-  - `portfolio.ts` owns concise homepage project metadata and external links;
+  - `portfolio.ts` owns concise homepage project content and external links;
     keep claims tied to repo-backed or resume-backed evidence.
   - Keep resume-backed content here when possible so page components stay
     mostly presentational.

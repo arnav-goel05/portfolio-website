@@ -9,10 +9,6 @@ type ProjectLink = {
 export type Project = {
   slug: string
   title: string
-  year: string
-  status: string
-  category: string
-  platform: string
   summary: string
   problem: string
   contribution: string
@@ -27,10 +23,6 @@ export const projects: Project[] = [
   {
     slug: 'tribe-music-optimization',
     title: 'TRIBE v2 Music Optimization Experiment',
-    year: '2026',
-    status: 'Experiment',
-    category: 'Applied AI, Audio',
-    platform: 'Colab Notebook',
     summary:
       'A model-guided music production experiment using predicted cortical responses to move a hip-hop track toward a calmer, sleep-oriented profile.',
     problem:
@@ -52,10 +44,6 @@ export const projects: Project[] = [
   {
     slug: 'amble',
     title: 'Amble — Singapore Discovery Map',
-    year: '2026',
-    status: 'Live Beta',
-    category: '3D Maps, Local Discovery',
-    platform: 'Web App',
     summary:
       'An interactive 3D map for discovering Singapore events, restaurants, landmarks, and routes in one visual planning experience.',
     problem:
