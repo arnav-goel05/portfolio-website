@@ -1,21 +1,19 @@
-type NavLink = {
-  href: string
-  label: string
-}
+import oldMacLogoNoDot from '../assets/old-mac-logo-no-dot.png'
 
 type SiteNavProps = {
   ariaLabel: string
-  brandHref: string
-  brandImageSrc?: string
-  brandLabel: string
-  links: NavLink[]
 }
 
-export function SiteNav({ ariaLabel, brandHref, brandImageSrc, brandLabel, links }: SiteNavProps) {
+const links = [
+  { href: '/#work', label: 'Work' },
+  { href: '/about', label: 'About' },
+]
+
+export function SiteNav({ ariaLabel }: SiteNavProps) {
   return (
     <nav className="site-nav" aria-label={ariaLabel}>
-      <a className={`brand${brandImageSrc ? ' brand--image' : ''}`} href={brandHref} aria-label={brandLabel}>
-        {brandImageSrc ? <img src={brandImageSrc} alt="" aria-hidden="true" /> : <span aria-hidden="true" />}
+      <a className="brand brand--image" href="/" aria-label="Arnav Goel home">
+        <img src={oldMacLogoNoDot} alt="" aria-hidden="true" />
       </a>
       <div className="nav-links">
         {links.map((link) => (

@@ -3,22 +3,12 @@ import { SiteNav } from '../components/SiteNav'
 import { aboutProfile, aboutRows, aboutSkillColumns } from '../data/about'
 import { contactLinks } from '../data/portfolio'
 
-const aboutNavLinks = [
-  { href: '/#work', label: 'Work' },
-  { href: '/about', label: 'About' },
-]
-
 export function AboutPage() {
   const [openRow, setOpenRow] = useState<string | null>(null)
 
   return (
     <main className="about-page">
-      <SiteNav
-        ariaLabel="About page navigation"
-        brandHref="/"
-        brandLabel="Back to Arnav Goel portfolio"
-        links={aboutNavLinks}
-      />
+      <SiteNav ariaLabel="About page navigation" />
 
       <section className="about-intro reveal" aria-labelledby="about-title">
         <div className="about-copy">

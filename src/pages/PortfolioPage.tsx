@@ -1,49 +1,37 @@
 import { SiteNav } from '../components/SiteNav'
-import oldMacLogoNoDot from '../assets/old-mac-logo-no-dot.png'
-import chipSticker from '../assets/stickers/chip.png'
-import codeTagSticker from '../assets/stickers/code-tag.png'
-import curlyBracesSticker from '../assets/stickers/curly-braces.png'
-import databaseSticker from '../assets/stickers/database.png'
-import escKeySticker from '../assets/stickers/esc-key.png'
-import gitBranchSticker from '../assets/stickers/git-branch.png'
-import graphNodesSticker from '../assets/stickers/graph-nodes.png'
-import mapGridSticker from '../assets/stickers/map-grid.png'
-import rocketSticker from '../assets/stickers/rocket.png'
-import sparklesSticker from '../assets/stickers/sparkles.png'
-import terminalPromptSticker from '../assets/stickers/terminal-prompt.png'
-import terminalWindowSticker from '../assets/stickers/terminal-window.png'
+import aiLearningBookSticker from '../assets/stickers-v2/ai-learning-book.png'
+import ambleCityMapSticker from '../assets/stickers-v2/amble-city-map.png'
+import creditRiskGaugeSticker from '../assets/stickers-v2/credit-risk-gauge.png'
+import currencyAccessibilityScanSticker from '../assets/stickers-v2/currency-accessibility-scan.png'
+import eyeScreeningWheelSticker from '../assets/stickers-v2/eye-screening-wheel.png'
+import maternalRiskRulesSticker from '../assets/stickers-v2/maternal-risk-rules.png'
+import procurementConversationSticker from '../assets/stickers-v2/procurement-conversation.png'
+import ragKnowledgeRetrievalSticker from '../assets/stickers-v2/rag-knowledge-retrieval.png'
+import spatialCognitionSticker from '../assets/stickers-v2/spatial-cognition.png'
+import spatialHandTrackingSticker from '../assets/stickers-v2/spatial-hand-tracking.png'
+import tribeCorticalAudioSticker from '../assets/stickers-v2/tribe-cortical-audio.png'
+import vision2ValueHealthcareWorkflowSticker from '../assets/stickers-v2/vision2value-healthcare-workflow.png'
 import { contactLinks, projects } from '../data/portfolio'
 
-const portfolioNavLinks = [
-  { href: '#work', label: 'Work' },
-  { href: '/about', label: 'About' },
-]
-
 const heroStickers = [
-  { src: terminalWindowSticker, label: 'terminal window', className: 'hero-sticker--terminal-window' },
-  { src: curlyBracesSticker, label: 'curly braces', className: 'hero-sticker--curly-braces' },
-  { src: databaseSticker, label: 'database stack', className: 'hero-sticker--database' },
-  { src: codeTagSticker, label: 'code brackets', className: 'hero-sticker--code-tag' },
-  { src: gitBranchSticker, label: 'git branch', className: 'hero-sticker--git-branch' },
-  { src: chipSticker, label: 'microchip', className: 'hero-sticker--chip' },
-  { src: graphNodesSticker, label: 'graph nodes', className: 'hero-sticker--graph-nodes' },
-  { src: escKeySticker, label: 'escape key', className: 'hero-sticker--esc-key' },
-  { src: terminalPromptSticker, label: 'terminal prompt', className: 'hero-sticker--terminal-prompt' },
-  { src: rocketSticker, label: 'rocket', className: 'hero-sticker--rocket' },
-  { src: sparklesSticker, label: 'sparkles', className: 'hero-sticker--sparkles' },
-  { src: mapGridSticker, label: 'map grid', className: 'hero-sticker--map-grid' },
+  { src: vision2ValueHealthcareWorkflowSticker, label: 'healthcare product workflow', className: 'hero-sticker--terminal-window' },
+  { src: currencyAccessibilityScanSticker, label: 'accessible currency scanner', className: 'hero-sticker--curly-braces' },
+  { src: procurementConversationSticker, label: 'conversational procurement', className: 'hero-sticker--database' },
+  { src: eyeScreeningWheelSticker, label: 'digital eye screening', className: 'hero-sticker--code-tag' },
+  { src: maternalRiskRulesSticker, label: 'maternal health risk rules', className: 'hero-sticker--git-branch' },
+  { src: spatialCognitionSticker, label: 'spatial cognitive assessment', className: 'hero-sticker--chip' },
+  { src: aiLearningBookSticker, label: 'AI learning platform', className: 'hero-sticker--graph-nodes' },
+  { src: creditRiskGaugeSticker, label: 'credit risk prediction', className: 'hero-sticker--esc-key' },
+  { src: tribeCorticalAudioSticker, label: 'cortical audio optimization', className: 'hero-sticker--terminal-prompt' },
+  { src: spatialHandTrackingSticker, label: 'spatial hand tracking', className: 'hero-sticker--rocket' },
+  { src: ragKnowledgeRetrievalSticker, label: 'knowledge retrieval', className: 'hero-sticker--sparkles' },
+  { src: ambleCityMapSticker, label: '3D city discovery map', className: 'hero-sticker--map-grid' },
 ]
 
 export function PortfolioPage() {
   return (
     <main className="portfolio-page">
-      <SiteNav
-        ariaLabel="Main navigation"
-        brandHref="#top"
-        brandImageSrc={oldMacLogoNoDot}
-        brandLabel="Arnav Goel home"
-        links={portfolioNavLinks}
-      />
+      <SiteNav ariaLabel="Main navigation" />
 
       <section className="portfolio-hero reveal" id="top">
         <div className="hero-stickers" aria-hidden="true">

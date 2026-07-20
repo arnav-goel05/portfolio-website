@@ -1,25 +1,56 @@
-**Findings**
-- No actionable P0/P1/P2 findings remain for the TRIBE project addition.
+# Navbar Design QA
 
-**Open Questions**
-- The TRIBE project uses the repository cortical-map animation as its hero visual. It is more distinctive than the optimizer chart, but still source-backed.
-- Mobile project capture still shows the existing nav label clipped at the far right edge in headless Chrome; this appears consistent with prior captures and is not introduced by the TRIBE project content.
+- Source visual truth: `/var/folders/kt/mjsyky8537n9z1rtwl34g_l00000gn/T/TemporaryItems/NSIRD_screencaptureui_nTTciJ/Screenshot 2026-07-20 at 2.55.30 AM.png`
+- Implementation screenshots:
+  - `/Users/arnav/Desktop/projects/portfolio/.qa/navbar-home.png`
+  - `/Users/arnav/Desktop/projects/portfolio/.qa/navbar-about.png`
+  - `/Users/arnav/Desktop/projects/portfolio/.qa/navbar-project.png`
+- Reference crop: 2748 × 136
+- Implementation viewport/crop: 2048 × 900, top 2048 × 101 navbar crop
+- State: desktop, top of home/About/project routes
 
-**Implementation Checklist**
-- Implementation screenshot path: `outputs/tribe-project-qa/tribe-case-top.png`, `outputs/tribe-project-qa/tribe-case-mobile.png`.
-- Viewport: desktop `1440px`; mobile `390x844`.
-- State: settled homepage and TRIBE case-study route.
-- Focused region comparison evidence: status pill, serif title, right-side project summary, large media panel, overview/facts split, smaller section-heading scale, mobile stacking, and TRIBE cortical-map animation readability.
-- Patches made since previous QA pass: added TRIBE project route/data entries, reduced oversized case-section heading typography, removed the temporary case-study slot, and replaced the project image with the cortical-map animation.
+## Findings
 
-**Required Fidelity Surfaces**
-- Fonts and typography: existing portfolio serif/sans/mono stacks preserve the Yutong-inspired editorial style.
-- Spacing and layout rhythm: the case-study page keeps the source-like hero, large media block, overview split, metadata rail, and section rhythm through the existing template.
-- Colors and visual tokens: the project page uses the same white/black sparse system with muted media treatment.
-- Image quality and asset fidelity: the TRIBE visual is copied locally from the user's linked GitHub repo. No external image is hotlinked.
-- Copy and content: the old project claims and temporary case-study slot are removed. The TRIBE content is grounded in the GitHub README facts.
+No actionable P0/P1/P2 navbar differences remain. All routes render the same shared navbar component with the same Mac logo asset, `WORK` and `ABOUT` labels, link order, font treatment, white page background, and fixed positioning.
 
-**Follow-up Polish**
-- [P3] Investigate the pre-existing mobile nav clipping separately.
+## Required fidelity surfaces
+
+- Fonts and typography: every route uses the same 14px Fragment Mono stack, weight, line height, uppercase treatment, and black foreground.
+- Spacing and layout rhythm: measured navbar, logo, and link rectangles are identical across all three routes at the comparison viewport.
+- Colors and visual tokens: the existing transparent navbar, white page surface, and black link styling are unchanged.
+- Image quality and asset fidelity: every route uses the supplied `old-mac-logo-no-dot.png` asset; no replacement or approximation was introduced.
+- Copy and content: every route shows the same `WORK` and `ABOUT` labels and destinations.
+
+## Full-view comparison evidence
+
+The reference is itself a navbar-only crop, so each implementation screenshot captures the same full target region. The three implementation crops were reviewed together with the source image. Their responsive aspect ratio and visible composition are consistent with the supplied reference, while retaining the project's existing navbar styling exactly as requested.
+
+## Focused region comparison evidence
+
+The navbar crop is also the focused comparison region. Browser measurements confirm identical post-fix geometry on every route: 42 × 42 logo element at `(68, 36)`, `WORK` at `(1818.13, 50)`, and `ABOUT` at `(1937.85, 50)` in the 2048px viewport.
+
+## Comparison history
+
+- Earlier finding: About and project pages omitted the Mac logo asset and rendered the component's fallback mark instead.
+- Fix: moved the existing Mac logo and canonical links into the shared `SiteNav` component and removed route-level visual variants.
+- Post-fix evidence: home, About, and project screenshots show the same navbar; measured element geometry and logo source are identical across routes.
+
+## Interaction and runtime checks
+
+- `ABOUT` navigates from the project page to `/about`.
+- `WORK` navigates from About to `/#work`.
+- Browser console checked. Existing duplicate-key warnings originate from About-page content and are unrelated to the navbar-only change.
+
+## Implementation checklist
+
+- [x] One canonical navbar implementation
+- [x] Same logo and links on every route
+- [x] Existing navbar styling preserved
+- [x] Navigation links tested
+- [x] Build and lint pass
+
+## Follow-up polish
+
+None required for the requested navbar consistency change.
 
 final result: passed

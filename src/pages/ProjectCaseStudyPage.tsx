@@ -1,11 +1,6 @@
 import { SiteNav } from '../components/SiteNav'
 import { contactLinks, type Project } from '../data/portfolio'
 
-const projectNavLinks = [
-  { href: '/#work', label: 'Work' },
-  { href: '/about', label: 'About' },
-]
-
 type ProjectCaseStudyPageProps = {
   project: Project
 }
@@ -13,12 +8,7 @@ type ProjectCaseStudyPageProps = {
 export function ProjectCaseStudyPage({ project }: ProjectCaseStudyPageProps) {
   return (
     <main className="case-study-page">
-      <SiteNav
-        ariaLabel={`${project.title} navigation`}
-        brandHref="/"
-        brandLabel="Back to Arnav Goel portfolio"
-        links={projectNavLinks}
-      />
+      <SiteNav ariaLabel={`${project.title} navigation`} />
 
       <section className="case-hero reveal">
         <div className="case-status">
