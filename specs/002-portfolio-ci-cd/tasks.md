@@ -56,16 +56,16 @@
 **Independent Test**: Manually run healthy, failing, repeated-failing, and recovered checks and inspect the issue lifecycle.
 
 - [X] T018 [US3] Add the single-request scheduled and manual issue-lifecycle workflow in `.github/workflows/uptime.yml`
-- [ ] T019 [US3] Create the repository `uptime` label and exercise healthy, failure, repeat-failure, and recovery runs
+- [X] T019 [US3] Create the repository `uptime` label and exercise healthy, failure, repeat-failure, and recovery runs
 
 ---
 
 ## Phase 6: Polish & Cross-Cutting Concerns
 
 - [X] T020 Run formatting, unit, browser, production build, Wrangler dry run, and production smoke validation from `specs/002-portfolio-ci-cd/quickstart.md`
-- [ ] T021 Publish the feature PR to `develop`, verify required checks and preview, then complete the manual `develop` to `master` release
+- [X] T021 Publish the feature PR to `develop`, verify required checks and preview, then complete the manual `develop` to `master` release
 - [X] T022 Run Spec Kit convergence and implement every actionable gap recorded in `specs/002-portfolio-ci-cd/tasks.md`
-- [ ] T023 Leave the local checkout on updated `develop` with `master` matching production
+- [X] T023 Leave the local checkout on updated `develop` with `master` matching production
 
 ## Dependencies & Execution Order
 
