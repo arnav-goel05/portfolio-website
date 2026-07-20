@@ -16,8 +16,8 @@ Yutong Wang's portfolio and Puzzle AI case-study flow.
 - Keep the navigation compact, with approximately 25% less vertical height than
   the original spacious header treatment.
 - Keep layouts clean, airy, and reference-like rather than resume-like.
-- Keep Selected Work media cards compact: approximately 75% of the original
-  desktop footprint, with proportionally reduced media height and image scale.
+- Keep Selected Work media cards full-width while using compact media heights
+  and restrained image scale.
 - Avoid dark mode unless explicitly requested.
 - Avoid cluttered illustrations or decorative elements that compete with the content.
 - Keep animations subtle: left-to-right reveal, image scale on hover, and a
