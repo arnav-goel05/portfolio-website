@@ -63,16 +63,16 @@ export const projects: Project[] = [
   },
   {
     slug: 'hand-eye-coordination-assessment',
-    title: 'Vision Pro Hand-Eye Assessment',
+    title: 'Vision Pro Hand Dexterity Assessment',
     summary:
-      'A spatial hand-dexterity assessment that measures how closely a patient follows defined movement paths during stroke rehabilitation.',
+      'An Apple Vision Pro assessment system that turns hand-eye coordination into precise 3D movement data for stroke rehabilitation and clinical research.',
     problem:
-      'Traditional hand-eye coordination assessments rely heavily on manual observation, making small movement deviations difficult to measure consistently.',
+      'Stroke rehabilitation still relies heavily on clinician observation to assess hand dexterity, making subtle movement deviations difficult to quantify consistently, compare across assessments, or track throughout recovery.',
     contribution:
-      'Translated rehabilitation requirements into a Vision Pro experience with hand calibration, real-time finger tracking, defined movement paths, deviation calculation, and a results summary.',
+      'Worked with the NUH Department of Rehabilitation to translate clinical requirements into an immersive visionOS assessment. Built hand calibration, real-time fingertip tracking, six movement tasks, repeated trials, deviation metrics, and automated 3D data export using Swift, SwiftUI, ARKit, and RealityKit. I also developed a Python pipeline with Pandas and Matplotlib to process more than 15,000 spatial data points and visualise differences between control and ataxia movement patterns.',
     outcome:
-      'Developed the project with the NUH Department of Rehabilitation through requirements gathering, design, implementation, and clinical-trial evaluation.',
-    tools: ['Swift', 'SwiftUI', 'ARKit', 'RealityKit', 'Apple Vision Pro'],
+      'Advanced the system into clinical trials with NUH, creating a repeatable assessment and analysis workflow for evaluating fine motor control. The underlying method is patent pending, with a research paper currently in preparation.',
+    tools: ['Swift', 'SwiftUI', 'ARKit', 'RealityKit', 'visionOS', 'Python', 'Pandas', 'Matplotlib'],
     image: spatialHeadset,
     links: [
       {
