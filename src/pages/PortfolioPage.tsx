@@ -46,7 +46,7 @@ export function PortfolioPage() {
           ))}
         </div>
         <h1>
-          Hello, I am <em>Arnav Goel.</em>
+          Hey! I am <em>Arnav Goel.</em>
           <br />
           <span>Building thoughtful products from 0→1.</span>
         </h1>
