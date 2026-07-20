@@ -1,3 +1,20 @@
+@media (max-width: 1380px) {
+  .work-list {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 48px;
+  }
+
+  .work-card {
+    display: block;
+    grid-row: auto;
+  }
+
+  .work-details {
+    display: block;
+  }
+}
+
 @media (max-width: 940px) {
   .site-nav {
     padding: 16px 24px;
@@ -52,21 +69,6 @@
 
   .about-intro {
     grid-template-columns: 1fr;
-  }
-
-  .work-list {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-    gap: 48px;
-  }
-
-  .work-card {
-    display: block;
-    grid-row: auto;
-  }
-
-  .work-details {
-    display: block;
   }
 
   .work-media {

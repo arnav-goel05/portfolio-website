@@ -1,5 +1,6 @@
 import tribeBrainResponseAnimation from '../assets/tribe-brain-response-animation.gif'
 import ambleMapFeatureTour from '../assets/amble-map-feature-tour.jpg'
+import spatialHeadset from '../assets/spatial-headset.png'
 
 type ProjectLink = {
   label: string
@@ -58,6 +59,27 @@ export const projects: Project[] = [
     links: [
       { label: 'Visit Amble', href: 'https://amblefinds.com/' },
       { label: 'View source', href: 'https://github.com/arnav-goel05/amble-discovery-map' },
+    ],
+  },
+  {
+    slug: 'hand-eye-coordination-assessment',
+    title: 'Vision Pro Hand-Eye Assessment',
+    summary:
+      'A spatial hand-dexterity assessment that measures how closely a patient follows defined movement paths during stroke rehabilitation.',
+    problem:
+      'Traditional hand-eye coordination assessments rely heavily on manual observation, making small movement deviations difficult to measure consistently.',
+    contribution:
+      'Translated rehabilitation requirements into a Vision Pro experience with hand calibration, real-time finger tracking, defined movement paths, deviation calculation, and a results summary.',
+    outcome:
+      'Developed the project with the NUH Department of Rehabilitation through requirements gathering, design, implementation, and clinical-trial evaluation.',
+    highlights: ['NUH Rehabilitation', 'Vision Pro hand tracking', 'Movement deviation scoring', 'Straight + zigzag paths'],
+    tools: ['Swift', 'SwiftUI', 'ARKit', 'RealityKit', 'Apple Vision Pro'],
+    image: spatialHeadset,
+    links: [
+      {
+        label: 'View source',
+        href: 'https://github.com/arnav-goel05/Hand-Eye-Coordination-Assessment',
+      },
     ],
   },
 ]

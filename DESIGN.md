@@ -18,8 +18,10 @@ portfolio and the clear information hierarchy of Puzzle AI.
 - Keep layouts clean, airy, and reference-like rather than resume-like.
 - Keep Selected Work media cards full-width while using compact media heights
   and restrained image scale.
-- Align paired desktop project cards on shared content rows, using consistent
+- Align wide-screen project cards on shared content rows, using consistent
   spacing for their media, copy, details, evidence, stack, and links.
+- Present three projects side by side only when the viewport can support readable
+  card widths; stack them below that breakpoint.
 - Avoid dark mode unless explicitly requested.
 - Avoid cluttered illustrations or decorative elements that compete with the content.
 - Keep animations subtle: left-to-right reveal, image scale on hover, and a
