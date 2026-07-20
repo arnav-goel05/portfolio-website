@@ -283,9 +283,6 @@
     gap: 14px;
   }
 
-  .work-highlights {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

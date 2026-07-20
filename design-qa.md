@@ -1,43 +1,37 @@
-# Design QA: Selected Work media frames
+# Design QA: Project highlight removal
 
-- Source visual truth: `/var/folders/kt/mjsyky8537n9z1rtwl34g_l00000gn/T/TemporaryItems/NSIRD_screencaptureui_e1DHqr/Screenshot 2026-07-20 at 3.31.17 PM.png`
-- Implementation screenshot: `/tmp/portfolio-media-after-full.png`
-- Combined comparison: `/tmp/portfolio-media-comparison-final.png`
-- Viewport: desktop layout evaluated at 2642 × 900 CSS pixels; responsive checks also run at 1280 × 720 and 390 × 844.
-- State: homepage Selected Work section with the first two project cards visible and the Amble recording loaded.
+- Source visual truth: `/var/folders/kt/mjsyky8537n9z1rtwl34g_l00000gn/T/TemporaryItems/NSIRD_screencaptureui_IjZzc1/Screenshot 2026-07-20 at 3.42.13 PM.png`
+- Implementation screenshot: `/tmp/portfolio-highlights-removed.png`
+- Combined comparison: `/tmp/portfolio-highlights-removal-comparison.png`
+- Viewports: 1280 × 720 desktop and 390 × 844 mobile.
+- State: homepage project cards with the details, stack, and source links visible.
 
 ## Full-view comparison evidence
 
-The supplied screenshot showed both project assets centered inside large grey panels. The revised desktop capture keeps the same two-column card structure and reduces the visible grey treatment to an 8 px frame around a white media canvas. Card headings and detail rows remain aligned.
+The source identifies the bordered project highlight tiles as the removal target. The implementation capture shows the card flowing directly from Problem, Built, and Outcome into Built With and the project links, with no remaining highlight grid.
 
 ## Focused region comparison evidence
 
-The combined comparison isolates the project media treatment. The TRIBE animation and Amble recording remain fully contained without cropping, while each media element now occupies the complete inner canvas. A focused comparison was necessary because the requested change concerned the frame and asset scale rather than the rest of the page.
+The combined comparison places the removed tile section above the revised card transition. The implementation retains an 18 px gap between the details block and Built With, so the removal does not leave a collapsed or oversized blank area.
 
 ## Fidelity surfaces
 
-- Fonts and typography: unchanged from the existing portfolio system; headings, summaries, and detail labels retain their previous sizes, weights, and wrapping.
-- Spacing and layout rhythm: grey space is reduced to an 8 px frame, media height is reduced from 420 px to 360 px at wide desktop widths, and the shared card rows remain aligned.
-- Colors and visual tokens: the existing `#f8f8f8` grey is retained only as the narrow outer frame; the inner media canvas is white.
-- Image quality and asset fidelity: original image, GIF, and video assets are reused with `object-fit: contain`; no asset is stretched or cropped.
-- Copy and content: unchanged.
+- Fonts and typography: all remaining project typography is unchanged.
+- Spacing and layout rhythm: highlight tiles and their margins are removed; the existing stack spacing now controls the transition.
+- Colors and visual tokens: no remaining colors or tokens were changed.
+- Image quality and asset fidelity: project imagery and video are unchanged.
+- Copy and content: only the highlight strings shown in the removed section were deleted; project summaries, details, tools, and links remain intact.
 
-## Comparison history
+## Responsive and runtime checks
 
-1. First pass exposed a P1 crop issue because percentage height resolved against the replaced media element rather than the fixed frame. Fixed by absolutely positioning media inside the frame with explicit 8 px insets.
-2. Mobile verification exposed a P2 width override that kept images narrower than video. Fixed by applying the same full-canvas width rule to both images and video below 620 px.
-3. Post-fix desktop and mobile measurements confirmed consistent insets, no horizontal overflow, and aligned card media.
-
-## Interaction and runtime checks
-
-- Amble video reached ready state 4 with no media error.
-- Desktop two-column, default single-column, and 390 px mobile layouts were checked.
-- Mobile document width matched the 390 px viewport with no horizontal overflow.
-- Browser console contained no errors or warnings.
+- No `.work-highlights` elements remain across all three project cards.
+- Desktop and 390 px mobile layouts keep a consistent 18 px details-to-stack gap.
+- The 390 px layout has no horizontal overflow.
+- Browser console contains no errors or warnings.
 
 ## Findings
 
-No actionable P0, P1, or P2 differences remain for the requested media-frame change.
+No actionable P0, P1, or P2 issues remain for the requested section removal.
 
 ## Follow-up polish
 

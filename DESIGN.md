@@ -21,7 +21,7 @@ portfolio and the clear information hierarchy of Puzzle AI.
 - Project recordings use optimized, muted inline playback and retain their
   project image as a loading poster.
 - Align wide-screen project cards on shared content rows, using consistent
-  spacing for their media, copy, details, evidence, stack, and links.
+  spacing for their media, copy, details, stack, and links.
 - Present the first two projects side by side on wide screens and start the third
   project on a new row at the same card width; stack all cards below that breakpoint.
 - Avoid dark mode unless explicitly requested.
@@ -34,8 +34,8 @@ portfolio and the clear information hierarchy of Puzzle AI.
 - Headings use an Erode-like serif stack via `--serif`.
 - Body and UI text use a Switzer/Inter-like stack via `--sans`.
 - Metadata and navigation use Fragment Mono-like text via `--mono`.
-- Project-card details use compact mono labels, readable body copy, and bordered
-  highlight cells so the information remains scannable.
+- Project-card details use compact mono labels and readable body copy so the
+  information remains scannable.
 
 ## CSS Organization
 
@@ -47,7 +47,7 @@ portfolio and the clear information hierarchy of Puzzle AI.
 ## Content Presentation
 
 - Keep project information on the homepage. Each card should quickly communicate
-  the overview, problem, contribution, outcome, evidence, tools, and links.
+  the overview, problem, contribution, outcome, tools, and links.
 - Keep the About page aligned to Yutong Wang's About flow: compact red section
   labels, large Switzer-like paragraphs, a right-side portrait, underlined
   contact links, thin bordered expandable rows, and a simple two-column skills

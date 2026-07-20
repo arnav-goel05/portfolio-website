@@ -15,7 +15,6 @@ export type Project = {
   problem: string
   contribution: string
   outcome: string
-  highlights: string[]
   tools: string[]
   image: string
   video?: string
@@ -34,7 +33,6 @@ export const projects: Project[] = [
       'Built an end to end Colab pipeline that separates the track into stems, runs 21 controlled sensitivity probes across seven production controls, maps each version to Schaefer 7 cortical network responses, and uses the strongest signals to guide a focused 10 trial optimizer.',
     outcome:
       'The optimizer selected trial_007, producing a version that was slower, longer, quieter, darker, and slightly narrower while retaining the original vocal performance.',
-    highlights: ['21 sensitivity probes', '7 production controls', '10 optimizer trials', '140.6 → 121 BPM', '4826 → 3703 Hz'],
     tools: ['Python', 'Google Colab', 'Demucs', 'TRIBE v2', 'Matplotlib'],
     image: tribeBrainResponseAnimation,
     links: [
@@ -55,7 +53,6 @@ export const projects: Project[] = [
       'Built Amble end to end, from the MapLibre and deck.gl 3D interface to data pipelines that collect events from official sources, resolve venues to OneMap building identities, cache restaurant results, and publish approved data through Cloudflare Workers, D1, and R2.',
     outcome:
       'Shipped a live cloud native beta where people can explore the city spatially, inspect original references, build a plan, and export the route to Google Maps.',
-    highlights: ['Live beta', '3D Singapore map', 'Events + food + landmarks', 'Google Maps route export'],
     tools: ['MapLibre', 'deck.gl', 'Three.js', '3D Tiles', 'Vite', 'Cloudflare Workers', 'D1', 'R2', 'OneMap', 'OpenStreetMap'],
     image: ambleMapFeatureTour,
     video: ambleDemoVideo,
@@ -75,7 +72,6 @@ export const projects: Project[] = [
       'Translated rehabilitation requirements into a Vision Pro experience with hand calibration, real-time finger tracking, defined movement paths, deviation calculation, and a results summary.',
     outcome:
       'Developed the project with the NUH Department of Rehabilitation through requirements gathering, design, implementation, and clinical-trial evaluation.',
-    highlights: ['NUH Rehabilitation', 'Vision Pro hand tracking', 'Movement deviation scoring', 'Straight + zigzag paths'],
     tools: ['Swift', 'SwiftUI', 'ARKit', 'RealityKit', 'Apple Vision Pro'],
     image: spatialHeadset,
     links: [

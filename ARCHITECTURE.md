@@ -18,7 +18,7 @@ system over adding dependencies.
 - `src/pages/`
   - Page-level components. Pages own section order and page-specific layout.
   - `PortfolioPage.tsx` renders the homepage as a selected-work index with
-    concise problem, contribution, outcome, metric, stack, and link details.
+    concise problem, contribution, outcome, stack, and link details.
   - `AboutPage.tsx` renders the Yutong-inspired about/profile page with
     project-based experience rows and skills.
 - `src/components/`

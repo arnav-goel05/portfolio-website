@@ -90,12 +90,6 @@ export function PortfolioPage() {
                 </div>
               </dl>
 
-              <ul className="work-highlights" aria-label={`${project.title} highlights`}>
-                {project.highlights.map((highlight) => (
-                  <li key={highlight}>{highlight}</li>
-                ))}
-              </ul>
-
               <div className="work-stack">
                 <span>Built with</span>
                 <p>{project.tools.join(' · ')}</p>
