@@ -64,7 +64,7 @@
 
 - [X] T020 Run formatting, unit, browser, production build, Wrangler dry run, and production smoke validation from `specs/002-portfolio-ci-cd/quickstart.md`
 - [ ] T021 Publish the feature PR to `develop`, verify required checks and preview, then complete the manual `develop` to `master` release
-- [ ] T022 Run Spec Kit convergence and implement every actionable gap recorded in `specs/002-portfolio-ci-cd/tasks.md`
+- [X] T022 Run Spec Kit convergence and implement every actionable gap recorded in `specs/002-portfolio-ci-cd/tasks.md`
 - [ ] T023 Leave the local checkout on updated `develop` with `master` matching production
 
 ## Dependencies & Execution Order
