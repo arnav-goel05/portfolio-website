@@ -24,6 +24,7 @@ system over adding dependencies.
 - `src/components/`
   - Reusable UI shared across pages.
   - `SiteNav.tsx` owns the common dot-brand navigation skeleton.
+  - `ProjectMedia.tsx` renders project images and optional inline video demos.
   - `CustomCursor.tsx` owns the mouse-only custom cursor.
   - `VisionProjectLaunch.tsx` is retained but no longer used by the active
     project routes.
@@ -34,7 +35,8 @@ system over adding dependencies.
   - Static portfolio content and asset-backed data.
   - `about.ts` owns About-page profile copy, project rows, and skills.
   - `portfolio.ts` owns concise homepage project content and external links;
-    keep claims tied to repo-backed or resume-backed evidence.
+    keep claims tied to repo-backed or resume-backed evidence. Projects may
+    provide an optional video while retaining an image as its loading poster.
   - Keep resume-backed content here when possible so page components stay
     mostly presentational.
 - `src/assets/`

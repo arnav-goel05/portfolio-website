@@ -1,5 +1,6 @@
 import tribeBrainResponseAnimation from '../assets/tribe-brain-response-animation.gif'
 import ambleMapFeatureTour from '../assets/amble-map-feature-tour.jpg'
+import ambleDemoVideo from '../assets/amble-demo.mp4'
 import spatialHeadset from '../assets/spatial-headset.png'
 
 type ProjectLink = {
@@ -17,6 +18,7 @@ export type Project = {
   highlights: string[]
   tools: string[]
   image: string
+  video?: string
   links: ProjectLink[]
 }
 
@@ -56,6 +58,7 @@ export const projects: Project[] = [
     highlights: ['Live beta', '3D Singapore map', 'Events + food + landmarks', 'Google Maps route export'],
     tools: ['MapLibre', 'deck.gl', 'Three.js', '3D Tiles', 'Vite', 'Cloudflare Workers', 'D1', 'R2', 'OneMap', 'OpenStreetMap'],
     image: ambleMapFeatureTour,
+    video: ambleDemoVideo,
     links: [
       { label: 'Visit Amble', href: 'https://amblefinds.com/' },
       { label: 'View source', href: 'https://github.com/arnav-goel05/amble-discovery-map' },

@@ -231,7 +231,8 @@
   background: #f8f8f8;
 }
 
-.work-media img {
+.work-media img,
+.work-media video {
   display: block;
   width: min(68%, 650px);
   max-height: 270px;
@@ -240,7 +241,8 @@
   transition: transform 450ms cubic-bezier(0.44, 0, 0.56, 1);
 }
 
-.work-card:hover .work-media img {
+.work-card:hover .work-media img,
+.work-card:hover .work-media video {
   transform: scale(1.045);
 }
 

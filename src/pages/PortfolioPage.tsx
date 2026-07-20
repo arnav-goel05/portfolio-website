@@ -1,4 +1,5 @@
 import { SiteNav } from '../components/SiteNav'
+import { ProjectMedia } from '../components/ProjectMedia'
 import aiLearningBookSticker from '../assets/stickers-v2/ai-learning-book.png'
 import ambleCityMapSticker from '../assets/stickers-v2/amble-city-map.png'
 import creditRiskGaugeSticker from '../assets/stickers-v2/credit-risk-gauge.png'
@@ -67,7 +68,7 @@ export function PortfolioPage() {
           {projects.map((project) => (
             <article className="work-card reveal" key={project.slug}>
               <div className="work-media">
-                <img src={project.image} alt="" aria-hidden="true" />
+                <ProjectMedia image={project.image} title={project.title} video={project.video} />
               </div>
               <div className="work-copy">
                 <h2>{project.title}</h2>

@@ -18,6 +18,8 @@ portfolio and the clear information hierarchy of Puzzle AI.
 - Keep layouts clean, airy, and reference-like rather than resume-like.
 - Keep Selected Work media cards full-width while using compact media heights
   and restrained image scale.
+- Project recordings use optimized, muted inline playback and retain their
+  project image as a loading poster.
 - Align wide-screen project cards on shared content rows, using consistent
   spacing for their media, copy, details, evidence, stack, and links.
 - Present the first two projects side by side on wide screens and start the third
