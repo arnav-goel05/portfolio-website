@@ -78,7 +78,7 @@
   }
 
   .work-media {
-    height: 270px;
+    min-height: 270px;
   }
 
   .contact-footer {
@@ -260,12 +260,11 @@
   }
 
   .work-media {
-    min-height: 0;
+    min-height: 180px;
   }
 
-  .work-media img,
-  .work-media video {
-    width: calc(100% - 16px);
+  .work-media img {
+    width: min(78%, 280px);
   }
 
   .work-copy h2 {

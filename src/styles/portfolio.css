@@ -224,21 +224,19 @@
 }
 
 .work-media {
-  position: relative;
-  height: clamp(250px, 18vw, 360px);
+  display: grid;
+  min-height: clamp(270px, 21vw, 420px);
+  place-items: center;
   overflow: hidden;
   background: #f8f8f8;
 }
 
 .work-media img,
 .work-media video {
-  position: absolute;
-  inset: 8px;
   display: block;
-  width: calc(100% - 16px);
-  height: calc(100% - 16px);
+  width: min(68%, 650px);
+  max-height: 270px;
   object-fit: contain;
-  background: #ffffff;
   filter: saturate(0.98);
   transition: transform 450ms cubic-bezier(0.44, 0, 0.56, 1);
 }
