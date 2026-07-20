@@ -23,16 +23,16 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: 'tribe-music-optimization',
-    title: 'TRIBE v2 Music Optimization Experiment',
+    title: 'TRIBE v2 Music Optimization',
     summary:
-      'A model-guided music production experiment using predicted cortical responses to move a hip-hop track toward a calmer, sleep-oriented profile.',
+      'A neuroscience guided music production system that uses TRIBE v2 cortical response predictions to transform a hip hop track toward a calmer, sleep aligned profile.',
     problem:
-      'Music-production choices are subjective, making it difficult to connect specific audio changes to a desired listener state.',
+      'Music production is largely guided by subjective listening. I wanted to determine whether changes in tempo, drums, reverb, EQ, transients, and bass could be evaluated and optimized against a defined cortical response target.',
     contribution:
-      'Built the full feedback loop: stem separation, 21 controlled sensitivity tests, TRIBE v2 response scoring, and a focused 10-trial optimizer.',
+      'Built an end to end Colab pipeline that separates the track into stems, runs 21 controlled sensitivity probes across seven production controls, maps each version to Schaefer 7 cortical network responses, and uses the strongest signals to guide a focused 10 trial optimizer.',
     outcome:
-      'The selected remix became slower, quieter, darker, and slightly narrower while preserving the original vocal performance. The result is model-derived, not clinical validation.',
-    highlights: ['21 controlled tests', '10 optimizer trials', '140.6 → 121 BPM', '4826 → 3703 Hz'],
+      'The optimizer selected trial_007, producing a version that was slower, longer, quieter, darker, and slightly narrower while retaining the original vocal performance.',
+    highlights: ['21 sensitivity probes', '7 production controls', '10 optimizer trials', '140.6 → 121 BPM', '4826 → 3703 Hz'],
     tools: ['Python', 'Google Colab', 'Demucs', 'TRIBE v2', 'Matplotlib'],
     image: tribeBrainResponseAnimation,
     links: [
