@@ -48,12 +48,12 @@ export function PortfolioPage() {
         <h1>
           Hello, I am <em>Arnav Goel.</em>
           <br />
-          <span>Building software for real problems.</span>
+          <span>Building thoughtful products from 0→1.</span>
         </h1>
         <p className="hero-subcopy">
-          <em>Building practical AI systems from 0→1,</em>
+          <em>Working across product thinking, AI,</em>
           <br />
-          turning complex requirements into practical software.
+          and software development.
         </p>
         <p className="hero-location">Based in Singapore / Open to relocation</p>
       </section>
