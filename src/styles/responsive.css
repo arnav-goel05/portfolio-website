@@ -82,14 +82,6 @@
     min-height: 270px;
   }
 
-  .contact-footer {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-footer div {
-    justify-content: flex-start;
-  }
-
   .about-intro {
     gap: 48px;
   }
@@ -114,12 +106,11 @@
     position: absolute;
     top: 31px;
     right: 22px;
-    gap: 18px;
+    gap: 12px;
   }
 
-  .nav-links a,
-  .contact-footer a {
-    font-size: 11px;
+  .nav-links a {
+    font-size: 10px;
   }
 
   .portfolio-hero {
@@ -169,8 +160,7 @@
   }
 
   .selected-work,
-  .about-intro,
-  .contact-footer {
+  .about-intro {
     padding-inline: 22px;
   }
 

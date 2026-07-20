@@ -115,4 +115,5 @@ export const projects: Project[] = [
 export const contactLinks = [
   { label: 'Email', href: 'mailto:arnav.goel@u.nus.edu' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/arnav--goel/' },
+  { label: 'GitHub', href: 'https://github.com/arnav-goel05' },
 ]

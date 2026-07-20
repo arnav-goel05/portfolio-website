@@ -15,6 +15,8 @@ portfolio and the clear information hierarchy of Puzzle AI.
   backdrop blur so page content remains softly visible beneath it while scrolling.
 - Keep the navigation compact, with approximately 25% less vertical height than
   the original spacious header treatment.
+- Keep Work, About, Email, LinkedIn, and GitHub accessible from the shared navbar;
+  do not repeat them in a standalone page footer.
 - Keep layouts clean, airy, and reference-like rather than resume-like.
 - Keep Selected Work media cards full-width while using compact media heights
   and restrained image scale.

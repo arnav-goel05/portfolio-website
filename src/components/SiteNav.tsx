@@ -1,13 +1,16 @@
 import oldMacLogoNoDot from '../assets/old-mac-logo-no-dot.png'
+import { contactLinks } from '../data/portfolio'
 
 type SiteNavProps = {
   ariaLabel: string
 }
 
-const links = [
+const pageLinks = [
   { href: '/#work', label: 'Work' },
   { href: '/about', label: 'About' },
 ]
+
+const links = [...pageLinks, ...contactLinks]
 
 export function SiteNav({ ariaLabel }: SiteNavProps) {
   return (
@@ -17,7 +20,12 @@ export function SiteNav({ ariaLabel }: SiteNavProps) {
       </a>
       <div className="nav-links">
         {links.map((link) => (
-          <a href={link.href} key={link.href}>
+          <a
+            href={link.href}
+            key={link.href}
+            target={link.href.startsWith('http') ? '_blank' : undefined}
+            rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
+          >
             {link.label}
           </a>
         ))}

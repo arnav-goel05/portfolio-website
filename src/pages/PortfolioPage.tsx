@@ -12,7 +12,7 @@ import spatialCognitionSticker from '../assets/stickers-v2/spatial-cognition.png
 import spatialHandTrackingSticker from '../assets/stickers-v2/spatial-hand-tracking.png'
 import tribeCorticalAudioSticker from '../assets/stickers-v2/tribe-cortical-audio.png'
 import vision2ValueHealthcareWorkflowSticker from '../assets/stickers-v2/vision2value-healthcare-workflow.png'
-import { contactLinks, projects } from '../data/portfolio'
+import { projects } from '../data/portfolio'
 
 const heroStickers = [
   { src: vision2ValueHealthcareWorkflowSticker, label: 'healthcare product workflow', className: 'hero-sticker--terminal-window' },
@@ -107,16 +107,6 @@ export function PortfolioPage() {
         </div>
       </section>
 
-      <footer className="contact-footer" id="contact">
-        <p>Where to Find Me <span aria-hidden="true">-&gt;</span></p>
-        <div>
-          {contactLinks.map((link) => (
-            <a href={link.href} key={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer">
-              {link.label}
-            </a>
-          ))}
-        </div>
-      </footer>
     </main>
   )
 }

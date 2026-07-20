@@ -339,26 +339,3 @@
   line-height: 1.4;
   text-underline-offset: 4px;
 }
-
-.contact-footer {
-  display: grid;
-  grid-template-columns: minmax(220px, 0.4fr) minmax(240px, 1fr);
-  gap: 36px;
-  align-items: center;
-  padding: 42px clamp(24px, 8vw, 140px) 52px;
-  border-top: 1px solid var(--line);
-  background: #ffffff;
-}
-
-.contact-footer p {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 18px;
-}
-
-.contact-footer div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 28px;
-  justify-content: flex-end;
-}

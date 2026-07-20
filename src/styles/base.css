@@ -103,11 +103,10 @@ body:has(button:hover) .custom-cursor {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: clamp(40px, 6vw, 86px);
+  gap: clamp(24px, 3.2vw, 52px);
 }
 
-.nav-links a,
-.contact-footer a {
+.nav-links a {
   color: #000000;
   font-family: var(--mono);
   font-size: 14px;
