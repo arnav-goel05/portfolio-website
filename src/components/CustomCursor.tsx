@@ -1,42 +1,38 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 export function CustomCursor() {
-  const [position, setPosition] = useState({ x: -40, y: -40 })
-  const [isActive, setIsActive] = useState(false)
+  const cursorRef = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
-    const moveCursor = (event: PointerEvent) => {
-      if (event.pointerType !== 'mouse') {
-        return
-      }
+    const cursor = cursorRef.current
+    const precisePointer = window.matchMedia('(hover: hover) and (pointer: fine)')
+    if (!cursor || !precisePointer.matches) return
 
-      setPosition({ x: event.clientX, y: event.clientY })
+    let frame = 0
+    let x = -40
+    let y = -40
+
+    const draw = () => {
+      cursor.style.transform = `translate3d(${x}px, ${y}px, 0)`
+      frame = 0
     }
-
-    const activate = (event: PointerEvent) => {
-      if (event.pointerType === 'mouse') {
-        setIsActive(true)
-      }
+    const move = (event: PointerEvent) => {
+      if (event.pointerType !== 'mouse') return
+      x = event.clientX
+      y = event.clientY
+      cursor.classList.add('is-active')
+      if (!frame) frame = requestAnimationFrame(draw)
     }
+    const hide = () => cursor.classList.remove('is-active')
 
-    const deactivate = () => setIsActive(false)
-
-    window.addEventListener('pointermove', moveCursor)
-    document.addEventListener('pointerover', activate)
-    document.addEventListener('pointerout', deactivate)
-
+    window.addEventListener('pointermove', move, { passive: true })
+    document.documentElement.addEventListener('pointerleave', hide)
     return () => {
-      window.removeEventListener('pointermove', moveCursor)
-      document.removeEventListener('pointerover', activate)
-      document.removeEventListener('pointerout', deactivate)
+      window.removeEventListener('pointermove', move)
+      document.documentElement.removeEventListener('pointerleave', hide)
+      if (frame) cancelAnimationFrame(frame)
     }
   }, [])
 
-  return (
-    <span
-      className={`custom-cursor ${isActive ? 'is-active' : ''}`}
-      style={{ transform: `translate3d(${position.x}px, ${position.y}px, 0)` }}
-      aria-hidden="true"
-    />
-  )
+  return <span ref={cursorRef} className="custom-cursor" aria-hidden="true" />
 }

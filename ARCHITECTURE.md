@@ -1,105 +1,47 @@
 # Portfolio Website Architecture
 
-This is a Vite + React + TypeScript portfolio site. Keep the app lightweight:
-prefer small page/components, static data modules, and CSS in the existing visual
-system over adding dependencies.
+This is a static Vite, React, and TypeScript portfolio deployed with Cloudflare Workers Static Assets. Keep
+it dependency-light: pages compose sections, components own reusable presentation, and data modules own
+portfolio content and asset metadata.
 
-## Top-Level Flow
+## Application flow
 
-- `src/main.tsx` mounts the React app.
-- `src/App.tsx` is intentionally small. It chooses between:
+- `src/main.tsx` mounts the app.
+- `src/App.tsx` normalizes the browser path, renders the shared cursor once, and selects:
   - `PortfolioPage` for `/`
-  - `AboutPage` for `/about`
-- Project information lives directly on the homepage; there are no individual
-  project routes. Routing remains path-based and dependency-free.
+  - `AboutPage` for `/about` and `/about/`
+  - `NotFoundPage` for every unknown path
+- Project information stays on the homepage; there are no individual project routes.
+- Cloudflare's single-page fallback serves direct route loads.
 
-## Source Layout
+## Ownership boundaries
 
-- `src/pages/`
-  - Page-level components. Pages own section order and page-specific layout.
-  - `PortfolioPage.tsx` renders the homepage as a selected-work index with
-    concise problem, contribution, outcome, stack, and link details.
-  - `AboutPage.tsx` renders the Yutong-inspired about/profile page with
-    project-based experience rows and skills.
-- `src/components/`
-  - Reusable UI shared across pages.
-  - `SiteNav.tsx` owns the common dot-brand navigation skeleton.
-  - `ProjectMedia.tsx` renders project images and optional inline video demos.
-  - `CustomCursor.tsx` owns the mouse-only custom cursor.
-  - `VisionProjectLaunch.tsx` is retained but no longer used by the active
-    project routes.
-- `src/lib/`
-  - Small framework and component-library helpers shared across reusable UI.
-  - `utils.ts` exports the `cn` class-name helper used by registry components.
-- `src/data/`
-  - Static portfolio content and asset-backed data.
-  - `about.ts` owns About-page profile copy, project rows, and skills.
-  - `portfolio.ts` owns concise homepage project content and external links;
-    keep claims tied to repo-backed or resume-backed evidence. Projects may
-    provide an optional video while retaining an image as its loading poster.
-  - Keep resume-backed content here when possible so page components stay
-    mostly presentational.
-- `src/assets/`
-  - Generated and static images used by the UI.
-  - Do not delete generated originals from `.codex/generated_images`; copy
-    selected assets into this folder.
-- `scripts/`
-  - Local asset-generation utilities.
-  - `generate_vision_transition.py` uses Python + Pillow to regenerate
-    `src/assets/vision-transition.webp` from existing Vision Pro assets.
-- `src/App.css`
-  - CSS import manifest only. Keep feature styles in `src/styles/`.
-- `src/styles/`
-  - `base.css` contains the page shell, dot navigation, custom cursor, and
-    shared reveal animation.
-  - `portfolio.css` contains the homepage hero, selected-work index, project
-    cards, and footer styles.
-  - `about.css` contains the standalone about page, contact links, expandable
-    project rows, portrait crop, and skills layout.
-  - `vision.css` contains the Vision Pro launch, hand-eye experience, and
-    related animation keyframes.
-  - `responsive.css` contains breakpoint and reduced-motion overrides. Keep it
-    imported last so overrides remain predictable.
-- `src/index.css`
-  - Global tokens, base typography, resets, and root styling.
+- `src/pages/`: page-level section order and composition only.
+- `src/components/`: reusable navigation, project card/media, and cursor behavior.
+- `src/data/portfolio.ts`: typed project records and production-media references.
+- `src/data/about.ts`: About profile, uniquely identified experiences, and skills.
+- `src/data/site.ts`: shared navigation and contact destinations.
+- `src/data/hero.ts`: decorative hero asset inventory and positioning tokens.
+- `src/styles/`: base, portfolio, About, and centralized responsive/reduced-motion rules.
+- `src/App.css`: import manifest only.
+- `scripts/audit-structure.mjs`: deterministic checks for architectural regressions.
 
-## Content Rules
+The project list is divided into reusable two-card visual rows. Each row uses CSS subgrid to align card
+sections, while automatic row construction supports odd counts and growth without index-specific CSS.
 
-- Use the resume as source of truth for claims, dates, roles, metrics, and
-  project outcomes.
-- Placeholder sections are allowed only when clearly marked.
-- Do not invent screenshots, clients, datasets, or extra metrics. Illustrative
-  visuals should feel explanatory, not like fabricated product evidence.
+## Media delivery
 
-## Visual System
+- Hero decoration uses WebP assets and is hidden from assistive technology.
+- Below-fold project images lazy-load and decode asynchronously.
+- Project video uses its still as a poster, attaches its source near the viewport, pauses outside it, loops
+  silently, and retains inline playback.
+- Generated source material and QA captures are not tracked; only production-ready assets belong in
+  `src/assets/`.
 
-- Reference-driven minimal portfolio system based on Yutong Wang's portfolio:
-  white background, black text, dot navigation, large whitespace, serif case
-  headings, compact mono metadata, pastel media panels, and sparse contact
-  footer.
-- Typography:
-  - Headings: Erode-like serif fallback stack via `--serif`
-  - Body/UI: Switzer/Inter-like fallback stack via `--sans`
-  - Metadata/UI: Fragment Mono-like stack via `--mono`
-- Keep motion subtle and respect readability. Avoid adding decorative animation
-  to the hero unless it supports the content.
+## Validation and deployment
 
-## Development Notes
-
-- The user prefers skipping build/lint checks unless explicitly requested.
-- The user asked to commit after every completed change.
-- Commit focused changes separately; avoid bundling unrelated visual and content
-  edits into one commit.
-- Motion Primitives and React Bits are source-copy component collections, not
-  monolithic runtime libraries. Both use the locally installed shadcn CLI so
-  generated files respect `components.json` and the `src/` architecture.
-- Add Motion Primitives with
-  `npm run ui:add:motion -- https://raw.githubusercontent.com/ibelick/motion-primitives/main/public/c/<component>.json`.
-  Add React Bits with
-  `npm run ui:add:react-bits -- @react-bits/<Component>-TS-CSS`.
-- Prefer React Bits' TypeScript + CSS variants so imported components follow the
-  existing CSS organization. Motion Primitives components require Tailwind;
-  Tailwind packages are installed but intentionally not activated globally to
-  avoid changing the current visual system before a component is selected.
-- Regenerate the hand-eye launch animation with
-  `npm run generate:vision-transition` if the Vision Pro source assets change.
+- `npm run check` runs the structure audit, lint, TypeScript compile, and production build.
+- `wrangler.jsonc` owns Worker routes, asset output, and SPA fallback behavior.
+- The site has no server-side data requirement; D1 and R2 must not be introduced without a specified need.
+- Spec Kit artifacts under `.specify/`, `.agents/skills/`, and `specs/` document governed changes and
+  convergence evidence.

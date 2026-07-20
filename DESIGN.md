@@ -1,59 +1,42 @@
-# DESIGN.md
+# Portfolio Design System
 
-## Visual Direction
+## Direction
 
-This portfolio uses a sparse, reference-driven system inspired by Yutong Wang's
-portfolio and the clear information hierarchy of Puzzle AI.
+The site uses a sparse, editorial portfolio system: white surfaces, black typography, thin grey dividers,
+large whitespace, restrained project media, and compact monospace navigation and metadata.
 
-## Style Preferences
+## Stable visual contract
 
-- Use a white background with very large whitespace.
-- Use black text and thin grey dividers.
-- Use pastel media panels for project imagery.
-- Use sparse dot navigation and compact uppercase links.
-- Give the fixed navigation a subtle translucent white surface with restrained
-  backdrop blur so page content remains softly visible beneath it while scrolling.
-- Keep the navigation compact, with approximately 25% less vertical height than
-  the original spacious header treatment.
-- Keep Work, About, Email, LinkedIn, and GitHub accessible from the shared navbar;
-  do not repeat them in a standalone page footer.
-- Keep layouts clean, airy, and reference-like rather than resume-like.
-- Keep Selected Work media cards full-width while using compact media heights
-  and restrained image scale.
-- Project recordings use optimized, muted inline playback and retain their
-  project image as a loading poster.
-- Align wide-screen project cards on shared content rows, using consistent
-  spacing for their media, copy, details, stack, and links.
-- Present projects in two-column rows on wide screens and stack all cards below
-  that breakpoint.
-- Avoid dark mode unless explicitly requested.
-- Avoid cluttered illustrations or decorative elements that compete with the content.
-- Keep animations subtle: left-to-right reveal, image scale on hover, and a
-  mouse-only custom cursor.
+- Keep the fixed navbar compact and frosted, with the retro computer mark plus Work, About, Email, LinkedIn,
+  and GitHub links.
+- Keep the centered hero statement, supporting line, location, and twelve project-derived stickers.
+- Present work in two-column rows on wide screens and a single column below the established breakpoint.
+- Align media, copy, details, stack, and link regions across cards in the same wide-screen row.
+- Keep project information on the homepage; do not add individual project pages or a duplicate footer.
+- Preserve compact media height and contained imagery with minimal grey gutter.
+- Avoid dark mode, dense dashboards, and decorative elements that compete with content unless requested.
 
 ## Typography
 
-- Headings use an Erode-like serif stack via `--serif`.
-- Body and UI text use a Switzer/Inter-like stack via `--sans`.
-- Metadata and navigation use Fragment Mono-like text via `--mono`.
-- Project-card details use compact mono labels and readable body copy so the
-  information remains scannable.
+- Headings use the local serif fallback stack in `--serif`.
+- Body and UI text use the local system sans stack in `--sans`.
+- Metadata and navigation use the local monospace stack in `--mono`.
+- The site intentionally makes no external font request.
 
-## CSS Organization
+## Interaction and accessibility
 
-- Keep shared tokens and base typography in `src/index.css`.
-- Keep `src/App.css` as an import manifest only.
-- Put feature-level visual rules in `src/styles/`.
-- Put responsive and reduced-motion overrides in `src/styles/responsive.css`.
+- Keep hover scale and link transitions subtle; do not add first-load or scroll reveal animations.
+- The custom cursor is mouse-only and must never replace normal focus, touch, or coarse-pointer behavior.
+- Respect reduced-motion preferences.
+- Maintain one primary heading per page, visible keyboard focus, labeled controls, and meaningful media text.
 
-## Content Presentation
+## CSS organization
 
-- Keep project information on the homepage. Each card should quickly communicate
-  the overview, problem, contribution, outcome, tools, and links.
-- Keep the About page aligned to Yutong Wang's About flow: compact red section
-  labels, large Switzer-like paragraphs, a right-side portrait, underlined
-  contact links, thin bordered expandable rows, and a simple two-column skills
-  list.
-- Prefer clear sections, concise copy, and a small number of strong visuals.
-- Use explicit placeholders when real project evidence is unavailable.
-- Do not make pages feel like dense reports or dashboards unless explicitly requested.
+- Shared tokens and resets: `src/index.css`
+- Shell, navigation, cursor, and not-found page: `src/styles/base.css`
+- Hero and project index: `src/styles/portfolio.css`
+- About page: `src/styles/about.css`
+- Breakpoints and reduced-motion overrides: `src/styles/responsive.css`
+- Import order only: `src/App.css`
+
+Update this document whenever a requested change alters the visual or interaction contract.

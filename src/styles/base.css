@@ -79,15 +79,6 @@ body:has(button:hover) .custom-cursor {
   text-decoration: none;
 }
 
-.brand span {
-  display: block;
-  width: 16px;
-  height: 16px;
-  border-radius: 999px;
-  background: #000000;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.55);
-}
-
 .brand img {
   display: block;
   width: 42px;
@@ -114,9 +105,6 @@ body:has(button:hover) .custom-cursor {
   line-height: 1;
   text-decoration: none;
   text-transform: uppercase;
-}
-
-.nav-links a {
   transition:
     opacity 180ms ease,
     transform 180ms ease;
@@ -125,4 +113,34 @@ body:has(button:hover) .custom-cursor {
 .nav-links a:hover {
   opacity: 0.55;
   transform: translateY(-2px);
+}
+
+.not-found-page section {
+  display: grid;
+  min-height: 100svh;
+  place-content: center;
+  justify-items: center;
+  gap: 18px;
+  padding: 120px 24px 60px;
+  text-align: center;
+}
+
+.not-found-code {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+
+.not-found-page h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(42px, 6vw, 86px);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.not-found-page section a {
+  color: var(--ink);
+  font-family: var(--mono);
+  text-underline-offset: 5px;
 }

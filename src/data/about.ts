@@ -1,4 +1,4 @@
-import heroArnav from '../assets/hero-arnav.png'
+import heroArnav from '../assets/hero-arnav.webp'
 
 export const aboutProfile = {
   image: heroArnav,
@@ -11,32 +11,12 @@ export const aboutProfile = {
 
 export const aboutRows = [
   {
+    id: 'nuh-rehabilitation',
     title: 'Interactive 3D / NUH Rehabilitation',
     role: 'Software Engineer Intern',
     date: 'May 2025 - Present',
     detail:
       'Developing a Vision Pro rehabilitation assessment tool with SwiftUI, ARKit, RealityKit, and Python analysis for hand-eye coordination measurement.',
-  },
-  {
-    title: 'Company Placeholder',
-    role: 'Role Placeholder',
-    date: 'Dates TBD',
-    detail:
-      'Placeholder for a work experience entry. Replace with company, title, dates, and one grounded sentence about the work.',
-  },
-  {
-    title: 'Company Placeholder',
-    role: 'Role Placeholder',
-    date: 'Dates TBD',
-    detail:
-      'Placeholder for a second work experience entry. Keep the description specific once the real role is available.',
-  },
-  {
-    title: 'Company Placeholder',
-    role: 'Role Placeholder',
-    date: 'Dates TBD',
-    detail:
-      'Placeholder for an additional work experience entry, matching the source page rhythm without inventing employment history.',
   },
 ]
 

@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# Arnav Goel Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight React and TypeScript portfolio for selected product, applied-AI, and spatial-computing work.
+Project case studies live on the homepage; the site also includes an About page and explicit not-found state.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Requirements: Node.js 22 or newer and npm.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm ci
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Vite prints the available local URL. To use a fixed port:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev -- --host 127.0.0.1 --port 4174
 ```
+
+## Validation
+
+```bash
+npm run check
+```
+
+This runs the repository structure audit, ESLint, TypeScript compilation, and a production Vite build.
+
+## Content and structure
+
+- Project case studies: `src/data/portfolio.ts`
+- About content: `src/data/about.ts`
+- Shared site links: `src/data/site.ts`
+- Hero sticker configuration: `src/data/hero.ts`
+- Reusable interface: `src/components/`
+- Page composition: `src/pages/`
+- Visual rules: `src/styles/`
+
+Read `ARCHITECTURE.md`, `DESIGN.md`, and `AGENTS.md` before changing structure or visuals.
+
+## Deployment
+
+The site deploys as static assets on Cloudflare Workers. `wrangler.jsonc` contains the Worker name, custom
+domains, asset directory, and single-page fallback. No D1 database or R2 bucket is required.
+
+```bash
+npm run deploy
+```
+
+Use `npx wrangler deploy --dry-run` to validate the bundle without publishing.

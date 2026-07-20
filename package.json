@@ -6,23 +6,19 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "generate:vision-transition": "python scripts/generate_vision_transition.py",
+    "audit:structure": "node scripts/audit-structure.mjs",
+    "check": "npm run audit:structure && npm run lint && npm run build",
+    "deploy": "npm run build && wrangler deploy",
+    "deploy:preview": "npm run build && wrangler dev",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "ui:add:motion": "shadcn add",
-    "ui:add:react-bits": "shadcn add"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "clsx": "^2.1.1",
-    "lucide-react": "^1.25.0",
-    "motion": "^12.42.2",
     "react": "^19.2.6",
-    "react-dom": "^19.2.6",
-    "tailwind-merge": "^3.6.0"
+    "react-dom": "^19.2.6"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^24.12.3",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
@@ -31,10 +27,9 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.6.0",
-    "shadcn": "^4.13.1",
-    "tailwindcss": "^4.3.3",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.59.2",
-    "vite": "^8.0.12"
+    "vite": "^8.0.12",
+    "wrangler": "^4.112.0"
   }
 }

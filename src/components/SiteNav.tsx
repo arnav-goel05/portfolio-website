@@ -1,14 +1,9 @@
-import oldMacLogoNoDot from '../assets/old-mac-logo-no-dot.png'
-import { contactLinks } from '../data/portfolio'
+import oldMacLogoNoDot from '../assets/old-mac-logo-no-dot.webp'
+import { contactLinks, pageLinks } from '../data/site'
 
 type SiteNavProps = {
   ariaLabel: string
 }
-
-const pageLinks = [
-  { href: '/#work', label: 'Work' },
-  { href: '/about', label: 'About' },
-]
 
 const links = [...pageLinks, ...contactLinks]
 

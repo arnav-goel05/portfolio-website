@@ -1,5 +1,9 @@
 @media (max-width: 1380px) {
   .work-list {
+    gap: 48px;
+  }
+
+  .work-row {
     grid-template-columns: 1fr;
     grid-template-rows: none;
     gap: 48px;
@@ -8,13 +12,6 @@
   .work-card {
     display: block;
     grid-row: auto;
-  }
-
-  .work-card:nth-child(3),
-  .work-card:nth-child(4) {
-    grid-column: auto;
-    grid-row: auto;
-    margin-top: 0;
   }
 
   .work-details {
@@ -246,7 +243,7 @@
     margin-bottom: 30px;
   }
 
-  .work-heading h1 {
+  .work-heading h2 {
     font-size: 38px;
   }
 
@@ -258,7 +255,7 @@
     width: min(78%, 280px);
   }
 
-  .work-copy h2 {
+  .work-copy h3 {
     font-size: 26px;
   }
 
@@ -273,6 +270,18 @@
     gap: 14px;
   }
 
+}
+
+@media (hover: none), (pointer: coarse) {
+  body,
+  a,
+  button {
+    cursor: auto;
+  }
+
+  .custom-cursor {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

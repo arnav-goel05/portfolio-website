@@ -1,8 +1,8 @@
 import tribeBrainResponseAnimation from '../assets/tribe-brain-response-animation.gif'
 import ambleMapFeatureTour from '../assets/amble-map-feature-tour.jpg'
 import ambleDemoVideo from '../assets/amble-demo.mp4'
-import visionProHandAssessment from '../assets/vision-pro-hand-assessment.png'
-import procurePilotWorkspace from '../assets/procurepilot-workspace.png'
+import visionProHandAssessment from '../assets/vision-pro-hand-assessment.webp'
+import procurePilotWorkspace from '../assets/procurepilot-workspace.webp'
 
 type ProjectLink = {
   label: string
@@ -110,10 +110,4 @@ export const projects: Project[] = [
       },
     ],
   },
-]
-
-export const contactLinks = [
-  { label: 'Email', href: 'mailto:arnav.goel@u.nus.edu' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/arnav--goel/' },
-  { label: 'GitHub', href: 'https://github.com/arnav-goel05' },
 ]

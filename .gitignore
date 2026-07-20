@@ -10,7 +10,16 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+.wrangler
 *.local
+.env
+.env.*
+!.env.example
+
+# Local design and QA output
+outputs/
+.qa/
+tmp/
 
 # Editor directories and files
 .vscode/*
