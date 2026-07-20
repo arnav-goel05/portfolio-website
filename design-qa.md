@@ -1,56 +1,46 @@
-# Navbar Design QA
+# Design QA: Selected Work media frames
 
-- Source visual truth: `/var/folders/kt/mjsyky8537n9z1rtwl34g_l00000gn/T/TemporaryItems/NSIRD_screencaptureui_nTTciJ/Screenshot 2026-07-20 at 2.55.30 AM.png`
-- Implementation screenshots:
-  - `/Users/arnav/Desktop/projects/portfolio/.qa/navbar-home.png`
-  - `/Users/arnav/Desktop/projects/portfolio/.qa/navbar-about.png`
-  - `/Users/arnav/Desktop/projects/portfolio/.qa/navbar-project.png`
-- Reference crop: 2748 × 136
-- Implementation viewport/crop: 2048 × 900, top 2048 × 101 navbar crop
-- State: desktop, top of home/About/project routes
-
-## Findings
-
-No actionable P0/P1/P2 navbar differences remain. All routes render the same shared navbar component with the same Mac logo asset, `WORK` and `ABOUT` labels, link order, font treatment, white page background, and fixed positioning.
-
-## Required fidelity surfaces
-
-- Fonts and typography: every route uses the same 14px Fragment Mono stack, weight, line height, uppercase treatment, and black foreground.
-- Spacing and layout rhythm: measured navbar, logo, and link rectangles are identical across all three routes at the comparison viewport.
-- Colors and visual tokens: the existing transparent navbar, white page surface, and black link styling are unchanged.
-- Image quality and asset fidelity: every route uses the supplied `old-mac-logo-no-dot.png` asset; no replacement or approximation was introduced.
-- Copy and content: every route shows the same `WORK` and `ABOUT` labels and destinations.
+- Source visual truth: `/var/folders/kt/mjsyky8537n9z1rtwl34g_l00000gn/T/TemporaryItems/NSIRD_screencaptureui_e1DHqr/Screenshot 2026-07-20 at 3.31.17 PM.png`
+- Implementation screenshot: `/tmp/portfolio-media-after-full.png`
+- Combined comparison: `/tmp/portfolio-media-comparison-final.png`
+- Viewport: desktop layout evaluated at 2642 × 900 CSS pixels; responsive checks also run at 1280 × 720 and 390 × 844.
+- State: homepage Selected Work section with the first two project cards visible and the Amble recording loaded.
 
 ## Full-view comparison evidence
 
-The reference is itself a navbar-only crop, so each implementation screenshot captures the same full target region. The three implementation crops were reviewed together with the source image. Their responsive aspect ratio and visible composition are consistent with the supplied reference, while retaining the project's existing navbar styling exactly as requested.
+The supplied screenshot showed both project assets centered inside large grey panels. The revised desktop capture keeps the same two-column card structure and reduces the visible grey treatment to an 8 px frame around a white media canvas. Card headings and detail rows remain aligned.
 
 ## Focused region comparison evidence
 
-The navbar crop is also the focused comparison region. Browser measurements confirm identical post-fix geometry on every route: 42 × 42 logo element at `(68, 36)`, `WORK` at `(1818.13, 50)`, and `ABOUT` at `(1937.85, 50)` in the 2048px viewport.
+The combined comparison isolates the project media treatment. The TRIBE animation and Amble recording remain fully contained without cropping, while each media element now occupies the complete inner canvas. A focused comparison was necessary because the requested change concerned the frame and asset scale rather than the rest of the page.
+
+## Fidelity surfaces
+
+- Fonts and typography: unchanged from the existing portfolio system; headings, summaries, and detail labels retain their previous sizes, weights, and wrapping.
+- Spacing and layout rhythm: grey space is reduced to an 8 px frame, media height is reduced from 420 px to 360 px at wide desktop widths, and the shared card rows remain aligned.
+- Colors and visual tokens: the existing `#f8f8f8` grey is retained only as the narrow outer frame; the inner media canvas is white.
+- Image quality and asset fidelity: original image, GIF, and video assets are reused with `object-fit: contain`; no asset is stretched or cropped.
+- Copy and content: unchanged.
 
 ## Comparison history
 
-- Earlier finding: About and project pages omitted the Mac logo asset and rendered the component's fallback mark instead.
-- Fix: moved the existing Mac logo and canonical links into the shared `SiteNav` component and removed route-level visual variants.
-- Post-fix evidence: home, About, and project screenshots show the same navbar; measured element geometry and logo source are identical across routes.
+1. First pass exposed a P1 crop issue because percentage height resolved against the replaced media element rather than the fixed frame. Fixed by absolutely positioning media inside the frame with explicit 8 px insets.
+2. Mobile verification exposed a P2 width override that kept images narrower than video. Fixed by applying the same full-canvas width rule to both images and video below 620 px.
+3. Post-fix desktop and mobile measurements confirmed consistent insets, no horizontal overflow, and aligned card media.
 
 ## Interaction and runtime checks
 
-- `ABOUT` navigates from the project page to `/about`.
-- `WORK` navigates from About to `/#work`.
-- Browser console checked. Existing duplicate-key warnings originate from About-page content and are unrelated to the navbar-only change.
+- Amble video reached ready state 4 with no media error.
+- Desktop two-column, default single-column, and 390 px mobile layouts were checked.
+- Mobile document width matched the 390 px viewport with no horizontal overflow.
+- Browser console contained no errors or warnings.
 
-## Implementation checklist
+## Findings
 
-- [x] One canonical navbar implementation
-- [x] Same logo and links on every route
-- [x] Existing navbar styling preserved
-- [x] Navigation links tested
-- [x] Build and lint pass
+No actionable P0, P1, or P2 differences remain for the requested media-frame change.
 
 ## Follow-up polish
 
-None required for the requested navbar consistency change.
+None required for this scoped change.
 
 final result: passed

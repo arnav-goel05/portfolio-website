@@ -17,7 +17,7 @@ portfolio and the clear information hierarchy of Puzzle AI.
   the original spacious header treatment.
 - Keep layouts clean, airy, and reference-like rather than resume-like.
 - Keep Selected Work media cards full-width while using compact media heights
-  and restrained image scale.
+  and a narrow grey frame around a full-size white media canvas.
 - Project recordings use optimized, muted inline playback and retain their
   project image as a loading poster.
 - Align wide-screen project cards on shared content rows, using consistent
