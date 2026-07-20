@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from 'react'
-
 type ProjectMediaProps = {
   image: string
   title: string
@@ -7,41 +5,28 @@ type ProjectMediaProps = {
 }
 
 export function ProjectMedia({ image, title, video }: ProjectMediaProps) {
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const [isNearViewport, setIsNearViewport] = useState(false)
-
-  useEffect(() => {
-    if (!video || !videoRef.current) return
-
-    const element = videoRef.current
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsNearViewport(entry.isIntersecting)
-        if (entry.isIntersecting) {
-          void element.play().catch(() => undefined)
-        } else {
-          element.pause()
-        }
-      },
-      { rootMargin: '240px 0px' },
-    )
-
-    observer.observe(element)
-    return () => observer.disconnect()
-  }, [video])
-
   if (video) {
     return (
       <video
-        ref={videoRef}
-        src={isNearViewport ? video : undefined}
+        src={video}
         poster={image}
         aria-hidden="true"
         autoPlay
+        controls={false}
+        controlsList="nodownload nofullscreen noplaybackrate"
+        disablePictureInPicture
         loop
         muted
         playsInline
-        preload="none"
+        preload="auto"
+        tabIndex={-1}
+        onCanPlay={(event) => {
+          event.currentTarget.muted = true
+          void event.currentTarget.play().catch(() => undefined)
+        }}
+        onPause={(event) => {
+          if (!document.hidden) void event.currentTarget.play().catch(() => undefined)
+        }}
       />
     )
   }

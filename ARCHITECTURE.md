@@ -35,8 +35,8 @@ sections, while automatic row construction supports odd counts and growth withou
 
 - Hero decoration uses WebP assets and is hidden from assistive technology.
 - Below-fold project images lazy-load and decode asynchronously.
-- Project video uses its still as a poster, attaches its source near the viewport, pauses outside it, loops
-  silently, and retains inline playback.
+- Project video uses its still as a loading poster, loads with the card, autoplays silently, loops
+  continuously, retains inline playback, and exposes no playback controls or pointer interaction.
 - Generated source material and QA captures are not tracked; only production-ready assets belong in
   `src/assets/`.
 

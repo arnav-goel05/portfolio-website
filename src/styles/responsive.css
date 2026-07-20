@@ -150,9 +150,12 @@
     display: block;
   }
 
-  .hero-location {
+  .hero-status {
     max-width: 340px;
     margin-inline: auto;
+  }
+
+  .hero-status p {
     font-size: 16px;
   }
 
