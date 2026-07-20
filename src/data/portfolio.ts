@@ -3,6 +3,8 @@ import ambleMapFeatureTour from '../assets/amble-map-feature-tour.jpg'
 import ambleDemoVideo from '../assets/amble-demo.mp4'
 import visionProHandAssessment from '../assets/vision-pro-hand-assessment.webp'
 import procurePilotWorkspace from '../assets/procurepilot-workspace.webp'
+import bartGecPipeline from '../assets/bart-gec-pipeline.svg'
+import currencyAccessibilityScan from '../assets/stickers-v2/currency-accessibility-scan.webp'
 
 type ProjectLink = {
   label: string
@@ -12,6 +14,7 @@ type ProjectLink = {
 export type Project = {
   slug: string
   title: string
+  status?: string
   summary: string
   problem: string
   contribution: string
@@ -46,6 +49,7 @@ export const projects: Project[] = [
   {
     slug: 'amble',
     title: 'Amble: Explore Singapore in 3D',
+    status: 'Updated weekly',
     summary:
       'A cloud native 3D discovery platform that brings Singapore’s events, restaurants, landmarks, and route planning into one spatial experience.',
     problem:
@@ -100,6 +104,7 @@ export const projects: Project[] = [
   {
     slug: 'procurepilot',
     title: 'ProcurePilot: AI-Assisted F&B Procurement',
+    status: 'Updated weekly',
     summary:
       'A Telegram-first procurement platform that connects staff requests, supplier communication, document intelligence, delivery checks, and owner approvals in one auditable workflow.',
     problem:
@@ -129,5 +134,54 @@ export const projects: Project[] = [
         href: 'https://procurepilot.project-hub-arnav.workers.dev',
       },
     ],
+  },
+  {
+    slug: 'bart-grammatical-error-correction',
+    title: 'BART Grammatical Error Correction',
+    summary:
+      'A transformer based grammatical error correction study investigating how model capacity and training strategy affect the precision and reliability of automated writing corrections.',
+    problem:
+      'Grammatical error correction must recognise diverse grammar, spelling, and punctuation mistakes without introducing unnecessary edits. Limited high quality annotated data makes this especially difficult, raising an important question: should models learn from every available dataset at once, or progressively specialise on cleaner corrections?',
+    contribution:
+      'Developed the BART experimentation pipeline for the study, implementing both single stage and two stage fine tuning for BART Base and BART Large. The two stage curriculum first adapted each model on the large Lang-8 learner corpus before specialising it on the higher quality NUCLE, FCE, and W&I+LOCNESS datasets. Configured dropout, learning rate scheduling, gradient accumulation, checkpointing, early stopping, beam search inference, and ERRANT based model selection; ran the training workloads on the NUS GPU cluster and built the evaluation workflow for BEA-2019 and CoNLL-2014.',
+    outcome:
+      'The ablation revealed that training strategy depended strongly on model capacity. Single stage and two stage BART Base produced nearly identical F0.5 scores of 63.56 and 63.54, while two stage specialisation improved BART Large from 60.04 to 67.20, a 7.16 point gain. The findings showed that a more complex training curriculum was valuable for the larger model but unnecessary for its smaller counterpart.',
+    tools: [
+      'Python',
+      'PyTorch',
+      'Hugging Face Transformers',
+      'BART',
+      'CUDA',
+      'SLURM',
+      'ERRANT',
+      'M2Scorer',
+    ],
+    image: bartGecPipeline,
+    links: [],
+  },
+  {
+    slug: 'on-device-low-vision-assistant',
+    title: 'On-Device Low Vision Assistant',
+    summary:
+      'A private and accessible iPhone assistant that identifies Singapore banknotes and helps people with low vision read and operate supported microwave displays without cloud processing.',
+    problem:
+      'Everyday tasks such as distinguishing banknotes or reading appliance displays can require sighted assistance. Cloud vision introduces privacy and connectivity constraints, while generic recognition systems do not provide the confidence aware, step by step guidance needed for safe independent use.',
+    contribution:
+      'Built two isolated camera experiences in SwiftUI: Core ML recognition for five Singapore banknote denominations and an Apple Vision pipeline for microwave model labels, display text, panel localisation, and deterministic appliance guidance. Added English and Mandarin speech, VoiceOver support, scalable text, voice commands, confidence gated results, local SwiftData history, strict camera and microphone lifecycle controls, and automated unit, UI, accessibility, privacy, and performance tests.',
+    outcome:
+      'Delivered a fully on-device research prototype evaluated with 12 independently captured banknote photographs, with recognition data and history remaining on the iPhone. The microwave assistant includes profiles for two supported COMFEE models and 19 reviewed function graphs, while uncertain, conflicting, or unsupported evidence fails closed with a clear recovery action.',
+    tools: [
+      'Swift',
+      'SwiftUI',
+      'Core ML',
+      'Apple Vision',
+      'AVFoundation',
+      'AVSpeechSynthesizer',
+      'SwiftData',
+      'XCTest',
+      'Python',
+    ],
+    image: currencyAccessibilityScan,
+    links: [],
   },
 ]

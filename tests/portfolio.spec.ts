@@ -5,6 +5,8 @@ const projectTitles = [
   'Amble: Explore Singapore in 3D',
   'Vision Pro Hand Dexterity Assessment',
   'ProcurePilot: AI-Assisted F&B Procurement',
+  'BART Grammatical Error Correction',
+  'On-Device Low Vision Assistant',
 ]
 
 function collectConsoleErrors(page: Page) {
