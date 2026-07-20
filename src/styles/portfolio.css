@@ -216,11 +216,20 @@
   animation-delay: 130ms;
 }
 
-.work-card:nth-child(3) {
-  grid-column: 1;
+.work-card:nth-child(3),
+.work-card:nth-child(4) {
   grid-row: 7 / span 6;
   margin-top: clamp(44px, 5vw, 70px);
   animation-delay: 260ms;
+}
+
+.work-card:nth-child(3) {
+  grid-column: 1;
+}
+
+.work-card:nth-child(4) {
+  grid-column: 2;
+  animation-delay: 390ms;
 }
 
 .work-media {

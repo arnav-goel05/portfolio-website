@@ -22,8 +22,8 @@ portfolio and the clear information hierarchy of Puzzle AI.
   project image as a loading poster.
 - Align wide-screen project cards on shared content rows, using consistent
   spacing for their media, copy, details, stack, and links.
-- Present the first two projects side by side on wide screens and start the third
-  project on a new row at the same card width; stack all cards below that breakpoint.
+- Present projects in two-column rows on wide screens and stack all cards below
+  that breakpoint.
 - Avoid dark mode unless explicitly requested.
 - Avoid cluttered illustrations or decorative elements that compete with the content.
 - Keep animations subtle: left-to-right reveal, image scale on hover, and a

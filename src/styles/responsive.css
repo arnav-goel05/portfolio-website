@@ -10,7 +10,8 @@
     grid-row: auto;
   }
 
-  .work-card:nth-child(3) {
+  .work-card:nth-child(3),
+  .work-card:nth-child(4) {
     grid-column: auto;
     grid-row: auto;
     margin-top: 0;

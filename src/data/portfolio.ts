@@ -2,6 +2,7 @@ import tribeBrainResponseAnimation from '../assets/tribe-brain-response-animatio
 import ambleMapFeatureTour from '../assets/amble-map-feature-tour.jpg'
 import ambleDemoVideo from '../assets/amble-demo.mp4'
 import visionProHandAssessment from '../assets/vision-pro-hand-assessment.png'
+import procurePilotWorkspace from '../assets/procurepilot-workspace.png'
 
 type ProjectLink = {
   label: string
@@ -75,6 +76,39 @@ export const projects: Project[] = [
     tools: ['Swift', 'SwiftUI', 'ARKit', 'RealityKit', 'visionOS', 'Python', 'Pandas', 'Matplotlib'],
     image: visionProHandAssessment,
     links: [],
+  },
+  {
+    slug: 'procurepilot',
+    title: 'ProcurePilot: AI-Assisted F&B Procurement',
+    summary:
+      'A Telegram-first procurement platform that connects staff requests, supplier communication, document intelligence, delivery checks, and owner approvals in one auditable workflow.',
+    problem:
+      'Procurement in small F&B teams often happens across chat messages, supplier emails, spreadsheets, and verbal updates. Requests are easy to lose, changes are difficult to trace, and invoice or delivery mismatches may only surface when payment is due. Automating this process introduces another risk: allowing AI to make decisions with financial consequences.',
+    contribution:
+      'Built ProcurePilot end to end as a multi-tenant procurement system. Staff submit and confirm stock needs through Telegram, suppliers continue communicating through Gmail, and owners manage requests, exceptions, evidence, and approvals from a web workspace. Added AI-assisted document extraction with confidence and provenance, deterministic checks for pricing, GST, quantities, deliveries, and duplicate invoices, bounded supplier negotiation, durable background processing, tenant isolation, and a complete audit trail.',
+    outcome:
+      'Deployed a live Cloudflare demo and validated connected Telegram and Gmail workflows, structured invoice extraction, and Stripe test-payment reconciliation. The system keeps every financially meaningful action under explicit owner control while making the surrounding procurement work faster, traceable, and resilient to retries or provider failures.',
+    tools: [
+      'Next.js',
+      'TypeScript',
+      'PostgreSQL',
+      'Drizzle',
+      'Telegram Bot API',
+      'Gmail API',
+      'OpenAI',
+      'Stripe',
+      'Cloudflare Workers',
+      'Queues',
+      'R2',
+      'Hyperdrive',
+    ],
+    image: procurePilotWorkspace,
+    links: [
+      {
+        label: 'Visit ProcurePilot',
+        href: 'https://procurepilot.project-hub-arnav.workers.dev',
+      },
+    ],
   },
 ]
 
