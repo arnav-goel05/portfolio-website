@@ -22,6 +22,8 @@ portfolio content and asset metadata.
 - `src/data/about.ts`: About profile, uniquely identified experiences, and skills.
 - `src/data/site.ts`: shared navigation and contact destinations.
 - `src/data/hero.ts`: decorative hero asset inventory and positioning tokens.
+- `src/lib/routes.ts`: framework-independent browser-path normalization.
+- `src/lib/collections.ts`: generic project-row chunking with input validation.
 - `src/styles/`: base, portfolio, About, and centralized responsive/reduced-motion rules.
 - `src/App.css`: import manifest only.
 - `scripts/audit-structure.mjs`: deterministic checks for architectural regressions.
@@ -40,8 +42,27 @@ sections, while automatic row construction supports odd counts and growth withou
 
 ## Validation and deployment
 
-- `npm run check` runs the structure audit, lint, TypeScript compile, and production build.
+- `npm run check:quality` runs formatting, the structure audit, lint, unit tests, TypeScript compile, and the
+  production build. `npm run check:ci` adds a Wrangler deployment dry run.
+- Vitest tests colocated in `src/lib/` cover framework-independent utilities and static-data invariants.
+- Playwright journeys in `tests/` run in Chromium and WebKit against `dist/` served by `wrangler dev`, so
+  Cloudflare SPA fallback and trailing-slash behavior are part of functional validation.
+- `scripts/check-site.mjs` owns the one-request, 15-second, status-and-title availability decision reused by
+  production smoke checks and recurring uptime monitoring.
 - `wrangler.jsonc` owns Worker routes, asset output, and SPA fallback behavior.
 - The site has no server-side data requirement; D1 and R2 must not be introduced without a specified need.
 - Spec Kit artifacts under `.specify/`, `.agents/skills/`, and `specs/` document governed changes and
   convergence evidence.
+
+## Delivery ownership
+
+- `.github/workflows/ci.yml` owns read-only pull-request and protected-branch validation. Stable job names
+  `quality` and `e2e` gate both branches; `release-source` additionally gates production PRs.
+- `.github/workflows/uptime.yml` is the only workflow with issue-write permission. It maintains one quiet
+  outage issue across a single-request failure and subsequent recovery.
+- `develop` is the integration branch. `master` remains the default, stable, and production branch.
+- Feature branches target `develop`; production releases are manually opened from `develop` to `master`.
+- Cloudflare Workers Builds owns branch previews and production deployments. Non-production branches upload
+  versions; only `master` deploys the canonical routes and runs the production smoke command.
+- The deployment remains one static asset Worker with no D1, R2, queues, secrets, snapshot preparation, or
+  staging Worker.

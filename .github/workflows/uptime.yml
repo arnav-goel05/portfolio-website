@@ -1,0 +1,76 @@
+name: Production uptime
+
+on:
+  schedule:
+    - cron: '3/5 * * * *'
+  workflow_dispatch:
+    inputs:
+      url:
+        description: URL to check for lifecycle validation
+        required: false
+        default: https://arnav-goel.com/
+        type: string
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: production-uptime
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      TARGET_URL: ${{ github.event.inputs.url || 'https://arnav-goel.com/' }}
+      GH_TOKEN: ${{ github.token }}
+      ISSUE_TITLE: '[Uptime] arnav-goel.com is unavailable'
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Make one availability request
+        id: availability
+        continue-on-error: true
+        run: node scripts/check-site.mjs "$TARGET_URL"
+
+      - name: Reconcile the outage issue
+        env:
+          CHECK_OUTCOME: ${{ steps.availability.outcome }}
+        run: |
+          issue_number="$(
+            gh issue list \
+              --repo "$GITHUB_REPOSITORY" \
+              --state open \
+              --label uptime \
+              --limit 100 \
+              --json number,title \
+              --jq '.[] | select(.title == "[Uptime] arnav-goel.com is unavailable") | .number' \
+              | head -n 1
+          )"
+
+          if [ "$CHECK_OUTCOME" = "failure" ]; then
+            if [ -z "$issue_number" ]; then
+              gh issue create \
+                --repo "$GITHUB_REPOSITORY" \
+                --title "$ISSUE_TITLE" \
+                --label uptime \
+                --body "The single-request availability check failed for $TARGET_URL. Review this workflow run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            fi
+            exit 1
+          fi
+
+          if [ -n "$issue_number" ]; then
+            gh issue comment "$issue_number" \
+              --repo "$GITHUB_REPOSITORY" \
+              --body "Recovery confirmed by one successful request to $TARGET_URL. Workflow run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            gh issue close "$issue_number" \
+              --repo "$GITHUB_REPOSITORY" \
+              --reason completed
+          fi

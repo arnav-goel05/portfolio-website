@@ -7,11 +7,21 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "audit:structure": "node scripts/audit-structure.mjs",
-    "check": "npm run audit:structure && npm run lint && npm run build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test:unit": "vitest run src",
+    "test:e2e": "playwright test",
+    "test": "npm run test:unit && npm run test:e2e",
+    "check": "npm run check:quality",
+    "check:quality": "npm run format:check && npm run audit:structure && npm run lint && npm run test:unit && npm run build",
+    "check:ci": "npm run check:quality && wrangler deploy --dry-run",
     "deploy": "npm run build && wrangler deploy",
-    "deploy:preview": "npm run build && wrangler dev",
+    "deploy:ci": "wrangler deploy && npm run smoke:production",
+    "deploy:preview": "npm run build && npm run preview:worker",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "preview:worker": "wrangler dev --local --port 8787",
+    "smoke:production": "node scripts/check-site.mjs https://arnav-goel.com/"
   },
   "dependencies": {
     "react": "^19.2.6",
@@ -19,6 +29,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.61.1",
     "@types/node": "^24.12.3",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
@@ -27,9 +38,11 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.6.0",
+    "prettier": "^3.9.5",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.59.2",
     "vite": "^8.0.12",
+    "vitest": "^4.1.10",
     "wrangler": "^4.112.0"
   }
 }
