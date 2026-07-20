@@ -1,7 +1,7 @@
 import tribeBrainResponseAnimation from '../assets/tribe-brain-response-animation.gif'
 import ambleMapFeatureTour from '../assets/amble-map-feature-tour.jpg'
 import ambleDemoVideo from '../assets/amble-demo.mp4'
-import spatialHeadset from '../assets/spatial-headset.png'
+import visionProHandAssessment from '../assets/vision-pro-hand-assessment.png'
 
 type ProjectLink = {
   label: string
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     outcome:
       'Advanced the system into clinical trials with NUH, creating a repeatable assessment and analysis workflow for evaluating fine motor control. The underlying method is patent pending, with a research paper currently in preparation.',
     tools: ['Swift', 'SwiftUI', 'ARKit', 'RealityKit', 'visionOS', 'Python', 'Pandas', 'Matplotlib'],
-    image: spatialHeadset,
+    image: visionProHandAssessment,
     links: [
       {
         label: 'View source',

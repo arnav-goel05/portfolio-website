@@ -1,40 +1,41 @@
-# Design QA: Project highlight removal
+# Design QA: Vision Pro project image
 
-- Source visual truth: `/var/folders/kt/mjsyky8537n9z1rtwl34g_l00000gn/T/TemporaryItems/NSIRD_screencaptureui_IjZzc1/Screenshot 2026-07-20 at 3.42.13 PM.png`
-- Implementation screenshot: `/tmp/portfolio-highlights-removed.png`
-- Combined comparison: `/tmp/portfolio-highlights-removal-comparison.png`
-- Viewports: 1280 × 720 desktop and 390 × 844 mobile.
-- State: homepage project cards with the details, stack, and source links visible.
+- Source visual truth: `/var/folders/kt/mjsyky8537n9z1rtwl34g_l00000gn/T/codex-clipboard-ad3113ca-ee68-4fdf-a909-a703cd15e220.png`
+- Implementation screenshot: `/tmp/avp-card-render.png`
+- Combined comparison: `/tmp/avp-source-vs-implementation.png`
+- Viewport: 1280 × 720
+- State: homepage, Vision Pro project card scrolled into view
 
 ## Full-view comparison evidence
 
-The source identifies the bordered project highlight tiles as the removal target. The implementation capture shows the card flowing directly from Problem, Built, and Outcome into Built With and the project links, with no remaining highlight grid.
+The selected image is present in the correct project card and retains the source composition: the hand remains visible at the left endpoint, the white headset stays centered, both spatial traces remain legible, and no part of the visual is cropped. The existing portfolio media panel adds light grey side gutters at this viewport because project imagery is intentionally constrained to a maximum width.
 
 ## Focused region comparison evidence
 
-The combined comparison places the removed tile section above the revised card transition. The implementation retains an 18 px gap between the details block and Built With, so the removal does not leave a collapsed or oversized blank area.
+A separate element capture was not required because the project media region is fully visible and large enough to inspect in the implementation screenshot. Browser measurements confirmed a loaded 1798 × 875 source rendered with `object-fit: contain`, a 650 × 270 image box, and zero horizontal overflow.
 
-## Fidelity surfaces
+## Required fidelity surfaces
 
-- Fonts and typography: all remaining project typography is unchanged.
-- Spacing and layout rhythm: highlight tiles and their margins are removed; the existing stack spacing now controls the transition.
-- Colors and visual tokens: no remaining colors or tokens were changed.
-- Image quality and asset fidelity: project imagery and video are unchanged.
-- Copy and content: only the highlight strings shown in the removed section were deleted; project summaries, details, tools, and links remain intact.
-
-## Responsive and runtime checks
-
-- No `.work-highlights` elements remain across all three project cards.
-- Desktop and 390 px mobile layouts keep a consistent 18 px details-to-stack gap.
-- The 390 px layout has no horizontal overflow.
-- Browser console contains no errors or warnings.
+- Fonts and typography: unchanged; the asset replacement does not affect type styling or wrapping.
+- Spacing and layout rhythm: unchanged; the image remains centered within the established 270 px media row.
+- Colors and visual tokens: the selected neutral-white artwork is preserved; the surrounding `#f8f8f8` panel is an existing portfolio token.
+- Image quality and asset fidelity: the exact supplied 1798 × 875 PNG is used with no recompression or crop. The hand, headset, endpoints, and paths remain sharp and visible.
+- Copy and content: unchanged apart from the previously approved project copy already present in the card.
 
 ## Findings
 
-No actionable P0, P1, or P2 issues remain for the requested section removal.
+- No actionable P0, P1, or P2 mismatches.
+- P3: light grey gutters remain around the white image at this viewport. This follows the existing shared media treatment and was intentionally left unchanged.
 
-## Follow-up polish
+## Comparison history
 
-None required for this scoped change.
+- Initial comparison: passed. No P0, P1, or P2 fixes were required.
+
+## Implementation checklist
+
+- [x] Copy the selected image into `src/assets/`.
+- [x] Point the Vision Pro project entry to the new asset.
+- [x] Confirm the source image loads at its natural dimensions.
+- [x] Confirm the full composition remains visible without cropping or overflow.
 
 final result: passed
