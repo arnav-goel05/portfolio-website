@@ -269,7 +269,6 @@
     grid-template-columns: 68px minmax(0, 1fr);
     gap: 14px;
   }
-
 }
 
 @media (hover: none), (pointer: coarse) {
