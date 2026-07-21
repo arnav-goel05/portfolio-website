@@ -23,7 +23,15 @@ describe('portfolio data integrity', () => {
         : [project.contribution]
       expect(contributions.length).toBeGreaterThan(0)
       for (const contribution of contributions) expect(contribution.trim()).not.toBe('')
-      expect(project.outcome.trim()).not.toBe('')
+      if (typeof project.outcome === 'string') {
+        expect(project.outcome.trim()).not.toBe('')
+      } else {
+        expect(project.outcome.summary.trim()).not.toBe('')
+        expect(project.outcome.lead.trim()).not.toBe('')
+        expect(project.outcome.metrics.length).toBeGreaterThan(0)
+        for (const metric of project.outcome.metrics) expect(metric.trim()).not.toBe('')
+        expect(project.outcome.note.trim()).not.toBe('')
+      }
       expect(project.tools.length).toBeGreaterThan(0)
       expect(project.image).toBeTruthy()
 

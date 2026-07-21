@@ -11,6 +11,13 @@ type ProjectLink = {
   href: string
 }
 
+type ProjectOutcome = {
+  summary: string
+  lead: string
+  metrics: string[]
+  note: string
+}
+
 export type Project = {
   slug: string
   title: string
@@ -18,7 +25,7 @@ export type Project = {
   summary: string
   problem: string
   contribution: string | string[]
-  outcome: string
+  outcome: string | ProjectOutcome
   tools: string[]
   image: string
   video?: string
@@ -108,14 +115,39 @@ export const projects: Project[] = [
     slug: 'tribe-music-optimization',
     title: 'TRIBE v2 Music Optimization',
     summary:
-      'A neuroscience guided music production system that uses TRIBE v2 cortical response predictions to transform a hip hop track toward a calmer, sleep aligned profile.',
+      'A model guided music production system that uses TRIBE v2 cortical predictions to remix a hip hop track toward a custom sleep alignment objective.',
     problem:
-      'Music production is largely guided by subjective listening. I wanted to determine whether changes in tempo, drums, reverb, EQ, transients, and bass could be evaluated and optimized against a defined cortical response target.',
-    contribution:
-      'Built an end to end Colab pipeline that separates the track into stems, runs 21 controlled sensitivity probes across seven production controls, maps each version to Schaefer 7 cortical network responses, and uses the strongest signals to guide a focused 10 trial optimizer.',
-    outcome:
-      'The optimizer selected trial_007, producing a version that was slower, longer, quieter, darker, and slightly narrower while retaining the original vocal performance.',
-    tools: ['Python', 'Google Colab', 'Demucs', 'TRIBE v2', 'Matplotlib'],
+      'Music production decisions are typically evaluated through subjective listening. I investigated whether controlled changes to tempo, drum level, reverb, EQ, bass smoothing, and transient intensity could instead be compared using predicted cortical activity.',
+    contribution: [
+      'Developed an end to end Google Colab pipeline that separates a track into vocals, drums, bass, and instrumentation using Demucs, then evaluates 21 controlled production probes across seven parameters.',
+      'Scored each version with TRIBE v2 across four matched 15 second sections. The pipeline maps the predictions through the Schaefer 100 parcel, 7 network atlas and combines them into a custom sleep alignment objective.',
+      'Ranked the five most responsive controls and ran a reproducible 10 trial optimization process using broad exploration followed by progressively tighter refinements. The pipeline also exports cortical maps, network time series, comparison charts, and the selected remix.',
+    ],
+    outcome: {
+      summary:
+        'The optimizer selected trial_007, improving the target aligned model score by +0.711, compared with +0.550 from the strongest individual probe.',
+      lead: 'The selected mix was slower, longer, quieter, darker, and slightly narrower:',
+      metrics: [
+        'Tempo: approximately 140.6 → 121.0 BPM',
+        'Duration: 350.8 → 410.3 seconds',
+        'Loudness: −13.8 → −16.1 dBFS',
+        'Spectral centroid: approximately 4,826 → 3,703 Hz',
+        'Stereo width: 0.347 → 0.319',
+      ],
+      note: 'The original separated vocal stem remained at unity gain and was not regenerated, although the final mix, including the vocal, was time stretched with the tempo change.',
+    },
+    tools: [
+      'Python',
+      'Google Colab',
+      'TRIBE v2',
+      'Demucs',
+      'PyTorch',
+      'FFmpeg',
+      'SciPy',
+      'Schaefer 2018',
+      'Nilearn',
+      'Matplotlib',
+    ],
     image: tribeBrainResponseAnimation,
     links: [
       {
@@ -123,18 +155,26 @@ export const projects: Project[] = [
         href: 'https://github.com/arnav-goel05/tribe-v2-music-optimization',
       },
     ],
+    featuredLink: {
+      label: 'View TRIBE v2 Music Optimization on LinkedIn',
+      href: 'https://www.linkedin.com/feed/update/urn:li:activity:7474024422937387008/',
+    },
   },
   {
     slug: 'hand-eye-coordination-assessment',
     title: 'Vision Pro Hand Dexterity Assessment',
+    status: 'Patent pending',
     summary:
-      'An Apple Vision Pro assessment system that turns hand-eye coordination into precise 3D movement data for stroke rehabilitation and clinical research.',
+      'An Apple Vision Pro assessment system that turns hand movement into precise 3D data for stroke rehabilitation and clinical research.',
     problem:
-      'Stroke rehabilitation still relies heavily on clinician observation to assess hand dexterity, making subtle movement deviations difficult to quantify consistently, compare across assessments, or track throughout recovery.',
-    contribution:
-      'Worked with the NUH Department of Rehabilitation to translate clinical requirements into an immersive visionOS assessment. Built hand calibration, real-time fingertip tracking, six movement tasks, repeated trials, deviation metrics, and automated 3D data export using Swift, SwiftUI, ARKit, and RealityKit. I also developed a Python pipeline with Pandas and Matplotlib to process more than 15,000 spatial data points and visualise differences between control and ataxia movement patterns.',
+      'Stroke rehabilitation often relies on clinician observation to assess hand dexterity. This makes small movement deviations difficult to quantify consistently, compare across assessments, or track throughout recovery.',
+    contribution: [
+      'Worked with the NUH Department of Rehabilitation to translate clinical requirements into a Vision Pro assessment that guides patients through structured hand movement tasks in 3D.',
+      'Developed hand calibration, real time fingertip tracking, six movement tasks, repeatable trials, deviation measurements, and automated 3D data export using Swift, SwiftUI, ARKit, and RealityKit.',
+      'Created a Python analysis pipeline that processes more than 15,000 movement points from each assessment, visualises key patterns, and compares healthy control data with simulated ataxia data.',
+    ],
     outcome:
-      'Advanced the system into clinical trials with NUH, creating a repeatable assessment and analysis workflow for evaluating fine motor control. The underlying method is patent pending, with a research paper currently in preparation.',
+      'The assessment is now being evaluated in clinical trials with NUH, establishing a repeatable workflow for measuring and analysing fine motor control. The underlying method is patent pending, and a research paper is currently in preparation.',
     tools: [
       'Swift',
       'SwiftUI',
