@@ -4,6 +4,9 @@ This is a static Vite, React, and TypeScript portfolio deployed with Cloudflare 
 it dependency-light: pages compose sections, components own reusable presentation, and data modules own
 portfolio content and asset metadata.
 
+`react-icons` is the only approved presentation dependency beyond React itself and supplies branded project
+and navigation marks without introducing an additional UI framework.
+
 ## Application flow
 
 - `src/main.tsx` mounts the app.
