@@ -92,7 +92,9 @@ assert(
 )
 assert(!trackedArtifacts, 'Generated QA/output or tmp files must not be tracked.')
 assert(
-  Object.keys(packageJson.dependencies).every((name) => ['react', 'react-dom'].includes(name)),
+  Object.keys(packageJson.dependencies).every((name) =>
+    ['react', 'react-dom', 'react-icons'].includes(name),
+  ),
   'Unexpected direct runtime dependency found.',
 )
 assert(!cycle, `Source dependency cycle found: ${cycle ?? ''}`)

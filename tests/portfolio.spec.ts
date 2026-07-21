@@ -1,12 +1,12 @@
 import { expect, test, type Page } from '@playwright/test'
 
 const projectTitles = [
-  'TRIBE v2 Music Optimization',
   'Amble: Explore Singapore in 3D',
-  'Vision Pro Hand Dexterity Assessment',
   'ProcurePilot: AI-Assisted F&B Procurement',
-  'BART Grammatical Error Correction',
+  'TRIBE v2 Music Optimization',
+  'Vision Pro Hand Dexterity Assessment',
   'On-Device Low Vision Assistant',
+  'BART Grammatical Error Correction',
 ]
 
 function collectConsoleErrors(page: Page) {
@@ -36,11 +36,11 @@ test('homepage presents every project and valid navigation', async ({ page }) =>
     'href',
     'mailto:arnav.goel@u.nus.edu',
   )
-  await expect(page.getByRole('link', { name: 'LinkedIn' })).toHaveAttribute(
+  await expect(page.getByRole('link', { name: 'LinkedIn', exact: true })).toHaveAttribute(
     'href',
     'https://www.linkedin.com/in/arnav--goel/',
   )
-  await expect(page.getByRole('link', { name: 'GitHub' })).toHaveAttribute(
+  await expect(page.getByRole('link', { name: 'GitHub', exact: true })).toHaveAttribute(
     'href',
     'https://github.com/arnav-goel05',
   )

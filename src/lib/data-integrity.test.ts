@@ -18,7 +18,11 @@ describe('portfolio data integrity', () => {
       expect(project.title.trim()).not.toBe('')
       expect(project.summary.trim()).not.toBe('')
       expect(project.problem.trim()).not.toBe('')
-      expect(project.contribution.trim()).not.toBe('')
+      const contributions = Array.isArray(project.contribution)
+        ? project.contribution
+        : [project.contribution]
+      expect(contributions.length).toBeGreaterThan(0)
+      for (const contribution of contributions) expect(contribution.trim()).not.toBe('')
       expect(project.outcome.trim()).not.toBe('')
       expect(project.tools.length).toBeGreaterThan(0)
       expect(project.image).toBeTruthy()
@@ -26,6 +30,12 @@ describe('portfolio data integrity', () => {
       for (const link of project.links) {
         expect(link.label.trim()).not.toBe('')
         expect(() => new URL(link.href)).not.toThrow()
+      }
+
+      if (project.featuredLink) {
+        const featuredLink = project.featuredLink
+        expect(featuredLink.label.trim()).not.toBe('')
+        expect(() => new URL(featuredLink.href)).not.toThrow()
       }
     }
   })
