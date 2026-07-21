@@ -2,7 +2,7 @@ import { expect, test, type Page } from '@playwright/test'
 
 const projectTitles = [
   'Amble: Explore Singapore in 3D',
-  'ProcurePilot: AI-Assisted F&B Procurement',
+  'SupplyCue: AI Assisted F&B Procurement',
   'TRIBE v2 Music Optimization',
   'Vision Pro Hand Dexterity Assessment',
   'On-Device Low Vision Assistant',
