@@ -8,12 +8,17 @@ large whitespace, restrained project media, and compact monospace navigation and
 ## Stable visual contract
 
 - Keep the fixed navbar compact and frosted, with the retro computer mark plus Work, About, Email, LinkedIn,
-  and GitHub links.
+  and GitHub links. Collapse those links into a compact Menu control on mobile.
+- Present the About introduction with one natural photographic portrait beside the profile copy.
 - Keep the centered hero statement, supporting line, graduation timing, location, and twelve
-  project-derived stickers.
+  project-derived stickers on wide screens, with a smaller curated sticker set on mobile.
 - Present work in two-column rows on wide screens and a single column below the established breakpoint.
 - Align media, copy, details, stack, and link regions across cards in the same wide-screen row.
 - Allow the Built row to use a short bullet list when separate implementation layers need to remain scannable.
+- Allow measured Outcome rows to pair concise context with a short metric list when exact results are central
+  to the project story.
+- Keep each project summary and external links visible, with a compact accordion toggle at the bottom right
+  above the divider for revealing the detailed project rows.
 - Place an optional branded project-post link at the far right of the title row without displacing the title
   or status pill.
 - Use a compact outlined status pill beside a project title when the work is actively updated.
@@ -33,6 +38,7 @@ large whitespace, restrained project media, and compact monospace navigation and
 - Keep hover scale and link transitions subtle; do not add first-load or scroll reveal animations.
 - The custom cursor is mouse-only and must never replace normal focus, touch, or coarse-pointer behavior.
 - Respect reduced-motion preferences.
+- Accordion controls must expose their expanded state and controlled detail region to assistive technology.
 - Maintain one primary heading per page, visible keyboard focus, labeled controls, and meaningful media text.
 
 ## CSS organization
