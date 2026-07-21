@@ -99,32 +99,97 @@
     display: none;
   }
 
+  .nav-toggle {
+    display: flex;
+  }
+
   .nav-links {
     position: absolute;
-    top: 31px;
-    right: 22px;
-    gap: 12px;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: grid;
+    gap: 0;
+    align-items: stretch;
+    padding: 8px 22px 18px;
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(20, 20, 20, 0.07);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px);
+    visibility: hidden;
+    -webkit-backdrop-filter: blur(18px) saturate(135%);
+    backdrop-filter: blur(18px) saturate(135%);
+    transition:
+      opacity 160ms ease,
+      transform 160ms ease,
+      visibility 160ms ease;
+  }
+
+  .nav-links.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
   }
 
   .nav-links a {
-    font-size: 10px;
+    padding: 12px 0;
+    border-top: 1px solid rgba(20, 20, 20, 0.08);
+    font-size: 12px;
   }
 
   .portfolio-hero {
-    min-height: 86svh;
-    gap: 30px;
-    padding-inline: 22px;
+    min-height: 100svh;
+    gap: 20px;
+    padding: 108px 22px 54px;
   }
 
   .hero-sticker {
     display: none;
   }
 
+  .hero-sticker--curly-braces,
+  .hero-sticker--database,
+  .hero-sticker--terminal-prompt,
+  .hero-sticker--map-grid {
+    display: block;
+    opacity: 0.82;
+  }
+
+  .hero-sticker--curly-braces {
+    --sticker-size: 42px;
+    top: 15%;
+    left: 7%;
+  }
+
+  .hero-sticker--database {
+    --sticker-size: 46px;
+    top: 15%;
+    right: 7%;
+    left: auto;
+  }
+
+  .hero-sticker--terminal-prompt {
+    --sticker-size: 46px;
+    top: auto;
+    right: auto;
+    bottom: 5%;
+    left: 7%;
+  }
+
+  .hero-sticker--map-grid {
+    --sticker-size: 50px;
+    right: 7%;
+    bottom: 5%;
+  }
+
   .portfolio-hero h1 {
     width: 100%;
-    max-width: 340px;
+    max-width: 310px;
     margin-inline: auto;
-    font-size: 42px;
+    font-size: 28px;
+    line-height: 1.15;
     overflow-wrap: break-word;
     white-space: normal;
   }
@@ -133,16 +198,21 @@
     display: block;
   }
 
+  .portfolio-hero h1 em {
+    width: fit-content;
+    margin-inline: auto;
+  }
+
   .portfolio-hero span {
     display: block;
-    max-width: 340px;
+    max-width: 290px;
     margin-inline: auto;
   }
 
   .hero-subcopy {
-    max-width: 300px;
-    font-size: 20px;
-    line-height: 1.38;
+    max-width: 280px;
+    font-size: 15px;
+    line-height: 1.34;
     overflow-wrap: break-word;
   }
 
@@ -151,12 +221,12 @@
   }
 
   .hero-status {
-    max-width: 340px;
+    max-width: 300px;
     margin-inline: auto;
   }
 
   .hero-status p {
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .selected-work,
@@ -167,8 +237,14 @@
   .about-intro {
     width: 100%;
     max-width: 100vw;
-    padding-top: 118px;
+    gap: 34px;
+    padding-top: 104px;
     min-width: 0;
+  }
+
+  .about-kicker {
+    margin-bottom: 20px;
+    font-size: 13px;
   }
 
   .about-copy,
@@ -181,9 +257,13 @@
   .about-intro-text p {
     width: 100%;
     max-width: 100%;
-    font-size: 28px;
-    line-height: 1.08;
+    font-size: 20px;
+    line-height: 1.28;
     overflow-wrap: break-word;
+  }
+
+  .about-intro-text {
+    gap: 24px;
   }
 
   .about-contact,
@@ -194,7 +274,7 @@
   }
 
   .about-contact {
-    padding-top: 78px;
+    padding-top: 64px;
   }
 
   .about-contact-links {
@@ -202,12 +282,12 @@
   }
 
   .about-contact-links a {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .about-rows,
   .about-skills {
-    padding-top: 76px;
+    padding-top: 64px;
   }
 
   .about-row button {
@@ -216,17 +296,18 @@
 
   .about-row strong,
   .about-row span span {
-    font-size: 22px;
-    line-height: 1.05;
+    font-size: 18px;
+    line-height: 1.12;
   }
 
   .about-row-icon {
-    font-size: 58px;
+    font-size: 46px;
   }
 
   .about-row-detail {
     margin-right: 0;
-    font-size: 17px;
+    font-size: 15px;
+    line-height: 1.4;
   }
 
   .about-skill-grid {
@@ -235,7 +316,8 @@
   }
 
   .about-skill-grid li {
-    font-size: 25px;
+    font-size: 19px;
+    line-height: 1.25;
   }
 
   .selected-work {
