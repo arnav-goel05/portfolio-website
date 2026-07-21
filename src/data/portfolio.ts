@@ -2,7 +2,7 @@ import tribeBrainResponseAnimation from '../assets/tribe-brain-response-animatio
 import ambleMapFeatureTour from '../assets/amble-map-feature-tour.jpg'
 import ambleDemoVideo from '../assets/amble-demo.mp4'
 import visionProHandAssessment from '../assets/vision-pro-hand-assessment.webp'
-import procurePilotWorkspace from '../assets/procurepilot-workspace.webp'
+import supplyCueWorkspace from '../assets/supplycue-workspace.png'
 import lowVisionCashierAssistance from '../assets/low-vision-cashier-assistance.jpg'
 
 type ProjectLink = {
@@ -102,7 +102,7 @@ export const projects: Project[] = [
       'Cloudflare Queues',
       'Hyperdrive',
     ],
-    image: procurePilotWorkspace,
+    image: supplyCueWorkspace,
     links: [
       {
         label: 'Visit SupplyCue',

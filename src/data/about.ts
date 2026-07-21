@@ -1,8 +1,8 @@
-import heroArnav from '../assets/hero-arnav.webp'
+import aboutArnav from '../assets/about-arnav.jpg'
 
 export const aboutProfile = {
-  image: heroArnav,
-  imageAlt: 'Portrait-style illustration of Arnav working at a laptop.',
+  image: aboutArnav,
+  imageAlt: 'Arnav Goel standing outdoors in the mountains.',
   intro: [
     'I am Arnav Goel, a Computer Science undergraduate at the National University of Singapore, graduating in May 2027. I work across product thinking, applied AI, and software engineering, turning ambiguous requirements into practical systems people can inspect, use, and trust.',
     'My experience spans graph-enhanced RAG and healthcare product discovery at Johnson & Johnson, spatial rehabilitation tools for Apple Vision Pro with NUH, full-stack education software, and product design in an international startup.',
