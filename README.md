@@ -11,7 +11,7 @@ homepage through its problem, implementation, outcome, technology, media, and re
 - **Amble** — a live, cloud-native 3D map for discovering events, food, landmarks, and routes in Singapore.
 - **Vision Pro Hand Dexterity Assessment** — a visionOS hand-eye coordination assessment developed with the
   NUH Department of Rehabilitation for clinical research and stroke rehabilitation.
-- **ProcurePilot** — a multi-tenant, AI-assisted F&B procurement workflow connecting Telegram, Gmail,
+- **SupplyCue** — a multi-tenant, AI-assisted F&B procurement workflow connecting Telegram, Gmail,
   document intelligence, delivery checks, and owner approvals.
 
 Project claims and links are maintained in [`src/data/portfolio.ts`](src/data/portfolio.ts).

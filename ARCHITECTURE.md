@@ -35,9 +35,11 @@ The project list is divided into reusable two-card visual rows. Each row uses CS
 sections, while automatic row construction supports odd counts and growth without index-specific CSS.
 Project contributions may be stored as a single paragraph or a short list of structured points;
 `ProjectCard` owns the corresponding semantic paragraph or list rendering.
+Project outcomes remain concise paragraphs by default, with an optional structured summary, metric list, and
+closing note for projects whose measured results benefit from direct comparison.
 Project records may also expose one featured external link in the title row for a relevant launch or
-project post, while the standard product and GitHub links sit below the project summary and above its
-detailed Problem, Built, and Outcome rows.
+project post. Each card keeps its media, summary, and external links visible, while an independent accessible
+accordion reveals its detailed Problem, Built, Outcome, and Built With rows on demand.
 
 ## Media delivery
 
