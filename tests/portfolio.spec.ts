@@ -1,12 +1,12 @@
 import { expect, test, type Page } from '@playwright/test'
 
 const projectTitles = [
-  'TRIBE v2 Music Optimization',
   'Amble: Explore Singapore in 3D',
-  'Vision Pro Hand Dexterity Assessment',
   'ProcurePilot: AI-Assisted F&B Procurement',
-  'BART Grammatical Error Correction',
+  'TRIBE v2 Music Optimization',
+  'Vision Pro Hand Dexterity Assessment',
   'On-Device Low Vision Assistant',
+  'BART Grammatical Error Correction',
 ]
 
 function collectConsoleErrors(page: Page) {

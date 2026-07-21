@@ -17,89 +17,54 @@ export type Project = {
   status?: string
   summary: string
   problem: string
-  contribution: string
+  contribution: string | string[]
   outcome: string
   tools: string[]
   image: string
   video?: string
   links: ProjectLink[]
+  featuredLink?: ProjectLink
 }
 
 export const projects: Project[] = [
   {
-    slug: 'tribe-music-optimization',
-    title: 'TRIBE v2 Music Optimization',
-    summary:
-      'A neuroscience guided music production system that uses TRIBE v2 cortical response predictions to transform a hip hop track toward a calmer, sleep aligned profile.',
-    problem:
-      'Music production is largely guided by subjective listening. I wanted to determine whether changes in tempo, drums, reverb, EQ, transients, and bass could be evaluated and optimized against a defined cortical response target.',
-    contribution:
-      'Built an end to end Colab pipeline that separates the track into stems, runs 21 controlled sensitivity probes across seven production controls, maps each version to Schaefer 7 cortical network responses, and uses the strongest signals to guide a focused 10 trial optimizer.',
-    outcome:
-      'The optimizer selected trial_007, producing a version that was slower, longer, quieter, darker, and slightly narrower while retaining the original vocal performance.',
-    tools: ['Python', 'Google Colab', 'Demucs', 'TRIBE v2', 'Matplotlib'],
-    image: tribeBrainResponseAnimation,
-    links: [
-      {
-        label: 'View source',
-        href: 'https://github.com/arnav-goel05/tribe-v2-music-optimization',
-      },
-    ],
-  },
-  {
     slug: 'amble',
     title: 'Amble: Explore Singapore in 3D',
-    status: 'Updated weekly',
+    status: 'Weekly releases',
     summary:
-      'A cloud native 3D discovery platform that brings Singapore’s events, restaurants, landmarks, and route planning into one spatial experience.',
+      'A 3D city discovery platform for exploring Singapore’s events, restaurants, landmarks, and current restaurant offers in one spatial experience.',
     problem:
-      'Finding something to do in Singapore meant switching between disconnected event listings, restaurant platforms, social posts, and maps, with no simple way to understand what was nearby or how different places could fit into one day.',
-    contribution:
-      'Built Amble end to end, from the MapLibre and deck.gl 3D interface to data pipelines that collect events from official sources, resolve venues to OneMap building identities, cache restaurant results, and publish approved data through Cloudflare Workers, D1, and R2.',
+      'Discovering what to do in Singapore often means switching between disconnected event listings, restaurant platforms, social posts, and maps. This makes it difficult to understand what is nearby, compare possibilities, or turn several places into a practical plan.',
+    contribution: [
+      'Created an interactive 3D interface deployed through Cloudflare Workers, with searchable events, viewport-based restaurant discovery, and an ordered itinerary builder.',
+      'Engineered an evidence-backed event pipeline that collects official listings, normalises recurring occurrences, resolves venues to verified OneMap building identities, and atomically publishes reviewed snapshots.',
+      'Developed a restaurant enrichment pipeline that uses TinyFish Search to identify official websites and TinyFish Fetch to inspect dynamic promotion pages. The pipeline verifies restaurant identity, preserves original evidence, and rejects expired offers.',
+    ],
     outcome:
-      'Shipped a live cloud native beta where people can explore the city spatially, inspect original references, build a plan, and export the route to Google Maps.',
+      'Released Amble as a live public beta at amblefinds.com, replacing a fragmented research process with one continuous journey from deciding where to go to leaving with a practical day plan.',
     tools: [
-      'MapLibre',
+      'JavaScript',
+      'MapLibre GL JS',
       'deck.gl',
-      'Three.js',
       '3D Tiles',
       'Vite',
+      'Node.js',
+      'TinyFish',
       'Cloudflare Workers',
-      'D1',
-      'R2',
       'OneMap',
       'OpenStreetMap',
+      'Playwright',
     ],
     image: ambleMapFeatureTour,
     video: ambleDemoVideo,
     links: [
       { label: 'Visit Amble', href: 'https://amblefinds.com/' },
-      { label: 'View source', href: 'https://github.com/arnav-goel05/amble-discovery-map' },
+      { label: 'View GitHub', href: 'https://github.com/arnav-goel05/amble-discovery-map' },
     ],
-  },
-  {
-    slug: 'hand-eye-coordination-assessment',
-    title: 'Vision Pro Hand Dexterity Assessment',
-    summary:
-      'An Apple Vision Pro assessment system that turns hand-eye coordination into precise 3D movement data for stroke rehabilitation and clinical research.',
-    problem:
-      'Stroke rehabilitation still relies heavily on clinician observation to assess hand dexterity, making subtle movement deviations difficult to quantify consistently, compare across assessments, or track throughout recovery.',
-    contribution:
-      'Worked with the NUH Department of Rehabilitation to translate clinical requirements into an immersive visionOS assessment. Built hand calibration, real-time fingertip tracking, six movement tasks, repeated trials, deviation metrics, and automated 3D data export using Swift, SwiftUI, ARKit, and RealityKit. I also developed a Python pipeline with Pandas and Matplotlib to process more than 15,000 spatial data points and visualise differences between control and ataxia movement patterns.',
-    outcome:
-      'Advanced the system into clinical trials with NUH, creating a repeatable assessment and analysis workflow for evaluating fine motor control. The underlying method is patent pending, with a research paper currently in preparation.',
-    tools: [
-      'Swift',
-      'SwiftUI',
-      'ARKit',
-      'RealityKit',
-      'visionOS',
-      'Python',
-      'Pandas',
-      'Matplotlib',
-    ],
-    image: visionProHandAssessment,
-    links: [],
+    featuredLink: {
+      label: 'View Amble on LinkedIn',
+      href: 'https://www.linkedin.com/feed/update/urn:li:activity:7483499253718335488/',
+    },
   },
   {
     slug: 'procurepilot',
@@ -136,27 +101,47 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: 'bart-grammatical-error-correction',
-    title: 'BART Grammatical Error Correction',
+    slug: 'tribe-music-optimization',
+    title: 'TRIBE v2 Music Optimization',
     summary:
-      'A transformer based grammatical error correction study investigating how model capacity and training strategy affect the precision and reliability of automated writing corrections.',
+      'A neuroscience guided music production system that uses TRIBE v2 cortical response predictions to transform a hip hop track toward a calmer, sleep aligned profile.',
     problem:
-      'Grammatical error correction must recognise diverse grammar, spelling, and punctuation mistakes without introducing unnecessary edits. Limited high quality annotated data makes this especially difficult, raising an important question: should models learn from every available dataset at once, or progressively specialise on cleaner corrections?',
+      'Music production is largely guided by subjective listening. I wanted to determine whether changes in tempo, drums, reverb, EQ, transients, and bass could be evaluated and optimized against a defined cortical response target.',
     contribution:
-      'Developed the BART experimentation pipeline for the study, implementing both single stage and two stage fine tuning for BART Base and BART Large. The two stage curriculum first adapted each model on the large Lang-8 learner corpus before specialising it on the higher quality NUCLE, FCE, and W&I+LOCNESS datasets. Configured dropout, learning rate scheduling, gradient accumulation, checkpointing, early stopping, beam search inference, and ERRANT based model selection; ran the training workloads on the NUS GPU cluster and built the evaluation workflow for BEA-2019 and CoNLL-2014.',
+      'Built an end to end Colab pipeline that separates the track into stems, runs 21 controlled sensitivity probes across seven production controls, maps each version to Schaefer 7 cortical network responses, and uses the strongest signals to guide a focused 10 trial optimizer.',
     outcome:
-      'The ablation revealed that training strategy depended strongly on model capacity. Single stage and two stage BART Base produced nearly identical F0.5 scores of 63.56 and 63.54, while two stage specialisation improved BART Large from 60.04 to 67.20, a 7.16 point gain. The findings showed that a more complex training curriculum was valuable for the larger model but unnecessary for its smaller counterpart.',
-    tools: [
-      'Python',
-      'PyTorch',
-      'Hugging Face Transformers',
-      'BART',
-      'CUDA',
-      'SLURM',
-      'ERRANT',
-      'M2Scorer',
+      'The optimizer selected trial_007, producing a version that was slower, longer, quieter, darker, and slightly narrower while retaining the original vocal performance.',
+    tools: ['Python', 'Google Colab', 'Demucs', 'TRIBE v2', 'Matplotlib'],
+    image: tribeBrainResponseAnimation,
+    links: [
+      {
+        label: 'View GitHub',
+        href: 'https://github.com/arnav-goel05/tribe-v2-music-optimization',
+      },
     ],
-    image: bartGecPipeline,
+  },
+  {
+    slug: 'hand-eye-coordination-assessment',
+    title: 'Vision Pro Hand Dexterity Assessment',
+    summary:
+      'An Apple Vision Pro assessment system that turns hand-eye coordination into precise 3D movement data for stroke rehabilitation and clinical research.',
+    problem:
+      'Stroke rehabilitation still relies heavily on clinician observation to assess hand dexterity, making subtle movement deviations difficult to quantify consistently, compare across assessments, or track throughout recovery.',
+    contribution:
+      'Worked with the NUH Department of Rehabilitation to translate clinical requirements into an immersive visionOS assessment. Built hand calibration, real-time fingertip tracking, six movement tasks, repeated trials, deviation metrics, and automated 3D data export using Swift, SwiftUI, ARKit, and RealityKit. I also developed a Python pipeline with Pandas and Matplotlib to process more than 15,000 spatial data points and visualise differences between control and ataxia movement patterns.',
+    outcome:
+      'Advanced the system into clinical trials with NUH, creating a repeatable assessment and analysis workflow for evaluating fine motor control. The underlying method is patent pending, with a research paper currently in preparation.',
+    tools: [
+      'Swift',
+      'SwiftUI',
+      'ARKit',
+      'RealityKit',
+      'visionOS',
+      'Python',
+      'Pandas',
+      'Matplotlib',
+    ],
+    image: visionProHandAssessment,
     links: [],
   },
   {
@@ -182,6 +167,30 @@ export const projects: Project[] = [
       'Python',
     ],
     image: currencyAccessibilityScan,
+    links: [],
+  },
+  {
+    slug: 'bart-grammatical-error-correction',
+    title: 'BART Grammatical Error Correction',
+    summary:
+      'A transformer based grammatical error correction study investigating how model capacity and training strategy affect the precision and reliability of automated writing corrections.',
+    problem:
+      'Grammatical error correction must recognise diverse grammar, spelling, and punctuation mistakes without introducing unnecessary edits. Limited high quality annotated data makes this especially difficult, raising an important question: should models learn from every available dataset at once, or progressively specialise on cleaner corrections?',
+    contribution:
+      'Developed the BART experimentation pipeline for the study, implementing both single stage and two stage fine tuning for BART Base and BART Large. The two stage curriculum first adapted each model on the large Lang-8 learner corpus before specialising it on the higher quality NUCLE, FCE, and W&I+LOCNESS datasets. Configured dropout, learning rate scheduling, gradient accumulation, checkpointing, early stopping, beam search inference, and ERRANT based model selection; ran the training workloads on the NUS GPU cluster and built the evaluation workflow for BEA-2019 and CoNLL-2014.',
+    outcome:
+      'The ablation revealed that training strategy depended strongly on model capacity. Single stage and two stage BART Base produced nearly identical F0.5 scores of 63.56 and 63.54, while two stage specialisation improved BART Large from 60.04 to 67.20, a 7.16 point gain. The findings showed that a more complex training curriculum was valuable for the larger model but unnecessary for its smaller counterpart.',
+    tools: [
+      'Python',
+      'PyTorch',
+      'Hugging Face Transformers',
+      'BART',
+      'CUDA',
+      'SLURM',
+      'ERRANT',
+      'M2Scorer',
+    ],
+    image: bartGecPipeline,
     links: [],
   },
 ]

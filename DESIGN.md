@@ -13,6 +13,9 @@ large whitespace, restrained project media, and compact monospace navigation and
   project-derived stickers.
 - Present work in two-column rows on wide screens and a single column below the established breakpoint.
 - Align media, copy, details, stack, and link regions across cards in the same wide-screen row.
+- Allow the Built row to use a short bullet list when separate implementation layers need to remain scannable.
+- Place an optional branded project-post link at the far right of the title row without displacing the title
+  or status pill.
 - Use a compact outlined status pill beside a project title when the work is actively updated.
 - Keep project information on the homepage; do not add individual project pages or a duplicate footer.
 - Preserve compact media height and contained imagery with minimal grey gutter.
