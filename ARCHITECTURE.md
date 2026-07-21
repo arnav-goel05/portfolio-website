@@ -4,6 +4,9 @@ This is a static Vite, React, and TypeScript portfolio deployed with Cloudflare 
 it dependency-light: pages compose sections, components own reusable presentation, and data modules own
 portfolio content and asset metadata.
 
+`react-icons` is the only approved presentation dependency beyond React itself and supplies branded project
+and navigation marks without introducing an additional UI framework.
+
 ## Application flow
 
 - `src/main.tsx` mounts the app.
@@ -30,6 +33,11 @@ portfolio content and asset metadata.
 
 The project list is divided into reusable two-card visual rows. Each row uses CSS subgrid to align card
 sections, while automatic row construction supports odd counts and growth without index-specific CSS.
+Project contributions may be stored as a single paragraph or a short list of structured points;
+`ProjectCard` owns the corresponding semantic paragraph or list rendering.
+Project records may also expose one featured external link in the title row for a relevant launch or
+project post, while the standard product and GitHub links sit below the project summary and above its
+detailed Problem, Built, and Outcome rows.
 
 ## Media delivery
 
