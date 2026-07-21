@@ -27,9 +27,9 @@ export function PortfolioPage() {
           <span>Building thoughtful products from 0→1.</span>
         </h1>
         <p className="hero-subcopy">
-          <em>Working across product thinking, AI,</em>
+          <em>Working across product thinking, AI, and software development</em>
           <br />
-          and software development.
+          to <strong>build technology for good.</strong>
         </p>
         <div className="hero-status">
           <p>Graduating in May 2027</p>

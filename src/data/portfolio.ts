@@ -3,8 +3,7 @@ import ambleMapFeatureTour from '../assets/amble-map-feature-tour.jpg'
 import ambleDemoVideo from '../assets/amble-demo.mp4'
 import visionProHandAssessment from '../assets/vision-pro-hand-assessment.webp'
 import procurePilotWorkspace from '../assets/procurepilot-workspace.webp'
-import bartGecPipeline from '../assets/bart-gec-pipeline.svg'
-import currencyAccessibilityScan from '../assets/stickers-v2/currency-accessibility-scan.webp'
+import lowVisionCashierAssistance from '../assets/low-vision-cashier-assistance.jpg'
 
 type ProjectLink = {
   label: string
@@ -112,6 +111,36 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'on-device-low-vision-assistant',
+    title: 'On-Device Low Vision Assistant',
+    status: 'In progress',
+    summary:
+      'Exploring how on device intelligence on iPhone can help people with low vision complete everyday tasks with greater independence.',
+    problem:
+      'Many existing low vision applications can recognise objects, read text, or describe where controls are located, but they often stop before helping the user complete the task. People may still need support deciding how much money to give a cashier, identifying unfamiliar notes and coins, or understanding which appliance buttons to press and in what order. These interactions must also be fast, private, accessible, and usable by elderly Singaporeans across English and Mandarin.',
+    contribution: [
+      'Conducting research with doctors, orientation and mobility specialists, and people with low vision to understand their everyday needs and translate them into clear product requirements and testable workflows.',
+      'Building an initial iPhone prototype that processes information on device for speed, privacy, and reliable offline use. The application includes VoiceOver, scalable text, clear recovery guidance, and English and Mandarin support for elderly users in Singapore.',
+      'Prototyping guided workflows for Singapore currency and home appliances. The currency workflow recognises local notes and coins and helps users determine how much to give a cashier. The appliance workflow uses speech input and voice guidance to explain which controls to use and walk users through each task step by step.',
+    ],
+    outcome:
+      'Work in progress. The current focus is refining the initial on device prototype and validating its core workflows before broader testing with people with low vision.',
+    tools: [
+      'Swift',
+      'SwiftUI',
+      'Core ML',
+      'Vision framework',
+      'AVFoundation',
+      'Speech',
+      'AVSpeechSynthesizer',
+      'SwiftData',
+      'XCTest',
+      'Python',
+    ],
+    image: lowVisionCashierAssistance,
+    links: [],
+  },
+  {
     slug: 'tribe-music-optimization',
     title: 'TRIBE v2 Music Optimization',
     summary:
@@ -186,55 +215,6 @@ export const projects: Project[] = [
       'Matplotlib',
     ],
     image: visionProHandAssessment,
-    links: [],
-  },
-  {
-    slug: 'on-device-low-vision-assistant',
-    title: 'On-Device Low Vision Assistant',
-    summary:
-      'A private and accessible iPhone assistant that identifies Singapore banknotes and helps people with low vision read and operate supported microwave displays without cloud processing.',
-    problem:
-      'Everyday tasks such as distinguishing banknotes or reading appliance displays can require sighted assistance. Cloud vision introduces privacy and connectivity constraints, while generic recognition systems do not provide the confidence aware, step by step guidance needed for safe independent use.',
-    contribution:
-      'Built two isolated camera experiences in SwiftUI: Core ML recognition for five Singapore banknote denominations and an Apple Vision pipeline for microwave model labels, display text, panel localisation, and deterministic appliance guidance. Added English and Mandarin speech, VoiceOver support, scalable text, voice commands, confidence gated results, local SwiftData history, strict camera and microphone lifecycle controls, and automated unit, UI, accessibility, privacy, and performance tests.',
-    outcome:
-      'Delivered a fully on-device research prototype evaluated with 12 independently captured banknote photographs, with recognition data and history remaining on the iPhone. The microwave assistant includes profiles for two supported COMFEE models and 19 reviewed function graphs, while uncertain, conflicting, or unsupported evidence fails closed with a clear recovery action.',
-    tools: [
-      'Swift',
-      'SwiftUI',
-      'Core ML',
-      'Apple Vision',
-      'AVFoundation',
-      'AVSpeechSynthesizer',
-      'SwiftData',
-      'XCTest',
-      'Python',
-    ],
-    image: currencyAccessibilityScan,
-    links: [],
-  },
-  {
-    slug: 'bart-grammatical-error-correction',
-    title: 'BART Grammatical Error Correction',
-    summary:
-      'A transformer based grammatical error correction study investigating how model capacity and training strategy affect the precision and reliability of automated writing corrections.',
-    problem:
-      'Grammatical error correction must recognise diverse grammar, spelling, and punctuation mistakes without introducing unnecessary edits. Limited high quality annotated data makes this especially difficult, raising an important question: should models learn from every available dataset at once, or progressively specialise on cleaner corrections?',
-    contribution:
-      'Developed the BART experimentation pipeline for the study, implementing both single stage and two stage fine tuning for BART Base and BART Large. The two stage curriculum first adapted each model on the large Lang-8 learner corpus before specialising it on the higher quality NUCLE, FCE, and W&I+LOCNESS datasets. Configured dropout, learning rate scheduling, gradient accumulation, checkpointing, early stopping, beam search inference, and ERRANT based model selection; ran the training workloads on the NUS GPU cluster and built the evaluation workflow for BEA-2019 and CoNLL-2014.',
-    outcome:
-      'The ablation revealed that training strategy depended strongly on model capacity. Single stage and two stage BART Base produced nearly identical F0.5 scores of 63.56 and 63.54, while two stage specialisation improved BART Large from 60.04 to 67.20, a 7.16 point gain. The findings showed that a more complex training curriculum was valuable for the larger model but unnecessary for its smaller counterpart.',
-    tools: [
-      'Python',
-      'PyTorch',
-      'Hugging Face Transformers',
-      'BART',
-      'CUDA',
-      'SLURM',
-      'ERRANT',
-      'M2Scorer',
-    ],
-    image: bartGecPipeline,
     links: [],
   },
 ]
