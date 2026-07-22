@@ -10,6 +10,7 @@ large whitespace, restrained project media, and compact monospace navigation and
 - Keep the fixed navbar compact and frosted, with the retro computer mark plus Work, About, Email, LinkedIn,
   and GitHub links. Collapse those links into a compact Menu control on mobile.
 - Present the About introduction with one natural photographic portrait beside the profile copy.
+- Present each About experience as an expandable entry whose details use the resume's exact bullet points.
 - Keep the centered hero statement, supporting line, graduation timing, location, and twelve
   project-derived stickers on wide screens, with a smaller curated sticker set on mobile.
 - Present work in two-column rows on wide screens and a single column below the established breakpoint.
