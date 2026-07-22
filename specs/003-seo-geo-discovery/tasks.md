@@ -74,6 +74,7 @@
 - [x] T013 Run formatting, `npm run audit:seo`, `npm run check:quality`, and Wrangler dry-run validation from `specs/003-seo-geo-discovery/quickstart.md`
 - [x] T014 Run the final Chrome rendered-metadata, navigation, and accordion audit and record results in `specs/003-seo-geo-discovery/research.md`
 - [x] T015 Update multi-entry reachability validation for the browser and Worker graphs in `scripts/audit-structure.mjs`
+- [x] T016 Update the production smoke title contract after the canonical title change in `scripts/check-site.mjs`
 
 ---
 
@@ -109,4 +110,4 @@
 
 ## Format Validation
 
-All 15 tasks use the required checkbox, sequential task ID, optional parallel marker, user-story label where applicable, and exact file path.
+All 16 tasks use the required checkbox, sequential task ID, optional parallel marker, user-story label where applicable, and exact file path.
