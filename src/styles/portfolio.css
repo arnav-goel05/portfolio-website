@@ -381,6 +381,11 @@
   margin-top: 18px;
 }
 
+.work-details[hidden],
+.work-stack[hidden] {
+  display: none;
+}
+
 .work-stack p {
   margin: 0;
   color: #555555;
