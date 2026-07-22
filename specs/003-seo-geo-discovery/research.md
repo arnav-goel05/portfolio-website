@@ -70,3 +70,4 @@ Direct HTTP inspection found:
 - Chrome confirmed the not-found interface retains its existing heading while receiving noindex metadata and no structured data.
 - Chrome confirmed one homepage H1, five project articles with matching stable fragments, and five detail regions present and collapsed by default. Opening Amble changed `aria-expanded` to true and removed native hidden state without changing its content.
 - The structure audit, lint, 13 unit tests, production build, 12 Chromium/WebKit journeys, and Wrangler deployment dry run passed.
+- The first live smoke check exposed an outdated expected-title contract. The monitored title was updated to the new canonical title so uptime checks continue to measure availability rather than report a false outage.

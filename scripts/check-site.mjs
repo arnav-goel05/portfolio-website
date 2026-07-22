@@ -1,5 +1,5 @@
 const target = process.argv[2] ?? 'https://arnav-goel.com/'
-const expectedTitle = '<title>Arnav Goel — Product, AI, and Software</title>'
+const expectedTitle = '<title>Arnav Goel | Product, AI &amp; Software Portfolio</title>'
 
 try {
   const response = await fetch(target, {
