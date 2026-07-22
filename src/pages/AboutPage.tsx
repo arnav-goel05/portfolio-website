@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { SiteNav } from '../components/SiteNav'
-import { aboutProfile, aboutRows, aboutSkillColumns } from '../data/about'
+import { aboutBeyondWork, aboutProfile, aboutRows, aboutSkillColumns } from '../data/about'
 import { contactLinks } from '../data/site'
 
 export function AboutPage() {
@@ -80,6 +80,24 @@ export function AboutPage() {
               </article>
             )
           })}
+        </div>
+      </section>
+
+      <section className="about-beyond" aria-labelledby="about-beyond-title">
+        <h2 className="about-kicker" id="about-beyond-title">
+          Beyond Work
+        </h2>
+        <div className="about-beyond-list">
+          {aboutBeyondWork.map((group) => (
+            <section className="about-beyond-group" key={group.title}>
+              <h3>{group.title}</h3>
+              <ul>
+                {group.details.map((detail) => (
+                  <li key={detail}>{detail}</li>
+                ))}
+              </ul>
+            </section>
+          ))}
         </div>
       </section>
 
