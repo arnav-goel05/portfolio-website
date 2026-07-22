@@ -56,6 +56,32 @@ export const aboutRows = [
   },
 ]
 
+export const aboutBeyondWork = [
+  {
+    title: 'Leadership Experience',
+    details: [
+      'Appointed as Prince George’s Park Residence Cluster Leader, responsible for hosting events with 15 floor residents and overseeing administrative duties such as resident safety and fire drills.',
+      'Co-organised the world’s first university hackathon dedicated to Vision Pro development, managing website development and mentoring student participants throughout the event',
+      'Served as Press and Creative Writing Executive for the NUS Students’ Union, crafting LinkedIn captions for events and initiatives, while developing article topics and weekly fun facts.',
+    ],
+  },
+  {
+    title: 'Volunteering Experience',
+    details: [
+      'Acted as Vice-Project Director for the Elderly Service Project (Computing Club), delegating tasks to various subdepartments, organising NUH volunteering sessions, while managing proposal writing and user guides for elderly.',
+      'Volunteered as a Python/Scratch Instructor for CITC and a Digital Literacy Instructor for SHG, teaching programming basics to students and guiding seniors in app usage, honing communication and instructional skills.',
+    ],
+  },
+  {
+    title: 'Achievements and Skills',
+    details: [
+      'Achieved a top 10 placement in a national creative writing competition, leading to the publication of my debut book, now stocked in every National Library Board branch across Singapore.',
+      'Landscape photographer, certified guitarist and passionate Tour de France fan.',
+      'Native proficiency in English and Hindi.',
+    ],
+  },
+]
+
 export const aboutSkillColumns = [
   [
     'Product Discovery',

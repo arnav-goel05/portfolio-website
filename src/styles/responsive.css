@@ -268,6 +268,7 @@
 
   .about-contact,
   .about-rows,
+  .about-beyond,
   .about-skills {
     width: auto;
     margin-inline: 22px;
@@ -286,6 +287,7 @@
   }
 
   .about-rows,
+  .about-beyond,
   .about-skills {
     padding-top: 64px;
   }
@@ -306,6 +308,19 @@
 
   .about-row-details {
     margin-right: 0;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .about-beyond-list {
+    gap: 30px;
+  }
+
+  .about-beyond-group h3 {
+    font-size: 18px;
+  }
+
+  .about-beyond-group ul {
     font-size: 15px;
     line-height: 1.4;
   }
