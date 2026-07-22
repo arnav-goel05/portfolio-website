@@ -1,0 +1,26 @@
+# Arnav Goel
+
+Arnav Goel is a Computer Science undergraduate at the National University of Singapore, graduating in May 2027. He works across product thinking, applied AI, spatial computing, accessibility, and software engineering, with a focus on building thoughtful products from 0 to 1 and technology for good.
+
+## Canonical pages
+
+- [Portfolio](https://arnav-goel.com/): Selected work, project summaries, implementation details, and outcomes.
+- [About](https://arnav-goel.com/about): Experience, skills, education context, and contact links.
+
+## Selected work
+
+- Amble: A live 3D Singapore discovery platform for events, restaurants, landmarks, offers, and itinerary planning.
+- SupplyCue: A Telegram first F&B procurement workflow connecting requests, supplier communication, invoice checks, and Owner approvals.
+- On-Device Low Vision Assistant: An in-progress iPhone assistant exploring private, accessible guidance for everyday tasks.
+- TRIBE v2 Music Optimization: A model-guided music production pipeline using predicted cortical responses to optimize toward a sleep-alignment objective.
+- Vision Pro Hand Dexterity Assessment: A patent-pending Apple Vision Pro assessment being evaluated with NUH for stroke rehabilitation research.
+
+## Public profiles and sources
+
+- [GitHub](https://github.com/arnav-goel05)
+- [LinkedIn](https://www.linkedin.com/in/arnav--goel/)
+- [Amble](https://amblefinds.com/)
+- [Amble source](https://github.com/arnav-goel05/amble-discovery-map)
+- [TRIBE v2 Music Optimization source](https://github.com/arnav-goel05/tribe-v2-music-optimization)
+
+Project claims and status should be taken from the canonical portfolio pages above, which are the maintained source of truth.

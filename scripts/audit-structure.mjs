@@ -64,7 +64,9 @@ const visit = (modulePath, stack = []) => {
   visiting.delete(modulePath)
   visited.add(modulePath)
 }
-visit(resolve('src/main.tsx'))
+for (const entryPoint of ['src/main.tsx', 'src/worker.ts']) {
+  if (existsSync(entryPoint)) visit(resolve(entryPoint))
+}
 
 const unusedModules = sourceModules
   .map((path) => resolve(path))
