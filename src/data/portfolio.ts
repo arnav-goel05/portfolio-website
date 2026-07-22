@@ -4,6 +4,7 @@ import ambleDemoVideo from '../assets/amble-demo.mp4'
 import visionProHandAssessment from '../assets/vision-pro-hand-assessment.webp'
 import supplyCueWorkspace from '../assets/supplycue-workspace.png'
 import lowVisionCashierAssistance from '../assets/low-vision-cashier-assistance.jpg'
+import { selectedProjectSeo } from './seo'
 
 type ProjectLink = {
   label: string
@@ -34,11 +35,8 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: 'amble',
-    title: 'Amble: Explore Singapore in 3D',
+    ...selectedProjectSeo.amble,
     status: 'Weekly releases',
-    summary:
-      'A 3D city discovery platform for exploring Singapore’s events, restaurants, landmarks, and current restaurant offers in one spatial experience.',
     problem:
       'Discovering what to do in Singapore often means switching between disconnected event listings, restaurant platforms, social posts, and maps. This makes it difficult to understand what is nearby, compare possibilities, or turn several places into a practical plan.',
     contribution: [
@@ -73,11 +71,8 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: 'supplycue',
-    title: 'SupplyCue: AI Assisted F&B Procurement',
+    ...selectedProjectSeo.supplyCue,
     status: 'Weekly releases',
-    summary:
-      'A Telegram first procurement platform that brings stock requests, supplier communication, delivery checks, invoice verification, and Owner approvals into one clear and traceable workflow.',
     problem:
       'Procurement in small F&B teams is often spread across chat messages, supplier emails, spreadsheets, invoices, and verbal updates. Requests can get lost, supplier changes are difficult to follow, and pricing or delivery problems may only become visible when payment is due.',
     contribution: [
@@ -111,11 +106,8 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: 'on-device-low-vision-assistant',
-    title: 'On-Device Low Vision Assistant',
+    ...selectedProjectSeo.lowVision,
     status: 'In progress',
-    summary:
-      'Exploring how on device intelligence on iPhone can help people with low vision complete everyday tasks with greater independence.',
     problem:
       'Many existing low vision applications can recognise objects, read text, or describe where controls are located, but they often stop before helping the user complete the task. People may still need support deciding how much money to give a cashier, identifying unfamiliar notes and coins, or understanding which appliance buttons to press and in what order. These interactions must also be fast, private, accessible, and usable by elderly Singaporeans across English and Mandarin.',
     contribution: [
@@ -141,10 +133,7 @@ export const projects: Project[] = [
     links: [],
   },
   {
-    slug: 'tribe-music-optimization',
-    title: 'TRIBE v2 Music Optimization',
-    summary:
-      'A model guided music production system that uses TRIBE v2 cortical predictions to remix a hip hop track toward a custom sleep alignment objective.',
+    ...selectedProjectSeo.tribe,
     problem:
       'Music production decisions are typically evaluated through subjective listening. I investigated whether controlled changes to tempo, drum level, reverb, EQ, bass smoothing, and transient intensity could instead be compared using predicted cortical activity.',
     contribution: [
@@ -190,11 +179,8 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: 'hand-eye-coordination-assessment',
-    title: 'Vision Pro Hand Dexterity Assessment',
+    ...selectedProjectSeo.visionPro,
     status: 'Patent pending',
-    summary:
-      'An Apple Vision Pro assessment system that turns hand movement into precise 3D data for stroke rehabilitation and clinical research.',
     problem:
       'Stroke rehabilitation often relies on clinician observation to assess hand dexterity. This makes small movement deviations difficult to quantify consistently, compare across assessments, or track throughout recovery.',
     contribution: [

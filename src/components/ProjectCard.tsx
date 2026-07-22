@@ -29,16 +29,17 @@ function ProjectOutcome({ outcome }: { outcome: Project['outcome'] }) {
 export function ProjectCard({ project }: ProjectCardProps) {
   const [isOpen, setIsOpen] = useState(false)
   const detailId = `${project.slug}-details`
+  const titleId = `${project.slug}-title`
 
   return (
-    <article className="work-card">
+    <article className="work-card" id={project.slug} aria-labelledby={titleId}>
       <div className="work-media">
         <ProjectMedia image={project.image} title={project.title} video={project.video} />
       </div>
       <div className="work-copy">
         <div className="work-title-row">
           <div className="work-title-main">
-            <h3>{project.title}</h3>
+            <h3 id={titleId}>{project.title}</h3>
             {project.status ? <span className="work-status">{project.status}</span> : null}
           </div>
           {project.featuredLink ? (
@@ -80,41 +81,37 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </button>
       </div>
 
-      {isOpen ? (
-        <>
-          <dl className="work-details" id={detailId}>
-            <div>
-              <dt>Problem</dt>
-              <dd>{project.problem}</dd>
-            </div>
-            <div>
-              <dt>Built</dt>
-              <dd>
-                {Array.isArray(project.contribution) ? (
-                  <ul>
-                    {project.contribution.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  project.contribution
-                )}
-              </dd>
-            </div>
-            <div>
-              <dt>Outcome</dt>
-              <dd>
-                <ProjectOutcome outcome={project.outcome} />
-              </dd>
-            </div>
-          </dl>
+      <dl className="work-details" id={detailId} hidden={!isOpen}>
+        <div>
+          <dt>Problem</dt>
+          <dd>{project.problem}</dd>
+        </div>
+        <div>
+          <dt>Built</dt>
+          <dd>
+            {Array.isArray(project.contribution) ? (
+              <ul>
+                {project.contribution.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            ) : (
+              project.contribution
+            )}
+          </dd>
+        </div>
+        <div>
+          <dt>Outcome</dt>
+          <dd>
+            <ProjectOutcome outcome={project.outcome} />
+          </dd>
+        </div>
+      </dl>
 
-          <div className="work-stack">
-            <span>Built with</span>
-            <p>{project.tools.join(' · ')}</p>
-          </div>
-        </>
-      ) : null}
+      <div className="work-stack" hidden={!isOpen}>
+        <span>Built with</span>
+        <p>{project.tools.join(' · ')}</p>
+      </div>
     </article>
   )
 }
