@@ -10,7 +10,7 @@ type Env = {
 
 const SEO_START = '<!-- seo:start -->'
 const SEO_END = '<!-- seo:end -->'
-const STATIC_PATHS = new Set(['/favicon.svg', '/robots.txt', '/sitemap.xml', '/llms.txt'])
+const STATIC_PATHS = new Set(['/favicon.png', '/robots.txt', '/sitemap.xml', '/llms.txt'])
 
 function escapeAttribute(value: string) {
   return value
