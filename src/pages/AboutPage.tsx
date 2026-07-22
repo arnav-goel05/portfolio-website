@@ -71,9 +71,11 @@ export function AboutPage() {
                   </span>
                 </button>
                 {isOpen && (
-                  <p className="about-row-detail" id={detailId}>
-                    {row.detail}
-                  </p>
+                  <ul className="about-row-details" id={detailId}>
+                    {row.details.map((detail) => (
+                      <li key={detail}>{detail}</li>
+                    ))}
+                  </ul>
                 )}
               </article>
             )
