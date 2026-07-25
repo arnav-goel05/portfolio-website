@@ -63,8 +63,8 @@ unchanged while machine readers can associate the evidence with each project.
 
 - Hero decoration uses WebP assets and is hidden from assistive technology.
 - Below-fold project images lazy-load and decode asynchronously.
-- Project video uses its still as a loading poster, loads with the card, autoplays silently, loops
-  continuously, retains inline playback, and exposes no playback controls or pointer interaction.
+- Project video uses a black loading field until playback begins, loads with the card, autoplays silently,
+  loops continuously, retains inline playback, and exposes no playback controls or pointer interaction.
 - Generated source material and QA captures are not tracked; only production-ready assets belong in
   `src/assets/`.
 
