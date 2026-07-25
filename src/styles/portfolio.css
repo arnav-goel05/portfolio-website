@@ -216,6 +216,7 @@
 }
 
 .work-media {
+  position: relative;
   display: grid;
   min-height: clamp(270px, 21vw, 420px);
   place-items: center;
@@ -225,6 +226,34 @@
 
 .work-media video {
   pointer-events: none;
+}
+
+.work-media video.is-loading {
+  visibility: hidden;
+}
+
+.work-video-loading {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  inset: 0;
+  place-items: center;
+  background: #000000;
+}
+
+.work-video-loading span {
+  width: 34px;
+  height: 34px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: work-video-spin 800ms linear infinite;
+}
+
+@keyframes work-video-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .work-media video::-webkit-media-controls {
@@ -254,7 +283,7 @@
 
 .work-title-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 14px;
 }
 
