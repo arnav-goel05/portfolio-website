@@ -3,6 +3,7 @@ import ambleMapFeatureTour from '../assets/amble-map-feature-tour.jpg'
 import ambleDemoVideo from '../assets/amble-demo.mp4'
 import visionProHandAssessment from '../assets/vision-pro-hand-assessment.webp'
 import supplyCueWorkspace from '../assets/supplycue-workspace.png'
+import supplyCueDemoVideo from '../assets/supplycue-demo.mp4'
 import lowVisionCashierAssistance from '../assets/low-vision-cashier-assistance.jpg'
 import { selectedProjectSeo } from './seo'
 
@@ -72,7 +73,7 @@ export const projects: Project[] = [
   },
   {
     ...selectedProjectSeo.supplyCue,
-    status: 'Weekly releases',
+    status: 'Biweekly releases',
     problem:
       'Procurement in small F&B teams is often spread across chat messages, supplier emails, spreadsheets, invoices, and verbal updates. Requests can get lost, supplier changes are difficult to follow, and pricing or delivery problems may only become visible when payment is due.',
     contribution: [
@@ -98,12 +99,17 @@ export const projects: Project[] = [
       'Hyperdrive',
     ],
     image: supplyCueWorkspace,
+    video: supplyCueDemoVideo,
     links: [
       {
         label: 'Visit SupplyCue',
-        href: 'https://procurepilot.project-hub-arnav.workers.dev/',
+        href: 'https://supplycue.project-hub-arnav.workers.dev/',
       },
     ],
+    featuredLink: {
+      label: 'View SupplyCue on LinkedIn',
+      href: 'https://www.linkedin.com/posts/arnav--goel_running-an-fb-business-is-already-demanding-activity-7486689143083806720-IFKv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUjVB8BW9ilsQ4eIZxp6tu-VDisSZGJD3A',
+    },
   },
   {
     ...selectedProjectSeo.lowVision,
