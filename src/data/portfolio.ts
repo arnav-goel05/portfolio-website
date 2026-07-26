@@ -37,7 +37,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     ...selectedProjectSeo.amble,
-    status: 'Weekly releases',
+    status: 'Biweekly releases',
     problem:
       'Discovering what to do in Singapore often means switching between disconnected event listings, restaurant platforms, social posts, and maps. This makes it difficult to understand what is nearby, compare possibilities, or turn several places into a practical plan.',
     contribution: [
