@@ -1,4 +1,6 @@
 import aboutArnav from '../assets/about-arnav.jpg'
+import jnjAprilAward from '../assets/jnj-silver-appreciation-award-april-2026.jpeg'
+import jnjMayAward from '../assets/jnj-silver-appreciation-award-may-2026.jpeg'
 
 export const aboutProfile = {
   image: aboutArnav,
@@ -12,13 +14,29 @@ export const aboutRows = [
   {
     id: 'johnson-and-johnson',
     title: 'Johnson & Johnson, Singapore',
-    role: 'Data & Digital Technology Analyst Intern',
-    date: 'Jan 2026 – July 2026 [Expected]',
+    role: 'Data & Digital Business Analyst Intern',
+    date: 'Jan 2026 – July 2026',
     details: [
-      'Developed a graph-enhanced RAG system with observability for sales teams, reducing hours spent searching and validating information across enterprise PDFs by surfacing evidence-backed answers with traceable citations.',
-      'Built a BA-first AI workflow platform for healthcare product discovery, automating multi-role workflow generation and downstream document updates to reduce requirements iteration cycles from weeks of manual effort to hours.',
-      'Identified and designed AI solutions into existing business workflows, converting product requirements to automations, user flows, Figma wireframes to improve efficiency and reduce manpower cost.',
-      'Drove rapid prototyping and PoC development for internal Shark Tank pitches and J&J Hackathon initiatives, collaborating with teams to turn early-stage ideas into validated, business-aligned digital product concepts.',
+      'Spearheaded the development of a graph RAG system with observability for teams, reducing hours spent searching and validating information across enterprise PDFs by surfacing evidence-backed answers with traceable citations.',
+      'Directed the development of a BA-first AI workflow platform for internal product discovery, automating multi-role workflow generation and downstream document updates designed to reduce of weeks of manual effort to hours.',
+      'Evaluated and developed AI agent PoCs for integration into existing business workflows, while designing Dataiku automations for repetitive scripting tasks to improve operational efficiency and reduce operating costs.',
+      'Drove rapid prototyping and PoC development for internal Shark Tank pitches and J&J Hackathon initiatives, collaborating with teams to turn early-stage ideas into scalable and maintainable AI-ready solutions.',
+    ],
+    awards: [
+      {
+        title: 'Silver Appreciation Award',
+        date: 'April 2026',
+        image: jnjAprilAward,
+        imageAlt:
+          'Johnson & Johnson Silver Appreciation Award presented to Goel Arnav in April 2026.',
+      },
+      {
+        title: 'Silver Appreciation Award',
+        date: 'May 2026',
+        image: jnjMayAward,
+        imageAlt:
+          'Johnson & Johnson Silver Appreciation Award presented to Goel Arnav in May 2026.',
+      },
     ],
   },
   {
@@ -28,7 +46,7 @@ export const aboutRows = [
     date: 'May 2025 – Jan 2026',
     details: [
       'Led an agile team of three and coordinated with NUH to digitise existing stroke rehab assessments, building multiplatform applications for Apple Vision Pro and iPad in Swift/Swift UI, to drive real-time recovery analytics.',
-      'Developed a patent-pending 3D hand-eye coordination assessment tool for quantifying hand dexterity, incorporating patient testing feedback and clinical requirements to support integration into healthcare workflows.',
+      'Developed a patent-pending 3D hand-eye coordination assessment tool on Vision Pro for quantifying hand dexterity, incorporating patient testing feedback and clinical requirements to support integration into healthcare workflows.',
       'Analysed and aggregated 15,000 data points through Python queries using Pandas and Matplotlib to process datasets, visualise key trends, and deliver actionable insights for patient recovery optimization.',
     ],
   },
@@ -40,7 +58,7 @@ export const aboutRows = [
     details: [
       'Designed a full-stack web application using React.js, JavaScript, and MySQL, employing OOP principles to automate coursework workflows, reducing administrative workload by 30% and boosting student engagement.',
       'Developed MySQL schema models and indexes to meet real-world requirements and boost query performance, and implemented complex, multi-table SQL queries to generate detailed user summaries, saving instructor’s time.',
-      'Collaborated closely with the client to capture requirements and deliver a secure, reliable product through the implementation of unit testing, error handling, static security scans using Semgrep and input validation.',
+      'Collaborated closely with the client to translate user needs into product requirements and deliver a reliable application through unit and integration testing, robust error handling, and security scanning.',
     ],
   },
   {

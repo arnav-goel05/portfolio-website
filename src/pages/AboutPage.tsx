@@ -71,11 +71,26 @@ export function AboutPage() {
                   </span>
                 </button>
                 {isOpen && (
-                  <ul className="about-row-details" id={detailId}>
-                    {row.details.map((detail) => (
-                      <li key={detail}>{detail}</li>
-                    ))}
-                  </ul>
+                  <div className="about-row-expanded" id={detailId}>
+                    <ul className="about-row-details">
+                      {row.details.map((detail) => (
+                        <li key={detail}>{detail}</li>
+                      ))}
+                    </ul>
+                    {'awards' in row && row.awards ? (
+                      <div className="about-row-awards" aria-label="Johnson & Johnson awards">
+                        {row.awards.map((award) => (
+                          <a href={award.image} key={award.date} target="_blank" rel="noreferrer">
+                            <img src={award.image} alt={award.imageAlt} loading="lazy" />
+                            <span>
+                              <strong>{award.title}</strong>
+                              <small>{award.date}</small>
+                            </span>
+                          </a>
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
                 )}
               </article>
             )
