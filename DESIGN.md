@@ -24,6 +24,7 @@ large whitespace, restrained project media, and compact monospace navigation and
   to the project story.
 - Keep each project summary and external links visible, with a compact accordion toggle at the bottom right
   above the divider for revealing the detailed project rows.
+- Omit the Built With row when the available source material does not identify a technical stack.
 - Place an optional branded project-post link at the far right of the title row without displacing the title
   or status pill.
 - Use a compact outlined status pill beside a project title when the work is actively updated.

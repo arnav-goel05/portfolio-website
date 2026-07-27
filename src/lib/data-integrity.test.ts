@@ -32,7 +32,7 @@ describe('portfolio data integrity', () => {
         for (const metric of project.outcome.metrics) expect(metric.trim()).not.toBe('')
         expect(project.outcome.note.trim()).not.toBe('')
       }
-      expect(project.tools.length).toBeGreaterThan(0)
+      if (project.tools) expect(project.tools.length).toBeGreaterThan(0)
       expect(project.image).toBeTruthy()
 
       for (const link of project.links) {
