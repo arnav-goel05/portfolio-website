@@ -41,7 +41,8 @@ Project outcomes remain concise paragraphs by default, with an optional structur
 closing note for projects whose measured results benefit from direct comparison.
 Project records may also expose one featured external link in the title row for a relevant launch or
 project post. Each card keeps its media, summary, and external links visible, while an independent accessible
-accordion reveals its detailed Problem, Built, Outcome, and Built With rows on demand.
+accordion reveals its detailed Problem, Built, Outcome, and Built With rows on demand. A project's tool list
+may remain empty when the available source material does not identify its technical stack.
 Project articles expose stable fragment identifiers used by structured data. Accordion detail regions stay
 in the rendered document and use native hidden state so the visible interaction and ARIA relationships remain
 unchanged while machine readers can associate the evidence with each project.
@@ -60,7 +61,7 @@ The About page renders that media within the corresponding expanded experience e
 - `public/robots.txt`, `public/sitemap.xml`, and `public/llms.txt` are non-visual crawler resources. The sitemap
   contains only the existing Home and About routes.
 - JSON-LD describes the portfolio website, Arnav's public person identity, the About profile page, and the
-  five visible selected projects using claims already present in portfolio content.
+  seven visible selected projects using claims already present in portfolio content.
 
 ## Media delivery
 

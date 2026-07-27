@@ -108,10 +108,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </dl>
 
-      <div className="work-stack" hidden={!isOpen}>
-        <span>Built with</span>
-        <p>{project.tools.join(' · ')}</p>
-      </div>
+      {project.tools?.length ? (
+        <div className="work-stack" hidden={!isOpen}>
+          <span>Built with</span>
+          <p>{project.tools.join(' · ')}</p>
+        </div>
+      ) : null}
     </article>
   )
 }
