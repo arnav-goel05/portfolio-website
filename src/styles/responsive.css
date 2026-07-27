@@ -306,10 +306,17 @@
     font-size: 46px;
   }
 
-  .about-row-details {
+  .about-row-expanded {
     margin-right: 0;
+  }
+
+  .about-row-details {
     font-size: 15px;
     line-height: 1.4;
+  }
+
+  .about-row-awards {
+    gap: 10px;
   }
 
   .about-beyond-list {
