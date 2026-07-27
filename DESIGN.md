@@ -11,6 +11,8 @@ large whitespace, restrained project media, and compact monospace navigation and
   and GitHub links. Collapse those links into a compact Menu control on mobile.
 - Present the About introduction with one natural photographic portrait beside the profile copy.
 - Present each About experience as an expandable entry whose details use the resume's exact bullet points.
+- Present internship awards as compact, linked certificate cards within the corresponding expanded
+  experience entry.
 - Place a concise Beyond Work section between Experience and My Skills, grouping the resume's leadership,
   volunteering, achievement, and personal-interest details without rewriting them.
 - Keep the centered hero statement, supporting line, graduation timing, location, and twelve

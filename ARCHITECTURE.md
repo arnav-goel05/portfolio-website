@@ -46,6 +46,9 @@ Project articles expose stable fragment identifiers used by structured data. Acc
 in the rendered document and use native hidden state so the visible interaction and ARIA relationships remain
 unchanged while machine readers can associate the evidence with each project.
 
+Experience records may include award media stored alongside their labels and dates in `src/data/about.ts`.
+The About page renders that media within the corresponding expanded experience entry.
+
 ## Search and discovery delivery
 
 - `src/worker.ts` runs before static assets and is the response-level owner for apex-host canonicalization,
