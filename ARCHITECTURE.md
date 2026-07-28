@@ -61,7 +61,7 @@ The About page renders that media within the corresponding expanded experience e
 - `public/robots.txt`, `public/sitemap.xml`, and `public/llms.txt` are non-visual crawler resources. The sitemap
   contains only the existing Home and About routes.
 - JSON-LD describes the portfolio website, Arnav's public person identity, the About profile page, and the
-  seven visible selected projects using claims already present in portfolio content.
+  five visible selected projects using claims already present in portfolio content.
 
 ## Media delivery
 
