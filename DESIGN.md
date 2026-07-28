@@ -15,7 +15,7 @@ large whitespace, restrained project media, and compact monospace navigation and
   experience entry.
 - Place a concise Beyond Work section between Experience and My Skills, grouping the resume's leadership,
   volunteering, achievement, and personal-interest details without rewriting them.
-- Keep the centered hero statement, supporting line, graduation timing, location, and twelve
+- Keep the centered hero statement, supporting line, graduation timing, location, and ten
   project-derived stickers on wide screens, with a smaller curated sticker set on mobile.
 - Present work in two-column rows on wide screens and a single column below the established breakpoint.
 - Align media, copy, details, stack, and link regions across cards in the same wide-screen row.
