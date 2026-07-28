@@ -6,8 +6,6 @@ const projectTitles = [
   'On-Device Low Vision Assistant',
   'TRIBE v2 Music Optimization',
   'Vision Pro Hand Dexterity Assessment',
-  'Graph RAG Knowledge System',
-  'Vision2Value',
 ]
 
 function collectConsoleErrors(page: Page) {
