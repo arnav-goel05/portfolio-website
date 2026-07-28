@@ -111,8 +111,8 @@ assert.ok(aboutGraph.some((entity) => entity['@type'] === 'ProfilePage'))
 
 const itemList = homeGraph.find((entity) => entity['@type'] === 'ItemList')
 assert.ok(itemList, 'Homepage JSON-LD must include selected work')
-assert.equal(itemList.numberOfItems, 5)
-assert.equal(itemList.itemListElement.length, 5)
+assert.equal(itemList.numberOfItems, 7)
+assert.equal(itemList.itemListElement.length, 7)
 
 assert.match(robotsResponse.headers.get('content-type') ?? '', /^text\/plain/)
 assert.match(sitemapResponse.headers.get('content-type') ?? '', /(?:application|text)\/xml/)

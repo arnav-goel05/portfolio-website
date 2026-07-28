@@ -13,6 +13,10 @@ homepage through its problem, implementation, outcome, technology, media, and re
   NUH Department of Rehabilitation for clinical research and stroke rehabilitation.
 - **SupplyCue** — a multi-tenant, AI-assisted F&B procurement workflow connecting Telegram, Gmail,
   document intelligence, delivery checks, and owner approvals.
+- **Graph RAG Knowledge System** — an enterprise retrieval system that surfaces evidence-backed answers
+  with traceable citations across PDFs.
+- **Vision2Value** — a BA-first AI workflow platform that automates multi-role product-discovery workflows
+  and downstream document updates.
 
 Project claims and links are maintained in [`src/data/portfolio.ts`](src/data/portfolio.ts).
 

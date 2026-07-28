@@ -5,6 +5,8 @@ import visionProHandAssessment from '../assets/vision-pro-hand-assessment.webp'
 import supplyCueWorkspace from '../assets/supplycue-workspace.png'
 import supplyCueDemoVideo from '../assets/supplycue-demo.mp4'
 import lowVisionCashierAssistance from '../assets/low-vision-cashier-assistance.jpg'
+import ragKnowledgeRetrieval from '../assets/stickers-v2/rag-knowledge-retrieval.webp'
+import vision2ValueHealthcareWorkflow from '../assets/stickers-v2/vision2value-healthcare-workflow.webp'
 import { selectedProjectSeo } from './seo'
 
 type ProjectLink = {
@@ -207,6 +209,27 @@ export const projects: Project[] = [
       'Matplotlib',
     ],
     image: visionProHandAssessment,
+    links: [],
+  },
+  {
+    ...selectedProjectSeo.graphRag,
+    problem:
+      'Internal teams were spending hours searching across enterprise PDFs and validating the information they found before they could use it.',
+    contribution:
+      'Spearheaded the development of a graph RAG system with observability for teams, surfacing evidence-backed answers with traceable citations.',
+    outcome:
+      'Reduced the time teams spent searching and validating information across enterprise PDFs.',
+    image: ragKnowledgeRetrieval,
+    links: [],
+  },
+  {
+    ...selectedProjectSeo.vision2Value,
+    problem:
+      'Internal product discovery relied on manual multi-role workflow generation and downstream document updates, creating weeks of effort.',
+    contribution:
+      'Directed the development of a BA-first AI workflow platform that automated multi-role workflow generation and downstream document updates.',
+    outcome: 'The platform was designed to reduce weeks of manual effort to hours.',
+    image: vision2ValueHealthcareWorkflow,
     links: [],
   },
 ]
