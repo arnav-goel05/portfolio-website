@@ -56,6 +56,12 @@ export const selectedProjectSeo = {
     summary:
       'A Telegram first procurement platform that brings stock requests, supplier communication, delivery checks, invoice verification, and Owner approvals into one clear and traceable workflow.',
   },
+  byteStreak: {
+    slug: 'bytestreak',
+    title: 'ByteStreak: Daily LeetCode Companion',
+    summary:
+      'A native Android app and home screen widget for tracking the LeetCode Daily Challenge and maintaining a consistent solving habit.',
+  },
   lowVision: {
     slug: 'on-device-low-vision-assistant',
     title: 'On-Device Low Vision Assistant',
@@ -73,18 +79,6 @@ export const selectedProjectSeo = {
     title: 'Vision Pro Hand Dexterity Assessment',
     summary:
       'An Apple Vision Pro assessment system that turns hand movement into precise 3D data for stroke rehabilitation and clinical research.',
-  },
-  graphRag: {
-    slug: 'graph-rag-knowledge-system',
-    title: 'Graph RAG Knowledge System',
-    summary:
-      'An enterprise graph RAG system with team observability that surfaces evidence-backed answers and traceable citations across PDFs, reducing hours spent searching and validating information.',
-  },
-  vision2Value: {
-    slug: 'vision2value',
-    title: 'Vision2Value',
-    summary:
-      'An internal BA-first AI workflow platform for product discovery that automates multi-role workflow generation and downstream document updates to reduce weeks of manual effort to hours.',
   },
 } as const
 

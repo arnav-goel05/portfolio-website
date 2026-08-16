@@ -30,6 +30,10 @@ large whitespace, restrained project media, and compact monospace navigation and
 - Use a compact outlined status pill beside a project title when the work is actively updated.
 - Keep project information on the homepage; do not add individual project pages or a duplicate footer.
 - Preserve compact media height and contained imagery with minimal grey gutter.
+- Allow wide comparison-board imagery to use more of the media frame when its labels would otherwise become
+  difficult to read.
+- Present complementary project evidence images side by side with contained scaling when both views are
+  needed to understand the work.
 - Show a centered loading spinner on black while project videos buffer; do not expose a browser poster or
   native play overlay.
 - Avoid dark mode, dense dashboards, and decorative elements that compete with content unless requested.

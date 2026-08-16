@@ -3,11 +3,10 @@ import { expect, test, type Page } from '@playwright/test'
 const projectTitles = [
   'Amble: Explore Singapore in 3D',
   'SupplyCue: AI Assisted F&B Procurement',
+  'ByteStreak: Daily LeetCode Companion',
   'On-Device Low Vision Assistant',
   'TRIBE v2 Music Optimization',
   'Vision Pro Hand Dexterity Assessment',
-  'Graph RAG Knowledge System',
-  'Vision2Value',
 ]
 
 function collectConsoleErrors(page: Page) {

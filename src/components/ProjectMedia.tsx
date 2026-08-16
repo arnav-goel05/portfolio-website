@@ -2,11 +2,21 @@ import { useState } from 'react'
 
 type ProjectMediaProps = {
   image: string
+  imageAlt?: string
+  secondaryImage?: string
+  secondaryImageAlt?: string
   title: string
   video?: string
 }
 
-export function ProjectMedia({ image, title, video }: ProjectMediaProps) {
+export function ProjectMedia({
+  image,
+  imageAlt,
+  secondaryImage,
+  secondaryImageAlt,
+  title,
+  video,
+}: ProjectMediaProps) {
   const [isVideoLoading, setIsVideoLoading] = useState(Boolean(video))
 
   if (video) {
@@ -45,5 +55,30 @@ export function ProjectMedia({ image, title, video }: ProjectMediaProps) {
     )
   }
 
-  return <img src={image} alt={`${title} project preview`} loading="lazy" decoding="async" />
+  if (secondaryImage) {
+    return (
+      <div className="work-media-pair">
+        <div className="work-media-pair-item">
+          <img
+            src={image}
+            alt={imageAlt ?? `${title} project preview`}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div className="work-media-pair-item">
+          <img
+            src={secondaryImage}
+            alt={secondaryImageAlt ?? `${title} secondary project preview`}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <img src={image} alt={imageAlt ?? `${title} project preview`} loading="lazy" decoding="async" />
+  )
 }

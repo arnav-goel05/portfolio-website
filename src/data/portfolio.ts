@@ -4,9 +4,9 @@ import ambleDemoVideo from '../assets/amble-demo.mp4'
 import visionProHandAssessment from '../assets/vision-pro-hand-assessment.webp'
 import supplyCueWorkspace from '../assets/supplycue-workspace.png'
 import supplyCueDemoVideo from '../assets/supplycue-demo.mp4'
-import lowVisionCashierAssistance from '../assets/low-vision-cashier-assistance.jpg'
-import ragKnowledgeRetrieval from '../assets/stickers-v2/rag-knowledge-retrieval.webp'
-import vision2ValueHealthcareWorkflow from '../assets/stickers-v2/vision2value-healthcare-workflow.webp'
+import byteStreakDailyStates from '../assets/bytestreak-daily-states.jpeg'
+import lowVisionCurrencyDetectionResults from '../assets/low-vision-currency-detection-results.jpg'
+import lowVisionApplianceControlDetectionResults from '../assets/low-vision-appliance-control-detection-results.jpg'
 import { selectedProjectSeo } from './seo'
 
 type ProjectLink = {
@@ -31,6 +31,10 @@ export type Project = {
   outcome: string | ProjectOutcome
   tools?: string[]
   image: string
+  imageAlt?: string
+  secondaryImage?: string
+  secondaryImageAlt?: string
+  mediaVariant?: 'pair' | 'wide'
   video?: string
   links: ProjectLink[]
   featuredLink?: ProjectLink
@@ -114,6 +118,43 @@ export const projects: Project[] = [
     },
   },
   {
+    ...selectedProjectSeo.byteStreak,
+    problem:
+      'Maintaining a Daily Challenge streak requires remembering to return to LeetCode and check whether today’s problem has been accepted. Without this progress on the Android home screen, it is easy to lose track as the day progresses.',
+    contribution: [
+      'Created a native Android dashboard and Jetpack Glance widget that display the current challenge, completion status, recent streak, acceptance time, and last update. Setup requires only a public LeetCode username, with no password or login required.',
+      'Engineered an on device pipeline that queries the LeetCode GraphQL API, matches accepted submissions to the exact challenge and its 24 hour UTC window, calculates consecutive completions, and caches results for immediate rendering.',
+      'Designed Byte, a mascot with 12 visual states that responds to completion, urgency, streak milestones, connectivity, and recently broken streaks. Added network aware background updates, retry handling, and three daily reminders that verify the challenge remains incomplete before notifying the user.',
+    ],
+    outcome:
+      'Built an installable Android prototype that gives users a reliable, glanceable view of their Daily Challenge progress. Validated its matching, streak, reminder, onboarding, and widget scheduling logic with 27 unit tests and three Android API 36 emulator tests.',
+    tools: [
+      'Kotlin',
+      'Jetpack Compose',
+      'Jetpack Glance',
+      'WorkManager',
+      'LeetCode GraphQL',
+      'SharedPreferences',
+      'Android Notifications',
+      'JUnit',
+      'Espresso',
+    ],
+    image: byteStreakDailyStates,
+    imageAlt:
+      'Six Byte mascot widget states becoming more urgent throughout an unfinished Daily Challenge',
+    mediaVariant: 'wide',
+    links: [
+      {
+        label: 'View GitHub',
+        href: 'https://github.com/arnav-goel05/leetcode_android_widget',
+      },
+    ],
+    featuredLink: {
+      label: 'View ByteStreak on LinkedIn',
+      href: 'https://www.linkedin.com/feed/update/urn:li:activity:7490814050411634688/',
+    },
+  },
+  {
     ...selectedProjectSeo.lowVision,
     status: 'In progress',
     problem:
@@ -137,7 +178,12 @@ export const projects: Project[] = [
       'XCTest',
       'Python',
     ],
-    image: lowVisionCashierAssistance,
+    image: lowVisionCurrencyDetectionResults,
+    imageAlt: 'Singapore banknote detection results across 15 test cases',
+    secondaryImage: lowVisionApplianceControlDetectionResults,
+    secondaryImageAlt:
+      'Microwave dial and keypad control detection results across multiple appliance models',
+    mediaVariant: 'pair',
     links: [],
   },
   {
@@ -209,27 +255,6 @@ export const projects: Project[] = [
       'Matplotlib',
     ],
     image: visionProHandAssessment,
-    links: [],
-  },
-  {
-    ...selectedProjectSeo.graphRag,
-    problem:
-      'Internal teams were spending hours searching across enterprise PDFs and validating the information they found before they could use it.',
-    contribution:
-      'Spearheaded the development of a graph RAG system with observability for teams, surfacing evidence-backed answers with traceable citations.',
-    outcome:
-      'Reduced the time teams spent searching and validating information across enterprise PDFs.',
-    image: ragKnowledgeRetrieval,
-    links: [],
-  },
-  {
-    ...selectedProjectSeo.vision2Value,
-    problem:
-      'Internal product discovery relied on manual multi-role workflow generation and downstream document updates, creating weeks of effort.',
-    contribution:
-      'Directed the development of a BA-first AI workflow platform that automated multi-role workflow generation and downstream document updates.',
-    outcome: 'The platform was designed to reduce weeks of manual effort to hours.',
-    image: vision2ValueHealthcareWorkflow,
     links: [],
   },
 ]

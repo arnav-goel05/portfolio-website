@@ -111,8 +111,8 @@ assert.ok(aboutGraph.some((entity) => entity['@type'] === 'ProfilePage'))
 
 const itemList = homeGraph.find((entity) => entity['@type'] === 'ItemList')
 assert.ok(itemList, 'Homepage JSON-LD must include selected work')
-assert.equal(itemList.numberOfItems, 7)
-assert.equal(itemList.itemListElement.length, 7)
+assert.equal(itemList.numberOfItems, 6)
+assert.equal(itemList.itemListElement.length, 6)
 
 assert.match(robotsResponse.headers.get('content-type') ?? '', /^text\/plain/)
 assert.match(sitemapResponse.headers.get('content-type') ?? '', /(?:application|text)\/xml/)
@@ -124,6 +124,7 @@ assert.deepEqual(sitemapUrls, ['https://arnav-goel.com/', 'https://arnav-goel.co
 for (const projectTitle of [
   'Amble',
   'SupplyCue',
+  'ByteStreak',
   'On-Device Low Vision Assistant',
   'TRIBE v2 Music Optimization',
   'Vision Pro Hand Dexterity Assessment',
