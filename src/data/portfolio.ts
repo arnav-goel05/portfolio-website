@@ -54,7 +54,6 @@ export type Project = {
 export const projects: Project[] = [
   {
     ...selectedProjectSeo.amble,
-    status: 'In progress',
     problem:
       'Discovering what to do in Singapore often means switching between disconnected event listings, restaurant platforms, social posts, and maps. This makes it difficult to understand what is nearby, compare possibilities, or turn several places into a practical plan.',
     contribution: [
@@ -90,7 +89,6 @@ export const projects: Project[] = [
   },
   {
     ...selectedProjectSeo.supplyCue,
-    status: 'In progress',
     problem:
       'Procurement in small F&B teams is often spread across chat messages, supplier emails, spreadsheets, invoices, and verbal updates. Requests can get lost, supplier changes are difficult to follow, and pricing or delivery problems may only become visible when payment is due.',
     contribution: [
@@ -180,7 +178,6 @@ export const projects: Project[] = [
   },
   {
     ...selectedProjectSeo.lowVision,
-    status: 'In progress',
     problem:
       'Many existing low vision applications can recognise objects, read text, or describe where controls are located, but they often stop before helping the user complete the task. People may still need support deciding how much money to give a cashier, identifying unfamiliar notes and coins, or understanding which appliance buttons to press and in what order. These interactions must also be fast, private, accessible, and usable by elderly Singaporeans across English and Mandarin.',
     contribution: [

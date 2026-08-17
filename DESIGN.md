@@ -27,7 +27,8 @@ large whitespace, restrained project media, and compact monospace navigation and
 - Omit the Built With row when the available source material does not identify a technical stack.
 - Place an optional branded project-post link at the far right of the title row without displacing the title
   or status pill.
-- Use a compact outlined status pill beside a project title when the work is actively updated.
+- Reserve the compact outlined status pill for distinct states such as Patent pending; do not label projects
+  as In progress.
 - Keep project information on the homepage; do not add individual project pages or a duplicate footer.
 - Preserve compact media height and contained imagery with minimal grey gutter.
 - Allow wide comparison-board imagery to use more of the media frame when its labels would otherwise become
