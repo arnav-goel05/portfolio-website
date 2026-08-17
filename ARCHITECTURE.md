@@ -62,6 +62,8 @@ The About page renders that media within the corresponding expanded experience e
   only that block for Home, About, and not-found responses.
 - `public/robots.txt`, `public/sitemap.xml`, and `public/llms.txt` are non-visual crawler resources. The sitemap
   contains only the existing Home and About routes.
+- The Worker explicitly passes `public/arnav-goel-resume.pdf` through to the static asset binding so the SPA
+  fallback cannot replace it with an application response.
 - JSON-LD describes the portfolio website, Arnav's public person identity, the About profile page, and the
   seven visible selected projects using claims already present in portfolio content.
 
