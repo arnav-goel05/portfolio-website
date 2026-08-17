@@ -6,6 +6,7 @@ Arnav Goel is a Computer Science undergraduate at the National University of Sin
 
 - [Portfolio](https://arnav-goel.com/): Selected work, project summaries, implementation details, and outcomes.
 - [About](https://arnav-goel.com/about): Experience, skills, education context, and contact links.
+- [Resume](https://arnav-goel.com/arnav-goel-resume.pdf): Downloadable PDF resume.
 
 ## Selected work
 

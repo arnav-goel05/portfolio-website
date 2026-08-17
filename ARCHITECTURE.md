@@ -23,7 +23,7 @@ and navigation marks without introducing an additional UI framework.
 - `src/components/`: reusable navigation, project card/media, and cursor behavior.
 - `src/data/portfolio.ts`: typed project records and production-media references.
 - `src/data/about.ts`: About profile, uniquely identified experiences, and skills.
-- `src/data/site.ts`: shared navigation and contact destinations.
+- `src/data/site.ts`: shared navigation and contact destinations, including downloadable assets.
 - `src/data/hero.ts`: decorative hero asset inventory and positioning tokens.
 - `src/data/seo.ts`: canonical route metadata, shared person identity, and structured selected-work data.
 - `src/lib/routes.ts`: framework-independent browser-path normalization.
@@ -75,6 +75,7 @@ The About page renders that media within the corresponding expanded experience e
   loops continuously, retains inline playback, and exposes no playback controls or pointer interaction.
 - Generated source material and QA captures are not tracked; only production-ready assets belong in
   `src/assets/`.
+- The downloadable resume is served unchanged from `public/arnav-goel-resume.pdf`.
 
 ## Validation and deployment
 

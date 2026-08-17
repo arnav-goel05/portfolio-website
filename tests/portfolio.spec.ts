@@ -33,9 +33,17 @@ test('homepage presents every project and valid navigation', async ({ page }) =>
 
   await expect(page.getByRole('link', { name: 'Work' })).toHaveAttribute('href', '/#work')
   await expect(page.getByRole('link', { name: 'About' })).toHaveAttribute('href', '/about')
+  await expect(page.getByRole('link', { name: 'Resume' })).toHaveAttribute(
+    'href',
+    '/arnav-goel-resume.pdf',
+  )
+  await expect(page.getByRole('link', { name: 'Resume' })).toHaveAttribute(
+    'download',
+    'Arnav-Goel-Resume.pdf',
+  )
   await expect(page.getByRole('link', { name: 'Email' })).toHaveAttribute(
     'href',
-    'mailto:arnav.goel@u.nus.edu',
+    'mailto:arnavgoel182@gmail.com',
   )
   await expect(page.getByRole('link', { name: 'LinkedIn', exact: true })).toHaveAttribute(
     'href',

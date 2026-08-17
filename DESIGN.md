@@ -7,8 +7,9 @@ large whitespace, restrained project media, and compact monospace navigation and
 
 ## Stable visual contract
 
-- Keep the fixed navbar compact and frosted, with the retro computer mark plus Work, About, Email, LinkedIn,
-  and GitHub links. Collapse those links into a compact Menu control on mobile.
+- Keep the fixed navbar compact and frosted, with the retro computer mark plus Work, About, Resume, Email,
+  LinkedIn, and GitHub links. Resume downloads the current PDF, and all links collapse into a compact Menu
+  control on mobile.
 - Present the About introduction with one natural photographic portrait beside the profile copy.
 - Present each About experience as an expandable entry whose details use the resume's exact bullet points.
 - Present internship awards as compact, linked certificate cards within the corresponding expanded

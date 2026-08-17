@@ -181,6 +181,6 @@ are disabled after 60 days without repository activity.
 
 ## Contact
 
-- [Email](mailto:arnav.goel@u.nus.edu)
+- [Email](mailto:arnavgoel182@gmail.com)
 - [LinkedIn](https://www.linkedin.com/in/arnav--goel/)
 - [GitHub](https://github.com/arnav-goel05)
