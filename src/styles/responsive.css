@@ -369,6 +369,25 @@
     max-height: 270px;
   }
 
+  .work-media--grid {
+    min-height: 390px;
+  }
+
+  .work-media-gallery {
+    gap: 7px;
+    width: 100%;
+  }
+
+  .work-media--grid .work-media-gallery-item img {
+    width: 100%;
+    max-width: none;
+  }
+
+  .work-media-gallery-item figcaption {
+    padding-block: 6px 7px;
+    font-size: 9px;
+  }
+
   .work-media--pair {
     min-height: 240px;
   }

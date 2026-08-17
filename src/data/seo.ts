@@ -62,6 +62,12 @@ export const selectedProjectSeo = {
     summary:
       'A native Android app and home screen widget for tracking the LeetCode Daily Challenge and maintaining a consistent solving habit.',
   },
+  liveShield: {
+    slug: 'liveshield',
+    title: 'LiveShield: Private Live Streaming',
+    summary:
+      'A native Android app that protects bystanders and sensitive information before live video reaches viewers.',
+  },
   lowVision: {
     slug: 'on-device-low-vision-assistant',
     title: 'On-Device Low Vision Assistant',

@@ -34,6 +34,7 @@ large whitespace, restrained project media, and compact monospace navigation and
   difficult to read.
 - Present complementary project evidence images side by side with contained scaling when both views are
   needed to understand the work.
+- Present four related project images in a compact two by two grid with a concise caption below each image.
 - Show a centered loading spinner on black while project videos buffer; do not expose a browser poster or
   native play overlay.
 - Avoid dark mode, dense dashboards, and decorative elements that compete with content unless requested.

@@ -13,6 +13,7 @@ homepage through its problem, implementation, outcome, technology, media, and re
   NUH Department of Rehabilitation for clinical research and stroke rehabilitation.
 - **SupplyCue** — a multi-tenant, AI-assisted F&B procurement workflow connecting Telegram, Gmail,
   document intelligence, delivery checks, and owner approvals.
+- **LiveShield** — a native Android privacy assistant that sanitizes live video before it is broadcast.
 
 Project claims and links are maintained in [`src/data/portfolio.ts`](src/data/portfolio.ts).
 

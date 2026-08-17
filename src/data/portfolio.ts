@@ -5,6 +5,10 @@ import visionProHandAssessment from '../assets/vision-pro-hand-assessment.webp'
 import supplyCueWorkspace from '../assets/supplycue-workspace.png'
 import supplyCueDemoVideo from '../assets/supplycue-demo.mp4'
 import byteStreakDailyStates from '../assets/bytestreak-daily-states.jpeg'
+import liveShieldQrCodeRedaction from '../assets/liveshield-qr-code-redaction.png'
+import liveShieldFaceRedaction from '../assets/liveshield-face-redaction.png'
+import liveShieldTextRedaction from '../assets/liveshield-text-redaction.png'
+import liveShieldAreaRedaction from '../assets/liveshield-area-redaction.png'
 import lowVisionCurrencyDetectionResults from '../assets/low-vision-currency-detection-results.jpg'
 import lowVisionApplianceControlDetectionResults from '../assets/low-vision-appliance-control-detection-results.jpg'
 import { selectedProjectSeo } from './seo'
@@ -21,6 +25,12 @@ type ProjectOutcome = {
   note: string
 }
 
+export type ProjectMediaItem = {
+  src: string
+  alt: string
+  caption: string
+}
+
 export type Project = {
   slug: string
   title: string
@@ -34,7 +44,8 @@ export type Project = {
   imageAlt?: string
   secondaryImage?: string
   secondaryImageAlt?: string
-  mediaVariant?: 'pair' | 'wide'
+  mediaGallery?: ProjectMediaItem[]
+  mediaVariant?: 'grid' | 'pair' | 'wide'
   video?: string
   links: ProjectLink[]
   featuredLink?: ProjectLink
@@ -153,6 +164,56 @@ export const projects: Project[] = [
       label: 'View ByteStreak on LinkedIn',
       href: 'https://www.linkedin.com/feed/update/urn:li:activity:7490814050411634688/',
     },
+  },
+  {
+    ...selectedProjectSeo.liveShield,
+    problem:
+      'Live streaming can unintentionally expose bystanders, private screens, documents, badges, parcels, codes, and other sensitive information. Once broadcast, this content can be recorded or shared beyond the creator’s control.',
+    contribution: [
+      'Developed LiveShield in Java using CameraX to analyze video from both the front and back cameras directly on the device. Creators can select themselves as the host, while YuNet and OpenCV detect, track, and cover other faces, including people who enter the frame later.',
+      'Combined PaddleOCR and OpenCV to identify email addresses, phone numbers, payment card details, verification codes, and words marked as private. Added ZXing to detect QR codes and barcodes, as well as manual privacy zones for screens, documents, badges, parcels, and background areas.',
+      'Created a protected video pipeline using OpenGL and MediaCodec, ensuring that the preview and broadcast use the same sanitized footage. Integrated RTMP publishing so eligible creators can stream directly to TikTok LIVE.',
+    ],
+    outcome:
+      'Built an installable Android prototype and validated its privacy pipeline across 20 simulated camera, detection, rendering, and connection failures. Successfully broadcast protected video from both cameras through TikTok LIVE without exposing untreated frames.',
+    tools: [
+      'Java',
+      'CameraX',
+      'OpenGL',
+      'MediaCodec',
+      'YuNet',
+      'OpenCV',
+      'PaddleOCR',
+      'ZXing',
+      'RTMP',
+      'TikTok LIVE',
+    ],
+    image: liveShieldQrCodeRedaction,
+    imageAlt: 'A parcel label covered by LiveShield',
+    mediaGallery: [
+      {
+        src: liveShieldQrCodeRedaction,
+        alt: 'A QR code on a parcel concealed by a black privacy mask',
+        caption: 'QR Code',
+      },
+      {
+        src: liveShieldFaceRedaction,
+        alt: 'A person’s face concealed by a black privacy mask during a live video',
+        caption: 'Face',
+      },
+      {
+        src: liveShieldTextRedaction,
+        alt: 'Text on a charger concealed by a black privacy mask',
+        caption: 'Text',
+      },
+      {
+        src: liveShieldAreaRedaction,
+        alt: 'A selected wall area concealed by a black privacy mask',
+        caption: 'Area',
+      },
+    ],
+    mediaVariant: 'grid',
+    links: [{ label: 'View GitHub', href: 'https://github.com/arnav-goel05/liveshield' }],
   },
   {
     ...selectedProjectSeo.lowVision,

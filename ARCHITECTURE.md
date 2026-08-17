@@ -43,8 +43,8 @@ Project records may also expose one featured external link in the title row for 
 project post. Each card keeps its media, summary, and external links visible, while an independent accessible
 accordion reveals its detailed Problem, Built, Outcome, and Built With rows on demand. A project's tool list
 may remain empty when the available source material does not identify its technical stack.
-Project media may use one contained asset or a paired evidence layout when two complementary results need to
-remain visible together.
+Project media may use one contained asset, a paired evidence layout, or a captioned two by two gallery when
+several complementary results need to remain visible together.
 Project articles expose stable fragment identifiers used by structured data. Accordion detail regions stay
 in the rendered document and use native hidden state so the visible interaction and ARIA relationships remain
 unchanged while machine readers can associate the evidence with each project.
@@ -63,13 +63,14 @@ The About page renders that media within the corresponding expanded experience e
 - `public/robots.txt`, `public/sitemap.xml`, and `public/llms.txt` are non-visual crawler resources. The sitemap
   contains only the existing Home and About routes.
 - JSON-LD describes the portfolio website, Arnav's public person identity, the About profile page, and the
-  eight visible selected projects using claims already present in portfolio content.
+  seven visible selected projects using claims already present in portfolio content.
 
 ## Media delivery
 
 - Hero decoration uses WebP assets and is hidden from assistive technology.
 - Below-fold project images lazy-load and decode asynchronously.
 - Paired project evidence images remain side by side and use contained scaling so neither source is cropped.
+- Captioned project galleries use a responsive two by two grid with concise labels below each image.
 - Project video uses a black loading field until playback begins, loads with the card, autoplays silently,
   loops continuously, retains inline playback, and exposes no playback controls or pointer interaction.
 - Generated source material and QA captures are not tracked; only production-ready assets belong in

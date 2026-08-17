@@ -1,10 +1,12 @@
 import { useState } from 'react'
+import type { ProjectMediaItem } from '../data/portfolio'
 
 type ProjectMediaProps = {
   image: string
   imageAlt?: string
   secondaryImage?: string
   secondaryImageAlt?: string
+  mediaGallery?: ProjectMediaItem[]
   title: string
   video?: string
 }
@@ -14,6 +16,7 @@ export function ProjectMedia({
   imageAlt,
   secondaryImage,
   secondaryImageAlt,
+  mediaGallery,
   title,
   video,
 }: ProjectMediaProps) {
@@ -52,6 +55,19 @@ export function ProjectMedia({
           </div>
         ) : null}
       </>
+    )
+  }
+
+  if (mediaGallery?.length) {
+    return (
+      <div className="work-media-gallery">
+        {mediaGallery.map((item) => (
+          <figure className="work-media-gallery-item" key={item.caption}>
+            <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+            <figcaption>{item.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
     )
   }
 

@@ -41,6 +41,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           imageAlt={project.imageAlt}
           secondaryImage={project.secondaryImage}
           secondaryImageAlt={project.secondaryImageAlt}
+          mediaGallery={project.mediaGallery}
           title={project.title}
           video={project.video}
         />
