@@ -56,12 +56,6 @@ export const selectedProjectSeo = {
     summary:
       'A Telegram first procurement platform that brings stock requests, supplier communication, delivery checks, invoice verification, and Owner approvals into one clear and traceable workflow.',
   },
-  byteStreak: {
-    slug: 'bytestreak',
-    title: 'ByteStreak: Daily LeetCode Companion',
-    summary:
-      'A native Android app and home screen widget for tracking the LeetCode Daily Challenge and maintaining a consistent solving habit.',
-  },
   liveShield: {
     slug: 'liveshield',
     title: 'LiveShield: Private Live Streaming',
@@ -85,6 +79,12 @@ export const selectedProjectSeo = {
     title: 'Vision Pro Hand Dexterity Assessment',
     summary:
       'An Apple Vision Pro assessment system that turns hand movement into precise 3D data for stroke rehabilitation and clinical research.',
+  },
+  byteStreak: {
+    slug: 'bytestreak',
+    title: 'ByteStreak: Daily LeetCode Companion',
+    summary:
+      'A native Android app and home screen widget for tracking the LeetCode Daily Challenge and maintaining a consistent solving habit.',
   },
 } as const
 

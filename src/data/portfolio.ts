@@ -129,43 +129,6 @@ export const projects: Project[] = [
     },
   },
   {
-    ...selectedProjectSeo.byteStreak,
-    problem:
-      'Maintaining a Daily Challenge streak requires remembering to return to LeetCode and check whether today’s problem has been accepted. Without this progress on the Android home screen, it is easy to lose track as the day progresses.',
-    contribution: [
-      'Created a native Android dashboard and Jetpack Glance widget that display the current challenge, completion status, recent streak, acceptance time, and last update. Setup requires only a public LeetCode username, with no password or login required.',
-      'Engineered an on device pipeline that queries the LeetCode GraphQL API, matches accepted submissions to the exact challenge and its 24 hour UTC window, calculates consecutive completions, and caches results for immediate rendering.',
-      'Designed Byte, a mascot with 12 visual states that responds to completion, urgency, streak milestones, connectivity, and recently broken streaks. Added network aware background updates, retry handling, and three daily reminders that verify the challenge remains incomplete before notifying the user.',
-    ],
-    outcome:
-      'Built an installable Android prototype that gives users a reliable, glanceable view of their Daily Challenge progress. Validated its matching, streak, reminder, onboarding, and widget scheduling logic with 27 unit tests and three Android API 36 emulator tests.',
-    tools: [
-      'Kotlin',
-      'Jetpack Compose',
-      'Jetpack Glance',
-      'WorkManager',
-      'LeetCode GraphQL',
-      'SharedPreferences',
-      'Android Notifications',
-      'JUnit',
-      'Espresso',
-    ],
-    image: byteStreakDailyStates,
-    imageAlt:
-      'Six Byte mascot widget states becoming more urgent throughout an unfinished Daily Challenge',
-    mediaVariant: 'wide',
-    links: [
-      {
-        label: 'View GitHub',
-        href: 'https://github.com/arnav-goel05/leetcode_android_widget',
-      },
-    ],
-    featuredLink: {
-      label: 'View ByteStreak on LinkedIn',
-      href: 'https://www.linkedin.com/feed/update/urn:li:activity:7490814050411634688/',
-    },
-  },
-  {
     ...selectedProjectSeo.liveShield,
     problem:
       'Live streaming can unintentionally expose bystanders, private screens, documents, badges, parcels, codes, and other sensitive information. Once broadcast, this content can be recorded or shared beyond the creator’s control.',
@@ -317,5 +280,42 @@ export const projects: Project[] = [
     ],
     image: visionProHandAssessment,
     links: [],
+  },
+  {
+    ...selectedProjectSeo.byteStreak,
+    problem:
+      'Maintaining a Daily Challenge streak requires remembering to return to LeetCode and check whether today’s problem has been accepted. Without this progress on the Android home screen, it is easy to lose track as the day progresses.',
+    contribution: [
+      'Created a native Android dashboard and Jetpack Glance widget that display the current challenge, completion status, recent streak, acceptance time, and last update. Setup requires only a public LeetCode username, with no password or login required.',
+      'Engineered an on device pipeline that queries the LeetCode GraphQL API, matches accepted submissions to the exact challenge and its 24 hour UTC window, calculates consecutive completions, and caches results for immediate rendering.',
+      'Designed Byte, a mascot with 12 visual states that responds to completion, urgency, streak milestones, connectivity, and recently broken streaks. Added network aware background updates, retry handling, and three daily reminders that verify the challenge remains incomplete before notifying the user.',
+    ],
+    outcome:
+      'Built an installable Android prototype that gives users a reliable, glanceable view of their Daily Challenge progress. Validated its matching, streak, reminder, onboarding, and widget scheduling logic with 27 unit tests and three Android API 36 emulator tests.',
+    tools: [
+      'Kotlin',
+      'Jetpack Compose',
+      'Jetpack Glance',
+      'WorkManager',
+      'LeetCode GraphQL',
+      'SharedPreferences',
+      'Android Notifications',
+      'JUnit',
+      'Espresso',
+    ],
+    image: byteStreakDailyStates,
+    imageAlt:
+      'Six Byte mascot widget states becoming more urgent throughout an unfinished Daily Challenge',
+    mediaVariant: 'wide',
+    links: [
+      {
+        label: 'View GitHub',
+        href: 'https://github.com/arnav-goel05/leetcode_android_widget',
+      },
+    ],
+    featuredLink: {
+      label: 'View ByteStreak on LinkedIn',
+      href: 'https://www.linkedin.com/feed/update/urn:li:activity:7490814050411634688/',
+    },
   },
 ]
