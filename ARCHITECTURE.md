@@ -75,6 +75,7 @@ The About page renders that media within the corresponding expanded experience e
 - Captioned project galleries use a responsive two by two grid with concise labels below each image.
 - Project video uses a black loading field until playback begins, loads with the card, autoplays silently,
   loops continuously, retains inline playback, and exposes no playback controls or pointer interaction.
+- LiveShield uses an optimized project video in place of its former four-image evidence gallery.
 - Generated source material and QA captures are not tracked; only production-ready assets belong in
   `src/assets/`.
 - The downloadable resume is served unchanged from `public/arnav-goel-resume.pdf`.
