@@ -6,9 +6,7 @@ import supplyCueWorkspace from '../assets/supplycue-workspace.png'
 import supplyCueDemoVideo from '../assets/supplycue-demo.mp4'
 import byteStreakDailyStates from '../assets/bytestreak-daily-states.jpeg'
 import liveShieldQrCodeRedaction from '../assets/liveshield-qr-code-redaction.png'
-import liveShieldFaceRedaction from '../assets/liveshield-face-redaction.png'
-import liveShieldTextRedaction from '../assets/liveshield-text-redaction.png'
-import liveShieldAreaRedaction from '../assets/liveshield-area-redaction.png'
+import liveShieldDemoVideo from '../assets/liveshield-demo.mp4'
 import lowVisionCurrencyDetectionResults from '../assets/low-vision-currency-detection-results.jpg'
 import lowVisionApplianceControlDetectionResults from '../assets/low-vision-appliance-control-detection-results.jpg'
 import { selectedProjectSeo } from './seo'
@@ -60,9 +58,10 @@ export const projects: Project[] = [
       'Created an interactive 3D interface deployed through Cloudflare Workers, with searchable events, viewport-based restaurant discovery, and an ordered itinerary builder.',
       'Engineered an evidence-backed event pipeline that collects official listings, normalises recurring occurrences, resolves venues to verified OneMap building identities, and atomically publishes reviewed snapshots.',
       'Developed a restaurant enrichment pipeline that uses TinyFish Search to identify official websites and TinyFish Fetch to inspect dynamic promotion pages. The pipeline verifies restaurant identity, preserves original evidence, and rejects expired offers.',
+      'Integrated the OpenAI Realtime API for voice based, natural language discovery across events, restaurants, and places.',
     ],
     outcome:
-      'Released Amble as a live public beta at amblefinds.com, replacing a fragmented research process with one continuous journey from deciding where to go to leaving with a practical day plan.',
+      'Launched Amble as a public beta serving 100+ monthly users, giving people one continuous journey for discovering Singapore events, restaurants, live promotions, and building a practical day plan.',
     tools: [
       'JavaScript',
       'MapLibre GL JS',
@@ -74,6 +73,7 @@ export const projects: Project[] = [
       'Cloudflare Workers',
       'OneMap',
       'OpenStreetMap',
+      'OpenAI Realtime API',
       'Playwright',
     ],
     image: ambleMapFeatureTour,
@@ -98,7 +98,7 @@ export const projects: Project[] = [
       'Developed AI assisted invoice reading and delivery checks to identify differences in quantities, prices, totals, and GST. Every request, supplier message, document, and decision is stored within one traceable case history for Owner review.',
     ],
     outcome:
-      'Released SupplyCue as an interactive Cloudflare demo, replacing fragmented procurement coordination with one continuous journey. I am currently working to partner with F&B operators to assess the concept’s feasibility in real procurement workflows.',
+      'In end to end workflow testing, SupplyCue reduced manual coordination per order from about 90 minutes to 15 minutes by automating requests, supplier negotiation, and invoice verification. The interactive Cloudflare demo is now being used to assess the concept with F&B operators.',
     tools: [
       'Next.js',
       'TypeScript',
@@ -151,29 +151,7 @@ export const projects: Project[] = [
     ],
     image: liveShieldQrCodeRedaction,
     imageAlt: 'A parcel label covered by LiveShield',
-    mediaGallery: [
-      {
-        src: liveShieldQrCodeRedaction,
-        alt: 'A QR code on a parcel concealed by a black privacy mask',
-        caption: 'QR Code',
-      },
-      {
-        src: liveShieldFaceRedaction,
-        alt: 'A person’s face concealed by a black privacy mask during a live video',
-        caption: 'Face',
-      },
-      {
-        src: liveShieldTextRedaction,
-        alt: 'Text on a charger concealed by a black privacy mask',
-        caption: 'Text',
-      },
-      {
-        src: liveShieldAreaRedaction,
-        alt: 'A selected wall area concealed by a black privacy mask',
-        caption: 'Area',
-      },
-    ],
-    mediaVariant: 'grid',
+    video: liveShieldDemoVideo,
     links: [{ label: 'View GitHub', href: 'https://github.com/arnav-goel05/liveshield' }],
   },
   {
@@ -259,12 +237,12 @@ export const projects: Project[] = [
     problem:
       'Stroke rehabilitation often relies on clinician observation to assess hand dexterity. This makes small movement deviations difficult to quantify consistently, compare across assessments, or track throughout recovery.',
     contribution: [
-      'Worked with the NUH Department of Rehabilitation to translate clinical requirements into a Vision Pro assessment that guides patients through structured hand movement tasks in 3D.',
+      'Led a 3 person team working with NUH to translate clinical requirements into a Vision Pro and iPad assessment that guides patients through structured hand movement tasks and captures quantified recovery metrics.',
       'Developed hand calibration, real time fingertip tracking, six movement tasks, repeatable trials, deviation measurements, and automated 3D data export using Swift, SwiftUI, ARKit, and RealityKit.',
       'Created a Python analysis pipeline that processes more than 15,000 movement points from each assessment, visualises key patterns, and compares healthy control data with simulated ataxia data.',
     ],
     outcome:
-      'The assessment is now being evaluated in clinical trials with NUH, establishing a repeatable workflow for measuring and analysing fine motor control. The underlying method is patent pending, and a research paper is currently in preparation.',
+      'Refined the assessment through testing with 7 patients and clinician feedback, establishing a repeatable workflow for measuring fine motor control and analysing more than 15,000 movement points. The underlying method is patent pending.',
     tools: [
       'Swift',
       'SwiftUI',

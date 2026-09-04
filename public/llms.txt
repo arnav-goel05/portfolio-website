@@ -10,13 +10,13 @@ Arnav Goel is a Computer Science undergraduate at the National University of Sin
 
 ## Selected work
 
-- Amble: A live 3D Singapore discovery platform for events, restaurants, landmarks, offers, and itinerary planning.
-- SupplyCue: A Telegram first F&B procurement workflow connecting requests, supplier communication, invoice checks, and Owner approvals.
-- LiveShield: A native Android app that protects bystanders and sensitive information before live video reaches viewers.
-- On-Device Low Vision Assistant: An in-progress iPhone assistant exploring private, accessible guidance for everyday tasks.
-- TRIBE v2 Music Optimization: A model-guided music production pipeline using predicted cortical responses to optimize toward a sleep-alignment objective.
-- Vision Pro Hand Dexterity Assessment: A patent-pending Apple Vision Pro assessment being evaluated with NUH for stroke rehabilitation research.
-- ByteStreak: A native Android app and home screen widget for tracking the LeetCode Daily Challenge and maintaining a consistent solving habit.
+- Amble: A public 3D discovery platform serving 100+ monthly users, bringing Singapore events, restaurants, live promotions, and day planning into one spatial experience.
+- SupplyCue: A stateful AI procurement platform that reduced manual coordination per order from about 90 to 15 minutes by connecting Telegram requests, supplier negotiation, and invoice verification.
+- LiveShield: A native Android live streaming app that masks faces, QR codes, private text, and custom regions on device before any frame reaches social platforms.
+- On-Device Low Vision Assistant: An on device iPhone assistant designed to help people with low vision independently identify Singapore currency and complete appliance tasks with private, step by step voice guidance.
+- TRIBE v2 Music Optimization: A model guided music production pipeline that remixed a hip hop track toward sleep alignment and improved its target score by +0.711.
+- Vision Pro Hand Dexterity Assessment: A Vision Pro and iPad hand assessment, refined with 7 patients, that turns movement into quantified 3D metrics for tracking stroke recovery.
+- ByteStreak: A native Android widget that keeps the LeetCode Daily Challenge visible through 12 responsive mascot states and completion-aware reminders.
 
 ## Public profiles and sources
 
