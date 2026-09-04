@@ -29,6 +29,7 @@ export function SiteNav({ ariaLabel }: SiteNavProps) {
         {links.map((link) => (
           <a
             href={link.href}
+            download={link.download}
             key={link.href}
             target={link.href.startsWith('http') ? '_blank' : undefined}
             rel={link.href.startsWith('http') ? 'noreferrer' : undefined}

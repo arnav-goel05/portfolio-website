@@ -33,8 +33,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <article className="work-card" id={project.slug} aria-labelledby={titleId}>
-      <div className="work-media">
-        <ProjectMedia image={project.image} title={project.title} video={project.video} />
+      <div
+        className={`work-media${project.mediaVariant ? ` work-media--${project.mediaVariant}` : ''}`}
+      >
+        <ProjectMedia
+          image={project.image}
+          imageAlt={project.imageAlt}
+          secondaryImage={project.secondaryImage}
+          secondaryImageAlt={project.secondaryImageAlt}
+          mediaGallery={project.mediaGallery}
+          title={project.title}
+          video={project.video}
+        />
       </div>
       <div className="work-copy">
         <div className="work-title-row">

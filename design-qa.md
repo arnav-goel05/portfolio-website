@@ -1,9 +1,17 @@
 # Design QA
 
-## Reference
+## Source visual truth
 
-Compared the supplied desktop screenshot with the local portfolio at a 2048 pixel viewport. The requested
-change was to align the Problem, Built, Outcome, and Built With rows across each two-card project row.
+The supplied 968 × 308 pixel screenshot shows the centered hero status block with graduation timing above
+the location line. The requested change adds one centered row directly above that graduation line while
+preserving the existing type, spacing, and alignment.
+
+## Implementation evidence
+
+- Desktop: `.qa/hero-education-desktop.jpg`, captured at a 1280 × 720 CSS viewport.
+- Mobile: `.qa/hero-education-mobile.jpg`, captured at a 390 × 844 CSS viewport.
+- Comparison: `.qa/hero-education-comparison.jpg`, showing the supplied source and the updated homepage.
+- State: homepage hero at initial load.
 
 ## Findings
 
@@ -12,10 +20,14 @@ change was to align the Problem, Built, Outcome, and Built With rows across each
 - P2: none.
 - P3: none.
 
-The first row now starts Problem at 1877 px, Built at 2010 px, Outcome at 2352 px, and Built With at
-2503 px in both cards. The second and third project pairs also return matching row positions.
+## Fidelity surfaces
 
-At 1200 px, cards correctly return to the existing single-column layout with no horizontal overflow.
-No browser console errors were observed.
+- Copy: the new row reads `National University of Singapore, Computer Science (Hons.) Year 4` and appears
+  immediately above `Graduating in May 2027`.
+- Typography: the new row inherits the existing hero status type size, weight, and centered alignment.
+- Spacing: the existing 10 pixel vertical rhythm is preserved across all three rows.
+- Responsive layout: desktop renders the new row on one line; mobile wraps it cleanly to two centered lines.
+- Overflow: no horizontal overflow was observed at either viewport.
+- Console: no warnings or errors were reported.
 
 final result: passed
