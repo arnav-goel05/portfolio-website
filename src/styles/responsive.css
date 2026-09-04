@@ -362,6 +362,49 @@
     width: min(78%, 280px);
   }
 
+  .work-media--wide img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 270px;
+  }
+
+  .work-media--grid {
+    min-height: 390px;
+  }
+
+  .work-media-gallery {
+    gap: 7px;
+    width: 100%;
+  }
+
+  .work-media--grid .work-media-gallery-item img {
+    width: 100%;
+    max-width: none;
+  }
+
+  .work-media-gallery-item figcaption {
+    padding-block: 6px 7px;
+    font-size: 9px;
+  }
+
+  .work-media--pair {
+    min-height: 240px;
+  }
+
+  .work-media-pair {
+    gap: 8px;
+    width: 100%;
+    height: 240px;
+  }
+
+  .work-media-pair img {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+  }
+
   .work-copy h3 {
     font-size: 26px;
   }

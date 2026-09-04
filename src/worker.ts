@@ -16,6 +16,7 @@ const STATIC_PATHS = new Set([
   '/robots.txt',
   '/sitemap.xml',
   '/llms.txt',
+  '/arnav-goel-resume.pdf',
 ])
 
 function escapeAttribute(value: string) {

@@ -42,6 +42,7 @@ const [
   robotsResponse,
   sitemapResponse,
   llmsResponse,
+  resumeResponse,
 ] = await Promise.all([
   request('/'),
   request('/about'),
@@ -49,6 +50,7 @@ const [
   request('/robots.txt'),
   request('/sitemap.xml'),
   request('/llms.txt'),
+  request('/arnav-goel-resume.pdf'),
 ])
 
 assert.equal(homeResponse.status, 200, 'Homepage must return HTTP 200')
@@ -117,6 +119,8 @@ assert.equal(itemList.itemListElement.length, 7)
 assert.match(robotsResponse.headers.get('content-type') ?? '', /^text\/plain/)
 assert.match(sitemapResponse.headers.get('content-type') ?? '', /(?:application|text)\/xml/)
 assert.match(llmsResponse.headers.get('content-type') ?? '', /^text\/plain/)
+assert.equal(resumeResponse.status, 200, 'Resume PDF must return HTTP 200')
+assert.match(resumeResponse.headers.get('content-type') ?? '', /^application\/pdf/)
 assert.match(robots, /Sitemap: https:\/\/arnav-goel\.com\/sitemap\.xml/)
 
 const sitemapUrls = Array.from(sitemap.matchAll(/<loc>([^<]+)<\/loc>/g), (match) => match[1])
@@ -124,6 +128,8 @@ assert.deepEqual(sitemapUrls, ['https://arnav-goel.com/', 'https://arnav-goel.co
 for (const projectTitle of [
   'Amble',
   'SupplyCue',
+  'ByteStreak',
+  'LiveShield',
   'On-Device Low Vision Assistant',
   'TRIBE v2 Music Optimization',
   'Vision Pro Hand Dexterity Assessment',

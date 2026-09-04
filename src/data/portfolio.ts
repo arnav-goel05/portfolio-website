@@ -4,9 +4,11 @@ import ambleDemoVideo from '../assets/amble-demo.mp4'
 import visionProHandAssessment from '../assets/vision-pro-hand-assessment.webp'
 import supplyCueWorkspace from '../assets/supplycue-workspace.png'
 import supplyCueDemoVideo from '../assets/supplycue-demo.mp4'
-import lowVisionCashierAssistance from '../assets/low-vision-cashier-assistance.jpg'
-import ragKnowledgeRetrieval from '../assets/stickers-v2/rag-knowledge-retrieval.webp'
-import vision2ValueHealthcareWorkflow from '../assets/stickers-v2/vision2value-healthcare-workflow.webp'
+import byteStreakDailyStates from '../assets/bytestreak-daily-states.jpeg'
+import liveShieldQrCodeRedaction from '../assets/liveshield-qr-code-redaction.png'
+import liveShieldDemoVideo from '../assets/liveshield-demo.mp4'
+import lowVisionCurrencyDetectionResults from '../assets/low-vision-currency-detection-results.jpg'
+import lowVisionApplianceControlDetectionResults from '../assets/low-vision-appliance-control-detection-results.jpg'
 import { selectedProjectSeo } from './seo'
 
 type ProjectLink = {
@@ -21,6 +23,12 @@ type ProjectOutcome = {
   note: string
 }
 
+export type ProjectMediaItem = {
+  src: string
+  alt: string
+  caption: string
+}
+
 export type Project = {
   slug: string
   title: string
@@ -31,6 +39,11 @@ export type Project = {
   outcome: string | ProjectOutcome
   tools?: string[]
   image: string
+  imageAlt?: string
+  secondaryImage?: string
+  secondaryImageAlt?: string
+  mediaGallery?: ProjectMediaItem[]
+  mediaVariant?: 'grid' | 'pair' | 'wide'
   video?: string
   links: ProjectLink[]
   featuredLink?: ProjectLink
@@ -39,16 +52,16 @@ export type Project = {
 export const projects: Project[] = [
   {
     ...selectedProjectSeo.amble,
-    status: 'Biweekly releases',
     problem:
       'Discovering what to do in Singapore often means switching between disconnected event listings, restaurant platforms, social posts, and maps. This makes it difficult to understand what is nearby, compare possibilities, or turn several places into a practical plan.',
     contribution: [
       'Created an interactive 3D interface deployed through Cloudflare Workers, with searchable events, viewport-based restaurant discovery, and an ordered itinerary builder.',
       'Engineered an evidence-backed event pipeline that collects official listings, normalises recurring occurrences, resolves venues to verified OneMap building identities, and atomically publishes reviewed snapshots.',
       'Developed a restaurant enrichment pipeline that uses TinyFish Search to identify official websites and TinyFish Fetch to inspect dynamic promotion pages. The pipeline verifies restaurant identity, preserves original evidence, and rejects expired offers.',
+      'Integrated the OpenAI Realtime API for voice based, natural language discovery across events, restaurants, and places.',
     ],
     outcome:
-      'Released Amble as a live public beta at amblefinds.com, replacing a fragmented research process with one continuous journey from deciding where to go to leaving with a practical day plan.',
+      'Launched Amble as a public beta serving 100+ monthly users, giving people one continuous journey for discovering Singapore events, restaurants, live promotions, and building a practical day plan.',
     tools: [
       'JavaScript',
       'MapLibre GL JS',
@@ -60,6 +73,7 @@ export const projects: Project[] = [
       'Cloudflare Workers',
       'OneMap',
       'OpenStreetMap',
+      'OpenAI Realtime API',
       'Playwright',
     ],
     image: ambleMapFeatureTour,
@@ -75,7 +89,6 @@ export const projects: Project[] = [
   },
   {
     ...selectedProjectSeo.supplyCue,
-    status: 'Biweekly releases',
     problem:
       'Procurement in small F&B teams is often spread across chat messages, supplier emails, spreadsheets, invoices, and verbal updates. Requests can get lost, supplier changes are difficult to follow, and pricing or delivery problems may only become visible when payment is due.',
     contribution: [
@@ -85,7 +98,7 @@ export const projects: Project[] = [
       'Developed AI assisted invoice reading and delivery checks to identify differences in quantities, prices, totals, and GST. Every request, supplier message, document, and decision is stored within one traceable case history for Owner review.',
     ],
     outcome:
-      'Released SupplyCue as an interactive Cloudflare demo, replacing fragmented procurement coordination with one continuous journey. I am currently working to partner with F&B operators to assess the concept’s feasibility in real procurement workflows.',
+      'In end to end workflow testing, SupplyCue reduced manual coordination per order from about 90 minutes to 15 minutes by automating requests, supplier negotiation, and invoice verification. The interactive Cloudflare demo is now being used to assess the concept with F&B operators.',
     tools: [
       'Next.js',
       'TypeScript',
@@ -114,8 +127,35 @@ export const projects: Project[] = [
     },
   },
   {
+    ...selectedProjectSeo.liveShield,
+    problem:
+      'Live streaming can unintentionally expose bystanders, private screens, documents, badges, parcels, codes, and other sensitive information. Once broadcast, this content can be recorded or shared beyond the creator’s control.',
+    contribution: [
+      'Developed LiveShield in Java using CameraX to analyze video from both the front and back cameras directly on the device. Creators can select themselves as the host, while YuNet and OpenCV detect, track, and cover other faces, including people who enter the frame later.',
+      'Combined PaddleOCR and OpenCV to identify email addresses, phone numbers, payment card details, verification codes, and words marked as private. Added ZXing to detect QR codes and barcodes, as well as manual privacy zones for screens, documents, badges, parcels, and background areas.',
+      'Created a protected video pipeline using OpenGL and MediaCodec, ensuring that the preview and broadcast use the same sanitized footage. Integrated RTMP publishing so eligible creators can stream directly to TikTok LIVE.',
+    ],
+    outcome:
+      'Built an installable Android prototype and validated its privacy pipeline across 20 simulated camera, detection, rendering, and connection failures. Successfully broadcast protected video from both cameras through TikTok LIVE without exposing untreated frames.',
+    tools: [
+      'Java',
+      'CameraX',
+      'OpenGL',
+      'MediaCodec',
+      'YuNet',
+      'OpenCV',
+      'PaddleOCR',
+      'ZXing',
+      'RTMP',
+      'TikTok LIVE',
+    ],
+    image: liveShieldQrCodeRedaction,
+    imageAlt: 'A parcel label covered by LiveShield',
+    video: liveShieldDemoVideo,
+    links: [{ label: 'View GitHub', href: 'https://github.com/arnav-goel05/liveshield' }],
+  },
+  {
     ...selectedProjectSeo.lowVision,
-    status: 'In progress',
     problem:
       'Many existing low vision applications can recognise objects, read text, or describe where controls are located, but they often stop before helping the user complete the task. People may still need support deciding how much money to give a cashier, identifying unfamiliar notes and coins, or understanding which appliance buttons to press and in what order. These interactions must also be fast, private, accessible, and usable by elderly Singaporeans across English and Mandarin.',
     contribution: [
@@ -137,7 +177,12 @@ export const projects: Project[] = [
       'XCTest',
       'Python',
     ],
-    image: lowVisionCashierAssistance,
+    image: lowVisionCurrencyDetectionResults,
+    imageAlt: 'Singapore banknote detection results across 15 test cases',
+    secondaryImage: lowVisionApplianceControlDetectionResults,
+    secondaryImageAlt:
+      'Microwave dial and keypad control detection results across multiple appliance models',
+    mediaVariant: 'pair',
     links: [],
   },
   {
@@ -192,12 +237,12 @@ export const projects: Project[] = [
     problem:
       'Stroke rehabilitation often relies on clinician observation to assess hand dexterity. This makes small movement deviations difficult to quantify consistently, compare across assessments, or track throughout recovery.',
     contribution: [
-      'Worked with the NUH Department of Rehabilitation to translate clinical requirements into a Vision Pro assessment that guides patients through structured hand movement tasks in 3D.',
+      'Led a 3 person team working with NUH to translate clinical requirements into a Vision Pro and iPad assessment that guides patients through structured hand movement tasks and captures quantified recovery metrics.',
       'Developed hand calibration, real time fingertip tracking, six movement tasks, repeatable trials, deviation measurements, and automated 3D data export using Swift, SwiftUI, ARKit, and RealityKit.',
       'Created a Python analysis pipeline that processes more than 15,000 movement points from each assessment, visualises key patterns, and compares healthy control data with simulated ataxia data.',
     ],
     outcome:
-      'The assessment is now being evaluated in clinical trials with NUH, establishing a repeatable workflow for measuring and analysing fine motor control. The underlying method is patent pending, and a research paper is currently in preparation.',
+      'Refined the assessment through testing with 7 patients and clinician feedback, establishing a repeatable workflow for measuring fine motor control and analysing more than 15,000 movement points. The underlying method is patent pending.',
     tools: [
       'Swift',
       'SwiftUI',
@@ -212,24 +257,40 @@ export const projects: Project[] = [
     links: [],
   },
   {
-    ...selectedProjectSeo.graphRag,
+    ...selectedProjectSeo.byteStreak,
     problem:
-      'Internal teams were spending hours searching across enterprise PDFs and validating the information they found before they could use it.',
-    contribution:
-      'Spearheaded the development of a graph RAG system with observability for teams, surfacing evidence-backed answers with traceable citations.',
+      'Maintaining a Daily Challenge streak requires remembering to return to LeetCode and check whether today’s problem has been accepted. Without this progress on the Android home screen, it is easy to lose track as the day progresses.',
+    contribution: [
+      'Created a native Android dashboard and Jetpack Glance widget that display the current challenge, completion status, recent streak, acceptance time, and last update. Setup requires only a public LeetCode username, with no password or login required.',
+      'Engineered an on device pipeline that queries the LeetCode GraphQL API, matches accepted submissions to the exact challenge and its 24 hour UTC window, calculates consecutive completions, and caches results for immediate rendering.',
+      'Designed Byte, a mascot with 12 visual states that responds to completion, urgency, streak milestones, connectivity, and recently broken streaks. Added network aware background updates, retry handling, and three daily reminders that verify the challenge remains incomplete before notifying the user.',
+    ],
     outcome:
-      'Reduced the time teams spent searching and validating information across enterprise PDFs.',
-    image: ragKnowledgeRetrieval,
-    links: [],
-  },
-  {
-    ...selectedProjectSeo.vision2Value,
-    problem:
-      'Internal product discovery relied on manual multi-role workflow generation and downstream document updates, creating weeks of effort.',
-    contribution:
-      'Directed the development of a BA-first AI workflow platform that automated multi-role workflow generation and downstream document updates.',
-    outcome: 'The platform was designed to reduce weeks of manual effort to hours.',
-    image: vision2ValueHealthcareWorkflow,
-    links: [],
+      'Built an installable Android prototype that gives users a reliable, glanceable view of their Daily Challenge progress. Validated its matching, streak, reminder, onboarding, and widget scheduling logic with 27 unit tests and three Android API 36 emulator tests.',
+    tools: [
+      'Kotlin',
+      'Jetpack Compose',
+      'Jetpack Glance',
+      'WorkManager',
+      'LeetCode GraphQL',
+      'SharedPreferences',
+      'Android Notifications',
+      'JUnit',
+      'Espresso',
+    ],
+    image: byteStreakDailyStates,
+    imageAlt:
+      'Six Byte mascot widget states becoming more urgent throughout an unfinished Daily Challenge',
+    mediaVariant: 'wide',
+    links: [
+      {
+        label: 'View GitHub',
+        href: 'https://github.com/arnav-goel05/leetcode_android_widget',
+      },
+    ],
+    featuredLink: {
+      label: 'View ByteStreak on LinkedIn',
+      href: 'https://www.linkedin.com/feed/update/urn:li:activity:7490814050411634688/',
+    },
   },
 ]

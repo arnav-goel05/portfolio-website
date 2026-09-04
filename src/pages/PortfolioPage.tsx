@@ -32,6 +32,7 @@ export function PortfolioPage() {
           to <strong>build technology for good.</strong>
         </p>
         <div className="hero-status">
+          <p>National University of Singapore, Computer Science (Hons.) Year 4</p>
           <p>Graduating in May 2027</p>
           <p className="hero-location">Based in Singapore / Open to relocation</p>
         </div>

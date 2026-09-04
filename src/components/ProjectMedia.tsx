@@ -1,12 +1,25 @@
 import { useState } from 'react'
+import type { ProjectMediaItem } from '../data/portfolio'
 
 type ProjectMediaProps = {
   image: string
+  imageAlt?: string
+  secondaryImage?: string
+  secondaryImageAlt?: string
+  mediaGallery?: ProjectMediaItem[]
   title: string
   video?: string
 }
 
-export function ProjectMedia({ image, title, video }: ProjectMediaProps) {
+export function ProjectMedia({
+  image,
+  imageAlt,
+  secondaryImage,
+  secondaryImageAlt,
+  mediaGallery,
+  title,
+  video,
+}: ProjectMediaProps) {
   const [isVideoLoading, setIsVideoLoading] = useState(Boolean(video))
 
   if (video) {
@@ -45,5 +58,43 @@ export function ProjectMedia({ image, title, video }: ProjectMediaProps) {
     )
   }
 
-  return <img src={image} alt={`${title} project preview`} loading="lazy" decoding="async" />
+  if (mediaGallery?.length) {
+    return (
+      <div className="work-media-gallery">
+        {mediaGallery.map((item) => (
+          <figure className="work-media-gallery-item" key={item.caption}>
+            <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+            <figcaption>{item.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    )
+  }
+
+  if (secondaryImage) {
+    return (
+      <div className="work-media-pair">
+        <div className="work-media-pair-item">
+          <img
+            src={image}
+            alt={imageAlt ?? `${title} project preview`}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div className="work-media-pair-item">
+          <img
+            src={secondaryImage}
+            alt={secondaryImageAlt ?? `${title} secondary project preview`}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <img src={image} alt={imageAlt ?? `${title} project preview`} loading="lazy" decoding="async" />
+  )
 }

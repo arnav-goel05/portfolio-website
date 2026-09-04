@@ -48,43 +48,43 @@ export const selectedProjectSeo = {
     slug: 'amble',
     title: 'Amble: Explore Singapore in 3D',
     summary:
-      'A 3D city discovery platform for exploring Singapore’s events, restaurants, landmarks, and current restaurant offers in one spatial experience.',
+      'A public 3D discovery platform serving 100+ monthly users, bringing Singapore events, restaurants, live promotions, and day planning into one spatial experience.',
   },
   supplyCue: {
     slug: 'supplycue',
     title: 'SupplyCue: AI Assisted F&B Procurement',
     summary:
-      'A Telegram first procurement platform that brings stock requests, supplier communication, delivery checks, invoice verification, and Owner approvals into one clear and traceable workflow.',
+      'A stateful AI procurement platform that reduced manual coordination per order from about 90 to 15 minutes by connecting Telegram requests, supplier negotiation, and invoice verification.',
+  },
+  liveShield: {
+    slug: 'liveshield',
+    title: 'LiveShield: Private Live Streaming',
+    summary:
+      'A native Android live streaming app that masks faces, QR codes, private text, and custom regions on device before any frame reaches social platforms.',
   },
   lowVision: {
     slug: 'on-device-low-vision-assistant',
     title: 'On-Device Low Vision Assistant',
     summary:
-      'Exploring how on device intelligence on iPhone can help people with low vision complete everyday tasks with greater independence.',
+      'An on device iPhone assistant designed to help people with low vision independently identify Singapore currency and complete appliance tasks with private, step by step voice guidance.',
   },
   tribe: {
     slug: 'tribe-music-optimization',
     title: 'TRIBE v2 Music Optimization',
     summary:
-      'A model guided music production system that uses TRIBE v2 cortical predictions to remix a hip hop track toward a custom sleep alignment objective.',
+      'A model guided music production pipeline that remixed a hip hop track toward sleep alignment and improved its target score by +0.711.',
   },
   visionPro: {
     slug: 'hand-eye-coordination-assessment',
     title: 'Vision Pro Hand Dexterity Assessment',
     summary:
-      'An Apple Vision Pro assessment system that turns hand movement into precise 3D data for stroke rehabilitation and clinical research.',
+      'A Vision Pro and iPad hand assessment, refined with 7 patients, that turns movement into quantified 3D metrics for tracking stroke recovery.',
   },
-  graphRag: {
-    slug: 'graph-rag-knowledge-system',
-    title: 'Graph RAG Knowledge System',
+  byteStreak: {
+    slug: 'bytestreak',
+    title: 'ByteStreak: Daily LeetCode Companion',
     summary:
-      'An enterprise graph RAG system with team observability that surfaces evidence-backed answers and traceable citations across PDFs, reducing hours spent searching and validating information.',
-  },
-  vision2Value: {
-    slug: 'vision2value',
-    title: 'Vision2Value',
-    summary:
-      'An internal BA-first AI workflow platform for product discovery that automates multi-role workflow generation and downstream document updates to reduce weeks of manual effort to hours.',
+      'A native Android widget that keeps the LeetCode Daily Challenge visible through 12 responsive mascot states and completion-aware reminders.',
   },
 } as const
 

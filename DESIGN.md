@@ -7,16 +7,18 @@ large whitespace, restrained project media, and compact monospace navigation and
 
 ## Stable visual contract
 
-- Keep the fixed navbar compact and frosted, with the retro computer mark plus Work, About, Email, LinkedIn,
-  and GitHub links. Collapse those links into a compact Menu control on mobile.
+- Keep the fixed navbar compact and frosted, with the retro computer mark plus Work, About, Resume, Email,
+  LinkedIn, and GitHub links. Resume downloads the current PDF, and all links collapse into a compact Menu
+  control on mobile.
 - Present the About introduction with one natural photographic portrait beside the profile copy.
 - Present each About experience as an expandable entry whose details use the resume's exact bullet points.
 - Present internship awards as compact, linked certificate cards within the corresponding expanded
   experience entry.
 - Place a concise Beyond Work section between Experience and My Skills, grouping the resume's leadership,
   volunteering, achievement, and personal-interest details without rewriting them.
-- Keep the centered hero statement, supporting line, graduation timing, location, and twelve
-  project-derived stickers on wide screens, with a smaller curated sticker set on mobile.
+- Keep the centered hero statement, supporting line, NUS Computer Science programme and year, graduation
+  timing, location, and twelve project-derived stickers on wide screens, with a smaller curated sticker set
+  on mobile.
 - Present work in two-column rows on wide screens and a single column below the established breakpoint.
 - Align media, copy, details, stack, and link regions across cards in the same wide-screen row.
 - Allow the Built row to use a short bullet list when separate implementation layers need to remain scannable.
@@ -27,9 +29,15 @@ large whitespace, restrained project media, and compact monospace navigation and
 - Omit the Built With row when the available source material does not identify a technical stack.
 - Place an optional branded project-post link at the far right of the title row without displacing the title
   or status pill.
-- Use a compact outlined status pill beside a project title when the work is actively updated.
+- Reserve the compact outlined status pill for distinct states such as Patent pending; do not label projects
+  as In progress.
 - Keep project information on the homepage; do not add individual project pages or a duplicate footer.
 - Preserve compact media height and contained imagery with minimal grey gutter.
+- Allow wide comparison-board imagery to use more of the media frame when its labels would otherwise become
+  difficult to read.
+- Present complementary project evidence images side by side with contained scaling when both views are
+  needed to understand the work.
+- Present four related project images in a compact two by two grid with a concise caption below each image.
 - Show a centered loading spinner on black while project videos buffer; do not expose a browser poster or
   native play overlay.
 - Avoid dark mode, dense dashboards, and decorative elements that compete with content unless requested.
