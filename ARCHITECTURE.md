@@ -89,8 +89,8 @@ The About page renders that media within the corresponding expanded experience e
 - Vitest tests colocated in `src/lib/` cover framework-independent utilities and static-data invariants.
 - Playwright journeys in `tests/` run in Chromium and WebKit against `dist/` served by `wrangler dev`, so
   Cloudflare SPA fallback and trailing-slash behavior are part of functional validation.
-- `scripts/check-site.mjs` owns the one-request, 15-second, status-and-title availability decision reused by
-  production smoke checks and recurring uptime monitoring.
+- `scripts/check-site.mjs` owns the one-request, 15-second, status-and-title availability decision used by
+  production smoke checks.
 - `wrangler.jsonc` owns Worker routes, the `ASSETS` binding, Worker-first request handling, asset output, and
   SPA fallback behavior.
 - The site has no server-side data requirement; D1 and R2 must not be introduced without a specified need.
@@ -101,8 +101,6 @@ The About page renders that media within the corresponding expanded experience e
 
 - `.github/workflows/ci.yml` owns read-only pull-request and protected-branch validation. Stable job names
   `quality` and `e2e` gate both branches; `release-source` additionally gates production PRs.
-- `.github/workflows/uptime.yml` is the only workflow with issue-write permission. It maintains one quiet
-  outage issue across a single-request failure and subsequent recovery.
 - `develop` is the integration branch. `master` remains the default, stable, and production branch.
 - Feature branches target `develop`; production releases are manually opened from `develop` to `master`.
 - Cloudflare Workers Builds owns branch previews and production deployments. Non-production branches upload
