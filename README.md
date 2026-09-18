@@ -155,7 +155,7 @@ codex/<description> → pull request to develop → manual pull request from dev
   `release-source`.
 - Direct pushes, force pushes, and deletion are blocked on both long-lived branches. No approval count is
   required while the repository has one maintainer.
-- GitHub Actions runs with read-only permissions except for the dedicated uptime workflow.
+- GitHub Actions runs with read-only permissions.
 
 ### Cloudflare previews and production
 
@@ -166,18 +166,6 @@ one smoke request to verify HTTP 200 and the expected portfolio title.
 
 No D1 database, R2 bucket, queue, staging Worker, snapshot preparation, or application secret is part of
 this deployment.
-
-### Uptime monitoring
-
-The production uptime workflow runs on demand and on a five-minute cron offset from the start of the hour.
-Each execution makes exactly one request to `https://arnav-goel.com/`, waits at most 15 seconds, and retries
-zero times. A result is healthy only when the response is HTTP 200 and includes the expected portfolio
-title.
-
-On failure, the workflow opens one labelled issue named `[Uptime] arnav-goel.com is unavailable`; repeated
-failures leave that issue unchanged. The first later success adds one recovery comment and closes it.
-GitHub schedules are best effort: runs can be delayed or dropped under load, and public-repository schedules
-are disabled after 60 days without repository activity.
 
 ## Contact
 
